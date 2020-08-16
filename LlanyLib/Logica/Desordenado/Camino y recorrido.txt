@@ -1,0 +1,120 @@
+Objetivo/os:
+	Buffer
+	Array
+	Dictionary LinkedList
+	Dictionary Hash
+	Dictionary AVL
+	Files
+		Lector de archivos
+		Creador y escritura de archivos
+		Lector y analizador de archivos (propiedades/tipo cabeceras HTML)
+
+Necesita:
+	Nodo doble		OK
+	Mem lib			OK
+	Diccionario (Cualquiera)
+	
+
+Objetivos cumplidos:
+
+
+Cosas por hacer/Incompletas:
+	Librerias simples:
+		Math
+		Mem
+	Interfaces:
+		List
+	Objetos:
+		
+	Plantillas:
+		Listas:
+			Array
+			Buffer
+			LinkedListAuto -> Add no eficiente y solo funciona de menor a mayor
+			ListaContigua
+		Nodos:
+
+		Otros:
+			SimpleSmartPointer
+
+Cosas por comentar y analizar temporal y espacialmente:
+	Librerias simples:
+	
+	Interfaces:
+		Nodo
+	Objetos:
+		Excepcion
+	Plantillas:
+		Listas:
+			Array
+			Buffer
+			LinkedListAuto
+		Nodos:
+			
+		Otros:
+			SimpleSmartPointer
+
+
+Cosas por testear:
+		Librerias simples:
+	
+	Interfaces:
+		
+	Objetos:
+		Racional -> operator== / operator!=
+	Plantillas:
+		Listas:
+			Racional -> operator== / operator!=
+			Array -> Todo
+			Buffer -> Todo
+			LinkedList -> Funciones No Heredadas, find()
+			LinkedListAuto -> Todo (La mayoria es heredado)
+		Nodos:
+			
+		Otros:
+			
+
+Cosas de mejora a futuro(Funcionan pero es mejor de otra manera):
+	Librerias simples:
+
+	Interfaces:
+		
+	Objetos:
+		
+	Plantillas:
+		Listas:
+			
+		Nodos:
+			NodoDoble -> cambiar el objeto para que herede de la interfaz Nodo
+		Otros:
+
+
+Cosas completadas:
+	Librerias simples:
+		Math
+		Mem
+	Interfaces:
+		Nodo
+	Objetos:
+		Excepcion
+		Racional
+	Plantillas:
+		Listas:
+			LinkedList
+		Nodos:
+			NodoDoble
+		Otros:
+			Racional
+			SimpleSmartPointer
+			Singleton
+
+
+// Funcion: Nada
+// Extra: Nada
+// Version: Final/Beta/Alfa/PreAlfa
+// Throws: Exception
+// Precondiciones:
+//		Ninguna
+// Retorno: Void/Si se ha realizado todo correctamente
+//		Resultado
+// Complejidad temporal y espacial: O(1) y M(1)

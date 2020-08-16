@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{9CF90555-D6E1-473E-B231-4F76B4EF175D}</ProjectGuid>
+    <RootNamespace>LlanyLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Logica\Basic\Gestores\GestorSingletons.cpp" />
+    <ClCompile Include="Logica\Basic\Gestores\SubscriptorSingletons.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Excepcion.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\JSONBuilder.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Logger.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Proceso.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\String.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\Chars.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\Files.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\JSONConversor.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\Mem.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\System.cpp" />
+    <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp" />
+    <ClCompile Include="Logica\Juego\Laberintos\Celda3D.cpp" />
+    <ClCompile Include="Logica\Juego\Laberintos\Laberinto2D.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Items\Hidrogeno.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Consumible.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Contenedor.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Equipable.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Item.cpp" />
+    <ClCompile Include="Logica\Math\Objetos\Racional.cpp" />
+    <ClCompile Include="Logica\Math\Objetos\Vector2.cpp" />
+    <ClCompile Include="Logica\Math\Objetos\Vector3.cpp" />
+    <ClCompile Include="Logica\Math\Singletons\BaseABC.cpp" />
+    <ClCompile Include="Logica\Math\Singletons\Math.cpp" />
+    <ClCompile Include="Logica\Math\Singletons\Random.cpp" />
+    <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
+    <ClCompile Include="Tests\MainTests2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Logica\Basic\Enumerators\FilesEnum.hpp" />
+    <ClInclude Include="Logica\Basic\Enumerators\LoggerEnum.hpp" />
+    <ClInclude Include="Logica\Basic\Enumerators\StringEnum.hpp" />
+    <ClInclude Include="Logica\Basic\Enumerators\SystemCodes.h" />
+    <ClInclude Include="Logica\Basic\Gestores\GestorSingletons.hpp" />
+    <ClInclude Include="Logica\Basic\Gestores\SubscriptorSingletons.hpp" />
+    <ClInclude Include="Logica\Basic\Interfaces\Contenedor.hpp" />
+    <ClInclude Include="Logica\Basic\Interfaces\ContenedorDobleTipo.hpp" />
+    <ClInclude Include="Logica\Basic\Interfaces\Dictionary.hpp" />
+    <ClInclude Include="Logica\Basic\Interfaces\List.hpp" />
+    <ClInclude Include="Logica\Basic\Interfaces\Listas.hpp" />
+    <ClInclude Include="Logica\Basic\Interfaces\VectorPunteros.hpp" />
+    <ClInclude Include="Logica\Basic\LibreriasSimples\AllLists.hpp" />
+    <ClInclude Include="Logica\Basic\LibreriasSimples\ASCII_Defines.h" />
+    <ClInclude Include="Logica\Basic\LibreriasSimples\Fork.h" />
+    <ClInclude Include="Logica\Basic\LibreriasSimples\LlanyTypes.h" />
+    <ClInclude Include="Logica\Basic\Objetos\Excepcion.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\Logger.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\Proceso.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\String.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\StringBuilder.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Dictionary\DictionaryLinkedList.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\Array.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\Buffer.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\LinkedList.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\LinkedListAuto.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoDosObjetosDosPunteros.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoDosObjetosUnPuntero.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoUnObjetoDoblePuntero.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoUnObjetoUnPuntero.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Otros\Singleton.hpp" />
+    <ClInclude Include="Logica\Basic\Plantillas\Pointers\SmartPointer.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\Chars.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\Files.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\JSONConversor.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\Mem.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\System.hpp" />
+    <ClInclude Include="Logica\Juego\Enums\ObjetosEnum.hpp" />
+    <ClInclude Include="Logica\Juego\Laberintos\Celda2D.hpp" />
+    <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp" />
+    <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Items\Hidrogeno.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Consumible.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Contenedor.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Equipable.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Item.hpp" />
+    <ClInclude Include="Logica\Math\Objetos\Racional.hpp" />
+    <ClInclude Include="Logica\Math\Objetos\Vector2.hpp" />
+    <ClInclude Include="Logica\Math\Objetos\Vector3.hpp" />
+    <ClInclude Include="Logica\Math\Plantillas\Racional.hpp" />
+    <ClInclude Include="Logica\Math\Singletons\BaseABC.hpp" />
+    <ClInclude Include="Logica\Math\Singletons\Math.hpp" />
+    <ClInclude Include="Logica\Math\Singletons\Random.hpp" />
+    <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Logica\Basic\Notas.txt" />
+    <Text Include="Logica\Juego\Notas.txt" />
+    <Text Include="Logica\Math\Notas.txt" />
+    <Text Include="Logica\Net\Notas.txt" />
+    <Text Include="Logica\Notas\Camino y recorrido.txt" />
+    <Text Include="Logica\Notas\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logica\Notas\Items.json" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

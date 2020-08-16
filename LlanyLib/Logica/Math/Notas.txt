@@ -1,0 +1,29 @@
+Version Pre-Alfa
+	<Singleton> Random
+	<Objeto> Uuid
+
+
+
+Version Alfa
+
+
+Version Beta -> Usado generalmente para marcar cosas que no son de mucha importancia
+
+
+Version Final (Lo mas probable es que esto siempre mayormente vacio)
+
+
+Version 'Beta' con posibles updates (LOW)
+	<Template> Racional
+
+	<Objeto> Racional
+
+
+Version 'Beta' con posibles updates (MED)
+
+
+Version 'Beta' con posibles updates (HIGH)
+	<Singleton> Math
+
+	<Objeto> Vector2
+	<Objeto> Vector3

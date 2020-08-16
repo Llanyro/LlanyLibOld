@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Logica">
+      <UniqueIdentifier>{67db96a5-1032-4480-a2f3-7caa7cdbbb9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{9495809b-b07f-4589-8d91-c030761065d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net">
+      <UniqueIdentifier>{8b406f4b-1353-45dc-81ac-6d012cd324e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos">
+      <UniqueIdentifier>{52860761-157d-4289-a563-bb4284269ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math">
+      <UniqueIdentifier>{65509835-f9d6-41df-b53c-d1d17aa4f6d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic">
+      <UniqueIdentifier>{0c9492d5-c460-4474-b96d-66dcf6e46448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Objetos">
+      <UniqueIdentifier>{813ff1cb-48ab-4f16-9bb2-ef25a70cb3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Objetos\Cpp">
+      <UniqueIdentifier>{50907777-f006-4beb-b917-bf3bdefb39d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Objetos\Hpp">
+      <UniqueIdentifier>{600ee3fd-b4ec-4e5f-afdc-7698dec087e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Plantillas">
+      <UniqueIdentifier>{038876fe-3101-4098-b325-ebc36e44a31c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Plantillas\Nodos">
+      <UniqueIdentifier>{c85fc7e3-af63-427a-8bfa-60d12331e35b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Plantillas\Listas">
+      <UniqueIdentifier>{a14ccc73-a7c9-4afe-a241-1b591408ec74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Plantillas\Dictionary">
+      <UniqueIdentifier>{a292dfe6-74fe-4ddd-947c-51f13a48944f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Plantillas\Otros">
+      <UniqueIdentifier>{2df5f6b0-b87a-452d-813e-6822ca6f00cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Plantillas\Pointers">
+      <UniqueIdentifier>{d0785a3d-017b-4942-8d04-8eca9674a3dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Singletons">
+      <UniqueIdentifier>{670f75ea-a7a8-4189-b769-269020d21a57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\LibreriasSimples">
+      <UniqueIdentifier>{4ac12c75-043b-4f29-8da3-02966e419beb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Interfaces">
+      <UniqueIdentifier>{4a70bc86-a9ac-4973-a271-741ffd83c426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Gestores">
+      <UniqueIdentifier>{5eb7ad46-5a70-407d-992f-d1a70c864a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Gestores\Cpp">
+      <UniqueIdentifier>{78a3651d-a328-4c98-99ed-a26b9a8b6ddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Gestores\Hpp">
+      <UniqueIdentifier>{1ca92601-5729-42e0-921e-c5fdd02879d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Enumerators">
+      <UniqueIdentifier>{49c89c1b-0e3e-43c9-b64c-d165aa9b5867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Objetos">
+      <UniqueIdentifier>{8a940b5c-9d29-4bd8-a813-45fa137c2c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Objetos\Hpp">
+      <UniqueIdentifier>{d46f98bb-c02a-4ced-aac3-8b441b228345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Objetos\Cpp">
+      <UniqueIdentifier>{1582a303-9259-4f59-9209-055b548ba5bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Plantillas">
+      <UniqueIdentifier>{e8036842-5aea-4046-afb6-6ad9a499ec0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Singletons">
+      <UniqueIdentifier>{6f931963-8450-42a2-840c-a86625645e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Singletons\Hpp">
+      <UniqueIdentifier>{409f36c4-b70d-40a7-bc26-62009b13a6c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Math\Singletons\Cpp">
+      <UniqueIdentifier>{2fcb95dd-3137-44b6-b7b5-26239a7c4ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Singletons\Cpp">
+      <UniqueIdentifier>{88414121-9b6a-4d07-8983-043fdcfd6e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Basic\Singletons\Hpp">
+      <UniqueIdentifier>{32cc97fd-f96b-4b0f-93ab-712c29fb92fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Notas">
+      <UniqueIdentifier>{35530b26-8b26-4dba-8a3a-558e2dc29203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos\Hpp">
+      <UniqueIdentifier>{bcdb647c-b76f-444c-a4c2-be635c45c3ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos\Cpp">
+      <UniqueIdentifier>{5a2ef586-faef-4d21-9dc1-b0243846f30e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego">
+      <UniqueIdentifier>{88409c9d-7d72-46be-bd55-72380f53cc31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Laberintos">
+      <UniqueIdentifier>{99d43d24-fe0f-417f-ae57-96d77e0aef45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos">
+      <UniqueIdentifier>{dfa2cdd6-db4c-447c-8f69-d3ee4d6876f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Enums">
+      <UniqueIdentifier>{7e8cc8e6-f67a-478a-ac00-06e4afa7ad9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items">
+      <UniqueIdentifier>{0a8c15bf-a869-44a0-8266-56e4cde5276a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Cpp">
+      <UniqueIdentifier>{e07cd602-f1ba-4c17-940f-1b0d321471ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Hpp">
+      <UniqueIdentifier>{b768dc0b-c9e3-448a-9a08-db66c7a41176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Plantillas">
+      <UniqueIdentifier>{8a7c6c82-6681-4774-8ba7-0abe67865d06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Plantillas\Hpp">
+      <UniqueIdentifier>{27d32458-489e-42f6-8382-f60b1a152b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Plantillas\Cpp">
+      <UniqueIdentifier>{3cc488ce-3041-4c95-bf88-15c69c49a4f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Tests\MainTests2.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Vector3.cpp">
+      <Filter>Logica\Math\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Vector2.cpp">
+      <Filter>Logica\Math\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Racional.cpp">
+      <Filter>Logica\Math\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Gestores\GestorSingletons.cpp">
+      <Filter>Logica\Basic\Gestores\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Gestores\SubscriptorSingletons.cpp">
+      <Filter>Logica\Basic\Gestores\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Singletons\Random.cpp">
+      <Filter>Logica\Math\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Singletons\Math.cpp">
+      <Filter>Logica\Math\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\System.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\Mem.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\Files.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\Chars.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\String.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\Logger.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\Excepcion.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\Proceso.cpp">
+      <Filter>Logica\Basic\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\Cookie.cpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Celda3D.cpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Laberinto2D.cpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\JSONConversor.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\JSONBuilder.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Consumible.cpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Contenedor.cpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Equipable.cpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Item.cpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Hidrogeno.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Singletons\BaseABC.cpp">
+      <Filter>Logica\Math\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Objetos\Racional.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Objetos\Vector2.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Enumerators\FilesEnum.hpp">
+      <Filter>Logica\Basic\Enumerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Enumerators\LoggerEnum.hpp">
+      <Filter>Logica\Basic\Enumerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Enumerators\StringEnum.hpp">
+      <Filter>Logica\Basic\Enumerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Enumerators\SystemCodes.h">
+      <Filter>Logica\Basic\Enumerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Gestores\SubscriptorSingletons.hpp">
+      <Filter>Logica\Basic\Gestores\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Gestores\GestorSingletons.hpp">
+      <Filter>Logica\Basic\Gestores\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Singletons\Random.hpp">
+      <Filter>Logica\Math\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Singletons\Math.hpp">
+      <Filter>Logica\Math\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Pointers\SmartPointer.hpp">
+      <Filter>Logica\Basic\Plantillas\Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Otros\Singleton.hpp">
+      <Filter>Logica\Basic\Plantillas\Otros</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Interfaces\Contenedor.hpp">
+      <Filter>Logica\Basic\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Interfaces\ContenedorDobleTipo.hpp">
+      <Filter>Logica\Basic\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Interfaces\Dictionary.hpp">
+      <Filter>Logica\Basic\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Interfaces\List.hpp">
+      <Filter>Logica\Basic\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Interfaces\Listas.hpp">
+      <Filter>Logica\Basic\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Interfaces\VectorPunteros.hpp">
+      <Filter>Logica\Basic\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\LibreriasSimples\AllLists.hpp">
+      <Filter>Logica\Basic\LibreriasSimples</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\LibreriasSimples\ASCII_Defines.h">
+      <Filter>Logica\Basic\LibreriasSimples</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\LibreriasSimples\Fork.h">
+      <Filter>Logica\Basic\LibreriasSimples</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\LibreriasSimples\LlanyTypes.h">
+      <Filter>Logica\Basic\LibreriasSimples</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Dictionary\DictionaryLinkedList.hpp">
+      <Filter>Logica\Basic\Plantillas\Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\Array.hpp">
+      <Filter>Logica\Basic\Plantillas\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\Buffer.hpp">
+      <Filter>Logica\Basic\Plantillas\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\LinkedList.hpp">
+      <Filter>Logica\Basic\Plantillas\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Listas\LinkedListAuto.hpp">
+      <Filter>Logica\Basic\Plantillas\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoDosObjetosDosPunteros.hpp">
+      <Filter>Logica\Basic\Plantillas\Nodos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoDosObjetosUnPuntero.hpp">
+      <Filter>Logica\Basic\Plantillas\Nodos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoUnObjetoDoblePuntero.hpp">
+      <Filter>Logica\Basic\Plantillas\Nodos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Plantillas\Nodos\NodoUnObjetoUnPuntero.hpp">
+      <Filter>Logica\Basic\Plantillas\Nodos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\System.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\Chars.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\Files.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\Mem.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\String.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\Excepcion.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\Logger.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\Proceso.hpp">
+      <Filter>Logica\Basic\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\StringBuilder.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Plantillas\Racional.hpp">
+      <Filter>Logica\Math\Plantillas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\Cookie.hpp">
+      <Filter>Logica\Net\Objetos\Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celda2D.hpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Enums\ObjetosEnum.hpp">
+      <Filter>Logica\Juego\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\JSONConversor.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Hidrogeno.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Consumible.hpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Contenedor.hpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Item.hpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Equipable.hpp">
+      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Singletons\BaseABC.hpp">
+      <Filter>Logica\Math\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Logica\Notas\readme.txt">
+      <Filter>Logica\Notas</Filter>
+    </Text>
+    <Text Include="Logica\Notas\Camino y recorrido.txt">
+      <Filter>Logica\Notas</Filter>
+    </Text>
+    <Text Include="Logica\Basic\Notas.txt">
+      <Filter>Logica\Basic</Filter>
+    </Text>
+    <Text Include="Logica\Math\Notas.txt">
+      <Filter>Logica\Math</Filter>
+    </Text>
+    <Text Include="Logica\Net\Notas.txt">
+      <Filter>Logica\Net</Filter>
+    </Text>
+    <Text Include="Logica\Juego\Notas.txt">
+      <Filter>Logica\Juego</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logica\Notas\Items.json">
+      <Filter>Logica\Notas</Filter>
+    </None>
+  </ItemGroup>
+</Project>

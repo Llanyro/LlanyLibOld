@@ -1,0 +1,24 @@
+
+ arreglar la complejidad de estas cosas
+
+
+Objetivo/os:
+	SingletonFiles -> files.h y .cpp
+		-> <LlanySimpleLib>
+		-> Funciones de lectura de sockets
+		-> Enum Files + Enum Sockets
+			-> <Enum>
+		
+	<Singleton> Generador de laberintos
+		2D y 3D
+		Crear a traves de Laberinto2D y dividirlo en Generador y Objeto
+
+// Funcion: Nada
+// Extra: Nada
+// Version: Final/Beta/Alfa/PreAlfa
+// Throws: Exception
+// Precondiciones:
+//		Ninguna
+// Retorno: Void/Si se ha realizado todo correctamente
+//		Resultado
+// Complejidad temporal y espacial: O(1) y M(1)

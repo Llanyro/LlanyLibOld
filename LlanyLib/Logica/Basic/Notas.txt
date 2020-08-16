@@ -1,0 +1,59 @@
+Version Pre-Alfa
+	<Objeto> Proceso
+	<Template> Thread
+	<Singleton> Tester, generador de testeos
+
+Version Alfa
+
+
+Version Beta -> Usado generalmente para marcar cosas que no son de mucha importancia
+	<Template> LinkedListAuto<T>
+
+
+Version Final (Lo mas probable es que esto siempre mayormente vacio)
+	<Objeto> Excepcion
+
+Version 'Beta' con posibles updates (LOW)
+	<Lib> ASCII_Defines
+	<Lib> AllLists
+	<Lib> LlanyTypes
+
+	<Interfaz> Contenedor<T>
+	<Interfaz> Contenedor<T1, T2>
+	<Interfaz> VectorPunteros<T, size>
+	<Interfaz> Listas
+	<Interfaz> List<T>
+	<Interfaz> Dictionary<T1, T2>
+
+	<Template> Nodo<T,1>
+	<Template> Nodo<T,2>
+	<Template> LinkedList<T>
+	<Template> Nodo<T1,T2,1>
+	<Template> DictionaryLinkedList<T1, T2>
+
+	<Objeto> Logger
+	<Objeto> StringBuilder
+
+	<Singleton> Chars
+	<Singleton> Files
+	<Singleton> Mem
+	<Singleton> StringPrinter
+	<Singleton> System
+	<Singleton> JSONConversor
+
+	<Gestores> GestorSingletons
+	<Gestores> SubscriptorSingletons
+
+
+Version 'Beta' con posibles updates (MED)
+	<Template> SmartPointer
+	<Template> Singleton
+
+
+Version 'Beta' con posibles updates (HIGH)
+	<Enum> StringEnum
+	<Enum> SystemCodes
+	<Enum> FilesEnum
+	<Enum> Logger
+
+	<Objeto> String

@@ -1,0 +1,32 @@
+Version Pre-Alfa
+	<Objeto> Laberinto2D
+	<Objeto> Laberinto3D
+	<Singleton> Generador de laberintos
+	<Enum> Dificultad laberinto
+	<Enum> Tipo laberinto
+
+	<Objeto> Objeto
+	<Objeto> Consumible
+	<Objeto> Contenedor
+	<Objeto> Equipable
+
+
+Version Alfa
+
+
+Version Beta -> Usado generalmente para marcar cosas que no son de mucha importancia
+
+
+Version Final (Lo mas probable es que esto siempre mayormente vacio)
+
+
+Version 'Beta' con posibles updates (LOW)
+	<Objeto> Celda2D
+	<Objeto> Celda3D
+
+
+Version 'Beta' con posibles updates (MED)
+
+
+Version 'Beta' con posibles updates (HIGH)
+	

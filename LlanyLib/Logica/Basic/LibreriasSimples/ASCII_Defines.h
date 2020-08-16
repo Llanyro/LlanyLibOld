@@ -1,0 +1,5 @@
+#define MAYUS 65
+#define MINUS 97
+#define NUMS 48
+#define DIFERENCIA_MAYUS_MINUS 32
+#define ASCII_CHARS 256

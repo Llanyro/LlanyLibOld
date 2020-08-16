@@ -1,0 +1,29 @@
+Version Pre-Alfa
+	<Objeto> Cabecera
+	<Enum> ContentType -> Para las cabeceras de retorno del servidor y de envio del cliente
+	<Objeto> Sesion -> Sesion de una conecxion socket (Parecido a una cookie pero no es lo mismo)
+	<Objeto> Socket
+	<Objeto> ClientSocket
+	<Objeto> ServerSocket
+	<Objeto> LogServer
+
+	<Objeto> Ejecutaservicios
+
+Version Alfa
+
+
+Version Beta -> Usado generalmente para marcar cosas que no son de mucha importancia
+
+
+Version Final (Lo mas probable es que esto siempre mayormente vacio)
+
+
+Version 'Beta' con posibles updates (LOW)
+	<Objeto> Cookie
+
+
+Version 'Beta' con posibles updates (MED)
+
+
+Version 'Beta' con posibles updates (HIGH)
+
