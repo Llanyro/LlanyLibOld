@@ -39,7 +39,7 @@ size_t LlanyLib::Math::Singletons::BaseABC::toValue(const Basic::Objetos::String
 	assert(&str != nullptr);
 	size_t value = 0;
 	for (size_t i = 0; i < str->length(); i++)
-		value += BaseABC::toShort(str->operator[](i));
+		value += BaseABC::toShort(str->get()[i]);
 	return value;
 }
 size_t LlanyLib::Math::Singletons::BaseABC::toValueClear(Basic::Objetos::String* str) const

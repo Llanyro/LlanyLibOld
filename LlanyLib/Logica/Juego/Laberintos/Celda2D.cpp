@@ -152,7 +152,7 @@ void LlanyLib::Objetos::Celda2D::mergeGrupos(const Celda2D& other)
 	LlanyLib::Basic::Templates::Listas::LinkedList<Celda2D*>* grupoAMezclar = other.grupo;
 	for (size_t i = 0; i < grupoAMezclar->getCount(); i++)
 	{
-		Celda2D* celda = grupoAMezclar->operator[](i);
+		Celda2D* celda = *grupoAMezclar->get(i);
 		celda->grupo = this->grupo;
 		this->grupo->add(celda);
 	}
