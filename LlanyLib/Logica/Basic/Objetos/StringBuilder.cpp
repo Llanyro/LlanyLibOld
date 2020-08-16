@@ -42,6 +42,10 @@ bool LlanyLib::Basic::Objetos::StringBuilder::operator+=(const char& caracter)
 {
 	return StringBuilder::add(caracter);
 }
+bool LlanyLib::Basic::Objetos::StringBuilder::operator+=(char const* const str)
+{
+	return StringBuilder::add(str);
+}
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Objetos::StringBuilder::build() const
 {
 	return new String(*this->buffer);

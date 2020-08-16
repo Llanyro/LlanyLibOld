@@ -12,6 +12,8 @@
 #include "../Logica/Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
 #include "../Logica/Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
+#include "../Logica/Math/Singletons/Random.hpp"
+
 #include "../Logica/Juego/Objetos/Plantillas/Item.hpp"
 #include "../Logica/Juego/Objetos/Items/Hidrogeno.hpp"
 
@@ -145,6 +147,11 @@ void t7()
 
 }
 
+void t8()
+{
+	STRING_PRINTER->printClear(RANDOM->uuid());
+}
+
 void j1()
 {
 	LlanyLib::Juego::Items::Item item;
@@ -170,8 +177,10 @@ int main()
 	//tt();
 	//t6();
 	//t7();
+	t8();
 
-	j1();
+
+	//j1();
 
 	
 	FREE_SINGLETONS;

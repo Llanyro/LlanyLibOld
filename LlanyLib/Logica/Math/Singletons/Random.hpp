@@ -52,6 +52,7 @@ namespace LlanyLib {
 					Basic::Objetos::String* stringEspeciales(const size_t& size) const;
 					Basic::Objetos::String* stringCaracteresEspecificos(const size_t& size, Basic::Templates::Listas::LinkedList<char>* listaCaracteres) const;
 					Basic::Objetos::String* stringCaracteresEspecificosClear(const size_t& size, Basic::Templates::Listas::LinkedList<char>* listaCaracteres) const;
+					Basic::Objetos::String* uuid() const;
 					#pragma endregion
 			};
 		}

@@ -28,6 +28,7 @@ namespace LlanyLib
 					bool add(const char& caracter);
 					void clear();
 					bool operator+=(const char& caracter);
+					bool operator+=(char const* const str);
 					String* build() const;
 			};
 		}
