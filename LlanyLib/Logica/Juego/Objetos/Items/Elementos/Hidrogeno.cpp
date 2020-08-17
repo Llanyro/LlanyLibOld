@@ -1,11 +1,11 @@
 #include "Hidrogeno.hpp"
 
-#include "../../../Basic/Objetos/String.hpp"
-#include "../../Enums/ObjetosEnum.hpp"
+#include "../../../../Basic/Objetos/String.hpp"
+#include "../../../Enums/ObjetosEnum.hpp"
 
-LlanyLib::Juego::Items::Generados::Hidrogeno::Hidrogeno()
+LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::Hidrogeno()
 	: Hidrogeno(1.0, Enums::TipoDeMaterial::Liquido){}
-LlanyLib::Juego::Items::Generados::Hidrogeno::Hidrogeno(const double& cantidad, const Enums::TipoDeMaterial& material)
+LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::Hidrogeno(const double& cantidad, const Enums::TipoDeMaterial& material)
 {
 	this->valorActual = 1.0;
 	this->valorMaximo = 1.0;
@@ -21,6 +21,6 @@ LlanyLib::Juego::Items::Generados::Hidrogeno::Hidrogeno(const double& cantidad, 
 	this->temperatura = 20.28;
 	this->resistenciaMaterial = 0.0;
 }
-LlanyLib::Juego::Items::Generados::Hidrogeno::Hidrogeno(const double& cantidad)
+LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::Hidrogeno(const double& cantidad)
 	: Hidrogeno(cantidad, Enums::TipoDeMaterial::Liquido){}
-LlanyLib::Juego::Items::Generados::Hidrogeno::~Hidrogeno(){}
+LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::~Hidrogeno(){}

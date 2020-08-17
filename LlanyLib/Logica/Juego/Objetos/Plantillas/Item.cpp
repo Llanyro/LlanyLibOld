@@ -137,7 +137,7 @@ void LlanyLib::Juego::Items::Objetos::addResistenciaTemperatura(const double& va
 LlanyLib::Basic::Objetos::JSONBuilder* LlanyLib::Juego::Items::Item::toJSONBuilder() const
 {
 	Basic::Objetos::JSONBuilder* json = new Basic::Objetos::JSONBuilder();
-	json->addClearKey(new Basic::Objetos::String("itemName"), this->itemName);
+	json->addClearKey(new Basic::Objetos::String("itemName"), this->itemName, Basic::Objetos::JSONBuilder::PrepType::Comillas);
 	json->addClear(new Basic::Objetos::String("tipoDeMaterial"), (int)this->tipoDeMaterial);
 	json->addClear(new Basic::Objetos::String("tipoDeObjeto"), (int)this->tipoDeObjeto);
 

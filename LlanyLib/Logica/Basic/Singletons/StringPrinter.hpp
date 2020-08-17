@@ -9,18 +9,16 @@
 
 namespace LlanyLib {
 	namespace Basic {
-		namespace Objetos { class String; }
+		namespace Objetos {
+			class JSONBuilder;
+			class String;
+		}
 		namespace Templates {
 			namespace Listas {
 				template<class T>
 				class Buffer;
 				template<class T>
 				class LinkedList;
-			}
-			namespace Simple
-			{
-				template<class T>
-				class SmartPointer;
 			}
 		}
 		namespace Singletons {
@@ -40,13 +38,18 @@ namespace LlanyLib {
 					void print(const char* str, const size_t& size) const;
 					void print(const Objetos::String* str) const;
 					void print(const Objetos::String& str) const;
+					void print(const Objetos::JSONBuilder* json) const;
+
 					void printClear(Objetos::String* str) const;
+					void printClear(Objetos::JSONBuilder* json) const;
 
 					void printLn(const char& caracter) const;
 					void printLn(const char* str, const size_t& size) const;
 					void printLn(const Objetos::String* str) const;
-					void printLn(const Objetos::String& str) const;
+					void printLn(const Objetos::JSONBuilder* str) const;
+
 					void printLnClear(Objetos::String* str) const;
+					void printLnClear(Objetos::JSONBuilder* json) const;
 
 					void print(LlanyLib::Basic::Templates::Listas::LinkedList<
 						LlanyLib::Basic::Objetos::String*>* list) const;
@@ -57,6 +60,7 @@ namespace LlanyLib {
 						LlanyLib::Basic::Objetos::String*>* list) const;
 					void printLnClear(LlanyLib::Basic::Templates::Listas::LinkedList<
 						LlanyLib::Basic::Objetos::String*>* list) const;
+
 			};
 		}
 	}

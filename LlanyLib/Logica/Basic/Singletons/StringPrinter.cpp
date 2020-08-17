@@ -3,8 +3,9 @@
 #include <stdio.h>
 
 #include "../Objetos/String.hpp"
-#include "../Plantillas/Pointers/SmartPointer.hpp"
+#include "../Objetos/JSONBuilder.hpp"
 #include "../Plantillas/Listas/LinkedList.hpp"
+#include "../Plantillas/Pointers/SmartPointer.hpp"
 //#include "FuncionesCaracteres.hpp"
 
 #define STRING_NULL "Se ha introducido un string apuntando a nullptr. Se ha ignorado esto"
@@ -43,11 +44,23 @@ void LlanyLib::Basic::Singletons::StringPrinter::print(const LlanyLib::Basic::Ob
 	else
 		StringPrinter::print(str(), str.length());
 }
+void LlanyLib::Basic::Singletons::StringPrinter::print(const Objetos::JSONBuilder* json) const
+{
+	StringPrinter::print('{');
+	StringPrinter::printClear(json->build());
+	StringPrinter::print('}');
+}
+
 void LlanyLib::Basic::Singletons::StringPrinter::printClear(LlanyLib::Basic::Objetos::String* str) const
 {
 	StringPrinter::print(str);
 	if (str != nullptr)
 		delete str;
+}
+void LlanyLib::Basic::Singletons::StringPrinter::printClear(Objetos::JSONBuilder* json) const
+{
+	StringPrinter::print(json);
+	delete json;
 }
 
 void LlanyLib::Basic::Singletons::StringPrinter::printLn(const char& caracter) const
@@ -65,14 +78,20 @@ void LlanyLib::Basic::Singletons::StringPrinter::printLn(const Objetos::String* 
 	StringPrinter::print(str);
 	StringPrinter::print('\n');
 }
-void LlanyLib::Basic::Singletons::StringPrinter::printLn(const Objetos::String& str) const
+void LlanyLib::Basic::Singletons::StringPrinter::printLn(const Objetos::JSONBuilder* json) const
 {
-	StringPrinter::print(str);
+	StringPrinter::print(json);
 	StringPrinter::print('\n');
 }
+
 void LlanyLib::Basic::Singletons::StringPrinter::printLnClear(Objetos::String* str) const
 {
 	StringPrinter::printClear(str);
+	StringPrinter::print('\n');
+}
+void LlanyLib::Basic::Singletons::StringPrinter::printLnClear(Objetos::JSONBuilder* json) const
+{
+	StringPrinter::printClear(json);
 	StringPrinter::print('\n');
 }
 

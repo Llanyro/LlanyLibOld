@@ -2,23 +2,19 @@
 #ifndef ITEM_OBJECT_HPP_
 #define ITEM_OBJECT_HPP_
 
-namespace LlanyLib
-{
+namespace LlanyLib {
 	namespace Basic {
 		namespace Objetos {
 			class String;
 			class JSONBuilder;
 		}
 	}
-
-	namespace Juego
-	{
+	namespace Juego {
 		namespace Enums {
 			enum class TipoDeMaterial;
 			enum class TipoObjeto;
 		}
-		namespace Items
-		{
+		namespace Items {
 			class Item
 			{
 				protected:
@@ -31,6 +27,7 @@ namespace LlanyLib
 					double durabilidad;							// Durabilidad del item actual
 					double durabilidadMaxima;					// Durabilidad maxima del item
 					double cantidad;							// Cantidad de items iguales
+					//double maxStack;							// Maximo que se puede stackear de un item
 					double peso;								// Peso actual del item, incluyendo en caso de ser un contenedor los pesos de los objetos guardados
 
 					double temperatura;							// Cantidad de calor  del objeto

@@ -15,7 +15,9 @@
 #include "../Logica/Math/Singletons/Random.hpp"
 
 #include "../Logica/Juego/Objetos/Plantillas/Item.hpp"
-#include "../Logica/Juego/Objetos/Items/Hidrogeno.hpp"
+#include "../Logica/Juego/Objetos/Plantillas/Contenedor.hpp"
+#include "../Logica/Juego/Objetos/Items/Elementos/Hidrogeno.hpp"
+#include "../Logica/Juego/Objetos/Items/Contenedores/BotellaPlastico.hpp"
 
 using namespace std;
 
@@ -157,8 +159,14 @@ void j1()
 	LlanyLib::Juego::Items::Item item;
 	STRING_PRINTER->printLnClear(item.toJSON());
 
-	LlanyLib::Juego::Items::Generados::Hidrogeno hidrogeno;
+	LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno hidrogeno;
 	STRING_PRINTER->printLnClear(hidrogeno.toJSON());
+}
+
+void j2()
+{
+	LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico botella;
+	STRING_PRINTER->printLnClear(botella.toJSONBuilder());
 }
 
 int main()
@@ -177,11 +185,11 @@ int main()
 	//tt();
 	//t6();
 	//t7();
-	t8();
+	//t8();
 
 
 	//j1();
-
+	j2();
 	
 	FREE_SINGLETONS;
 

@@ -130,12 +130,6 @@
     <Filter Include="Logica\Juego\Objetos\Items">
       <UniqueIdentifier>{0a8c15bf-a869-44a0-8266-56e4cde5276a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Cpp">
-      <UniqueIdentifier>{e07cd602-f1ba-4c17-940f-1b0d321471ef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Hpp">
-      <UniqueIdentifier>{b768dc0b-c9e3-448a-9a08-db66c7a41176}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\Juego\Objetos\Plantillas">
       <UniqueIdentifier>{8a7c6c82-6681-4774-8ba7-0abe67865d06}</UniqueIdentifier>
     </Filter>
@@ -144,6 +138,24 @@
     </Filter>
     <Filter Include="Logica\Juego\Objetos\Plantillas\Cpp">
       <UniqueIdentifier>{3cc488ce-3041-4c95-bf88-15c69c49a4f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Singletons">
+      <UniqueIdentifier>{7d741990-61b5-4a32-968a-f4cb91d543e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Contenedores">
+      <UniqueIdentifier>{0f52ba93-929d-4d67-a28d-2ff3813c9d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Consumibles">
+      <UniqueIdentifier>{45e3b10b-b472-4bd9-8592-5fabd88b6650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Elementos">
+      <UniqueIdentifier>{1437b207-93b0-4d46-8461-97ead6462882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Elementos\Hpp">
+      <UniqueIdentifier>{b768dc0b-c9e3-448a-9a08-db66c7a41176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Elementos\Cpp">
+      <UniqueIdentifier>{e07cd602-f1ba-4c17-940f-1b0d321471ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -228,14 +240,20 @@
     <ClCompile Include="Logica\Juego\Objetos\Plantillas\Item.cpp">
       <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Items\Hidrogeno.cpp">
-      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Math\Singletons\BaseABC.cpp">
       <Filter>Logica\Math\Singletons\Cpp</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp">
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Singletons\ItemController.cpp">
+      <Filter>Logica\Juego\Objetos\Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Elementos\Hidrogeno.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Elementos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Contenedores\BotellaPlastico.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Contenedores</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -386,9 +404,6 @@
     <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp">
       <Filter>Logica\Basic\Objetos\Hpp</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Items\Hidrogeno.hpp">
-      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Juego\Objetos\Plantillas\Consumible.hpp">
       <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
     </ClInclude>
@@ -406,6 +421,15 @@
     </ClInclude>
     <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Singletons\ItemController.hpp">
+      <Filter>Logica\Juego\Objetos\Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Elementos\Hidrogeno.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Elementos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Contenedores\BotellaPlastico.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Contenedores</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
