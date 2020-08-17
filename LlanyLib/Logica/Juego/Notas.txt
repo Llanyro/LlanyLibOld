@@ -5,9 +5,7 @@ Version Pre-Alfa
 	<Enum> Dificultad laberinto
 	<Enum> Tipo laberinto
 
-	<Objeto> Objeto
 	<Objeto> Consumible
-	<Objeto> Contenedor
 	<Objeto> Equipable
 
 
@@ -29,4 +27,8 @@ Version 'Beta' con posibles updates (MED)
 
 
 Version 'Beta' con posibles updates (HIGH)
-	
+	<Objeto> Item
+	<Objeto> Contenedor
+	<Objeto::ElementoPuro> Hidrogeno
+	<Objeto::Contenedor> BotellaPlastico
+	<Singleton> ItemController
