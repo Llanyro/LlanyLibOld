@@ -1,6 +1,6 @@
 #pragma once
-#ifndef UNIT_CONVERSOR_SINGLETON_HPP_
-#define UNIT_CONVERSOR_SINGLETON_HPP_
+#ifndef UNIT_CONVERSOR_SINGLETON_MATH_HPP_
+#define UNIT_CONVERSOR_SINGLETON_MATH_HPP_
 
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
@@ -10,7 +10,7 @@
 namespace LlanyLib {
 	namespace Math {
 		namespace Singletons {
-			class UnitConversor : public Basic::Templates::Singleton<Math>, Basic::Gestores::SubscriptorSingletons
+			class UnitConversor : public Basic::Templates::Singleton<UnitConversor>, Basic::Gestores::SubscriptorSingletons
 			{
 				#pragma region Singleton
 				private:
@@ -22,10 +22,9 @@ namespace LlanyLib {
 				void toBinary() const;
 				void toBinary() const;
 				void toBinary() const;
-
 				void toBinary() const;
 			};
 		}
 	}
 }
-#endif // !UNIT_CONVERSOR_SINGLETON_HPP_
+#endif // !UNIT_CONVERSOR_SINGLETON_MATH_HPP_

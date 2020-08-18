@@ -157,6 +157,9 @@
     <Filter Include="Logica\Juego\Objetos\Items\Elementos\Cpp">
       <UniqueIdentifier>{e07cd602-f1ba-4c17-940f-1b0d321471ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\Math\Enum">
+      <UniqueIdentifier>{a8231743-e117-46b6-b146-3e2dc714e44e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tests\MainTests2.cpp">
@@ -254,6 +257,12 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Objetos\Items\Contenedores\BotellaPlastico.cpp">
       <Filter>Logica\Juego\Objetos\Items\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp">
+      <Filter>Logica\Math\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Unit.cpp">
+      <Filter>Logica\Math\Objetos\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +439,15 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Objetos\Items\Contenedores\BotellaPlastico.hpp">
       <Filter>Logica\Juego\Objetos\Items\Contenedores</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp">
+      <Filter>Logica\Math\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp">
+      <Filter>Logica\Math\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Objetos\Unit.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

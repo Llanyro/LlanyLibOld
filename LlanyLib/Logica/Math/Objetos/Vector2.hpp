@@ -1,6 +1,6 @@
 #pragma once
-#ifndef VECTOR2_HPP_
-#define VECTOR2_HPP_
+#ifndef VECTOR2_OBJECT_MATH_HPP_
+#define VECTOR2_OBJECT_MATH_HPP_
 
 namespace LlanyLib {
 	namespace Math {
@@ -32,4 +32,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !VECTOR2_HPP_
+#endif // !VECTOR2_OBJECT_MATH_HPP_

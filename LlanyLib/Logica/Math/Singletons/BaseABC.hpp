@@ -1,6 +1,6 @@
 #pragma once
-#ifndef BASE_ABC_SINGLETON_HPP_
-#define BASE_ABC_SINGLETON_HPP_
+#ifndef BASE_ABC_SINGLETON_MATH_HPP_
+#define BASE_ABC_SINGLETON_MATH_HPP_
 
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
@@ -33,4 +33,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !BASE_ABC_SINGLETON_HPP_
+#endif // !BASE_ABC_SINGLETON_MATH_HPP_

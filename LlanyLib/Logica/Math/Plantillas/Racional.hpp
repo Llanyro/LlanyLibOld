@@ -1,6 +1,6 @@
 #pragma once
-#ifndef RACIONAL_TEMPLATE_HPP_
-#define RACIONAL_TEMPLATE_HPP_
+#ifndef RACIONAL_TEMPLATE_MATH_HPP_
+#define RACIONAL_TEMPLATE_MATH_HPP_
 
 #include <cassert>
 
@@ -244,4 +244,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !RACIONAL_TEMPLATE_HPP_
+#endif // !RACIONAL_TEMPLATE_MATH_HPP_

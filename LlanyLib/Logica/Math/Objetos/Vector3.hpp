@@ -1,6 +1,6 @@
 #pragma once
-#ifndef VECTOR3_HPP_
-#define VECTOR3_HPP_
+#ifndef VECTOR3_OBJECT_MATH_HPP_
+#define VECTOR3_OBJECT_MATH_HPP_
 
 namespace LlanyLib {
 	namespace Math {

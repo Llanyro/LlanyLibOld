@@ -1,6 +1,6 @@
 #pragma once
-#ifndef RACIONAL_HPP_
-#define RACIONAL_HPP_
+#ifndef RACIONAL_OBJECT_MATH_HPP_
+#define RACIONAL_OBJECT_MATH_HPP_
 
 namespace LlanyLib {
 	namespace Math {
@@ -131,4 +131,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !RACIONAL_HPP_
+#endif // !RACIONAL_OBJECT_MATH_HPP_

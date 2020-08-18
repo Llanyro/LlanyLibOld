@@ -1,6 +1,6 @@
 #pragma once
-#ifndef RANDOM_SINGLETON_HPP_
-#define RANDOM_SINGLETON_HPP_
+#ifndef RANDOM_SINGLETON_MATH_HPP_
+#define RANDOM_SINGLETON_MATH_HPP_
 
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
@@ -58,4 +58,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !RANDOM_SINGLETON_HPP_
+#endif // !RANDOM_SINGLETON_MATH_HPP_

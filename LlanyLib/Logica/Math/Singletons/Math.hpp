@@ -1,6 +1,6 @@
 #pragma once
-#ifndef MATH_SINGLETON_HPP_
-#define MATH_SINGLETON_HPP_
+#ifndef MATH_SINGLETON_MATH_HPP_
+#define MATH_SINGLETON_MATH_HPP_
 
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
@@ -82,4 +82,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !MATH_SINGLETON_HPP_
+#endif // !MATH_SINGLETON_MATH_HPP_
