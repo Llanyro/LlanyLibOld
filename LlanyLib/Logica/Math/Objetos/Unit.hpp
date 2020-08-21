@@ -2,6 +2,8 @@
 #ifndef UNIT_OBJECT_MATH_HPP_
 #define UNIT_OBJECT_MATH_HPP_
 
+#include "../Libs/MathTypes.h"
+
 namespace LlanyLib {
 	namespace Basic {
 		namespace Objetos {
@@ -16,13 +18,23 @@ namespace LlanyLib {
 			class Unit
 			{
 				protected:
-					Basic::Objetos::String* value;
-					Enum::UnitType type;
+					Basic::Objetos::String* hexValue;
+				protected:
+					void setValue(char const* const value, const Enum::UnitType& unitType);
+					void setValue(const long_t& value, const Enum::UnitType& unitType);
 				public:
-				void toBinary() const;
-				void toBinary() const;
-				void toBinary() const;
-				void toBinary() const;
+					Unit();
+					Unit(char const* const value, const Enum::UnitType& unitType);
+					Unit(const long_t& value, const Enum::UnitType& unitType);
+					~Unit();
+					Basic::Objetos::String* getFromatedHex() const;
+					Basic::Objetos::String* getFromatedOct() const;
+					Basic::Objetos::String* getFromatedDec() const;
+					Basic::Objetos::String* getFromatedBin() const;
+					Basic::Objetos::String* getHex() const;
+					Basic::Objetos::String* getOct() const;
+					Basic::Objetos::String* getBin() const;
+					long_t getDec() const;
 			};
 		}
 	}

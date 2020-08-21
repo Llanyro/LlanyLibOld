@@ -10,7 +10,8 @@ namespace LlanyLib {
 				Binary,
 				Decimal,
 				Hexadecimal,
-				Octal
+				Octal,
+				None
 			};
 		}
 	}

@@ -108,6 +108,7 @@ namespace LlanyLib
 					bool startWith(const String& other) const;
 					#pragma endregion
 					#pragma region Modificadores
+					void reverse();
 					String* getModifiedString(const Enum::ModificadorString& modif) const;
 					size_t modifyString(const Enum::ModificadorString& modif);
 					inline void clear();

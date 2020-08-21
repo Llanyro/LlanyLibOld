@@ -225,6 +225,7 @@
     <ClInclude Include="Logica\Juego\Objetos\Plantillas\Item.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Singletons\ItemController.hpp" />
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp" />
+    <ClInclude Include="Logica\Math\Libs\MathTypes.h" />
     <ClInclude Include="Logica\Math\Objetos\Racional.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Unit.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Vector2.hpp" />

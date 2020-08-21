@@ -8,6 +8,7 @@ Version Pre-Alfa
 	<Objeto> Consumible
 	<Objeto> Equipable
 
+	<Singleton> Subscriptor de objetos como mine con el idname o algo asi
 
 Version Alfa
 

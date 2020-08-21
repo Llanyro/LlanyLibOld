@@ -42,7 +42,7 @@ void LlanyLib::Basic::Objetos::String::inicializarStringObj(const String& str)
 	if (&str == nullptr || str.vector == nullptr)
 		String::clear();
 	else
-		String::inicializarString(str.vector, str.count);
+		String::inicializarString(str.vector, str.count - 1);
 }
 void LlanyLib::Basic::Objetos::String::inicializarStringObj(const Templates::Listas::Buffer<char>& str)
 {
@@ -436,6 +436,10 @@ bool LlanyLib::Basic::Objetos::String::startWith(const String& other) const
 }
 #pragma endregion
 #pragma region Modificadores
+void LlanyLib::Basic::Objetos::String::reverse()
+{
+	MEM->invertirBloque(this->vector, this->count - 1, sizeof(char));
+}
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Objetos::String::getModifiedString(const Enum::ModificadorString& modif) const
 {
 	String* str = new String(*this);
