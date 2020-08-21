@@ -5,14 +5,10 @@
 #include "../../Interfaces/List.hpp"
 #include "../Nodos/NodoUnObjetoDoblePuntero.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Templates
-		{
-			namespace Listas
-			{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Templates {
+			namespace Listas {
 				template<class T>
 				class LinkedListAuto;
 
@@ -328,6 +324,11 @@ namespace LlanyLib
 							this->raiz = nullptr;
 							this->cacheNodo = nullptr;
 							this->cachePosicionNodo = 0;
+						}
+						// Aun no planteada
+						inline virtual void sort(int Compare(const void* a, const void* b)) override
+						{
+
 						}
 						#pragma endregion
 						#pragma region Busquedas

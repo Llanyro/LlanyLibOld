@@ -1,6 +1,6 @@
 #pragma once
-#ifndef OBJETOS_ENUMS_HPP_
-#define OBJETOS_ENUMS_HPP_
+#ifndef ITEM_ENUM_JUEGO_HPP_
+#define ITEM_ENUM_JUEGO_HPP_
 namespace LlanyLib
 {
 	namespace Juego
@@ -36,4 +36,4 @@ namespace LlanyLib
 		}
 	}
 }
-#endif // !OBJETOS_ENUMS_HPP_
+#endif // !ITEM_ENUM_JUEGO_HPP_

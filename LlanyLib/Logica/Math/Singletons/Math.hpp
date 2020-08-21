@@ -2,6 +2,7 @@
 #ifndef MATH_SINGLETON_MATH_HPP_
 #define MATH_SINGLETON_MATH_HPP_
 
+#include "../Libs/MathTypes.h"
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
 
@@ -19,6 +20,8 @@ namespace LlanyLib {
 					~Math();
 				#pragma endregion
 				public:
+					int compare(const long_t& a, const long_t& b) const;
+
 					// Funcion: Realiza los calculos para obtener el factorial de un numero
 					// Version: Beta
 					// Retorno: Factorial de el numero procesado

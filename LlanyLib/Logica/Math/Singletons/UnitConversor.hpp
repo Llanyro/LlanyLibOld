@@ -16,6 +16,9 @@ namespace LlanyLib {
 	}
 	namespace Math {
 		namespace Singletons {
+			/*
+				Help: https://www.rapidtables.com/convert/number/binary-to-hex.html
+			*/
 			class UnitConversor : public Basic::Templates::Singleton<UnitConversor>, Basic::Gestores::SubscriptorSingletons
 			{
 				#pragma region Singleton

@@ -2,7 +2,7 @@
 #ifndef BOTELLA_PLASTICO_ITEM_OBJECT_HPP_
 #define BOTELLA_PLASTICO_ITEM_OBJECT_HPP_
 
-#include "../../Plantillas/Contenedor.hpp"
+#include "../../Objetos/Contenedor.hpp"
 
 namespace LlanyLib
 {
@@ -14,7 +14,7 @@ namespace LlanyLib
 		namespace Items {
 			namespace Generados {
 				namespace Contenedores {
-					class BotellaPlastico : public Contenedor
+					class BotellaPlastico : public Objetos::Contenedor
 					{
 						public:
 							#pragma region Constructores

@@ -68,6 +68,10 @@ void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const char& v
 {
 	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
 }
+void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const long_t& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
 void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const JSONBuilder* json)
 {
 	/*if (this->n > 0) this->buffer->add(',');
@@ -136,6 +140,11 @@ void LlanyLib::Basic::Objetos::JSONBuilder::addClear(String* key, const float& v
 	delete key;
 }
 void LlanyLib::Basic::Objetos::JSONBuilder::addClear(String* key, const char& value)
+{
+	JSONBuilder::add(key, value);
+	delete key;
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::addClear(String* key, const long_t& value)
 {
 	JSONBuilder::add(key, value);
 	delete key;

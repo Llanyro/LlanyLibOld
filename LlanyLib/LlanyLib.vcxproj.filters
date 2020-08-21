@@ -121,47 +121,53 @@
     <Filter Include="Logica\Juego\Laberintos">
       <UniqueIdentifier>{99d43d24-fe0f-417f-ae57-96d77e0aef45}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Juego\Objetos">
-      <UniqueIdentifier>{dfa2cdd6-db4c-447c-8f69-d3ee4d6876f1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\Juego\Enums">
       <UniqueIdentifier>{7e8cc8e6-f67a-478a-ac00-06e4afa7ad9d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items">
-      <UniqueIdentifier>{0a8c15bf-a869-44a0-8266-56e4cde5276a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Plantillas">
-      <UniqueIdentifier>{8a7c6c82-6681-4774-8ba7-0abe67865d06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Plantillas\Hpp">
-      <UniqueIdentifier>{27d32458-489e-42f6-8382-f60b1a152b2c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Plantillas\Cpp">
-      <UniqueIdentifier>{3cc488ce-3041-4c95-bf88-15c69c49a4f2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Singletons">
-      <UniqueIdentifier>{7d741990-61b5-4a32-968a-f4cb91d543e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Contenedores">
-      <UniqueIdentifier>{0f52ba93-929d-4d67-a28d-2ff3813c9d1a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Consumibles">
-      <UniqueIdentifier>{45e3b10b-b472-4bd9-8592-5fabd88b6650}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Elementos">
-      <UniqueIdentifier>{1437b207-93b0-4d46-8461-97ead6462882}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Elementos\Hpp">
-      <UniqueIdentifier>{b768dc0b-c9e3-448a-9a08-db66c7a41176}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Items\Elementos\Cpp">
-      <UniqueIdentifier>{e07cd602-f1ba-4c17-940f-1b0d321471ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="Logica\Math\Enum">
       <UniqueIdentifier>{a8231743-e117-46b6-b146-3e2dc714e44e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Logica\Math\Libs">
       <UniqueIdentifier>{2d7da331-3179-482b-8411-1ca8763b409e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items">
+      <UniqueIdentifier>{dfa2cdd6-db4c-447c-8f69-d3ee4d6876f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items\Consumibles">
+      <UniqueIdentifier>{45e3b10b-b472-4bd9-8592-5fabd88b6650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items\Contenedores">
+      <UniqueIdentifier>{0f52ba93-929d-4d67-a28d-2ff3813c9d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items\Elementos">
+      <UniqueIdentifier>{1437b207-93b0-4d46-8461-97ead6462882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items\Elementos\Hpp">
+      <UniqueIdentifier>{b768dc0b-c9e3-448a-9a08-db66c7a41176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items\Elementos\Cpp">
+      <UniqueIdentifier>{e07cd602-f1ba-4c17-940f-1b0d321471ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos">
+      <UniqueIdentifier>{799761e2-9250-415b-a8f2-8e9bab70b581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Hpp">
+      <UniqueIdentifier>{9b2d3578-65e6-416b-8540-8bc18e2e03f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Cpp">
+      <UniqueIdentifier>{e14615b8-8c5f-4bb0-9f47-68208f510202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Gestores">
+      <UniqueIdentifier>{2d90bef3-b99f-4959-bf91-5272d9257b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Singletons">
+      <UniqueIdentifier>{003edd1d-0662-4e4f-966c-c4f1c33789ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Singletons\Hpp">
+      <UniqueIdentifier>{7d67ad94-2f13-4a86-b58f-25a9937ff8da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Singletons\Cpp">
+      <UniqueIdentifier>{b796a64a-49d4-4f65-b7db-0486a6c4be27}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -234,38 +240,38 @@
     <ClCompile Include="Logica\Basic\Objetos\JSONBuilder.cpp">
       <Filter>Logica\Basic\Objetos\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Consumible.cpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Contenedor.cpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Equipable.cpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Plantillas\Item.cpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Math\Singletons\BaseABC.cpp">
       <Filter>Logica\Math\Singletons\Cpp</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp">
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Singletons\ItemController.cpp">
-      <Filter>Logica\Juego\Objetos\Singletons</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Items\Elementos\Hidrogeno.cpp">
-      <Filter>Logica\Juego\Objetos\Items\Elementos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Items\Contenedores\BotellaPlastico.cpp">
-      <Filter>Logica\Juego\Objetos\Items\Contenedores</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Math\Objetos\Unit.cpp">
       <Filter>Logica\Math\Objetos\Cpp</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp">
       <Filter>Logica\Math\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Gestores\GestorItems.cpp">
+      <Filter>Logica\Juego\Gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\ListaItems.cpp">
+      <Filter>Logica\Juego\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Item.cpp">
+      <Filter>Logica\Juego\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Equipable.cpp">
+      <Filter>Logica\Juego\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Contenedor.cpp">
+      <Filter>Logica\Juego\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Consumible.cpp">
+      <Filter>Logica\Juego\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp">
+      <Filter>Logica\Juego\Singletons\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -407,41 +413,17 @@
     <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp">
       <Filter>Logica\Juego\Laberintos</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Juego\Enums\ObjetosEnum.hpp">
-      <Filter>Logica\Juego\Enums</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Basic\Singletons\JSONConversor.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
     </ClInclude>
     <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp">
       <Filter>Logica\Basic\Objetos\Hpp</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Consumible.hpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Contenedor.hpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Item.hpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Plantillas\Equipable.hpp">
-      <Filter>Logica\Juego\Objetos\Plantillas\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Math\Singletons\BaseABC.hpp">
       <Filter>Logica\Math\Singletons\Hpp</Filter>
     </ClInclude>
     <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Singletons\ItemController.hpp">
-      <Filter>Logica\Juego\Objetos\Singletons</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Items\Elementos\Hidrogeno.hpp">
-      <Filter>Logica\Juego\Objetos\Items\Elementos\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Items\Contenedores\BotellaPlastico.hpp">
-      <Filter>Logica\Juego\Objetos\Items\Contenedores</Filter>
     </ClInclude>
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp">
       <Filter>Logica\Math\Enum</Filter>
@@ -454,6 +436,30 @@
     </ClInclude>
     <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp">
       <Filter>Logica\Math\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Gestores\GestorItems.hpp">
+      <Filter>Logica\Juego\Gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\ListaItems.hpp">
+      <Filter>Logica\Juego\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Consumible.hpp">
+      <Filter>Logica\Juego\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Contenedor.hpp">
+      <Filter>Logica\Juego\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Equipable.hpp">
+      <Filter>Logica\Juego\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Item.hpp">
+      <Filter>Logica\Juego\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Singletons\ItemController.hpp">
+      <Filter>Logica\Juego\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Enums\ItemEnum.hpp">
+      <Filter>Logica\Juego\Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

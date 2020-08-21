@@ -2,7 +2,7 @@
 #ifndef HIDROGENO_ITEM_OBJECT_HPP_
 #define HIDROGENO_ITEM_OBJECT_HPP_
 
-#include "../../Plantillas/Item.hpp"
+#include "../../Objetos/Item.hpp"
 
 namespace LlanyLib {
 	namespace Juego {
@@ -12,7 +12,7 @@ namespace LlanyLib {
 		namespace Items {
 			namespace Generados {
 				namespace Elementos {
-					class Hidrogeno : public Item
+					class Hidrogeno : public Objetos::Item
 					{
 						public:
 							#pragma region Constructores

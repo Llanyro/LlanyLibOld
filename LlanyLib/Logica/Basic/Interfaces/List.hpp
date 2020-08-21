@@ -95,6 +95,7 @@ namespace LlanyLib
 					// Retorno: Si se ha eliminado el objeto solicitado
 					// Complejidad temporal y espacial: O(?) y M(?)
 					inline virtual bool remove(const size_t& position) { return false; }
+					inline virtual void sort(int Compare(const void* a, const void* b)){}
 
 					/// Busquedas
 					// Funcion: Busca un objeto solicitado usando ==

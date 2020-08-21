@@ -1,6 +1,8 @@
 #pragma once
-#ifndef ITEM_OBJECT_HPP_
-#define ITEM_OBJECT_HPP_
+#ifndef ITEM_OBJECT_JUEGO_HPP_
+#define ITEM_OBJECT_JUEGO_HPP_
+
+#include "../../Math/Libs/MathTypes.h"
 
 namespace LlanyLib {
 	namespace Basic {
@@ -14,31 +16,34 @@ namespace LlanyLib {
 			enum class TipoDeMaterial;
 			enum class TipoObjeto;
 		}
-		namespace Items {
-			class Item
+		namespace Objetos {
+			class Item 
 			{
 				protected:
-					Basic::Objetos::String* itemName;			// Id del nombre del objeto
+					long_t itemID;							// Id del objeto
 					Enums::TipoDeMaterial tipoDeMaterial;	// Estado del material usado para definir en grupos y permitir o no el guardado en contenedores
-					Enums::TipoObjeto tipoDeObjeto;		// Indica que grupo de objetos pertenece
+					Enums::TipoObjeto tipoDeObjeto;			// Indica que grupo de objetos pertenece
 
-					double valorActual;							// Valor actual del objeto
-					double valorMaximo;							// Valor de inicio o valor maximo que se puede alcanzar
-					double durabilidad;							// Durabilidad del item actual
-					double durabilidadMaxima;					// Durabilidad maxima del item
-					double cantidad;							// Cantidad de items iguales
-					//double maxStack;							// Maximo que se puede stackear de un item
-					double peso;								// Peso actual del item, incluyendo en caso de ser un contenedor los pesos de los objetos guardados
+					double valorActual;						// Valor actual del objeto
+					double valorMaximo;						// Valor de inicio o valor maximo que se puede alcanzar
+					double durabilidad;						// Durabilidad del item actual
+					double durabilidadMaxima;				// Durabilidad maxima del item
+					double cantidad;						// Cantidad de items iguales
+					//double maxStack;						// Maximo que se puede stackear de un item
+					double peso;							// Peso actual del item, incluyendo en caso de ser un contenedor los pesos de los objetos guardados
 
-					double temperatura;							// Cantidad de calor  del objeto
-					double resistenciaMaterial;					// Resistencia a cambiar de temperatura de un objeto
+					double temperatura;						// Cantidad de calor  del objeto
+					double resistenciaMaterial;				// Resistencia a cambiar de temperatura de un objeto
 				public:
 					#pragma region Constructores
 					Item();
+					Item(const Item& other);
+					Item(const Item* other);
+					bool operator=(const Item& other);
 					~Item();
 					#pragma endregion
 					#pragma region Getters
-					const Basic::Objetos::String* getItemName() const;
+					long_t getItemID() const;
 					Enums::TipoDeMaterial getTipoDeMaterial() const;
 					Enums::TipoObjeto getTipoObjeto() const;
 					double getValorActual() const;
@@ -49,6 +54,12 @@ namespace LlanyLib {
 					double getPeso() const;
 					double getTemperatura() const;
 					double getResistenciaTemperatura() const;
+					#pragma endregion
+					#pragma region Setters
+					void setCantidad(const double& value);
+					#pragma endregion
+					#pragma region Adders
+					void addCantidad(const double& value);
 					#pragma endregion
 					/*#pragma region Setters
 					void setItemName(char const* const nombre);
@@ -73,8 +84,17 @@ namespace LlanyLib {
 					void addTemperatura(const double& value);
 					void addResistenciaTemperatura(const double& value);
 					#pragma endregion*/
+					#pragma region Virtual
+					virtual Item* clone() const;
 					virtual Basic::Objetos::JSONBuilder* toJSONBuilder() const;
 					virtual Basic::Objetos::String* toJSON() const;
+					int compare(const Item& other) const;
+					bool similar(const Item& other) const;
+					bool equals(const Item& other) const;
+					bool igualMenosCantidad(const Item& other) const;
+					bool operator==(const Item& other) const;
+					bool operator!=(const Item& other) const;
+					#pragma endregion
 			};
 		}
 	}

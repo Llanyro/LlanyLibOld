@@ -20,10 +20,10 @@
 #include "../Logica/Math/Singletons/Random.hpp"
 #include "../Logica/Math/Singletons/UnitConversor.hpp"
 
-#include "../Logica/Juego/Objetos/Plantillas/Item.hpp"
-#include "../Logica/Juego/Objetos/Plantillas/Contenedor.hpp"
-#include "../Logica/Juego/Objetos/Items/Elementos/Hidrogeno.hpp"
-#include "../Logica/Juego/Objetos/Items/Contenedores/BotellaPlastico.hpp"
+#include "../Logica/Juego/Objetos/Item.hpp"
+#include "../Logica/Juego/Objetos/Contenedor.hpp"
+#include "../Logica/Juego/Items/Elementos/Hidrogeno.hpp"
+#include "../Logica/Juego/Items/Contenedores/BotellaPlastico.hpp"
 
 using namespace std;
 
@@ -537,7 +537,7 @@ void m3()
 
 void j1()
 {
-	LlanyLib::Juego::Items::Item item;
+	LlanyLib::Juego::Objetos::Item item;
 	STRING_PRINTER->printLnClear(item.toJSON());
 
 	LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno hidrogeno;

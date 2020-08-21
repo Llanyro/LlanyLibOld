@@ -2,8 +2,8 @@
 #ifndef ITEM_CONTROLLER_SINGLETON_HPP_
 #define ITEM_CONTROLLER_SINGLETON_HPP_
 
-#include "../../../Basic/Plantillas/Otros/Singleton.hpp"
-#include "../../../Basic/Gestores/SubscriptorSingletons.hpp"
+#include "../../Basic/Plantillas/Otros/Singleton.hpp"
+#include "../../Basic/Gestores/SubscriptorSingletons.hpp"
 
 #define ITEM_CONTROLLER LlanyLib::Juego::Singletons::ItemContoller::getInstancia()
 
@@ -20,7 +20,7 @@ namespace LlanyLib {
 		}
 	}
 	namespace Juego {
-		namespace Items {
+		namespace Objetos {
 			class Item;
 		}
 		namespace Singletons {
@@ -33,8 +33,8 @@ namespace LlanyLib {
 					~ItemContoller();
 					#pragma endregion
 				public:
-					Basic::Objetos::String* generateJSONString(Basic::Templates::Listas::LinkedList<Items::Item*>* list) const;
-					Basic::Objetos::String* generateJSONStringClear(Basic::Templates::Listas::LinkedList<Items::Item*>* list) const;
+					Basic::Objetos::String* generateJSONString(Basic::Templates::Listas::LinkedList<Objetos::Item*>* list) const;
+					Basic::Objetos::String* generateJSONStringClear(Basic::Templates::Listas::LinkedList<Objetos::Item*>* list) const;
 			};
 		}
 	}

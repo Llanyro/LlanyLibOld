@@ -1,14 +1,12 @@
 #pragma once
-#ifndef STRING_HPP_
-#define STRING_HPP_
+#ifndef STRING_OBJECT_HPP_
+#define STRING_OBJECT_HPP_
 
 #include "Excepcion.hpp"
 #include "../Interfaces/Listas.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
+namespace LlanyLib {
+	namespace Basic {
 		namespace Enum { enum class ModificadorString; }
 		namespace Templates {
 			namespace Listas {
@@ -22,8 +20,7 @@ namespace LlanyLib
 				class SmartPointer;
 			}
 		}
-		namespace Objetos
-		{
+		namespace Objetos {
 			class String : public Interfaces::Listas
 			{
 				protected:
@@ -136,4 +133,4 @@ namespace LlanyLib
 		}
 	}
 }
-#endif // !STRING_HPP_
+#endif // !STRING_OBJECT_HPP_

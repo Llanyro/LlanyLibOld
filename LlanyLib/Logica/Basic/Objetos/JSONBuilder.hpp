@@ -2,12 +2,11 @@
 #ifndef JSON_BUILDER_OBJECT_HPP_
 #define JSON_BUILDER_OBJECT_HPP_
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Objetos
-		{
+#include "../../Math/Libs/MathTypes.h"
+
+namespace LlanyLib {
+	namespace Basic {
+		namespace Objetos {
 			class String;
 			class StringBuilder;
 			class JSONBuilder
@@ -33,6 +32,7 @@ namespace LlanyLib
 					void add(const String* key, const double& value);
 					void add(const String* key, const float& value);
 					void add(const String* key, const char& value);
+					void add(const String* key, const long_t& value);
 					void add(const String* key, const JSONBuilder* json);
 
 					void addClear(String* key, JSONBuilder* json);
@@ -48,6 +48,7 @@ namespace LlanyLib
 					void addClear(String* key, const double& value);
 					void addClear(String* key, const float& value);
 					void addClear(String* key, const char& value);
+					void addClear(String* key, const long_t& value);
 
 					void clear();
 					String* build() const;

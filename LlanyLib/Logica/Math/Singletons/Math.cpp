@@ -5,6 +5,14 @@
 LlanyLib::Math::Singletons::Math::Math() { Math::subscribir(Math::freeInstancia); }
 LlanyLib::Math::Singletons::Math::~Math() {}
 
+int LlanyLib::Math::Singletons::Math::compare(const long_t& a, const long_t& b) const
+{
+	int res = 0;
+	if (a > b) res = 1;
+	else if (b > a) res = -1;
+	return 0;
+}
+
 size_t LlanyLib::Math::Singletons::Math::factorial(const size_t& value) const
 {
 	assert(&value != nullptr);
