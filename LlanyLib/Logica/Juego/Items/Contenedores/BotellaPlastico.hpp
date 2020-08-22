@@ -4,10 +4,10 @@
 
 #include "../../Objetos/Contenedor.hpp"
 
-namespace LlanyLib
-{
-	namespace Juego
-	{
+#define LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico "BotellaPlastico"
+
+namespace LlanyLib {
+	namespace Juego {
 		namespace Enums {
 			enum class TipoDeMaterial;
 		}
@@ -17,10 +17,12 @@ namespace LlanyLib
 					class BotellaPlastico : public Objetos::Contenedor
 					{
 						public:
-							#pragma region Constructores
 							BotellaPlastico();
+							BotellaPlastico(const BotellaPlastico& other);
+							bool operator=(const BotellaPlastico& other);
 							~BotellaPlastico();
-							#pragma endregion
+							virtual Item* clone() const;
+							virtual void deleteItem() override;
 					};
 				}
 			}

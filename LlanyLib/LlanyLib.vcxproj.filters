@@ -169,6 +169,12 @@
     <Filter Include="Logica\Juego\Singletons\Cpp">
       <UniqueIdentifier>{b796a64a-49d4-4f65-b7db-0486a6c4be27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\Juego\Items\Contenedores\Cpp">
+      <UniqueIdentifier>{99c6ad3b-509e-4cec-99b4-f4a80250b365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Items\Contenedores\Hpp">
+      <UniqueIdentifier>{b97b1a61-1832-4fa6-8ec4-5441a01edd9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tests\MainTests2.cpp">
@@ -272,6 +278,12 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp">
       <Filter>Logica\Juego\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Items\Elementos\Hidrogeno.cpp">
+      <Filter>Logica\Juego\Items\Elementos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Items\Contenedores\BotellaPlastico.cpp">
+      <Filter>Logica\Juego\Items\Contenedores\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -460,6 +472,12 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Enums\ItemEnum.hpp">
       <Filter>Logica\Juego\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Items\Elementos\Hidrogeno.hpp">
+      <Filter>Logica\Juego\Items\Elementos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Items\Contenedores\BotellaPlastico.hpp">
+      <Filter>Logica\Juego\Items\Contenedores\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

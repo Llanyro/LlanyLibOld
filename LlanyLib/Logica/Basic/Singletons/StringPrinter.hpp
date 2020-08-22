@@ -34,6 +34,8 @@ namespace LlanyLib {
 				protected:
 					//void print(const char* str) const;
 				public:
+					void printBool(const bool& value) const;
+
 					void print(const char& caracter) const;
 					void print(const char* str, const size_t& size) const;
 					void print(const Objetos::String* str) const;

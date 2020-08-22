@@ -34,7 +34,7 @@ Version 'Beta' con posibles updates (LOW)
 	<Objeto> Logger
 	<Objeto> StringBuilder
 
-	<Singleton> Chars
+	<Singleton> Chars						/**********Hay que repararlo para que se pueda usar en el objeto String******************/
 	<Singleton> Files
 	<Singleton> Mem
 	<Singleton> StringPrinter

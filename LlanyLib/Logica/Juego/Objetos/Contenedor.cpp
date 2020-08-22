@@ -44,16 +44,27 @@ LlanyLib::Juego::Objetos::Contenedor::Contenedor() : Item()
 }
 LlanyLib::Juego::Objetos::Contenedor::Contenedor(const Contenedor& other) : Contenedor()
 {
+	Contenedor::operator=(other);
 }
 LlanyLib::Juego::Objetos::Contenedor::Contenedor(const Contenedor* other) : Contenedor()
 {
+	if(other != nullptr)
+		Contenedor::operator=(other);
 }
 inline bool LlanyLib::Juego::Objetos::Contenedor::operator=(const Contenedor& other)
 {
-	return false;
+	bool resultado = false;
+	if (&other != nullptr) {
+		this->capacidadOcupada = other.capacidadOcupada;
+		this->capacidadMaxima = other.capacidadMaxima;
+		this->tipoDeMaterialContenible = other.tipoDeMaterialContenible;
+		resultado = true;
+	}
+	return resultado;
 }
 LlanyLib::Juego::Objetos::Contenedor::~Contenedor()
 {
+	delete this->listaContenedor;
 	/*if (this->listaContenedor != nullptr) {
 		for (size_t i = 0; i < this->listaContenedor->length(); i++)
 			delete* this->listaContenedor->get(i);
@@ -103,7 +114,7 @@ LlanyLib::Basic::Objetos::JSONBuilder* LlanyLib::Juego::Objetos::Contenedor::toJ
 	json->addClear(new Basic::Objetos::String("capacidadOcupada"), this->capacidadOcupada);
 	json->addClear(new Basic::Objetos::String("capacidadMaxima"), this->capacidadMaxima);
 	json->addClear(new Basic::Objetos::String("tipoDeMaterialContenible"), (int)this->tipoDeMaterialContenible);
-	json->addClear(new Basic::Objetos::String("listaContenedor"), ITEM_CONTROLLER->generateJSONString(this->listaContenedor), Basic::Objetos::JSONBuilder::PrepType::Nada);
+	json->addClear(new Basic::Objetos::String("listaContenedor"), ITEM_CONTROLLER->generateJSONString(this->listaContenedor->getList()), Basic::Objetos::JSONBuilder::PrepType::Nada);
 
 	result->addClear(new Basic::Objetos::String("Contenedor"), json);
 
@@ -115,6 +126,10 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Contenedor::toJSON()
 	LlanyLib::Basic::Objetos::String* str = build->build();
 	delete build;
 	return str;
+}
+void LlanyLib::Juego::Objetos::Contenedor::deleteItem()
+{
+	delete this;
 }
 int LlanyLib::Juego::Objetos::Contenedor::compare(const Contenedor& other) const
 {

@@ -1,12 +1,28 @@
 #include "String.hpp"
 
-#include <string.h>
+#include <string>
+
+#include "../Enumerators/StringEnum.hpp"
+
+#include "../Singletons/Mem.hpp"
+//#include "../Singletons/Chars.hpp"
+
+#include "../Plantillas/Listas/Buffer.hpp"
 
 #include "StringBuilder.hpp"
-#include "../Singletons/Mem.hpp"
-#include "../Enumerators/StringEnum.hpp"
-#include "../Plantillas/Listas/Buffer.hpp"
-#include "../Plantillas/Pointers/SmartPointer.hpp"
+
+inline int compareChar(const char* caracter1, const char* caracter2)
+{
+	int resultado = 0;
+	if (caracter1 == nullptr && caracter2 == nullptr) resultado = 0;	// Ambos son iguales
+	else if (caracter1 == nullptr) resultado = -1;						// Caracter 2 mayor
+	else if (caracter2 == nullptr) resultado = 1;						// Caracter 1 mayor
+	else if (*caracter1 == *caracter2) resultado = 0;					// Ambos son iguales
+	else if (*caracter1 > * caracter2) resultado = 1;					// Caracter 1 mayor
+	else if (*caracter1 < *caracter2) resultado = -1;					// Caracter 2 mayor
+	else resultado = -2;												// Other
+	return resultado;
+}
 
 #pragma region Protected
 void LlanyLib::Basic::Objetos::String::inicializarString(const size_t& size)
@@ -180,27 +196,42 @@ bool LlanyLib::Basic::Objetos::String::similar(const String& other)
 }
 int LlanyLib::Basic::Objetos::String::compare(const char& caracter) const
 {
-	return 0;
+	int resultado = 0;
+	if (this->count > 0)
+		resultado = compareChar(this->vector, &caracter);
+	else
+		resultado = -1;
+	return resultado;
 }
 int LlanyLib::Basic::Objetos::String::compare(char const* const str) const
 {
-	return 0;
+	int resultado = 0;
+	if (str != this->vector) {
+		if (str == nullptr) resultado = 1;
+		else if (vector == nullptr) resultado = -1;
+		else resultado = strcmp(this->vector, str);
+	}
+	return resultado;
+	//return CHARS->compareString(this->vector, this->count, str, strlen(str));
 }
 int LlanyLib::Basic::Objetos::String::compare(const String& other) const
 {
-	return 0;
+	int resultado = 0;
+	if (&other != nullptr)
+		resultado = String::compare(other.vector);
+	return resultado;
 }
 int LlanyLib::Basic::Objetos::String::equals(const char& caracter) const
 {
-	return 0;
+	return String::compare(caracter) == 0;
 }
 int LlanyLib::Basic::Objetos::String::equals(char const* const str) const
 {
-	return 0;
+	return String::compare(str) == 0;
 }
 int LlanyLib::Basic::Objetos::String::equals(const String& other) const
 {
-	return 0;
+	return String::compare(other) == 0;
 }
 bool LlanyLib::Basic::Objetos::String::operator==(const char& caracter) const
 {

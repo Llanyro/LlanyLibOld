@@ -317,7 +317,7 @@ namespace LlanyLib
 							}
 							return resultado;
 						}
-						inline virtual bool containsKey(const T2& value, bool CompareValue(const void* item_a, const void* item_b)) const override
+						inline virtual bool containsValue(const T2& value, bool CompareValue(const void* item_a, const void* item_b)) const override
 						{
 							bool resultado = false;
 							if (&value != nullptr) {

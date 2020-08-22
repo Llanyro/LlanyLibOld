@@ -52,7 +52,7 @@ bool LlanyLib::Juego::Objetos::ListItem::add(Item* item)
 void LlanyLib::Juego::Objetos::ListItem::clear()
 {
 	for (size_t i = 0; i < this->list->length(); i++)
-		delete ListItem::extractItem(i);
+		ListItem::extractItem(i)->deleteItem();
 }
 void LlanyLib::Juego::Objetos::ListItem::ordenar(const Enums::Ordenamiento& ord)
 {
@@ -106,4 +106,9 @@ bool LlanyLib::Juego::Objetos::ListItem::equals(const ListItem& other) const
 		}
 	}
 	return resultado;
+}
+
+LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Juego::Objetos::Item*>* LlanyLib::Juego::Objetos::ListItem::getList() const
+{
+	return this->list;
 }

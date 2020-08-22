@@ -66,6 +66,7 @@ namespace LlanyLib {
 					virtual Item* clone() const;
 					virtual Basic::Objetos::JSONBuilder* toJSONBuilder() const;
 					virtual Basic::Objetos::String* toJSON() const;
+					virtual void deleteItem() override;
 					int compare(const Contenedor& other) const;
 					bool similar(const Contenedor& other) const;
 					bool equals(const Contenedor& other) const;

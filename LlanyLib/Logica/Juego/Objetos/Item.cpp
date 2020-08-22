@@ -6,13 +6,16 @@
 #include "../../Math/Singletons/Math.hpp"
 
 #include "../Enums/ItemEnum.hpp"
+#include "../Gestores/GestorItems.hpp"
 
 #pragma region Constructores
 LlanyLib::Juego::Objetos::Item::Item()
 {
 	this->itemID = -1;
+
 	this->tipoDeMaterial = Enums::TipoDeMaterial::Irreal;
 	this->tipoDeObjeto = Enums::TipoObjeto::Objeto;
+	this->itemShowName = nullptr;
 
 	this->valorActual = 0.0;
 	this->valorMaximo = 0.0;
@@ -28,18 +31,18 @@ LlanyLib::Juego::Objetos::Item::Item(const Item& other) : Item()
 {
 	Item::operator=(other);
 }
-LlanyLib::Juego::Objetos::Item::Item(const Item* other) : Item()
-{
-	if(other != nullptr)
-		Item::operator=(*other);
-}
 bool LlanyLib::Juego::Objetos::Item::operator=(const Item& other)
 {
 	bool resultado = false;
 	if (&other != nullptr) {
 		this->itemID = other.itemID;
+
 		this->tipoDeMaterial = other.tipoDeMaterial;
 		this->tipoDeObjeto = other.tipoDeObjeto;
+		if (this->itemShowName != nullptr)
+			this->itemShowName->operator=(*other.itemShowName);
+		else
+			this->itemShowName = new Basic::Objetos::String(*other.itemShowName);
 
 		this->valorActual = other.valorActual;
 		this->valorMaximo = other.valorMaximo;
@@ -54,7 +57,11 @@ bool LlanyLib::Juego::Objetos::Item::operator=(const Item& other)
 	}
 	return resultado;
 }
-LlanyLib::Juego::Objetos::Item::~Item(){}
+LlanyLib::Juego::Objetos::Item::~Item()
+{
+	if (this->itemShowName != nullptr)
+		delete this->itemShowName;
+}
 #pragma endregion
 #pragma region Getters
 long_t LlanyLib::Juego::Objetos::Item::getItemID() const
@@ -68,6 +75,10 @@ LlanyLib::Juego::Enums::TipoDeMaterial LlanyLib::Juego::Objetos::Item::getTipoDe
 LlanyLib::Juego::Enums::TipoObjeto LlanyLib::Juego::Objetos::Item::getTipoObjeto() const
 {
 	return this->tipoDeObjeto;
+}
+const LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Item::getShowName() const
+{
+	return this->itemShowName;
 }
 double LlanyLib::Juego::Objetos::Item::getValorActual() const
 {
@@ -117,19 +128,17 @@ void LlanyLib::Juego::Objetos::Item::addCantidad(const double& value)
 #pragma region Virtual
 LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::Item::clone() const
 {
-	return new Item(this);
+	return new Item(*this);
 }
 LlanyLib::Basic::Objetos::JSONBuilder* LlanyLib::Juego::Objetos::Item::toJSONBuilder() const
 {
 	Basic::Objetos::JSONBuilder* json = new Basic::Objetos::JSONBuilder();
 
-	//json->addClear(new Basic::Objetos::String("itemID"), this->itemID);
-	/*
-		Para sacar un JSON hay que recibir el nombre segun el id del objeto desde el Gestor de Items
-		String* name = Gestor::getName(this.itemID);
-		json->addClearKey(new Basic::Objetos::String("itemName"), this->itemName, Basic::Objetos::JSONBuilder::PrepType::Comillas);
-	*/
+	const Basic::Objetos::String* name = GESTOR_ITEMS->getRegisterName(this->itemID);
+	json->addClearKey(new Basic::Objetos::String("itemName"), name, Basic::Objetos::JSONBuilder::PrepType::Comillas);
+	
 
+	json->addClearKey(new Basic::Objetos::String("itemShowName"), this->itemShowName, Basic::Objetos::JSONBuilder::PrepType::Comillas);
 	json->addClear(new Basic::Objetos::String("tipoDeMaterial"), (int)this->tipoDeMaterial);
 	json->addClear(new Basic::Objetos::String("tipoDeObjeto"), (int)this->tipoDeObjeto);
 
@@ -151,6 +160,10 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Item::toJSON() const
 	LlanyLib::Basic::Objetos::String* str = build->build();
 	delete build;
 	return str;
+}
+void LlanyLib::Juego::Objetos::Item::deleteItem()
+{
+	delete this;
 }
 int LlanyLib::Juego::Objetos::Item::compare(const Item& other) const
 {

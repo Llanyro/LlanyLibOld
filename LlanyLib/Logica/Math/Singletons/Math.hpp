@@ -21,6 +21,7 @@ namespace LlanyLib {
 				#pragma endregion
 				public:
 					int compare(const long_t& a, const long_t& b) const;
+					int compare(const double& a, const double& b) const;
 
 					// Funcion: Realiza los calculos para obtener el factorial de un numero
 					// Version: Beta

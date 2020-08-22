@@ -3,9 +3,12 @@
 #include <cassert>
 #include <string>
 
+
 #include "../LibreriasSimples/ASCII_Defines.h"
-#include "../Objetos/String.hpp"
+
 #include "Mem.hpp"
+
+#include "../Objetos/String.hpp"
 
 LlanyLib::Basic::Singletons::Chars::Chars() { Chars::subscribir(Chars::freeInstancia); }
 LlanyLib::Basic::Singletons::Chars::~Chars(){}
@@ -68,7 +71,7 @@ int LlanyLib::Basic::Singletons::Chars::compareMemoryBlocks(const char* block1, 
 }
 int LlanyLib::Basic::Singletons::Chars::compareString(const char* block1, const size_t& size_1, const char* block2, const size_t& size_2)
 {
-	return 0;//compareMemoryBlocks(block1, size_1, block2, size_2, sizeof(char), CHARS->compareChar);
+	return 0;//Chars::compareMemoryBlocks(block1, size_1, block2, size_2, sizeof(char), CHARS->compareChar);
 }
 int LlanyLib::Basic::Singletons::Chars::compareString(const char* string1, const char* string2)
 {
@@ -92,7 +95,7 @@ int LlanyLib::Basic::Singletons::Chars::compareString(const char* string1, const
 }
 int LlanyLib::Basic::Singletons::Chars::compareStringSimilar(const char* block1, const size_t& size_1, const char* block2, const size_t& size_2)
 {
-	return 0;// compareMemoryBlocks(block1, size_1, block2, size_2, sizeof(char), CHARS->compareCharSimilar);
+	return 0;// Chars::compareMemoryBlocks(block1, size_1, block2, size_2, sizeof(char), CHARS->compareCharSimilar);
 }
 int LlanyLib::Basic::Singletons::Chars::compareStringSimilar(const char* string1, const char* string2)
 {

@@ -153,6 +153,8 @@
     <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\System.cpp" />
     <ClCompile Include="Logica\Juego\Gestores\GestorItems.cpp" />
+    <ClCompile Include="Logica\Juego\Items\Contenedores\BotellaPlastico.cpp" />
+    <ClCompile Include="Logica\Juego\Items\Elementos\Hidrogeno.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celda3D.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Laberinto2D.cpp" />
@@ -215,6 +217,8 @@
     <ClInclude Include="Logica\Basic\Singletons\System.hpp" />
     <ClInclude Include="Logica\Juego\Enums\ItemEnum.hpp" />
     <ClInclude Include="Logica\Juego\Gestores\GestorItems.hpp" />
+    <ClInclude Include="Logica\Juego\Items\Contenedores\BotellaPlastico.hpp" />
+    <ClInclude Include="Logica\Juego\Items\Elementos\Hidrogeno.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celda2D.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp" />

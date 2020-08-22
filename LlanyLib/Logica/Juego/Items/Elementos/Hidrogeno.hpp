@@ -4,6 +4,8 @@
 
 #include "../../Objetos/Item.hpp"
 
+#define LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno "Hidrogeno"
+
 namespace LlanyLib {
 	namespace Juego {
 		namespace Enums {
@@ -15,7 +17,6 @@ namespace LlanyLib {
 					class Hidrogeno : public Objetos::Item
 					{
 						public:
-							#pragma region Constructores
 							Hidrogeno();
 							Hidrogeno(
 								// Cantidad en litros / unidades
@@ -26,7 +27,10 @@ namespace LlanyLib {
 								// Cantidad en litros / unidades
 								const double& cantidad);
 							~Hidrogeno();
-							#pragma endregion
+							Hidrogeno(const Hidrogeno& other);
+							bool operator=(const Hidrogeno& other);
+							virtual Item* clone() const;
+							virtual void deleteItem() override;
 					};
 				}
 			}

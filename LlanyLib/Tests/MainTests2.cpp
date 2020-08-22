@@ -24,6 +24,7 @@
 #include "../Logica/Juego/Objetos/Contenedor.hpp"
 #include "../Logica/Juego/Items/Elementos/Hidrogeno.hpp"
 #include "../Logica/Juego/Items/Contenedores/BotellaPlastico.hpp"
+#include "../Logica/Juego/Gestores/GestorItems.hpp"
 
 using namespace std;
 
@@ -158,6 +159,26 @@ void t7()
 void t8()
 {
 	STRING_PRINTER->printClear(RANDOM->uuid());
+}
+
+void t9()
+{
+	LlanyLib::Basic::Objetos::String* str1 = new LlanyLib::Basic::Objetos::String("Hola");
+	LlanyLib::Basic::Objetos::String* str2 = new LlanyLib::Basic::Objetos::String("hola");
+	LlanyLib::Basic::Objetos::String* str3 = new LlanyLib::Basic::Objetos::String("Hol");
+	LlanyLib::Basic::Objetos::String* str4 = new LlanyLib::Basic::Objetos::String("Holaa");
+
+
+	STRING_PRINTER->printBool(str1->equals(*str2));
+	STRING_PRINTER->printBool(str1->equals(*str3));
+	STRING_PRINTER->printBool(str1->equals(*str4));
+	STRING_PRINTER->printBool(str1->equals(*str1));
+	STRING_PRINTER->printBool(str1->equals("Hola"));
+
+	delete str1;
+	delete str2;
+	delete str3;
+	delete str4;
 }
 
 /*
@@ -534,7 +555,6 @@ void m3()
 	printHex(unit.getHex());
 }
 
-
 void j1()
 {
 	LlanyLib::Juego::Objetos::Item item;
@@ -548,6 +568,27 @@ void j2()
 {
 	LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico botella;
 	STRING_PRINTER->printLnClear(botella.toJSONBuilder());
+}
+
+void j3()
+{
+	GESTOR_ITEMS->itemRegister(
+		new LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno(),
+		LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
+	GESTOR_ITEMS->itemRegister(
+		new LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico(),
+		LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico);
+
+	cout << GESTOR_ITEMS->getID(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno) << endl;
+	cout << GESTOR_ITEMS->getID(LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico) << endl;
+
+	STRING_PRINTER->printLn(GESTOR_ITEMS->getRegisterName(1));
+	STRING_PRINTER->printLn(GESTOR_ITEMS->getRegisterName(2));
+	
+	LlanyLib::Juego::Objetos::Item* it = GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
+	STRING_PRINTER->printLnClear(it->toJSONBuilder());
+
+	delete it;
 }
 
 int main()
@@ -567,14 +608,16 @@ int main()
 	//t6();
 	//t7();
 	//t8();
+	//t9();
 
 	//m1();
 	//m2();
-	m3();
+	//m3();
 
 
 	//j1();
 	//j2();
+	j3();
 	
 	FREE_SINGLETONS;
 

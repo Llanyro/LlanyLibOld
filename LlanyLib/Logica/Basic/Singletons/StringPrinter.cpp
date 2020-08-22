@@ -15,6 +15,15 @@
 LlanyLib::Basic::Singletons::StringPrinter::StringPrinter() { StringPrinter::subscribir(StringPrinter::freeInstancia); }
 LlanyLib::Basic::Singletons::StringPrinter::~StringPrinter(){}
 
+void LlanyLib::Basic::Singletons::StringPrinter::printBool(const bool& value) const
+{
+	if(value)
+		StringPrinter::print("True");
+	else
+		StringPrinter::print("False");
+	StringPrinter::print('\n');
+}
+
 void LlanyLib::Basic::Singletons::StringPrinter::print(const char& caracter) const
 {
 	putchar(caracter);

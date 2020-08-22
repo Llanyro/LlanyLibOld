@@ -31,6 +31,7 @@ namespace LlanyLib {
 					Item* extractItem(const size_t& pos) const;
 					Item* extractItem(const size_t& pos, const double& cantidad) const;
 					bool equals(const ListItem& other) const;
+					Basic::Templates::Listas::LinkedList<Item*>* getList() const;
 			};
 		}
 	}

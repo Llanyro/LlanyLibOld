@@ -1,7 +1,7 @@
 #include "BotellaPlastico.hpp"
 
-#include "../../../Enums/ObjetosEnum.hpp"
-#include "../../../../Basic/Objetos/String.hpp"
+#include "../../Enums/ItemEnum.hpp"
+#include "../../../Basic/Objetos/String.hpp"
 
 #include "../Elementos/Hidrogeno.hpp"
 
@@ -14,7 +14,8 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::BotellaPlastic
 	this->cantidad = 1;
 	this->peso = 1;
 
-	this->itemName = new Basic::Objetos::String("BotellaPlastico");
+	//this->itemShowName = new Basic::Objetos::String("BotellaPlastico");
+
 	this->tipoDeObjeto = Enums::TipoObjeto::Contenedor;
 	this->tipoDeMaterial = Enums::TipoDeMaterial::Solido;
 
@@ -28,7 +29,7 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::BotellaPlastic
 	this->tipoDeMaterialContenible = Enums::TipoDeMaterial::Liquido;
 
 
-	Item* tmp = nullptr;
+	/*Item* tmp = nullptr;
 
 	tmp = BotellaPlastico::addItem(new Elementos::Hidrogeno());
 	if (tmp != nullptr)
@@ -40,6 +41,22 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::BotellaPlastic
 
 	tmp = BotellaPlastico::addItem(new Elementos::Hidrogeno(3));
 	if (tmp != nullptr)
-		delete tmp;
+		delete tmp;*/
+}
+LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::BotellaPlastico(const BotellaPlastico& other) : BotellaPlastico()
+{
+	BotellaPlastico::operator=(other);
+}
+bool LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::operator=(const BotellaPlastico& other)
+{
+	return Contenedor::operator=(other);
 }
 LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::~BotellaPlastico(){}
+LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::clone() const
+{
+	return new BotellaPlastico(*this);
+}
+void LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::deleteItem()
+{
+	delete this;
+}
