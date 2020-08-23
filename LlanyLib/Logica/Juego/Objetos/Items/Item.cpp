@@ -1,12 +1,12 @@
 #include "Item.hpp"
 
-#include "../../Basic/Objetos/String.hpp"
-#include "../../Basic/Objetos/JSONBuilder.hpp"
+#include "../../../Basic/Objetos/String.hpp"
+#include "../../../Basic/Objetos/JSONBuilder.hpp"
 
-#include "../../Math/Singletons/Math.hpp"
+#include "../../../Math/Singletons/Math.hpp"
 
-#include "../Enums/ItemEnum.hpp"
-#include "../Gestores/GestorItems.hpp"
+#include "../../Enums/ItemEnum.hpp"
+#include "../../Gestores/GestorItems.hpp"
 
 #pragma region Constructores
 LlanyLib::Juego::Objetos::Item::Item()
@@ -230,8 +230,6 @@ bool LlanyLib::Juego::Objetos::Item::operator!=(const Item& other) const
 	return !Item::equals(other);
 }
 #pragma endregion
-
-
 /*#pragma region Setters
 void LlanyLib::Juego::Objetos::Objetos::setItemName(char const* const nombre)
 {

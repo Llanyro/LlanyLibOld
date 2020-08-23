@@ -21,6 +21,7 @@ namespace LlanyLib {
 		namespace Enums {
 			enum class TipoDeMaterial;
 			enum class TipoObjeto;
+			enum class Ordenamiento;
 		}
 		namespace Objetos {
 			class ListItem;
@@ -31,49 +32,53 @@ namespace LlanyLib {
 					Enums::TipoDeMaterial tipoDeMaterialContenible;
 					double capacidadOcupada;
 					double capacidadMaxima;
+				#pragma region No virtual
 				protected:
 					#pragma region Protected
-					virtual bool sePuedeAñadir(const Item* item) const;
-					Item* addItemProtected(Item* item);
-					Item* getItemProtected(const size_t& pos);
+					Item* addProtected(Item* item);
 					#pragma endregion
 				public:
 					#pragma region Constructores
 					Contenedor();
 					Contenedor(const Contenedor& other);
-					Contenedor(const Contenedor* other);
 					bool operator=(const Contenedor& other);
 					~Contenedor();
 					#pragma endregion
-					// Funcion: Añade un Item al contenedor
-					// Extra: Si se intenta añadir un objeto y no se puede, devuelve el puntero al item
-					// Version: Final/Beta/Alfa/PreAlfa
-					// Precondiciones:
-					//		item != nullptr
-					// Retorno: 
-					//		nullptr: Si se ha añadido el item
-					//		pointer: Si se no ha añadido el item (el puntero del item pasado)
-					// Complejidad temporal y espacial: O(1) y M(1)
-					#pragma region Getter && add
-					virtual Item* addItem(Item* item);
-					virtual Item* getItem(const size_t& pos);
-
+					#pragma region Getters
 					bool getCapacidadOcupada() const;
 					bool getCapacidadMaxima() const;
+					#pragma endregion
+					#pragma region Contenedor
+					void clear();
+					void ordenar(const Enums::Ordenamiento& ord);
 					const Item* get(const size_t& pos) const;
 					#pragma endregion
-					#pragma region Virtual
+				#pragma endregion
+				#pragma region Virtual
+				protected:
+					#pragma region Protected
+					virtual bool sePuedeAñadir(const Item* item) const;
+					virtual bool cabeItem(const Item* item) const;
+					#pragma endregion
+				public:
+					#pragma region Contenedor
+					virtual LlanyLib::Juego::Objetos::Item* add(Item* item);
+					virtual Item* extractItem(const size_t& pos);
+					virtual Item* extractItem(const size_t& pos, const double& cantidad);
+					#pragma endregion
+					#pragma region Other
 					virtual Item* clone() const;
 					virtual Basic::Objetos::JSONBuilder* toJSONBuilder() const;
 					virtual Basic::Objetos::String* toJSON() const;
 					virtual void deleteItem() override;
-					int compare(const Contenedor& other) const;
-					bool similar(const Contenedor& other) const;
-					bool equals(const Contenedor& other) const;
-					bool igualMenosCantidad(const Contenedor& other) const;
-					bool operator==(const Contenedor& other) const;
-					bool operator!=(const Contenedor& other) const;
+					virtual int compare(const Contenedor& other) const;
+					virtual bool similar(const Contenedor& other) const;
+					virtual bool equals(const Contenedor& other) const;
+					virtual bool igualMenosCantidad(const Contenedor& other) const;
+					virtual bool operator==(const Contenedor& other) const;
+					virtual bool operator!=(const Contenedor& other) const;
 					#pragma endregion
+				#pragma endregion
 			};
 		}
 	}

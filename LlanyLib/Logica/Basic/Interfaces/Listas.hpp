@@ -2,12 +2,9 @@
 #ifndef LISTAS_SIZE_INTERFACE_HPP_
 #define LISTAS_SIZE_INTERFACE_HPP_
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Interfaces
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Interfaces {
 			class Listas
 			{
 				protected:

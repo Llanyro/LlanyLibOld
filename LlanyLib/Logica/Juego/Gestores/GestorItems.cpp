@@ -6,8 +6,8 @@
 
 #include "../../Basic/Objetos/String.hpp"
 
-#include "../Objetos/Item.hpp"
-#include "../Objetos/Contenedor.hpp"
+#include "../Objetos/Items/Item.hpp"
+#include "../Objetos/Items/Contenedor.hpp"
 
 #pragma region Singleton
 LlanyLib::Juego::Gestores::GestorItems::GestorItems()

@@ -2,7 +2,7 @@
 #ifndef ITEM_OBJECT_JUEGO_HPP_
 #define ITEM_OBJECT_JUEGO_HPP_
 
-#include "../../Math/Libs/MathTypes.h"
+#include "../../../Math/Libs/MathTypes.h"
 //#include "../Gestores/GestorItems.hpp"
 
 namespace LlanyLib {

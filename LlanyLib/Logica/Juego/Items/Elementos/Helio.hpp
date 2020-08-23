@@ -1,10 +1,10 @@
 #pragma once
-#ifndef HIDROGENO_ITEM_OBJECT_HPP_
-#define HIDROGENO_ITEM_OBJECT_HPP_
+#ifndef HELIO_ITEM_OBJECT_HPP_
+#define HELIO_ITEM_OBJECT_HPP_
 
 #include "../../Objetos/Items/Item.hpp"
 
-#define LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno "Hidrogeno"
+#define LlanyLib_Juego_Items_Generados_Elementos_Helio "Helio"
 
 namespace LlanyLib {
 	namespace Juego {
@@ -14,21 +14,21 @@ namespace LlanyLib {
 		namespace Items {
 			namespace Generados {
 				namespace Elementos {
-					class Hidrogeno : public Objetos::Item
+					class Helio : public Objetos::Item
 					{
 						public:
-							Hidrogeno();
-							Hidrogeno(
+							Helio();
+							Helio(
 								// Cantidad en litros / unidades
 								const double& cantidad,
 								// Tipo de estado del material
 								const Enums::TipoDeMaterial& material);
-							Hidrogeno(
+							Helio(
 								// Cantidad en litros / unidades
 								const double& cantidad);
-							~Hidrogeno();
-							Hidrogeno(const Hidrogeno& other);
-							bool operator=(const Hidrogeno& other);
+							~Helio();
+							Helio(const Helio& other);
+							bool operator=(const Helio& other);
 							virtual Item* clone() const;
 							virtual void deleteItem() override;
 					};
@@ -37,4 +37,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !HIDROGENO_ITEM_OBJECT_HPP_
+#endif // !HELIO_ITEM_OBJECT_HPP_

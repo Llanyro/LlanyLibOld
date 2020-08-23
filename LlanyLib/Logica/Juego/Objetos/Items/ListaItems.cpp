@@ -1,6 +1,6 @@
 #include "ListaItems.hpp"
 
-#include "../../Basic/Plantillas/Listas/LinkedList.hpp"
+#include "../../../Basic/Plantillas/Listas/LinkedList.hpp"
 
 #include "Item.hpp"
 
@@ -30,6 +30,20 @@ LlanyLib::Juego::Objetos::ListItem::~ListItem()
 		ListItem::clear();
 		delete this->list;
 	}
+}
+bool LlanyLib::Juego::Objetos::ListItem::operator=(const ListItem& other)
+{
+	bool resultado = false;
+	if (&other != nullptr) {
+		ListItem::clear();
+		Item* item = nullptr;
+		for (size_t i = 0; i < other.list->length(); i++) {
+			item = *other.list->get(i);
+			this->list->add(item->clone());
+		}
+		resultado = true;
+	}
+	return resultado;
 }
 bool LlanyLib::Juego::Objetos::ListItem::add(Item* item)
 {

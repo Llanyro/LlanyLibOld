@@ -24,6 +24,7 @@ namespace LlanyLib {
 				public:
 					ListItem();
 					~ListItem();
+					bool operator=(const ListItem& other);
 					bool add(Item* item);
 					void clear();
 					void ordenar(const Enums::Ordenamiento& ord);

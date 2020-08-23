@@ -151,12 +151,6 @@
     <Filter Include="Logica\Juego\Objetos">
       <UniqueIdentifier>{799761e2-9250-415b-a8f2-8e9bab70b581}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Juego\Objetos\Hpp">
-      <UniqueIdentifier>{9b2d3578-65e6-416b-8540-8bc18e2e03f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Juego\Objetos\Cpp">
-      <UniqueIdentifier>{e14615b8-8c5f-4bb0-9f47-68208f510202}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\Juego\Gestores">
       <UniqueIdentifier>{2d90bef3-b99f-4959-bf91-5272d9257b86}</UniqueIdentifier>
     </Filter>
@@ -174,6 +168,24 @@
     </Filter>
     <Filter Include="Logica\Juego\Items\Contenedores\Hpp">
       <UniqueIdentifier>{b97b1a61-1832-4fa6-8ec4-5441a01edd9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items">
+      <UniqueIdentifier>{bef2f544-a8a6-4610-a56f-274a0f8a4463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Hpp">
+      <UniqueIdentifier>{9b2d3578-65e6-416b-8540-8bc18e2e03f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Items\Cpp">
+      <UniqueIdentifier>{e14615b8-8c5f-4bb0-9f47-68208f510202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Stats">
+      <UniqueIdentifier>{2d3b677f-048a-4826-849a-0936c9e03f4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Stats\Hpp">
+      <UniqueIdentifier>{508b3f28-e9ac-464c-bdd1-5ef65a5e686a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Stats\Cpp">
+      <UniqueIdentifier>{bb42a417-6941-44cb-b9e2-7f771ccaf350}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -261,21 +273,6 @@
     <ClCompile Include="Logica\Juego\Gestores\GestorItems.cpp">
       <Filter>Logica\Juego\Gestores</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\ListaItems.cpp">
-      <Filter>Logica\Juego\Objetos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Item.cpp">
-      <Filter>Logica\Juego\Objetos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Equipable.cpp">
-      <Filter>Logica\Juego\Objetos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Contenedor.cpp">
-      <Filter>Logica\Juego\Objetos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Objetos\Consumible.cpp">
-      <Filter>Logica\Juego\Objetos\Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp">
       <Filter>Logica\Juego\Singletons\Cpp</Filter>
     </ClCompile>
@@ -284,6 +281,51 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Items\Contenedores\BotellaPlastico.cpp">
       <Filter>Logica\Juego\Items\Contenedores\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Items\Contenedores\BotellaHidrogeno.cpp">
+      <Filter>Logica\Juego\Items\Contenedores\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Items\Elementos\Helio.cpp">
+      <Filter>Logica\Juego\Items\Elementos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Gestores\VistaGestorItems.cpp">
+      <Filter>Logica\Juego\Gestores</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Singletons\VistaItemController.cpp">
+      <Filter>Logica\Juego\Singletons\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Survival.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Critico.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Defensa.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Energia.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Ofensivos.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Resistencia.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\ListaItems.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Item.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Equipable.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Contenedor.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Items\Consumible.cpp">
+      <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -452,21 +494,6 @@
     <ClInclude Include="Logica\Juego\Gestores\GestorItems.hpp">
       <Filter>Logica\Juego\Gestores</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\ListaItems.hpp">
-      <Filter>Logica\Juego\Objetos\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Consumible.hpp">
-      <Filter>Logica\Juego\Objetos\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Contenedor.hpp">
-      <Filter>Logica\Juego\Objetos\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Equipable.hpp">
-      <Filter>Logica\Juego\Objetos\Hpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Objetos\Item.hpp">
-      <Filter>Logica\Juego\Objetos\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Juego\Singletons\ItemController.hpp">
       <Filter>Logica\Juego\Singletons\Hpp</Filter>
     </ClInclude>
@@ -478,6 +505,54 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Items\Contenedores\BotellaPlastico.hpp">
       <Filter>Logica\Juego\Items\Contenedores\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Items\Contenedores\BotellaHidrogeno.hpp">
+      <Filter>Logica\Juego\Items\Contenedores\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Items\Elementos\Helio.hpp">
+      <Filter>Logica\Juego\Items\Elementos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Gestores\VistaGestorItems.hpp">
+      <Filter>Logica\Juego\Gestores</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Enums\ItemControllerEnum.hpp">
+      <Filter>Logica\Juego\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Singletons\VistaItemController.hpp">
+      <Filter>Logica\Juego\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Survival.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Critico.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Defensa.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Energia.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Ofensivos.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Resistencia.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Consumible.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Contenedor.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Equipable.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\Item.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Items\ListaItems.hpp">
+      <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

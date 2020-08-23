@@ -2,15 +2,12 @@
 #ifndef BOTELLA_PLASTICO_ITEM_OBJECT_HPP_
 #define BOTELLA_PLASTICO_ITEM_OBJECT_HPP_
 
-#include "../../Objetos/Contenedor.hpp"
+#include "../../Objetos/Items/Contenedor.hpp"
 
 #define LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico "BotellaPlastico"
 
 namespace LlanyLib {
 	namespace Juego {
-		namespace Enums {
-			enum class TipoDeMaterial;
-		}
 		namespace Items {
 			namespace Generados {
 				namespace Contenedores {

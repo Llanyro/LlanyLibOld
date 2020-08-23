@@ -1,6 +1,14 @@
 #include <iostream>
 
+#pragma region Basic
+#include "../Logica/Basic/LibreriasSimples/ASCII_Defines.h"
+
 #include "../Logica/Basic/Gestores/GestorSingletons.hpp"
+
+#include "../Logica/Basic/Plantillas/Listas/LinkedList.hpp"
+#include "../Logica/Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
+#include "../Logica/Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
+
 #include "../Logica/Basic/Singletons/StringPrinter.hpp"
 #include "../Logica/Basic/Singletons/System.hpp"
 #include "../Logica/Basic/Singletons/Chars.hpp"
@@ -9,22 +17,33 @@
 
 #include "../Logica/Basic/Objetos/String.hpp"
 #include "../Logica/Basic/Objetos/StringBuilder.hpp"
-#include "../Logica/Basic/LibreriasSimples/ASCII_Defines.h"
-#include "../Logica/Basic/Plantillas/Listas/LinkedList.hpp"
-#include "../Logica/Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../Logica/Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
-
-#include "../Logica/Math/Objetos/Unit.hpp"
+#pragma endregion
+#pragma region Math
 #include "../Logica/Math/Enums/UnitEnum.hpp"
+
 #include "../Logica/Math/Singletons/Math.hpp"
 #include "../Logica/Math/Singletons/Random.hpp"
 #include "../Logica/Math/Singletons/UnitConversor.hpp"
 
-#include "../Logica/Juego/Objetos/Item.hpp"
-#include "../Logica/Juego/Objetos/Contenedor.hpp"
+#include "../Logica/Math/Objetos/Unit.hpp"
+#pragma endregion
+#pragma region Juego
+#include "../Logica/Juego/Enums/ItemEnum.hpp"
+
+//#include "../Logica/Juego/Gestores/GestorItems.hpp"
+#include "../Logica/Juego/Gestores/VistaGestorItems.hpp"
+
+//#include "../Logica/Juego/Singletons/ItemController.hpp"
+#include "../Logica/Juego/Singletons/VistaItemController.hpp"
+
+#include "../Logica/Juego/Objetos/Items/Item.hpp"
+#include "../Logica/Juego/Objetos/Items/Contenedor.hpp"
+
 #include "../Logica/Juego/Items/Elementos/Hidrogeno.hpp"
+#include "../Logica/Juego/Items/Elementos/Helio.hpp"
 #include "../Logica/Juego/Items/Contenedores/BotellaPlastico.hpp"
-#include "../Logica/Juego/Gestores/GestorItems.hpp"
+#include "../Logica/Juego/Items/Contenedores/BotellaHidrogeno.hpp"
+#pragma endregion
 
 using namespace std;
 
@@ -555,6 +574,25 @@ void m3()
 	printHex(unit.getHex());
 }
 
+void jregister()
+{
+	// Elementos puros
+	VISTA_GESTOR_ITEMS->itemRegister(
+		new LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno(),
+		LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
+	VISTA_GESTOR_ITEMS->itemRegister(
+		new LlanyLib::Juego::Items::Generados::Elementos::Helio(),
+		LlanyLib_Juego_Items_Generados_Elementos_Helio);
+
+	// Contenedores
+	VISTA_GESTOR_ITEMS->itemRegister(
+		new LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico(),
+		LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico);
+	VISTA_GESTOR_ITEMS->itemRegister(
+		new LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno(),
+		LlanyLib_Juego_Items_Generados_Contenedores_BotellaHidrogeno);
+}
+
 void j1()
 {
 	LlanyLib::Juego::Objetos::Item item;
@@ -572,14 +610,7 @@ void j2()
 
 void j3()
 {
-	GESTOR_ITEMS->itemRegister(
-		new LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno(),
-		LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
-	GESTOR_ITEMS->itemRegister(
-		new LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico(),
-		LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico);
-
-	cout << GESTOR_ITEMS->getID(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno) << endl;
+	/*cout << GESTOR_ITEMS->getID(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno) << endl;
 	cout << GESTOR_ITEMS->getID(LlanyLib_Juego_Items_Generados_Contenedores_BotellaPlastico) << endl;
 
 	STRING_PRINTER->printLn(GESTOR_ITEMS->getRegisterName(1));
@@ -588,7 +619,50 @@ void j3()
 	LlanyLib::Juego::Objetos::Item* it = GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
 	STRING_PRINTER->printLnClear(it->toJSONBuilder());
 
-	delete it;
+	delete it;*/
+}
+
+void j4()
+{
+	LlanyLib::Juego::Objetos::Item* botellahidro =
+		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Contenedores_BotellaHidrogeno);
+	LlanyLib::Juego::Objetos::Item* hidrogeno =
+		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
+
+	if (botellahidro != nullptr) {
+		LlanyLib::Juego::Objetos::Item* temp = nullptr;
+
+		if (botellahidro->getTipoObjeto() == LlanyLib::Juego::Enums::TipoObjeto::Contenedor) {
+			LlanyLib::Juego::Objetos::Contenedor* contenedorHidro = 
+				(LlanyLib::Juego::Objetos::Contenedor*)botellahidro;
+			temp = contenedorHidro->add(hidrogeno);
+
+			if (temp != nullptr) {
+				cout << "No se ha podido añadir el objeto al contenedor" << endl;
+				delete temp;
+			}
+			else
+				cout << "Se ha añadido exitosamente el objeto al contenedor" << endl;
+
+		}
+
+
+
+		botellahidro->deleteItem();
+	}
+
+}
+
+void j5()
+{
+	LlanyLib::Juego::Objetos::Item* botellahidrogeno =
+		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Contenedores_BotellaHidrogeno);
+	LlanyLib::Juego::Objetos::Item* hidrogeno =
+		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
+
+	VISTA_ITEM_CONTROLLER->addItemToContenedorDelete(botellahidrogeno, hidrogeno);
+
+	VISTA_ITEM_CONTROLLER->deleteItem(botellahidrogeno);
 }
 
 int main()
@@ -615,10 +689,14 @@ int main()
 	//m3();
 
 
+	jregister();
 	//j1();
 	//j2();
-	j3();
-	
+	//j3();
+	//j4();
+	j5();
+
+
 	FREE_SINGLETONS;
 
 	return 0;

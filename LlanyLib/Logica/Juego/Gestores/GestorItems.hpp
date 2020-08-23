@@ -41,7 +41,8 @@ namespace LlanyLib {
 				protected:
 					Basic::Templates::Diccionarios::DictionaryLinkedList<
 						Basic::Objetos::String*, 
-						Objetos::Item*>* registro;
+						Objetos::Item*
+					>* registro;
 				protected:
 					#pragma region Protected
 					bool containsName(char const* const registerName) const;
