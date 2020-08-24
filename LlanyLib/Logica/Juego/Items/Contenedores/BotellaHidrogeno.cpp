@@ -47,7 +47,7 @@ bool LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::operator
 }
 LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::~BotellaHidrogeno(){}
 
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::clone() const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::clone() const
 {
 	return new BotellaHidrogeno(*this);
 }

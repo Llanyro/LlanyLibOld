@@ -11,7 +11,7 @@
 LlanyLib::Juego::Gestores::VistaGestorItems::VistaGestorItems() { VistaGestorItems::subscribir(VistaGestorItems::freeInstancia); }
 LlanyLib::Juego::Gestores::VistaGestorItems::~VistaGestorItems(){}
 
-bool LlanyLib::Juego::Gestores::VistaGestorItems::itemRegister(Objetos::Item* item, char const* const registerName)
+bool LlanyLib::Juego::Gestores::VistaGestorItems::itemRegister(Objetos::Items::Item* item, char const* const registerName)
 {
 	bool resultado = GESTOR_ITEMS->itemRegister(item, registerName);
 	if (resultado) 
@@ -32,9 +32,9 @@ bool LlanyLib::Juego::Gestores::VistaGestorItems::itemRegister(Objetos::Item* it
 	}
 	return resultado;
 }
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Gestores::VistaGestorItems::newItem(char const* const registerName) const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Gestores::VistaGestorItems::newItem(char const* const registerName) const
 {
-	Objetos::Item* item = GESTOR_ITEMS->newItem(registerName);
+	Objetos::Items::Item* item = GESTOR_ITEMS->newItem(registerName);
 	if (item != nullptr)
 		std::cout
 			<< "Se ha generado exitosamente el objeto \""

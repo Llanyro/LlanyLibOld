@@ -15,7 +15,7 @@ LlanyLib::Juego::Gestores::GestorItems::GestorItems()
 	GestorItems::subscribir(GestorItems::freeInstancia);
 	this->registro = new Basic::Templates::Diccionarios::DictionaryLinkedList<
 		Basic::Objetos::String*,
-		Objetos::Item*
+		Objetos::Items::Item*
 	>();
 }
 LlanyLib::Juego::Gestores::GestorItems::~GestorItems()
@@ -32,10 +32,7 @@ LlanyLib::Juego::Gestores::GestorItems::~GestorItems()
 #pragma region Protected
 bool LlanyLib::Juego::Gestores::GestorItems::containsName(char const* const registerName) const
 {
-	Basic::Templates::Nodos::NDODP<
-		Basic::Objetos::String*,
-		Objetos::Item*
-	>* temp = this->registro->getObject(0);
+	NODO* temp = this->registro->getObject(0);
 	bool encontrado = false;
 	for (size_t i = 0; i < this->registro->length(); i++) {
 		if (temp->getObject0()->equals(registerName)) {
@@ -74,7 +71,7 @@ long_t LlanyLib::Juego::Gestores::GestorItems::buscarID(char const* const regist
 }
 #pragma endregion
 #pragma region Registro y generacion
-bool LlanyLib::Juego::Gestores::GestorItems::itemRegister(Objetos::Item* item, char const* const registerName)
+bool LlanyLib::Juego::Gestores::GestorItems::itemRegister(Objetos::Items::Item* item, char const* const registerName)
 {
 	bool resultado = false;
 	if (!GestorItems::containsName(registerName)) {
@@ -84,9 +81,9 @@ bool LlanyLib::Juego::Gestores::GestorItems::itemRegister(Objetos::Item* item, c
 	}
 	return resultado;
 }
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Gestores::GestorItems::newItem(char const* const registerName) const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Gestores::GestorItems::newItem(char const* const registerName) const
 {
-	Objetos::Item* resultado = nullptr;
+	Objetos::Items::Item* resultado = nullptr;
 	NODO* nodo = GestorItems::buscarNodo(registerName);
 	if (nodo != nullptr)
 		resultado = nodo->getObject1()->clone();

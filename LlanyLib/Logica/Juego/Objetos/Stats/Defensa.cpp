@@ -3,7 +3,7 @@
 #include <cassert>
 
 #pragma region Constructores
-LlanyLib::Juego::Objetos::Defensa::Defensa()
+LlanyLib::Juego::Objetos::Stats::Defensa::Defensa()
 {
 	this->golpes = 0.0;
 	this->cortes = 0.0;
@@ -18,7 +18,7 @@ LlanyLib::Juego::Objetos::Defensa::Defensa()
 	this->oscuridad = 0.0;
 	this->luz = 0.0;
 }
-/*LlanyLib::Juego::Objetos::Defensa::Defensa(const String& contenidoJSON) : Defensa()
+/*LlanyLib::Juego::Objetos::Stats::Defensa::Defensa(const String& contenidoJSON) : Defensa()
 {
 	assert(&contenidoJSON != nullptr);
 	Diccionario<String, String> listaAtributos = JSON::evalV2(contenidoJSON);
@@ -50,13 +50,13 @@ LlanyLib::Juego::Objetos::Defensa::Defensa()
 			this->luz = listaAtributos.getValue(i).toDouble();
 	}
 }*/
-LlanyLib::Juego::Objetos::Defensa::Defensa(const Defensa& other)
+LlanyLib::Juego::Objetos::Stats::Defensa::Defensa(const Defensa& other)
 {
 	assert(&other != nullptr);
-	bool temp = LlanyLib::Juego::Objetos::Defensa::operator=(other);
+	bool temp = LlanyLib::Juego::Objetos::Stats::Defensa::operator=(other);
 	assert(temp);
 }
-bool LlanyLib::Juego::Objetos::Defensa::operator=(const Defensa& other)
+bool LlanyLib::Juego::Objetos::Stats::Defensa::operator=(const Defensa& other)
 {
 	bool temp = true;
 	if (&other == nullptr) temp = false;
@@ -77,7 +77,7 @@ bool LlanyLib::Juego::Objetos::Defensa::operator=(const Defensa& other)
 	}
 	return temp;
 }
-LlanyLib::Juego::Objetos::Defensa::~Defensa()
+LlanyLib::Juego::Objetos::Stats::Defensa::~Defensa()
 {
 	this->golpes = 0.0;
 	this->cortes = 0.0;
@@ -94,181 +94,181 @@ LlanyLib::Juego::Objetos::Defensa::~Defensa()
 }
 #pragma endregion
 #pragma region Getters
-double LlanyLib::Juego::Objetos::Defensa::getGolpes() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getGolpes() const
 {
 	return this->golpes;
 }
-double LlanyLib::Juego::Objetos::Defensa::getCortes() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getCortes() const
 {
 	return this->cortes;
 }
-double LlanyLib::Juego::Objetos::Defensa::getPenetracion() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getPenetracion() const
 {
 	return this->penetracion;
 }
-double LlanyLib::Juego::Objetos::Defensa::getExplosiones() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getExplosiones() const
 {
 	return this->explosiones;
 }
-double LlanyLib::Juego::Objetos::Defensa::getElectro() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getElectro() const
 {
 	return this->electro;
 }
-double LlanyLib::Juego::Objetos::Defensa::getFuego() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getFuego() const
 {
 	return this->fuego;
 }
-double LlanyLib::Juego::Objetos::Defensa::getHielo() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getHielo() const
 {
 	return this->hielo;
 }
-double LlanyLib::Juego::Objetos::Defensa::getViento() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getViento() const
 {
 	return this->viento;
 }
-double LlanyLib::Juego::Objetos::Defensa::getAgua() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getAgua() const
 {
 	return this->agua;
 }
-double LlanyLib::Juego::Objetos::Defensa::getTierra() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getTierra() const
 {
 	return this->tierra;
 }
-double LlanyLib::Juego::Objetos::Defensa::getOscuridad() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getOscuridad() const
 {
 	return this->oscuridad;
 }
-double LlanyLib::Juego::Objetos::Defensa::getLuz() const
+double LlanyLib::Juego::Objetos::Stats::Defensa::getLuz() const
 {
 	return this->luz;
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Juego::Objetos::Defensa::setGolpes(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setGolpes(const double& value)
 {
 	assert(&value != nullptr);
 	this->golpes = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setCortes(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setCortes(const double& value)
 {
 	assert(&value != nullptr);
 	this->cortes = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setPenetracion(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setPenetracion(const double& value)
 {
 	assert(&value != nullptr);
 	this->penetracion = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setExplosiones(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setExplosiones(const double& value)
 {
 	assert(&value != nullptr);
 	this->explosiones = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setElectro(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setElectro(const double& value)
 {
 	assert(&value != nullptr);
 	this->electro = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setFuego(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setFuego(const double& value)
 {
 	assert(&value != nullptr);
 	this->fuego = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setHielo(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setHielo(const double& value)
 {
 	assert(&value != nullptr);
 	this->hielo = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setViento(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setViento(const double& value)
 {
 	assert(&value != nullptr);
 	this->viento = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setAgua(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setAgua(const double& value)
 {
 	assert(&value != nullptr);
 	this->agua = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setTierra(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setTierra(const double& value)
 {
 	assert(&value != nullptr);
 	this->tierra = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setOscuridad(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setOscuridad(const double& value)
 {
 	assert(&value != nullptr);
 	this->oscuridad = value;
 }
-void LlanyLib::Juego::Objetos::Defensa::setLuz(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::setLuz(const double& value)
 {
 	assert(&value != nullptr);
 	this->luz = value;
 }
 #pragma endregion
 #pragma region Adders
-void LlanyLib::Juego::Objetos::Defensa::addGolpes(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addGolpes(const double& value)
 {
 	assert(&value != nullptr);
 	this->golpes += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addCortes(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addCortes(const double& value)
 {
 	assert(&value != nullptr);
 	this->cortes += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addPenetracion(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addPenetracion(const double& value)
 {
 	assert(&value != nullptr);
 	this->penetracion += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addExplosiones(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addExplosiones(const double& value)
 {
 	assert(&value != nullptr);
 	this->explosiones += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addElectro(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addElectro(const double& value)
 {
 	assert(&value != nullptr);
 	this->electro += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addFuego(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addFuego(const double& value)
 {
 	assert(&value != nullptr);
 	this->fuego += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addHielo(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addHielo(const double& value)
 {
 	assert(&value != nullptr);
 	this->hielo += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addViento(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addViento(const double& value)
 {
 	assert(&value != nullptr);
 	this->viento += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addAgua(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addAgua(const double& value)
 {
 	assert(&value != nullptr);
 	this->agua += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addTierra(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addTierra(const double& value)
 {
 	assert(&value != nullptr);
 	this->tierra += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addOscuridad(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addOscuridad(const double& value)
 {
 	assert(&value != nullptr);
 	this->oscuridad += value;
 }
-void LlanyLib::Juego::Objetos::Defensa::addLuz(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Defensa::addLuz(const double& value)
 {
 	assert(&value != nullptr);
 	this->luz += value;
 }
 #pragma endregion
 #pragma region Compares
-bool LlanyLib::Juego::Objetos::Defensa::igual(const Defensa& other) const
+bool LlanyLib::Juego::Objetos::Stats::Defensa::igual(const Defensa& other) const
 {
 	bool temp = false;
 	if (&other == nullptr && this == nullptr) temp = true;
@@ -290,17 +290,17 @@ bool LlanyLib::Juego::Objetos::Defensa::igual(const Defensa& other) const
 }
 #pragma endregion
 #pragma region Operators
-bool LlanyLib::Juego::Objetos::Defensa::operator==(const Defensa& other) const
+bool LlanyLib::Juego::Objetos::Stats::Defensa::operator==(const Defensa& other) const
 {
 	assert(&other != nullptr);
-	return LlanyLib::Juego::Objetos::Defensa::igual(other);
+	return LlanyLib::Juego::Objetos::Stats::Defensa::igual(other);
 }
-bool LlanyLib::Juego::Objetos::Defensa::operator!=(const Defensa& other) const
+bool LlanyLib::Juego::Objetos::Stats::Defensa::operator!=(const Defensa& other) const
 {
 	assert(&other != nullptr);
-	return !LlanyLib::Juego::Objetos::Defensa::igual(other);
+	return !LlanyLib::Juego::Objetos::Stats::Defensa::igual(other);
 }
-void LlanyLib::Juego::Objetos::Defensa::operator+=(const Defensa& other)
+void LlanyLib::Juego::Objetos::Stats::Defensa::operator+=(const Defensa& other)
 {
 	assert(&other != nullptr);
 	this->golpes += other.golpes;
@@ -316,7 +316,7 @@ void LlanyLib::Juego::Objetos::Defensa::operator+=(const Defensa& other)
 	this->oscuridad += other.oscuridad;
 	this->luz += other.luz;
 }
-void LlanyLib::Juego::Objetos::Defensa::operator-=(const Defensa& other)
+void LlanyLib::Juego::Objetos::Stats::Defensa::operator-=(const Defensa& other)
 {
 	assert(&other != nullptr);
 	this->golpes -= other.golpes;
@@ -332,14 +332,14 @@ void LlanyLib::Juego::Objetos::Defensa::operator-=(const Defensa& other)
 	this->oscuridad -= other.oscuridad;
 	this->luz -= other.luz;
 }
-LlanyLib::Juego::Objetos::Defensa* LlanyLib::Juego::Objetos::Defensa::operator+(const Defensa& other)
+LlanyLib::Juego::Objetos::Stats::Defensa* LlanyLib::Juego::Objetos::Stats::Defensa::operator+(const Defensa& other)
 {
 	assert(&other != nullptr);
 	Defensa* result = new Defensa(*this);
 	result->operator+=(other);
 	return result;
 }
-LlanyLib::Juego::Objetos::Defensa* LlanyLib::Juego::Objetos::Defensa::operator-(const Defensa& other)
+LlanyLib::Juego::Objetos::Stats::Defensa* LlanyLib::Juego::Objetos::Stats::Defensa::operator-(const Defensa& other)
 {
 	assert(&other != nullptr);
 	Defensa* result = new Defensa(*this);
@@ -348,83 +348,83 @@ LlanyLib::Juego::Objetos::Defensa* LlanyLib::Juego::Objetos::Defensa::operator-(
 }
 #pragma endregion
 #pragma region Reajustar
-void LlanyLib::Juego::Objetos::Defensa::reajustarTodo()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarTodo()
 {
-	LlanyLib::Juego::Objetos::Defensa::reajustarGolpes();
-	LlanyLib::Juego::Objetos::Defensa::reajustarCortes();
-	LlanyLib::Juego::Objetos::Defensa::reajustarPenetracion();
-	LlanyLib::Juego::Objetos::Defensa::reajustarExplosiones();
-	LlanyLib::Juego::Objetos::Defensa::reajustarElectro();
-	LlanyLib::Juego::Objetos::Defensa::reajustarFuego();
-	LlanyLib::Juego::Objetos::Defensa::reajustarHielo();
-	LlanyLib::Juego::Objetos::Defensa::reajustarViento();
-	LlanyLib::Juego::Objetos::Defensa::reajustarAgua();
-	LlanyLib::Juego::Objetos::Defensa::reajustarTierra();
-	LlanyLib::Juego::Objetos::Defensa::reajustarOscuridad();
-	LlanyLib::Juego::Objetos::Defensa::reajustarLuz();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarGolpes();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarCortes();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarPenetracion();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarExplosiones();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarElectro();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarFuego();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarHielo();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarViento();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarAgua();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarTierra();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarOscuridad();
+	LlanyLib::Juego::Objetos::Stats::Defensa::reajustarLuz();
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarGolpes()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarGolpes()
 {
 	if (this->golpes < 0.0)
 		this->golpes = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarCortes()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarCortes()
 {
 	if (this->cortes < 0.0)
 		this->cortes = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarPenetracion()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarPenetracion()
 {
 	if (this->penetracion < 0.0)
 		this->penetracion = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarExplosiones()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarExplosiones()
 {
 	if (this->explosiones < 0.0)
 		this->explosiones = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarElectro()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarElectro()
 {
 	if (this->electro < 0.0)
 		this->electro = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarFuego()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarFuego()
 {
 	if (this->fuego < 0.0)
 		this->fuego = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarHielo()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarHielo()
 {
 	if (this->hielo < 0.0)
 		this->hielo = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarViento()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarViento()
 {
 	if (this->viento < 0.0)
 		this->viento = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarAgua()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarAgua()
 {
 	if (this->agua < 0.0)
 		this->agua = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarTierra()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarTierra()
 {
 	if (this->tierra < 0.0)
 		this->tierra = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarOscuridad()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarOscuridad()
 {
 	if (this->oscuridad < 0.0)
 		this->oscuridad = 0.0;
 }
-void LlanyLib::Juego::Objetos::Defensa::reajustarLuz()
+void LlanyLib::Juego::Objetos::Stats::Defensa::reajustarLuz()
 {
 	if (this->luz < 0.0)
 		this->luz = 0.0;
 }
 #pragma endregion
-/*String LlanyLib::Juego::Objetos::Defensa::toJSON() const
+/*String LlanyLib::Juego::Objetos::Stats::Defensa::toJSON() const
 {
 	JSON json;
 	json.addVaribale("golpes", this->golpes);

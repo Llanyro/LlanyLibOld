@@ -3,6 +3,7 @@
 #define TYPES_MATH_H_
 
 typedef long long long_t;
+typedef unsigned long long ulong_t;
 
 #define BIN_TO_HEX_GROUP_SIZE 4
 

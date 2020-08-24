@@ -595,7 +595,7 @@ void jregister()
 
 void j1()
 {
-	LlanyLib::Juego::Objetos::Item item;
+	LlanyLib::Juego::Objetos::Items::Item item;
 	STRING_PRINTER->printLnClear(item.toJSON());
 
 	LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno hidrogeno;
@@ -624,17 +624,17 @@ void j3()
 
 void j4()
 {
-	LlanyLib::Juego::Objetos::Item* botellahidro =
+	LlanyLib::Juego::Objetos::Items::Item* botellahidro =
 		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Contenedores_BotellaHidrogeno);
-	LlanyLib::Juego::Objetos::Item* hidrogeno =
+	LlanyLib::Juego::Objetos::Items::Item* hidrogeno =
 		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
 
 	if (botellahidro != nullptr) {
-		LlanyLib::Juego::Objetos::Item* temp = nullptr;
+		LlanyLib::Juego::Objetos::Items::Item* temp = nullptr;
 
 		if (botellahidro->getTipoObjeto() == LlanyLib::Juego::Enums::TipoObjeto::Contenedor) {
-			LlanyLib::Juego::Objetos::Contenedor* contenedorHidro = 
-				(LlanyLib::Juego::Objetos::Contenedor*)botellahidro;
+			LlanyLib::Juego::Objetos::Items::Contenedor* contenedorHidro =
+				(LlanyLib::Juego::Objetos::Items::Contenedor*)botellahidro;
 			temp = contenedorHidro->add(hidrogeno);
 
 			if (temp != nullptr) {
@@ -655,9 +655,9 @@ void j4()
 
 void j5()
 {
-	LlanyLib::Juego::Objetos::Item* botellahidrogeno =
+	LlanyLib::Juego::Objetos::Items::Item* botellahidrogeno =
 		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Contenedores_BotellaHidrogeno);
-	LlanyLib::Juego::Objetos::Item* hidrogeno =
+	LlanyLib::Juego::Objetos::Items::Item* hidrogeno =
 		VISTA_GESTOR_ITEMS->newItem(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno);
 
 	VISTA_ITEM_CONTROLLER->addItemToContenedorDelete(botellahidrogeno, hidrogeno);

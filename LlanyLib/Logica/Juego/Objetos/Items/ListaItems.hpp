@@ -14,26 +14,28 @@ namespace LlanyLib {
 	namespace Juego {
 		namespace Enums { enum class Ordenamiento; }
 		namespace Objetos {
-			class Item;
-			class ListItem
-			{
-				protected:
-					Basic::Templates::Listas::LinkedList<Item*>* list;
-				protected:
-					Item* getItemIgual(Item* item) const;
-				public:
-					ListItem();
-					~ListItem();
-					bool operator=(const ListItem& other);
-					bool add(Item* item);
-					void clear();
-					void ordenar(const Enums::Ordenamiento& ord);
-					const Item* get(const size_t& pos) const;
-					Item* extractItem(const size_t& pos) const;
-					Item* extractItem(const size_t& pos, const double& cantidad) const;
-					bool equals(const ListItem& other) const;
-					Basic::Templates::Listas::LinkedList<Item*>* getList() const;
-			};
+			namespace Items {
+				class Item;
+				class ListItem
+				{
+					protected:
+						Basic::Templates::Listas::LinkedList<Item*>* list;
+					protected:
+						Item* getItemIgual(Item* item) const;
+					public:
+						ListItem();
+						~ListItem();
+						bool operator=(const ListItem& other);
+						bool add(Item* item);
+						void clear();
+						void ordenar(const Enums::Ordenamiento& ord);
+						const Item* get(const size_t& pos) const;
+						Item* extractItem(const size_t& pos) const;
+						Item* extractItem(const size_t& pos, const double& cantidad) const;
+						bool equals(const ListItem& other) const;
+						Basic::Templates::Listas::LinkedList<Item*>* getList() const;
+				};
+			}
 		}
 	}
 }

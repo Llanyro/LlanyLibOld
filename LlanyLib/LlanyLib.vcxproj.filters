@@ -187,6 +187,15 @@
     <Filter Include="Logica\Juego\Objetos\Stats\Cpp">
       <UniqueIdentifier>{bb42a417-6941-44cb-b9e2-7f771ccaf350}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\Juego\Objetos\Entidades">
+      <UniqueIdentifier>{1d383a02-f4d4-4c4b-b449-51b075b7cbe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Entidades\Cpp">
+      <UniqueIdentifier>{af994836-b1c5-4864-91b2-4090383bb467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Objetos\Entidades\Hpp">
+      <UniqueIdentifier>{590fc2f9-3b67-4b40-8f70-bef970a3a803}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tests\MainTests2.cpp">
@@ -326,6 +335,15 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Objetos\Items\Consumible.cpp">
       <Filter>Logica\Juego\Objetos\Items\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Stats.cpp">
+      <Filter>Logica\Juego\Objetos\Stats\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Entidades\Entidad.cpp">
+      <Filter>Logica\Juego\Objetos\Entidades\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Objetos\Entidades\Familiar.cpp">
+      <Filter>Logica\Juego\Objetos\Entidades\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -553,6 +571,21 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Objetos\Items\ListaItems.hpp">
       <Filter>Logica\Juego\Objetos\Items\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Enums\StatsEnum.hpp">
+      <Filter>Logica\Juego\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Stats.hpp">
+      <Filter>Logica\Juego\Objetos\Stats\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Enums\EntidadesEnum.hpp">
+      <Filter>Logica\Juego\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Entidades\Entidad.hpp">
+      <Filter>Logica\Juego\Objetos\Entidades\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Objetos\Entidades\Familiar.hpp">
+      <Filter>Logica\Juego\Objetos\Entidades\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

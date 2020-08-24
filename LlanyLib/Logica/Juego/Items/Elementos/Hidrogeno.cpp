@@ -33,7 +33,7 @@ bool LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::operator=(const Hi
 {
 	return Item::operator=(other);
 }
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::clone() const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno::clone() const
 {
 	return new Hidrogeno(*this);
 }

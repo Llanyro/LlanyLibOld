@@ -14,7 +14,7 @@ namespace LlanyLib {
 		namespace Items {
 			namespace Generados {
 				namespace Elementos {
-					class Hidrogeno : public Objetos::Item
+					class Hidrogeno : public Objetos::Items::Item
 					{
 						public:
 							Hidrogeno();

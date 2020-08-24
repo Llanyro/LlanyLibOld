@@ -52,7 +52,7 @@ bool LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::operator=
 	return Contenedor::operator=(other);
 }
 LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::~BotellaPlastico(){}
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::clone() const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::clone() const
 {
 	return new BotellaPlastico(*this);
 }

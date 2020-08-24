@@ -23,8 +23,10 @@ namespace LlanyLib {
 	}
 	namespace Juego {
 		namespace Objetos {
-			class Item;
-			class Contenedor;
+			namespace Items {
+				class Item;
+				class Contenedor;
+			}
 		}
 		namespace Singletons {
 			class ItemContoller : public Basic::Templates::Singleton<ItemContoller>, Basic::Gestores::SubscriptorSingletons
@@ -36,22 +38,22 @@ namespace LlanyLib {
 					~ItemContoller();
 					#pragma endregion
 				public:
-					Basic::Objetos::String* generateJSONString(Basic::Templates::Listas::LinkedList<Objetos::Item*>* list) const;
-					Basic::Objetos::String* generateJSONStringClear(Basic::Templates::Listas::LinkedList<Objetos::Item*>* list) const;
+					Basic::Objetos::String* generateJSONString(Basic::Templates::Listas::LinkedList<Objetos::Items::Item*>* list) const;
+					Basic::Objetos::String* generateJSONStringClear(Basic::Templates::Listas::LinkedList<Objetos::Items::Item*>* list) const;
 					#pragma region Items
 
 					#pragma endregion
 					#pragma region Contenedores
-					Enums::ItemControllerResults isContenedor(Objetos::Item* contenedor) const;
-					Enums::ItemControllerResults isContenedor(Objetos::Contenedor* contenedor) const;
+					Enums::ItemControllerResults isContenedor(Objetos::Items::Item* contenedor) const;
+					Enums::ItemControllerResults isContenedor(Objetos::Items::Contenedor* contenedor) const;
 
-					Enums::ItemControllerResults addItemToContenedor(Objetos::Item* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
 					// Si no se añade borra el item
-					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Item* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
 
-					Enums::ItemControllerResults addItemToContenedor(Objetos::Contenedor* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
 					// Si no se añade borra el item
-					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Contenedor* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
 					#pragma endregion
 			};
 		}

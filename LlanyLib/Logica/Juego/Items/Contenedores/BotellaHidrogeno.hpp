@@ -11,7 +11,7 @@ namespace LlanyLib {
 		namespace Items {
 			namespace Generados {
 				namespace Contenedores {
-					class BotellaHidrogeno : public Objetos::Contenedor
+					class BotellaHidrogeno : public Objetos::Items::Contenedor
 					{
 						protected:
 							virtual bool sePuedeAñadir(const Item* item) const;

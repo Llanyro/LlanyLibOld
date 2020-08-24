@@ -3,7 +3,7 @@
 #include <cassert>
 
 #pragma region Constructores
-LlanyLib::Juego::Objetos::Survival::Survival()
+LlanyLib::Juego::Objetos::Stats::Survival::Survival()
 {
 	this->hambre = 0.0;
 	this->sed = 0.0;
@@ -13,7 +13,7 @@ LlanyLib::Juego::Objetos::Survival::Survival()
 	this->radiacion = 0.0;
 	this->oxido = 0.0;
 }
-/*LlanyLib::Juego::Objetos::Survival::Survival(const String& contenidoJSON) : Survival()
+/*LlanyLib::Juego::Objetos::Stats::Survival::Survival(const String& contenidoJSON) : Survival()
 {
 	assert(&contenidoJSON != nullptr);
 	Diccionario<String, String> listaAtributos = JSON::evalV2(contenidoJSON);
@@ -35,13 +35,13 @@ LlanyLib::Juego::Objetos::Survival::Survival()
 			this->oxido = listaAtributos.getValue(i).toDouble();
 	}
 }*/
-LlanyLib::Juego::Objetos::Survival::Survival(const Survival& other)
+LlanyLib::Juego::Objetos::Stats::Survival::Survival(const Survival& other)
 {
 	assert(&other != nullptr);
-	bool temp = LlanyLib::Juego::Objetos::Survival::operator=(other);
+	bool temp = LlanyLib::Juego::Objetos::Stats::Survival::operator=(other);
 	assert(temp);
 }
-bool LlanyLib::Juego::Objetos::Survival::operator=(const Survival& other)
+bool LlanyLib::Juego::Objetos::Stats::Survival::operator=(const Survival& other)
 {
 	bool temp = true;
 	if (&other == nullptr) temp = false;
@@ -57,7 +57,7 @@ bool LlanyLib::Juego::Objetos::Survival::operator=(const Survival& other)
 	}
 	return temp;
 }
-LlanyLib::Juego::Objetos::Survival::~Survival()
+LlanyLib::Juego::Objetos::Stats::Survival::~Survival()
 {
 	this->hambre = 0.0;
 	this->sed = 0.0;
@@ -69,111 +69,111 @@ LlanyLib::Juego::Objetos::Survival::~Survival()
 }
 #pragma endregion
 #pragma region Getters
-double LlanyLib::Juego::Objetos::Survival::getHambre() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getHambre() const
 {
 	return this->hambre;
 }
-double LlanyLib::Juego::Objetos::Survival::getSed() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getSed() const
 {
 	return this->sed;
 }
-double LlanyLib::Juego::Objetos::Survival::getCansancio() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getCansancio() const
 {
 	return this->cansancio;
 }
-double LlanyLib::Juego::Objetos::Survival::getOxigeno() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getOxigeno() const
 {
 	return this->oxigeno;
 }
-double LlanyLib::Juego::Objetos::Survival::getBlindaje() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getBlindaje() const
 {
 	return this->blindaje;
 }
-double LlanyLib::Juego::Objetos::Survival::getRadiacion() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getRadiacion() const
 {
 	return this->radiacion;
 }
-double LlanyLib::Juego::Objetos::Survival::getOxido() const
+double LlanyLib::Juego::Objetos::Stats::Survival::getOxido() const
 {
 	return this->oxido;
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Juego::Objetos::Survival::setHambre(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setHambre(const double& value)
 {
 	assert(&value != nullptr);
 	this->hambre = value;
 }
-void LlanyLib::Juego::Objetos::Survival::setSed(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setSed(const double& value)
 {
 	assert(&value != nullptr);
 	this->sed = value;
 }
-void LlanyLib::Juego::Objetos::Survival::setCansancio(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setCansancio(const double& value)
 {
 	assert(&value != nullptr);
 	this->cansancio = value;
 }
-void LlanyLib::Juego::Objetos::Survival::setOxigeno(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setOxigeno(const double& value)
 {
 	assert(&value != nullptr);
 	this->oxigeno = value;
 }
-void LlanyLib::Juego::Objetos::Survival::setBlindaje(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setBlindaje(const double& value)
 {
 	assert(&value != nullptr);
 	this->blindaje = value;
 }
-void LlanyLib::Juego::Objetos::Survival::setRadiacion(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setRadiacion(const double& value)
 {
 	assert(&value != nullptr);
 	this->radiacion = value;
 }
-void LlanyLib::Juego::Objetos::Survival::setOxido(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::setOxido(const double& value)
 {
 	assert(&value != nullptr);
 	this->oxido = value;
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Juego::Objetos::Survival::addHambre(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addHambre(const double& value)
 {
 	assert(&value != nullptr);
 	this->hambre += value;
 }
-void LlanyLib::Juego::Objetos::Survival::addSed(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addSed(const double& value)
 {
 	assert(&value != nullptr);
 	this->sed += value;
 }
-void LlanyLib::Juego::Objetos::Survival::addCansancio(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addCansancio(const double& value)
 {
 	assert(&value != nullptr);
 	this->cansancio += value;
 }
-void LlanyLib::Juego::Objetos::Survival::addOxigeno(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addOxigeno(const double& value)
 {
 	assert(&value != nullptr);
 	this->oxigeno += value;
 }
-void LlanyLib::Juego::Objetos::Survival::addBlindaje(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addBlindaje(const double& value)
 {
 	assert(&value != nullptr);
 	this->blindaje += value;
 }
-void LlanyLib::Juego::Objetos::Survival::addRadiacion(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addRadiacion(const double& value)
 {
 	assert(&value != nullptr);
 	this->radiacion += value;
 }
-void LlanyLib::Juego::Objetos::Survival::addOxido(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Survival::addOxido(const double& value)
 {
 	assert(&value != nullptr);
 	this->oxido += value;
 }
 #pragma endregion
 #pragma region Compares
-bool LlanyLib::Juego::Objetos::Survival::igual(const Survival& other) const
+bool LlanyLib::Juego::Objetos::Stats::Survival::igual(const Survival& other) const
 {
 	bool temp = false;
 	if (&other == nullptr && this == nullptr) temp = true;
@@ -190,15 +190,15 @@ bool LlanyLib::Juego::Objetos::Survival::igual(const Survival& other) const
 }
 #pragma endregion
 #pragma region Operators
-bool LlanyLib::Juego::Objetos::Survival::operator==(const Survival& other) const
+bool LlanyLib::Juego::Objetos::Stats::Survival::operator==(const Survival& other) const
 {
-	return LlanyLib::Juego::Objetos::Survival::igual(other);
+	return LlanyLib::Juego::Objetos::Stats::Survival::igual(other);
 }
-bool LlanyLib::Juego::Objetos::Survival::operator!=(const Survival& other) const
+bool LlanyLib::Juego::Objetos::Stats::Survival::operator!=(const Survival& other) const
 {
-	return !LlanyLib::Juego::Objetos::Survival::igual(other);
+	return !LlanyLib::Juego::Objetos::Stats::Survival::igual(other);
 }
-void LlanyLib::Juego::Objetos::Survival::operator+=(const Survival& other)
+void LlanyLib::Juego::Objetos::Stats::Survival::operator+=(const Survival& other)
 {
 	assert(&other != nullptr);
 	this->hambre += other.hambre;
@@ -209,7 +209,7 @@ void LlanyLib::Juego::Objetos::Survival::operator+=(const Survival& other)
 	this->radiacion += other.radiacion;
 	this->oxido += other.oxido;
 }
-void LlanyLib::Juego::Objetos::Survival::operator-=(const Survival& other)
+void LlanyLib::Juego::Objetos::Stats::Survival::operator-=(const Survival& other)
 {
 	assert(&other != nullptr);
 	this->hambre -= other.hambre;
@@ -220,14 +220,14 @@ void LlanyLib::Juego::Objetos::Survival::operator-=(const Survival& other)
 	this->radiacion -= other.radiacion;
 	this->oxido -= other.oxido;
 }
-LlanyLib::Juego::Objetos::Survival* LlanyLib::Juego::Objetos::Survival::operator+(const Survival& other)
+LlanyLib::Juego::Objetos::Stats::Survival* LlanyLib::Juego::Objetos::Stats::Survival::operator+(const Survival& other)
 {
 	assert(&other != nullptr);
 	Survival* result = new Survival(*this);
 	result->operator+=(other);
 	return result;
 }
-LlanyLib::Juego::Objetos::Survival* LlanyLib::Juego::Objetos::Survival::operator-(const Survival& other)
+LlanyLib::Juego::Objetos::Stats::Survival* LlanyLib::Juego::Objetos::Stats::Survival::operator-(const Survival& other)
 {
 	assert(&other != nullptr);
 	Survival* result = new Survival(*this);
@@ -236,53 +236,53 @@ LlanyLib::Juego::Objetos::Survival* LlanyLib::Juego::Objetos::Survival::operator
 }
 #pragma endregion
 #pragma region Reajustar
-void LlanyLib::Juego::Objetos::Survival::reajustarTodo()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarTodo()
 {
-	LlanyLib::Juego::Objetos::Survival::reajustarHambre();
-	LlanyLib::Juego::Objetos::Survival::reajustarSed();
-	LlanyLib::Juego::Objetos::Survival::reajustarCansancio();
-	LlanyLib::Juego::Objetos::Survival::reajustarOxigeno();
-	LlanyLib::Juego::Objetos::Survival::reajustarBlindaje();
-	LlanyLib::Juego::Objetos::Survival::reajustarRadiacion();
-	LlanyLib::Juego::Objetos::Survival::reajustarOxido();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarHambre();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarSed();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarCansancio();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarOxigeno();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarBlindaje();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarRadiacion();
+	LlanyLib::Juego::Objetos::Stats::Survival::reajustarOxido();
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarHambre()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarHambre()
 {
 	if (this->hambre < 0.0)
 		this->hambre = 0.0;
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarSed()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarSed()
 {
 	if (this->sed < 0.0)
 		this->sed = 0.0;
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarCansancio()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarCansancio()
 {
 	if (this->cansancio < 0.0)
 		this->cansancio = 0.0;
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarOxigeno()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarOxigeno()
 {
 	if (this->oxigeno < 0.0)
 		this->oxigeno = 0.0;
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarBlindaje()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarBlindaje()
 {
 	if (this->blindaje < 0.0)
 		this->blindaje = 0.0;
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarRadiacion()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarRadiacion()
 {
 	if (this->radiacion < 0.0)
 		this->radiacion = 0.0;
 }
-void LlanyLib::Juego::Objetos::Survival::reajustarOxido()
+void LlanyLib::Juego::Objetos::Stats::Survival::reajustarOxido()
 {
 	if (this->oxido < 0.0)
 		this->oxido = 0.0;
 }
 #pragma endregion
-/*String LlanyLib::Juego::Objetos::Survival::toJSON() const
+/*String LlanyLib::Juego::Objetos::Stats::Survival::toJSON() const
 {
 	JSON json;
 	json.addVaribale("hambre", this->hambre);

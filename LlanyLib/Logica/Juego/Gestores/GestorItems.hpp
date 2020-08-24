@@ -26,9 +26,13 @@ namespace LlanyLib {
 		}
 	}
 	namespace Juego {
-		namespace Objetos { class Item; }
+		namespace Objetos {
+			namespace Items{
+				class Item;
+			}
+		}
 		namespace Gestores {
-			#define NODO LlanyLib::Basic::Templates::Nodos::NDODP<LlanyLib::Basic::Objetos::String*, LlanyLib::Juego::Objetos::Item*>
+			#define NODO LlanyLib::Basic::Templates::Nodos::NDODP<LlanyLib::Basic::Objetos::String*, LlanyLib::Juego::Objetos::Items::Item*>
 
 			class GestorItems : public Basic::Templates::Singleton<GestorItems>, Basic::Gestores::SubscriptorSingletons
 			{
@@ -41,7 +45,7 @@ namespace LlanyLib {
 				protected:
 					Basic::Templates::Diccionarios::DictionaryLinkedList<
 						Basic::Objetos::String*, 
-						Objetos::Item*
+						Objetos::Items::Item*
 					>* registro;
 				protected:
 					#pragma region Protected
@@ -51,8 +55,8 @@ namespace LlanyLib {
 					#pragma endregion
 				public:
 					#pragma region Registro y generacion
-					bool itemRegister(Objetos::Item* item, char const* const registerName);
-					Objetos::Item* newItem(char const* const registerName) const;
+					bool itemRegister(Objetos::Items::Item* item, char const* const registerName);
+					Objetos::Items::Item* newItem(char const* const registerName) const;
 					#pragma endregion
 					#pragma region Getters
 					const Basic::Objetos::String* getRegisterName(const long_t& itemID) const;

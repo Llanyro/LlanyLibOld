@@ -12,8 +12,10 @@
 namespace LlanyLib {
 	namespace Juego {
 		namespace Objetos {
-			class Item;
-			class Contenedor;
+			namespace Items {
+				class Item;
+				class Contenedor;
+			}
 		}
 		namespace Singletons {
 			class VistaItemContoller : public Basic::Templates::Singleton<VistaItemContoller>, Basic::Gestores::SubscriptorSingletons
@@ -25,19 +27,19 @@ namespace LlanyLib {
 					~VistaItemContoller();
 					#pragma endregion
 				protected:
-					void printResultadoAddItemToContenedor(const Enums::ItemControllerResults& val, const Objetos::Item* contenedor, const Objetos::Item* item) const;
+					void printResultadoAddItemToContenedor(const Enums::ItemControllerResults& val, const Objetos::Items::Item* contenedor, const Objetos::Items::Item* item) const;
 				public:
 					#pragma region Items
-					void deleteItem(Objetos::Item* item) const;
+					void deleteItem(Objetos::Items::Item* item) const;
 					#pragma endregion
 					#pragma region Contenedores
-					Enums::ItemControllerResults addItemToContenedor(Objetos::Item* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
 					// Si no se añade borra el item
-					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Item* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
 
-					Enums::ItemControllerResults addItemToContenedor(Objetos::Contenedor* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
 					// Si no se añade borra el item
-					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Contenedor* contenedor, Objetos::Item* item) const;
+					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
 					#pragma endregion
 
 			};

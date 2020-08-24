@@ -6,7 +6,7 @@
 
 #define MAX_STACK 64
 
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::ListItem::getItemIgual(Item* item) const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::ListItem::getItemIgual(Item* item) const
 {
 	Item* resultado = nullptr;
 	Item* temp = nullptr;
@@ -20,18 +20,18 @@ LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::ListItem::getItemIgual
 	return resultado;
 }
 
-LlanyLib::Juego::Objetos::ListItem::ListItem()
+LlanyLib::Juego::Objetos::Items::ListItem::ListItem()
 {
 	this->list = new LlanyLib::Basic::Templates::Listas::LinkedList<Item*>();
 }
-LlanyLib::Juego::Objetos::ListItem::~ListItem()
+LlanyLib::Juego::Objetos::Items::ListItem::~ListItem()
 {
 	if (this->list != nullptr) {
 		ListItem::clear();
 		delete this->list;
 	}
 }
-bool LlanyLib::Juego::Objetos::ListItem::operator=(const ListItem& other)
+bool LlanyLib::Juego::Objetos::Items::ListItem::operator=(const ListItem& other)
 {
 	bool resultado = false;
 	if (&other != nullptr) {
@@ -45,7 +45,7 @@ bool LlanyLib::Juego::Objetos::ListItem::operator=(const ListItem& other)
 	}
 	return resultado;
 }
-bool LlanyLib::Juego::Objetos::ListItem::add(Item* item)
+bool LlanyLib::Juego::Objetos::Items::ListItem::add(Item* item)
 {
 	bool resultado = false;
 	Item* temp = ListItem::getItemIgual(item);
@@ -63,23 +63,23 @@ bool LlanyLib::Juego::Objetos::ListItem::add(Item* item)
 	}
 	return resultado;
 }
-void LlanyLib::Juego::Objetos::ListItem::clear()
+void LlanyLib::Juego::Objetos::Items::ListItem::clear()
 {
 	for (size_t i = 0; i < this->list->length(); i++)
 		ListItem::extractItem(i)->deleteItem();
 }
-void LlanyLib::Juego::Objetos::ListItem::ordenar(const Enums::Ordenamiento& ord)
+void LlanyLib::Juego::Objetos::Items::ListItem::ordenar(const Enums::Ordenamiento& ord)
 {
 }
-const LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::ListItem::get(const size_t& pos) const
+const LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::ListItem::get(const size_t& pos) const
 {
 	return *this->list->get(pos);
 }
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::ListItem::extractItem(const size_t& pos) const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::ListItem::extractItem(const size_t& pos) const
 {
 	return ListItem::extractItem(pos, MAX_STACK);
 }
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::ListItem::extractItem(const size_t& pos, const double& cantidad) const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::ListItem::extractItem(const size_t& pos, const double& cantidad) const
 {
 	Item* resultado = nullptr;
 	if (pos < this->list->length()) {
@@ -94,7 +94,7 @@ LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::ListItem::extractItem(
 	}
 	return resultado;
 }
-bool LlanyLib::Juego::Objetos::ListItem::equals(const ListItem& other) const
+bool LlanyLib::Juego::Objetos::Items::ListItem::equals(const ListItem& other) const
 {
 	bool resultado = false;
 	if (&other != nullptr && this != nullptr) {
@@ -122,7 +122,7 @@ bool LlanyLib::Juego::Objetos::ListItem::equals(const ListItem& other) const
 	return resultado;
 }
 
-LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Juego::Objetos::Item*>* LlanyLib::Juego::Objetos::ListItem::getList() const
+LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Juego::Objetos::Items::Item*>* LlanyLib::Juego::Objetos::Items::ListItem::getList() const
 {
 	return this->list;
 }

@@ -9,7 +9,7 @@
 #include "../../Gestores/GestorItems.hpp"
 
 #pragma region Constructores
-LlanyLib::Juego::Objetos::Item::Item()
+LlanyLib::Juego::Objetos::Items::Item::Item()
 {
 	this->itemID = -1;
 
@@ -27,11 +27,11 @@ LlanyLib::Juego::Objetos::Item::Item()
 	this->temperatura = 0.0;
 	this->resistenciaMaterial = 0.0;
 }
-LlanyLib::Juego::Objetos::Item::Item(const Item& other) : Item()
+LlanyLib::Juego::Objetos::Items::Item::Item(const Item& other) : Item()
 {
 	Item::operator=(other);
 }
-bool LlanyLib::Juego::Objetos::Item::operator=(const Item& other)
+bool LlanyLib::Juego::Objetos::Items::Item::operator=(const Item& other)
 {
 	bool resultado = false;
 	if (&other != nullptr) {
@@ -57,80 +57,80 @@ bool LlanyLib::Juego::Objetos::Item::operator=(const Item& other)
 	}
 	return resultado;
 }
-LlanyLib::Juego::Objetos::Item::~Item()
+LlanyLib::Juego::Objetos::Items::Item::~Item()
 {
 	if (this->itemShowName != nullptr)
 		delete this->itemShowName;
 }
 #pragma endregion
 #pragma region Getters
-long_t LlanyLib::Juego::Objetos::Item::getItemID() const
+long_t LlanyLib::Juego::Objetos::Items::Item::getItemID() const
 {
 	return this->itemID;
 }
-LlanyLib::Juego::Enums::TipoDeMaterial LlanyLib::Juego::Objetos::Item::getTipoDeMaterial() const
+LlanyLib::Juego::Enums::TipoDeMaterial LlanyLib::Juego::Objetos::Items::Item::getTipoDeMaterial() const
 {
 	return this->tipoDeMaterial;
 }
-LlanyLib::Juego::Enums::TipoObjeto LlanyLib::Juego::Objetos::Item::getTipoObjeto() const
+LlanyLib::Juego::Enums::TipoObjeto LlanyLib::Juego::Objetos::Items::Item::getTipoObjeto() const
 {
 	return this->tipoDeObjeto;
 }
-const LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Item::getShowName() const
+const LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Items::Item::getShowName() const
 {
 	return this->itemShowName;
 }
-double LlanyLib::Juego::Objetos::Item::getValorActual() const
+double LlanyLib::Juego::Objetos::Items::Item::getValorActual() const
 {
 	return this->valorActual;
 }
-double LlanyLib::Juego::Objetos::Item::getValorMaximo() const
+double LlanyLib::Juego::Objetos::Items::Item::getValorMaximo() const
 {
 	return this->valorMaximo;
 }
-double LlanyLib::Juego::Objetos::Item::getDurabilidad() const
+double LlanyLib::Juego::Objetos::Items::Item::getDurabilidad() const
 {
 	return this->durabilidad;
 }
-double LlanyLib::Juego::Objetos::Item::getDurabilidadMaxima() const
+double LlanyLib::Juego::Objetos::Items::Item::getDurabilidadMaxima() const
 {
 	return this->durabilidadMaxima;
 }
-double LlanyLib::Juego::Objetos::Item::getCantidad() const
+double LlanyLib::Juego::Objetos::Items::Item::getCantidad() const
 {
 	return this->cantidad;
 }
-double LlanyLib::Juego::Objetos::Item::getPeso() const
+double LlanyLib::Juego::Objetos::Items::Item::getPeso() const
 {
 	return this->peso;
 }
-double LlanyLib::Juego::Objetos::Item::getTemperatura() const
+double LlanyLib::Juego::Objetos::Items::Item::getTemperatura() const
 {
 	return this->temperatura;
 }
-double LlanyLib::Juego::Objetos::Item::getResistenciaTemperatura() const
+double LlanyLib::Juego::Objetos::Items::Item::getResistenciaTemperatura() const
 {
 	return this->resistenciaMaterial;
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Juego::Objetos::Item::setCantidad(const double& value)
+void LlanyLib::Juego::Objetos::Items::Item::setCantidad(const double& value)
 {
 	this->cantidad = value;
 }
 #pragma endregion
 #pragma region Adders
-void LlanyLib::Juego::Objetos::Item::addCantidad(const double& value)
+void LlanyLib::Juego::Objetos::Items::Item::addCantidad(const double& value)
 {
 	this->cantidad += value;
 }
 #pragma endregion
 #pragma region Virtual
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Objetos::Item::clone() const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::Item::clone() const
 {
 	return new Item(*this);
 }
-LlanyLib::Basic::Objetos::JSONBuilder* LlanyLib::Juego::Objetos::Item::toJSONBuilder() const
+LlanyLib::Basic::Objetos::JSONBuilder* LlanyLib::Juego::Objetos::Items::Item::toJSONBuilder() const
 {
 	Basic::Objetos::JSONBuilder* json = new Basic::Objetos::JSONBuilder();
 
@@ -154,25 +154,25 @@ LlanyLib::Basic::Objetos::JSONBuilder* LlanyLib::Juego::Objetos::Item::toJSONBui
 
 	return json;
 }
-LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Item::toJSON() const
+LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Items::Item::toJSON() const
 {
 	LlanyLib::Basic::Objetos::JSONBuilder* build = Item::toJSONBuilder();
 	LlanyLib::Basic::Objetos::String* str = build->build();
 	delete build;
 	return str;
 }
-void LlanyLib::Juego::Objetos::Item::deleteItem()
+void LlanyLib::Juego::Objetos::Items::Item::deleteItem()
 {
 	delete this;
 }
-int LlanyLib::Juego::Objetos::Item::compare(const Item& other) const
+int LlanyLib::Juego::Objetos::Items::Item::compare(const Item& other) const
 {
 	int result = MATH->compare(this->itemID, other.itemID);
 	if (result == 0)
 		result = MATH->compare(this->cantidad, other.cantidad);
 	return result;
 }
-bool LlanyLib::Juego::Objetos::Item::similar(const Item& other) const
+bool LlanyLib::Juego::Objetos::Items::Item::similar(const Item& other) const
 {
 	bool temp = false;
 	if (&other != nullptr && this != nullptr)
@@ -186,7 +186,7 @@ bool LlanyLib::Juego::Objetos::Item::similar(const Item& other) const
 		temp = true;
 	return temp;
 }
-bool LlanyLib::Juego::Objetos::Item::equals(const Item& other) const
+bool LlanyLib::Juego::Objetos::Items::Item::equals(const Item& other) const
 {
 	bool temp = false;
 	if (&other != nullptr && this != nullptr)
@@ -204,7 +204,7 @@ bool LlanyLib::Juego::Objetos::Item::equals(const Item& other) const
 		temp = true;
 	return temp;
 }
-bool LlanyLib::Juego::Objetos::Item::igualMenosCantidad(const Item& other) const
+bool LlanyLib::Juego::Objetos::Items::Item::igualMenosCantidad(const Item& other) const
 {
 	bool temp = false;
 	if (&other != nullptr && this != nullptr)
@@ -221,73 +221,73 @@ bool LlanyLib::Juego::Objetos::Item::igualMenosCantidad(const Item& other) const
 		temp = true;
 	return temp;
 }
-bool LlanyLib::Juego::Objetos::Item::operator==(const Item& other) const
+bool LlanyLib::Juego::Objetos::Items::Item::operator==(const Item& other) const
 {
 	return Item::equals(other);
 }
-bool LlanyLib::Juego::Objetos::Item::operator!=(const Item& other) const
+bool LlanyLib::Juego::Objetos::Items::Item::operator!=(const Item& other) const
 {
 	return !Item::equals(other);
 }
 #pragma endregion
 /*#pragma region Setters
-void LlanyLib::Juego::Objetos::Objetos::setItemName(char const* const nombre)
+void LlanyLib::Juego::Objetos::Items::Objetos::setItemName(char const* const nombre)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setItemName(Base::Objetos::String*& nombre)
+void LlanyLib::Juego::Objetos::Items::Objetos::setItemName(Base::Objetos::String*& nombre)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setValorActual(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setValorActual(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setValorMaximo(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setValorMaximo(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setDurabilidad(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setDurabilidad(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setDurabilidadMaxima(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setDurabilidadMaxima(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setCantidad(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setCantidad(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setPeso(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setPeso(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setTipoDeMaterial(const Base::Enums::TipoDeMaterial& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setTipoDeMaterial(const Base::Enums::TipoDeMaterial& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setTemperatura(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setTemperatura(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::setResistenciaTemperatura(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setResistenciaTemperatura(const double& value)
 {
 }
 #pragma endregion
 #pragma region Adders
-void LlanyLib::Juego::Objetos::Objetos::addValorActual(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addValorActual(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addValorMaximo(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addValorMaximo(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addDurabilidad(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addDurabilidad(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addDurabilidadMaxima(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addDurabilidadMaxima(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addCantidad(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addCantidad(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addPeso(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addPeso(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addTemperatura(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addTemperatura(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Objetos::addResistenciaTemperatura(const double& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::addResistenciaTemperatura(const double& value)
 {
 }
 #pragma endregion*/

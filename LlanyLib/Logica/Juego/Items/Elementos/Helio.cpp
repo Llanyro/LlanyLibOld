@@ -33,7 +33,7 @@ bool LlanyLib::Juego::Items::Generados::Elementos::Helio::operator=(const Helio&
 {
 	return 	Item::operator=(other);
 }
-LlanyLib::Juego::Objetos::Item* LlanyLib::Juego::Items::Generados::Elementos::Helio::clone() const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Items::Generados::Elementos::Helio::clone() const
 {
 	return new Helio(*this);
 }

@@ -11,7 +11,7 @@ namespace LlanyLib {
 		namespace Items {
 			namespace Generados {
 				namespace Contenedores {
-					class BotellaPlastico : public Objetos::Contenedor
+					class BotellaPlastico : public Objetos::Items::Contenedor
 					{
 						public:
 							BotellaPlastico();

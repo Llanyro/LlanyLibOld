@@ -10,7 +10,7 @@
 LlanyLib::Juego::Singletons::VistaItemContoller::VistaItemContoller() { VistaItemContoller::subscribir(VistaItemContoller::freeInstancia); }
 LlanyLib::Juego::Singletons::VistaItemContoller::~VistaItemContoller(){}
 
-void LlanyLib::Juego::Singletons::VistaItemContoller::printResultadoAddItemToContenedor(const Enums::ItemControllerResults& val, const Objetos::Item* contenedor, const Objetos::Item* item) const
+void LlanyLib::Juego::Singletons::VistaItemContoller::printResultadoAddItemToContenedor(const Enums::ItemControllerResults& val, const Objetos::Items::Item* contenedor, const Objetos::Items::Item* item) const
 {
 	switch (val)
 	{
@@ -36,7 +36,7 @@ void LlanyLib::Juego::Singletons::VistaItemContoller::printResultadoAddItemToCon
 }
 
 #pragma region Items
-void LlanyLib::Juego::Singletons::VistaItemContoller::deleteItem(Objetos::Item* item) const
+void LlanyLib::Juego::Singletons::VistaItemContoller::deleteItem(Objetos::Items::Item* item) const
 {
 	if (item == nullptr)
 		std::cout << "No se puede eliminar un item cuya direccion es nullptr" << std::endl;
@@ -51,25 +51,25 @@ void LlanyLib::Juego::Singletons::VistaItemContoller::deleteItem(Objetos::Item* 
 }
 #pragma endregion
 #pragma region Contenedores
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedor(Objetos::Item* contenedor, Objetos::Item* item) const
+LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const
 {
 	Enums::ItemControllerResults resultado = ITEM_CONTROLLER->addItemToContenedor(contenedor, item);
 	VistaItemContoller::printResultadoAddItemToContenedor(resultado, contenedor, item);
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedorDelete(Objetos::Item* contenedor, Objetos::Item* item) const
+LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const
 {
 	Enums::ItemControllerResults resultado = VistaItemContoller::addItemToContenedor(contenedor, item);
 	if (resultado != Enums::ItemControllerResults::AddItemExitoContenedor)
 		VistaItemContoller::deleteItem(item);
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedor(Objetos::Contenedor* contenedor, Objetos::Item* item) const
+LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const
 {
-	Enums::ItemControllerResults resultado = VistaItemContoller::addItemToContenedor((Objetos::Item*)contenedor, item);
+	Enums::ItemControllerResults resultado = VistaItemContoller::addItemToContenedor((Objetos::Items::Item*)contenedor, item);
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedorDelete(Objetos::Contenedor* contenedor, Objetos::Item* item) const
+LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::VistaItemContoller::addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const
 {
 	Enums::ItemControllerResults resultado = VistaItemContoller::addItemToContenedor(contenedor, item);
 	if (resultado != Enums::ItemControllerResults::AddItemExitoContenedor)

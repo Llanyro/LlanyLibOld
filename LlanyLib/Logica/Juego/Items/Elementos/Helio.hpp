@@ -14,7 +14,7 @@ namespace LlanyLib {
 		namespace Items {
 			namespace Generados {
 				namespace Elementos {
-					class Helio : public Objetos::Item
+					class Helio : public Objetos::Items::Item
 					{
 						public:
 							Helio();

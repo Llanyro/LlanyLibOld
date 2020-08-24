@@ -16,7 +16,11 @@ namespace LlanyLib {
 		}
 	}
 	namespace Juego {
-		namespace Objetos { class Item; }
+		namespace Objetos {
+			namespace Items {
+				class Item;
+			}
+		}
 		namespace Gestores {
 			class VistaGestorItems : public Basic::Templates::Singleton<VistaGestorItems>, Basic::Gestores::SubscriptorSingletons
 			{
@@ -28,8 +32,8 @@ namespace LlanyLib {
 				#pragma endregion
 				public:
 					#pragma region Registro y generacion
-					bool itemRegister(Objetos::Item* item, char const* const registerName);
-					Objetos::Item* newItem(char const* const registerName) const;
+					bool itemRegister(Objetos::Items::Item* item, char const* const registerName);
+					Objetos::Items::Item* newItem(char const* const registerName) const;
 					#pragma endregion
 					#pragma region Getters
 					const Basic::Objetos::String* getRegisterName(const long_t& itemID) const;

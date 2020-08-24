@@ -161,6 +161,8 @@
     <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celda3D.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Laberinto2D.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Entidades\Entidad.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Entidades\Familiar.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Items\Consumible.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Items\Contenedor.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Items\Equipable.cpp" />
@@ -171,6 +173,7 @@
     <ClCompile Include="Logica\Juego\Objetos\Stats\Energia.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Stats\Ofensivos.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Stats\Resistencia.cpp" />
+    <ClCompile Include="Logica\Juego\Objetos\Stats\Stats.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Stats\Survival.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\VistaItemController.cpp" />
@@ -225,8 +228,10 @@
     <ClInclude Include="Logica\Basic\Singletons\Mem.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\System.hpp" />
+    <ClInclude Include="Logica\Juego\Enums\EntidadesEnum.hpp" />
     <ClInclude Include="Logica\Juego\Enums\ItemControllerEnum.hpp" />
     <ClInclude Include="Logica\Juego\Enums\ItemEnum.hpp" />
+    <ClInclude Include="Logica\Juego\Enums\StatsEnum.hpp" />
     <ClInclude Include="Logica\Juego\Gestores\GestorItems.hpp" />
     <ClInclude Include="Logica\Juego\Gestores\VistaGestorItems.hpp" />
     <ClInclude Include="Logica\Juego\Items\Contenedores\BotellaHidrogeno.hpp" />
@@ -236,6 +241,8 @@
     <ClInclude Include="Logica\Juego\Laberintos\Celda2D.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Entidades\Entidad.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Entidades\Familiar.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Items\Consumible.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Items\Contenedor.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Items\Equipable.hpp" />
@@ -246,6 +253,7 @@
     <ClInclude Include="Logica\Juego\Objetos\Stats\Energia.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Stats\Ofensivos.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Stats\Resistencia.hpp" />
+    <ClInclude Include="Logica\Juego\Objetos\Stats\Stats.hpp" />
     <ClInclude Include="Logica\Juego\Objetos\Stats\Survival.hpp" />
     <ClInclude Include="Logica\Juego\Singletons\ItemController.hpp" />
     <ClInclude Include="Logica\Juego\Singletons\VistaItemController.hpp" />

@@ -4,7 +4,7 @@
 #include <cassert>
 
 #pragma region Constructores
-LlanyLib::Juego::Objetos::Critico::Critico()
+LlanyLib::Juego::Objetos::Stats::Critico::Critico()
 {
 	this->fuerza = 0.0;
 	this->destreza = 0.0;
@@ -17,7 +17,7 @@ LlanyLib::Juego::Objetos::Critico::Critico()
 	this->oscuridad = 0.0;
 	this->luz = 0.0;
 }
-/*LlanyLib::Juego::Objetos::Critico::Critico(const String& contenidoJSON) : Critico()
+/*LlanyLib::Juego::Objetos::Stats::Critico::Critico(const String& contenidoJSON) : Critico()
 {
 	assert(&contenidoJSON != nullptr);
 	Diccionario<String, String> listaAtributos = JSON::evalV2(contenidoJSON);
@@ -45,13 +45,13 @@ LlanyLib::Juego::Objetos::Critico::Critico()
 			this->luz = listaAtributos.getValue(i).toDouble();
 	}
 }*/
-LlanyLib::Juego::Objetos::Critico::Critico(const Critico& other)
+LlanyLib::Juego::Objetos::Stats::Critico::Critico(const Critico& other)
 {
 	assert(&other != nullptr);
-	bool temp = LlanyLib::Juego::Objetos::Critico::operator=(other);
+	bool temp = LlanyLib::Juego::Objetos::Stats::Critico::operator=(other);
 	assert(temp);
 }
-bool LlanyLib::Juego::Objetos::Critico::operator=(const Critico& other)
+bool LlanyLib::Juego::Objetos::Stats::Critico::operator=(const Critico& other)
 {
 	bool temp = true;
 	if (&other == nullptr) temp = false;
@@ -70,7 +70,7 @@ bool LlanyLib::Juego::Objetos::Critico::operator=(const Critico& other)
 	}
 	return temp;
 }
-LlanyLib::Juego::Objetos::Critico::~Critico()
+LlanyLib::Juego::Objetos::Stats::Critico::~Critico()
 {
 	this->fuerza = 0.0;
 	this->destreza = 0.0;
@@ -85,153 +85,153 @@ LlanyLib::Juego::Objetos::Critico::~Critico()
 }
 #pragma endregion
 #pragma region Getters
-double LlanyLib::Juego::Objetos::Critico::getFuerza() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getFuerza() const
 {
 	return this->fuerza;
 }
-double LlanyLib::Juego::Objetos::Critico::getDestreza() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getDestreza() const
 {
 	return this->destreza;
 }
-double LlanyLib::Juego::Objetos::Critico::getElectro() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getElectro() const
 {
 	return this->electro;
 }
-double LlanyLib::Juego::Objetos::Critico::getFuego() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getFuego() const
 {
 	return this->fuego;
 }
-double LlanyLib::Juego::Objetos::Critico::getHielo() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getHielo() const
 {
 	return this->hielo;
 }
-double LlanyLib::Juego::Objetos::Critico::getViento() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getViento() const
 {
 	return this->viento;
 }
-double LlanyLib::Juego::Objetos::Critico::getAgua() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getAgua() const
 {
 	return this->agua;
 }
-double LlanyLib::Juego::Objetos::Critico::getTierra() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getTierra() const
 {
 	return this->tierra;
 }
-double LlanyLib::Juego::Objetos::Critico::getOscuridad() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getOscuridad() const
 {
 	return this->oscuridad;
 }
-double LlanyLib::Juego::Objetos::Critico::getLuz() const
+double LlanyLib::Juego::Objetos::Stats::Critico::getLuz() const
 {
 	return this->luz;
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Juego::Objetos::Critico::setFuerza(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setFuerza(const double& value)
 {
 	assert(&value != nullptr);
 	this->fuerza = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setDestreza(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setDestreza(const double& value)
 {
 	assert(&value != nullptr);
 	this->destreza = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setElectro(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setElectro(const double& value)
 {
 	assert(&value != nullptr);
 	this->electro = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setFuego(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setFuego(const double& value)
 {
 	assert(&value != nullptr);
 	this->fuego = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setHielo(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setHielo(const double& value)
 {
 	assert(&value != nullptr);
 	this->hielo = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setViento(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setViento(const double& value)
 {
 	assert(&value != nullptr);
 	this->viento = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setAgua(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setAgua(const double& value)
 {
 	assert(&value != nullptr);
 	this->agua = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setTierra(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setTierra(const double& value)
 {
 	assert(&value != nullptr);
 	this->tierra = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setOscuridad(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setOscuridad(const double& value)
 {
 	assert(&value != nullptr);
 	this->oscuridad = value;
 }
-void LlanyLib::Juego::Objetos::Critico::setLuz(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::setLuz(const double& value)
 {
 	assert(&value != nullptr);
 	this->luz = value;
 }
 #pragma endregion
 #pragma region Adders
-void LlanyLib::Juego::Objetos::Critico::addFuerza(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addFuerza(const double& value)
 {
 	assert(&value != nullptr);
 	this->fuerza += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addDestreza(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addDestreza(const double& value)
 {
 	assert(&value != nullptr);
 	this->destreza += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addElectro(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addElectro(const double& value)
 {
 	assert(&value != nullptr);
 	this->electro += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addFuego(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addFuego(const double& value)
 {
 	assert(&value != nullptr);
 	this->fuego += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addHielo(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addHielo(const double& value)
 {
 	assert(&value != nullptr);
 	this->hielo += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addViento(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addViento(const double& value)
 {
 	assert(&value != nullptr);
 	this->viento += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addAgua(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addAgua(const double& value)
 {
 	assert(&value != nullptr);
 	this->agua += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addTierra(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addTierra(const double& value)
 {
 	assert(&value != nullptr);
 	this->tierra += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addOscuridad(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addOscuridad(const double& value)
 {
 	assert(&value != nullptr);
 	this->oscuridad += value;
 }
-void LlanyLib::Juego::Objetos::Critico::addLuz(const double& value)
+void LlanyLib::Juego::Objetos::Stats::Critico::addLuz(const double& value)
 {
 	assert(&value != nullptr);
 	this->luz += value;
 }
 #pragma endregion
 #pragma region Compares
-bool LlanyLib::Juego::Objetos::Critico::igual(const Critico& other) const
+bool LlanyLib::Juego::Objetos::Stats::Critico::igual(const Critico& other) const
 {
 	bool temp = false;
 	if (&other == nullptr && this == nullptr) temp = true;
@@ -251,29 +251,29 @@ bool LlanyLib::Juego::Objetos::Critico::igual(const Critico& other) const
 }
 #pragma endregion
 #pragma region Operators
-bool LlanyLib::Juego::Objetos::Critico::operator==(const Critico& other) const
+bool LlanyLib::Juego::Objetos::Stats::Critico::operator==(const Critico& other) const
 {
-	return LlanyLib::Juego::Objetos::Critico::igual(other);
+	return LlanyLib::Juego::Objetos::Stats::Critico::igual(other);
 }
-bool LlanyLib::Juego::Objetos::Critico::operator!=(const Critico& other) const
+bool LlanyLib::Juego::Objetos::Stats::Critico::operator!=(const Critico& other) const
 {
-	return !LlanyLib::Juego::Objetos::Critico::igual(other);
+	return !LlanyLib::Juego::Objetos::Stats::Critico::igual(other);
 }
-LlanyLib::Juego::Objetos::Critico* LlanyLib::Juego::Objetos::Critico::operator+(const Critico& other)
+LlanyLib::Juego::Objetos::Stats::Critico* LlanyLib::Juego::Objetos::Stats::Critico::operator+(const Critico& other)
 {
 	assert(&other != nullptr);
 	Critico* result = new Critico(*this);
 	result->operator+=(other);
 	return result;
 }
-LlanyLib::Juego::Objetos::Critico* LlanyLib::Juego::Objetos::Critico::operator-(const Critico& other)
+LlanyLib::Juego::Objetos::Stats::Critico* LlanyLib::Juego::Objetos::Stats::Critico::operator-(const Critico& other)
 {
 	assert(&other != nullptr);
 	Critico* result = new Critico(*this);
 	result->operator-=(other);
 	return result;
 }
-void LlanyLib::Juego::Objetos::Critico::operator+=(const Critico& other)
+void LlanyLib::Juego::Objetos::Stats::Critico::operator+=(const Critico& other)
 {
 	assert(&other != nullptr);
 	this->fuerza += other.fuerza;
@@ -287,7 +287,7 @@ void LlanyLib::Juego::Objetos::Critico::operator+=(const Critico& other)
 	this->oscuridad += other.oscuridad;
 	this->luz += other.luz;
 }
-void LlanyLib::Juego::Objetos::Critico::operator-=(const Critico& other)
+void LlanyLib::Juego::Objetos::Stats::Critico::operator-=(const Critico& other)
 {
 	assert(&other != nullptr);
 	this->fuerza -= other.fuerza;
@@ -301,7 +301,7 @@ void LlanyLib::Juego::Objetos::Critico::operator-=(const Critico& other)
 	this->oscuridad -= other.oscuridad;
 	this->luz -= other.luz;
 }
-LlanyLib::Juego::Objetos::Ofensivos* LlanyLib::Juego::Objetos::Critico::operator*(const Ofensivos& other) const
+LlanyLib::Juego::Objetos::Stats::Ofensivos* LlanyLib::Juego::Objetos::Stats::Critico::operator*(const Ofensivos& other) const
 {
 	assert(&other != nullptr);
 	Ofensivos* result = new Ofensivos();
@@ -320,71 +320,71 @@ LlanyLib::Juego::Objetos::Ofensivos* LlanyLib::Juego::Objetos::Critico::operator
 }
 #pragma endregion
 #pragma region Reajustar
-void LlanyLib::Juego::Objetos::Critico::reajustarTodo()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarTodo()
 {
-	LlanyLib::Juego::Objetos::Critico::reajustarFuerza();
-	LlanyLib::Juego::Objetos::Critico::reajustarDestreza();
-	LlanyLib::Juego::Objetos::Critico::reajustarElectro();
-	LlanyLib::Juego::Objetos::Critico::reajustarFuego();
-	LlanyLib::Juego::Objetos::Critico::reajustarHielo();
-	LlanyLib::Juego::Objetos::Critico::reajustarViento();
-	LlanyLib::Juego::Objetos::Critico::reajustarAgua();
-	LlanyLib::Juego::Objetos::Critico::reajustarTierra();
-	LlanyLib::Juego::Objetos::Critico::reajustarOscuridad();
-	LlanyLib::Juego::Objetos::Critico::reajustarLuz();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarFuerza();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarDestreza();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarElectro();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarFuego();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarHielo();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarViento();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarAgua();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarTierra();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarOscuridad();
+	LlanyLib::Juego::Objetos::Stats::Critico::reajustarLuz();
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarFuerza()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarFuerza()
 {
 	if (this->fuerza < 0.0)
 		this->fuerza = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarDestreza()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarDestreza()
 {
 	if (this->destreza < 0.0)
 		this->destreza = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarElectro()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarElectro()
 {
 	if (this->electro < 0.0)
 		this->electro = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarFuego()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarFuego()
 {
 	if (this->fuego < 0.0)
 		this->fuego = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarHielo()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarHielo()
 {
 	if (this->hielo < 0.0)
 		this->hielo = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarViento()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarViento()
 {
 	if (this->viento < 0.0)
 		this->viento = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarAgua()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarAgua()
 {
 	if (this->agua < 0.0)
 		this->agua = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarTierra()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarTierra()
 {
 	if (this->tierra < 0.0)
 		this->tierra = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarOscuridad()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarOscuridad()
 {
 	if (this->oscuridad < 0.0)
 		this->oscuridad = 0.0;
 }
-void LlanyLib::Juego::Objetos::Critico::reajustarLuz()
+void LlanyLib::Juego::Objetos::Stats::Critico::reajustarLuz()
 {
 	if (this->luz < 0.0)
 		this->luz = 0.0;
 }
 #pragma endregion
-/*String LlanyLib::Juego::Objetos::Critico::toJSON() const
+/*String LlanyLib::Juego::Objetos::Stats::Critico::toJSON() const
 {
 	JSON json;
 	json.addVaribale("fuerza", this->fuerza);
