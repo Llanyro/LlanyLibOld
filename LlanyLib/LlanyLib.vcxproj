@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="Logica\Basic\Gestores\GestorSingletons.cpp" />
     <ClCompile Include="Logica\Basic\Gestores\SubscriptorSingletons.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Date.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Excepcion.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\JSONBuilder.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Logger.cpp" />
@@ -147,9 +148,11 @@
     <ClCompile Include="Logica\Basic\Objetos\String.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Chars.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\DateController.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Files.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\JSONConversor.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Mem.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\Printer.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\System.cpp" />
     <ClCompile Include="Logica\Juego\Gestores\GestorItems.cpp" />
@@ -185,10 +188,12 @@
     <ClCompile Include="Logica\Math\Singletons\Math.cpp" />
     <ClCompile Include="Logica\Math\Singletons\Random.cpp" />
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
+    <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
     <ClCompile Include="Tests\MainTests2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Logica\Basic\Enumerators\DateEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\FilesEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\LoggerEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\StringEnum.hpp" />
@@ -205,6 +210,7 @@
     <ClInclude Include="Logica\Basic\LibreriasSimples\ASCII_Defines.h" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\Fork.h" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\LlanyTypes.h" />
+    <ClInclude Include="Logica\Basic\Objetos\Date.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Excepcion.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Logger.hpp" />
@@ -223,9 +229,11 @@
     <ClInclude Include="Logica\Basic\Plantillas\Otros\Singleton.hpp" />
     <ClInclude Include="Logica\Basic\Plantillas\Pointers\SmartPointer.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\Chars.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\DateController.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\Files.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\JSONConversor.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\Mem.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\Printer.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\System.hpp" />
     <ClInclude Include="Logica\Juego\Enums\EntidadesEnum.hpp" />
@@ -268,6 +276,8 @@
     <ClInclude Include="Logica\Math\Singletons\Math.hpp" />
     <ClInclude Include="Logica\Math\Singletons\Random.hpp" />
     <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp" />
+    <ClInclude Include="Logica\Net\Enums\ContentTypeEnum.hpp" />
+    <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,8 @@
 
 #include "../../Basic/Objetos/String.hpp"
 #include "../../Basic/Objetos/StringBuilder.hpp"
+#include "../../Basic/Objetos/Date.hpp"
+
 
 #pragma region Constructores
 LlanyLib::Net::Objetos::Cookie::Cookie()
@@ -33,9 +35,10 @@ LlanyLib::Net::Objetos::Cookie::Cookie(char const* const key, Basic::Objetos::St
 LlanyLib::Net::Objetos::Cookie::~Cookie()
 {
 	Basic::Objetos::String* nu = nullptr;
+	Basic::Objetos::Date* nu2 = nullptr;
 	Cookie::setKey(nu);
 	Cookie::setValue(nu);
-	Cookie::setFechaExpiracion(nu);
+	Cookie::setFechaExpiracion(nu2);
 	Cookie::setDominio(nu);
 	Cookie::setPath(nu);
 	this->seguro = false;
@@ -51,7 +54,7 @@ const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::Cookie::getValue
 {
 	return this->value;
 }
-const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::Cookie::getFechaExpiracion() const
+const LlanyLib::Basic::Objetos::Date* LlanyLib::Net::Objetos::Cookie::getFechaExpiracion() const
 {
 	return this->fechaExpiracion;
 }
@@ -105,7 +108,7 @@ void LlanyLib::Net::Objetos::Cookie::setValue(Basic::Objetos::String* value)
 		delete this->value;
 	this->value = value;
 }
-void LlanyLib::Net::Objetos::Cookie::setFechaExpiracion(Basic::Objetos::String* fechaExpiracion)
+void LlanyLib::Net::Objetos::Cookie::setFechaExpiracion(Basic::Objetos::Date* fechaExpiracion)
 {
 	if (this->fechaExpiracion != nullptr)
 		delete this->fechaExpiracion;
@@ -131,9 +134,9 @@ void LlanyLib::Net::Objetos::Cookie::setValue(char const* const value)
 {
 	Cookie::setValue(new Basic::Objetos::String(value));
 }
-void LlanyLib::Net::Objetos::Cookie::setFechaExpiracion(char const* const fechaExpiracion)
+void LlanyLib::Net::Objetos::Cookie::setFechaExpiracion(const long_t& value, const Basic::Enum::DateType& type)
 {
-	Cookie::setFechaExpiracion(new Basic::Objetos::String(fechaExpiracion));
+	Cookie::setFechaExpiracion(new Basic::Objetos::Date(type, value));
 }
 void LlanyLib::Net::Objetos::Cookie::setDominio(char const* const dominio)
 {
@@ -142,10 +145,6 @@ void LlanyLib::Net::Objetos::Cookie::setDominio(char const* const dominio)
 void LlanyLib::Net::Objetos::Cookie::setPath(char const* const path)
 {
 	Cookie::setPath(new Basic::Objetos::String(path));
-}
-void LlanyLib::Net::Objetos::Cookie::setFechaExpiracion(int fechaExpiracion)
-{
-	// generar una fecha desde hoy hasta la fecha indicada
 }
 void LlanyLib::Net::Objetos::Cookie::setSeguro(const bool& seguro)
 {
@@ -189,7 +188,7 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::Cookie::toString() con
 		// Expiracion
 		if (this->fechaExpiracion != nullptr) {
 			str.add("; expires=");
-			str.add(this->fechaExpiracion);
+			str.addClear(this->fechaExpiracion->toString());
 		}
 		// Dominio
 		if (this->dominio != nullptr) {

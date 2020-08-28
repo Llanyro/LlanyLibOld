@@ -1,6 +1,6 @@
 #pragma once
-#ifndef EXCEPCION_HPP_
-#define EXCEPCION_HPP_
+#ifndef EXCEPCION_OBJECT_HPP_
+#define EXCEPCION_OBJECT_HPP_
 #pragma warning(disable:4290)
 
 #define THROW throw(LlanyLib::Basic::Objetos::Excepcion)
@@ -42,4 +42,4 @@ namespace LlanyLib
 		}
 	}
 }
-#endif // EXCEPCION_HPP_
+#endif // EXCEPCION_OBJECT_HPP_

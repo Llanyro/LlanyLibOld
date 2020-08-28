@@ -164,7 +164,7 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::crearPath(
 	Templates::Listas::LinkedList<Objetos::String*>* list = fileName->split(&separadores);
 	Objetos::StringBuilder buffer;
 	Objetos::String* temp = nullptr;
-	char sep = SYSTEM->caracterSeparadorDirectorios();
+	char sep = Files::caracterSeparadorDirectorios();
 
 	buffer.add("mkdir ");
 
@@ -200,5 +200,33 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::crearPathC
 	LlanyLib::Basic::Objetos::String* temp = Files::crearPath(fileName);
 	delete fileName;
 	return temp;
+}
+#pragma endregion
+#pragma region Otros
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::origenPrograma() const
+{
+	Objetos::String* resultado = nullptr;
+
+	#ifdef _WIN32
+	Objetos::String* temp = SYSTEM->ejecutarCommandClear(new LlanyLib::Basic::Objetos::String("cd"));
+	resultado = temp->splitGetFirst('\n');
+	delete temp;
+	#elif __unix__
+	return System::ejecutarCommandClear("pwd").splitIn2('\n')[0];
+	#else
+	return "No preparado para este sistema";
+	#endif // _WIN32
+
+	return resultado;
+}
+char LlanyLib::Basic::Singletons::Files::caracterSeparadorDirectorios() const
+{
+	char c;
+	#ifdef _WIN32
+	c = '\\';
+	#elif __unix__
+	c = '/';
+	#endif // _WIN32
+	return c;
 }
 #pragma endregion

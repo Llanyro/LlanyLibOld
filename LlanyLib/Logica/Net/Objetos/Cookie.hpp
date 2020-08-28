@@ -1,24 +1,25 @@
 #pragma once
-#ifndef COOKIE_OBJECT_HPP_
-#define COOKIE_OBJECT_HPP_
+#ifndef COOKIE_OBJECT_NET_HPP_
+#define COOKIE_OBJECT_NET_HPP_
 
-namespace LlanyLib
-{
+#include "../../Math/Libs/MathTypes.h"
+
+namespace LlanyLib {
 	namespace Basic {
 		namespace Objetos {
 			class String;
+			class Date;
 		}
+		namespace Enum { enum class DateType; }
 	}
-	namespace Net
-	{
-		namespace Objetos
-		{
+	namespace Net {
+		namespace Objetos {
 			class Cookie
 			{
 				protected:
 					Basic::Objetos::String* key;
 					Basic::Objetos::String* value;
-					Basic::Objetos::String* fechaExpiracion;
+					Basic::Objetos::Date* fechaExpiracion;
 					bool seguro;
 					bool httponly;
 					Basic::Objetos::String* dominio;
@@ -35,7 +36,7 @@ namespace LlanyLib
 					#pragma region Getters
 					const Basic::Objetos::String* getKey() const;
 					const Basic::Objetos::String* getValue() const;
-					const Basic::Objetos::String* getFechaExpiracion() const;
+					const Basic::Objetos::Date* getFechaExpiracion() const;
 					bool getSeguro() const;
 					bool getHTTPOnly() const;
 					const Basic::Objetos::String* getDominio() const;
@@ -49,17 +50,16 @@ namespace LlanyLib
 
 					void setKey(Basic::Objetos::String* key);
 					void setValue(Basic::Objetos::String* value);
-					void setFechaExpiracion(Basic::Objetos::String* fechaExpiracion);
+					void setFechaExpiracion(Basic::Objetos::Date* fechaExpiracion);
 					void setDominio(Basic::Objetos::String* dominio);
 					void setPath(Basic::Objetos::String* path);
 
 					void setKey(char const* const key);
 					void setValue(char const* const value);
-					void setFechaExpiracion(char const* const fechaExpiracion);
+					void setFechaExpiracion(const long_t& value, const Basic::Enum::DateType& type);
 					void setDominio(char const* const dominio);
 					void setPath(char const* const path);
 
-					void setFechaExpiracion(int fechaExpiracion);
 					void setSeguro(const bool& seguro);
 					void setHTTPOnly(const bool& httponly);
 					#pragma endregion
@@ -75,4 +75,4 @@ namespace LlanyLib
 		}
 	}
 }
-#endif // !COOKIE_OBJECT_HPP_
+#endif // !COOKIE_OBJECT_NET_HPP_

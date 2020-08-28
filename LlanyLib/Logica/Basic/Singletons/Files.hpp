@@ -11,8 +11,7 @@ namespace LlanyLib {
 	namespace Basic {
 		namespace Objetos { class String; }
 		namespace Enum { enum class FopenType; }
-		namespace Singletons
-		{
+		namespace Singletons {
 			class Files : public Templates::Singleton<Files>, Gestores::SubscriptorSingletons
 			{
 				#pragma region Singleton
@@ -53,6 +52,17 @@ namespace LlanyLib {
 					#pragma region Directorios
 					Objetos::String* crearPath(const Objetos::String* fileName) const;
 					Objetos::String* crearPathClear(const Objetos::String* fileName) const;
+					#pragma endregion
+					#pragma region Otros
+					// Funcion: Ejecuta un proceso para saber la ruta del programa
+					// Extra: Solo funciona en _WIN32 y  __unix__
+					// Retorno: La ruta de donde se esta ejecutando el programa
+					// Complejidad temporal y espacial: O(1) y M(1)
+					Objetos::String* origenPrograma() const;
+					// Funcion: Devuelve el caracter que se usa por defecto para separar directorios
+					// Extra: Depende del sistema en el que se esta
+					// Complejidad temporal y espacial: O(1) y M(1)
+					char caracterSeparadorDirectorios() const;
 					#pragma endregion
 			};
 		}

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <time.h>
 
 #include "Chars.hpp"
 #include "../Objetos/String.hpp"
@@ -13,44 +12,6 @@
 LlanyLib::Basic::Singletons::System::System() { System::subscribir(System::freeInstancia); }
 LlanyLib::Basic::Singletons::System::~System(){}
 
-#pragma region Time
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::System::horaFechaNumericos() const
-{
-	time_t now = time(0);
-	#ifdef _WIN32
-	tm* ltm = new tm();
-	localtime_s(ltm, &now);
-	#elif __unix__
-	tm* ltm = localtime(&now);
-	#endif // _WIN32
-	Objetos::StringBuilder fecha;
-	// Añadimos el dia al buffer
-	LlanyLib::Basic::Objetos::String* temp = CHARS->toString(ltm->tm_mday);
-	fecha.addClear(temp);
-	fecha.add('/');
-	// Añadimos el mes
-	temp = CHARS->toString(1 + ltm->tm_mon);
-	fecha.addClear(temp);
-	fecha.add('/');
-	// Añadimos el año
-	temp = CHARS->toString(1900 + ltm->tm_year);
-	fecha.addClear(temp);
-	fecha.add(' ');
-	// Añadimos la hora
-	temp = CHARS->toString(ltm->tm_hour);
-	fecha.addClear(temp);
-	fecha.add(':');
-	// Añadimos el minuto
-	temp = CHARS->toString(ltm->tm_min);
-	fecha.addClear(temp);
-	fecha.add(':');
-	// Añadimos el segundo
-	temp = CHARS->toString(ltm->tm_sec);
-	fecha.addClear(temp);
-	delete ltm;
-	return fecha.build();
-}
-#pragma endregion
 #pragma region Commands
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::System::ejecutarCommand(const Objetos::String* command) const
 {
@@ -113,31 +74,5 @@ bool LlanyLib::Basic::Singletons::System::comprobarProcesador(const bool& value)
 	if (resultado && value)
 		System::forzarCierre(Enum::Codes::PROCESADOR_NO_ACTIVO);
 	return resultado;
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::System::origenPrograma() const
-{
-	Objetos::String* resultado = nullptr;
-
-	#ifdef _WIN32
-	Objetos::String* temp = System::ejecutarCommandClear(new LlanyLib::Basic::Objetos::String("cd"));
-	resultado = temp->splitGetFirst('\n');
-	delete temp;
-	#elif __unix__
-	return System::ejecutarCommandClear("pwd").splitIn2('\n')[0];
-	#else
-	return "No preparado para este sistema";
-	#endif // _WIN32
-
-	return resultado;
-}
-char LlanyLib::Basic::Singletons::System::caracterSeparadorDirectorios() const
-{
-	char c;
-	#ifdef _WIN32
-	c = '\\';
-	#elif __unix__
-	c = '/';
-	#endif // _WIN32
-	return c;
 }
 #pragma endregion

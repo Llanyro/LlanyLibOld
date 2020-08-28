@@ -196,6 +196,9 @@
     <Filter Include="Logica\Juego\Objetos\Entidades\Hpp">
       <UniqueIdentifier>{590fc2f9-3b67-4b40-8f70-bef970a3a803}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\Net\Enums">
+      <UniqueIdentifier>{2dbcd8ff-0149-42cd-8927-fed3f96f23c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tests\MainTests2.cpp">
@@ -248,9 +251,6 @@
     </ClCompile>
     <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp">
       <Filter>Logica\Basic\Objetos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Net\Objetos\Cookie.cpp">
-      <Filter>Logica\Net\Objetos\Hpp</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp">
       <Filter>Logica\Juego\Laberintos</Filter>
@@ -344,6 +344,21 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Objetos\Entidades\Familiar.cpp">
       <Filter>Logica\Juego\Objetos\Entidades\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp">
+      <Filter>Logica\Net\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\Cookie.cpp">
+      <Filter>Logica\Net\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\Date.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\Printer.cpp">
+      <Filter>Logica\Basic\Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Basic\Singletons\DateController.cpp">
+      <Filter>Logica\Basic\Singletons\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -473,9 +488,6 @@
     <ClInclude Include="Logica\Math\Plantillas\Racional.hpp">
       <Filter>Logica\Math\Plantillas</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Net\Objetos\Cookie.hpp">
-      <Filter>Logica\Net\Objetos\Cpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp">
       <Filter>Logica\Juego\Laberintos</Filter>
     </ClInclude>
@@ -586,6 +598,27 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Objetos\Entidades\Familiar.hpp">
       <Filter>Logica\Juego\Objetos\Entidades\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Enums\ContentTypeEnum.hpp">
+      <Filter>Logica\Net\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\Cookie.hpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\Date.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Enumerators\DateEnum.hpp">
+      <Filter>Logica\Basic\Enumerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\Printer.hpp">
+      <Filter>Logica\Basic\Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Singletons\DateController.hpp">
+      <Filter>Logica\Basic\Singletons\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

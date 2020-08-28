@@ -1,6 +1,8 @@
 #include <iostream>
 
 #pragma region Basic
+#include "../Logica/Basic/Enumerators/DateEnum.hpp"
+
 #include "../Logica/Basic/LibreriasSimples/ASCII_Defines.h"
 
 #include "../Logica/Basic/Gestores/GestorSingletons.hpp"
@@ -14,7 +16,9 @@
 #include "../Logica/Basic/Singletons/Chars.hpp"
 #include "../Logica/Basic/Singletons/Files.hpp"
 #include "../Logica/Basic/Singletons/JSONConversor.hpp"
+#include "../Logica/Basic/Singletons/DateController.hpp"
 
+#include "../Logica/Basic/Objetos/Date.hpp"
 #include "../Logica/Basic/Objetos/String.hpp"
 #include "../Logica/Basic/Objetos/StringBuilder.hpp"
 #pragma endregion
@@ -99,26 +103,26 @@ void t3()
 	//STRING_PRINTER->printLnClear(CHARS->toString(100.00f));
 
 
-	STRING_PRINTER->printLnClear(SYSTEM->horaFechaNumericos());
+	//STRING_PRINTER->printLnClear(SYSTEM->horaFechaNumericos());
 }
 
 void t4()
 {
-	STRING_PRINTER->printLnClear(SYSTEM->origenPrograma());
+	//STRING_PRINTER->printLnClear(SYSTEM->origenPrograma());
 }
 
 void t5()
 {
-	LlanyLib::Basic::Objetos::String* str1 = SYSTEM->origenPrograma();
+	//LlanyLib::Basic::Objetos::String* str1 = SYSTEM->origenPrograma();
 	//LlanyLib::Basic::Objetos::String* str2 = new LlanyLib::Basic::Objetos::String("./Carpeta1/Carpeta2/Carpeta3");
-	LlanyLib::Basic::Objetos::String* str2 = new LlanyLib::Basic::Objetos::String("/Carpeta1/Carpeta2/Carpeta3");
-	LlanyLib::Basic::Objetos::String* str3 = str1->operator+(*str2);
+	//LlanyLib::Basic::Objetos::String* str2 = new LlanyLib::Basic::Objetos::String("/Carpeta1/Carpeta2/Carpeta3");
+	//LlanyLib::Basic::Objetos::String* str3 = str1->operator+(*str2);
 
-	STRING_PRINTER->printLnClear(str1);
-	STRING_PRINTER->printLnClear(str2);
+	//STRING_PRINTER->printLnClear(str1);
+	//STRING_PRINTER->printLnClear(str2);
 	//STRING_PRINTER->printLnClear(str3);
 
-	STRING_PRINTER->printLnClear(FILES->crearPathClear(str3));
+	//STRING_PRINTER->printLnClear(FILES->crearPathClear(str3));
 	//delete str3;
 }
 
@@ -198,6 +202,28 @@ void t9()
 	delete str2;
 	delete str3;
 	delete str4;
+}
+
+void t10()
+{
+	LlanyLib::Basic::Objetos::Date* date = new LlanyLib::Basic::Objetos::Date(LlanyLib::Basic::Enum::DateType::Days, 2531);
+	LlanyLib::Basic::Objetos::Date* date2 = new LlanyLib::Basic::Objetos::Date(LlanyLib::Basic::Enum::DateType::Months, 58);
+	LlanyLib::Basic::Objetos::Date* date3 = new LlanyLib::Basic::Objetos::Date(LlanyLib::Basic::Enum::DateType::Years, 15);
+	STRING_PRINTER->printLnClear(DATE_CONTROLLER->now());
+	STRING_PRINTER->printLnClear(date->toString());
+	STRING_PRINTER->printLnClear(date2->toString());
+	STRING_PRINTER->printLnClear(date3->toString());
+	delete date;
+	delete date2;
+	delete date3;
+	//STRING_PRINTER->printLnClear(date.toString());
+	//STRING_PRINTER->printLnClear(date.toJSON());
+}
+
+void t11()
+{
+	LlanyLib::Basic::Objetos::Date date;
+	STRING_PRINTER->printLnClear(DATE_CONTROLLER->diaToString(date.getToday()));
 }
 
 /*
@@ -683,18 +709,19 @@ int main()
 	//t7();
 	//t8();
 	//t9();
+	///t10();
+	t11();
 
 	//m1();
 	//m2();
 	//m3();
 
-
-	jregister();
+	//jregister();
 	//j1();
 	//j2();
 	//j3();
 	//j4();
-	j5();
+	//j5();
 
 
 	FREE_SINGLETONS;

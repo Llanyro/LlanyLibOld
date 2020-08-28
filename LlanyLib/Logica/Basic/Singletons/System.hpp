@@ -26,9 +26,6 @@ namespace LlanyLib {
 					~System();
 				#pragma endregion
 				public:
-					#pragma region Time
-					Objetos::String* horaFechaNumericos() const;
-					#pragma endregion
 					#pragma region Commands
 					// Funcion: Ejecuta un "comando" en el sistema indicado con popen
 					// Extra: El commando a ejecutar depende del sistema y su consola/terminal
@@ -51,15 +48,6 @@ namespace LlanyLib {
 					// Retorno: El estado de system()
 					// Complejidad temporal y espacial: O(1) y M(1)
 					bool comprobarProcesador(const bool& value) const;
-					// Funcion: Ejecuta un proceso para saber la ruta del programa
-					// Extra: Solo funciona en _WIN32 y  __unix__
-					// Retorno: La ruta de donde se esta ejecutando el programa
-					// Complejidad temporal y espacial: O(1) y M(1)
-					Objetos::String* origenPrograma() const;
-					// Funcion: Devuelve el caracter que se usa por defecto para separar directorios
-					// Extra: Depende del sistema en el que se esta
-					// Complejidad temporal y espacial: O(1) y M(1)
-					char caracterSeparadorDirectorios() const;
 					#pragma endregion
 			};
 		}

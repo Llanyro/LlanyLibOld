@@ -1,7 +1,7 @@
 #include "Logger.hpp"
 
-#include "../Singletons/System.hpp"
 #include "../Singletons/Files.hpp"
+#include "../Singletons/DateController.hpp"
 
 #include "../Objetos/String.hpp"
 
@@ -40,7 +40,7 @@ void LlanyLib::Basic::Objetos::Logger::log(const String* log, const Enum::LogTyp
 			fileName = this->logWarningFile;
 			break;
 	}
-	FILES->escribirFicheroAppendClearContent(fileName, SYSTEM->horaFechaNumericos());
+	FILES->escribirFicheroAppendClearContent(fileName, DATE_CONTROLLER->now());
 	FILES->escribirFicheroAppend(fileName, ' ');
 	FILES->escribirFicheroAppend(fileName, log);
 	FILES->escribirFicheroAppend(fileName, '\n');
@@ -52,16 +52,16 @@ LlanyLib::Basic::Objetos::Logger::Logger(String* className)
 	String* temp = nullptr;
 	StringBuilder buff;
 
-	temp = SYSTEM->origenPrograma();
+	temp = FILES->origenPrograma();
 	buff.add(temp);
 	delete temp;
 
 	// Añadimos la carpta de logs base desde el origen del programa
-	buff.add(SYSTEM->caracterSeparadorDirectorios());
+	buff.add(FILES->caracterSeparadorDirectorios());
 	buff.add(DIRECTORIO_LOGS);
 
 	// Añadimos a la ruta el nombre de la clase
-	buff.add(SYSTEM->caracterSeparadorDirectorios());
+	buff.add(FILES->caracterSeparadorDirectorios());
 	buff.add(className);
 	//buff.add(SYSTEM->caracterSeparadorDirectorios());
 
@@ -69,7 +69,7 @@ LlanyLib::Basic::Objetos::Logger::Logger(String* className)
 	
 	delete FILES->crearPath(logPath);
 
-	temp = this->logPath->operator+(SYSTEM->caracterSeparadorDirectorios());
+	temp = this->logPath->operator+(FILES->caracterSeparadorDirectorios());
 
 	this->logFile = temp->operator+(FILE_LOG);
 	this->logErrorFile = temp->operator+(FILE_LOGERROR);

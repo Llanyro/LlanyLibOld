@@ -12,6 +12,13 @@ void LlanyLib::Basic::Objetos::JSONBuilder::addKey(const String* key, const Prep
 	this->buffer->add("\": ");
 	JSONBuilder::addFin(prepObject, true);
 }
+void LlanyLib::Basic::Objetos::JSONBuilder::addKey(char const* const key, const PrepType& prepObject)
+{
+	this->buffer->add('"');
+	this->buffer->add(key);
+	this->buffer->add("\": ");
+	JSONBuilder::addFin(prepObject, true);
+}
 void LlanyLib::Basic::Objetos::JSONBuilder::addFin(const PrepType& prepObject, const bool& delantero)
 {
 	switch (prepObject)
@@ -52,6 +59,10 @@ void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const size_t&
 {
 	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
 }
+void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const bool& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
 void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const int& value)
 {
 	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
@@ -85,6 +96,46 @@ void LlanyLib::Basic::Objetos::JSONBuilder::add(const String* key, const JSONBui
 	JSONBuilder::addClearValue(key, json->build(), JSONBuilder::PrepType::Corchetes);
 }
 
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const String* value, const PrepType& prepObject)
+{
+	if (this->n > 0) this->buffer->add(',');
+	JSONBuilder::addKey(key, prepObject);
+	this->buffer->add(value);
+	JSONBuilder::addFin(prepObject, false);
+	this->n++;
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const size_t& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const bool& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const int& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const double& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const float& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const char& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const long_t& value)
+{
+	JSONBuilder::addClearValue(key, CHARS->toString(value), JSONBuilder::PrepType::Comillas);
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::add(char const* const key, const JSONBuilder* json)
+{
+	JSONBuilder::addClearValue(key, json->build(), JSONBuilder::PrepType::Corchetes);
+}
 
 void LlanyLib::Basic::Objetos::JSONBuilder::addClear(String* key, JSONBuilder* json)
 {
@@ -108,6 +159,11 @@ void LlanyLib::Basic::Objetos::JSONBuilder::addClearKey(String* key, const Strin
 	delete key;
 }
 void LlanyLib::Basic::Objetos::JSONBuilder::addClearValue(const String* key, String* value, const PrepType& prepObject)
+{
+	JSONBuilder::add(key, value, prepObject);
+	delete value;
+}
+void LlanyLib::Basic::Objetos::JSONBuilder::addClearValue(char const* const key, String* value, const PrepType& prepObject)
 {
 	JSONBuilder::add(key, value, prepObject);
 	delete value;
