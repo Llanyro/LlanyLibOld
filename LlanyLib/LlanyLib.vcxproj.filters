@@ -360,6 +360,9 @@
     <ClCompile Include="Logica\Basic\Singletons\DateController.cpp">
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
@@ -619,6 +622,9 @@
     </ClInclude>
     <ClInclude Include="Logica\Basic\Singletons\DateController.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
