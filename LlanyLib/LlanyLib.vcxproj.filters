@@ -360,14 +360,8 @@
     <ClCompile Include="Logica\Basic\Singletons\DateController.cpp">
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Basic\Objetos\ClientSocket.cpp">
-      <Filter>Logica\Basic\Objetos</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Basic\Objetos\ServerSocket.cpp">
-      <Filter>Logica\Basic\Objetos</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Basic\Objetos\Socket.cpp">
-      <Filter>Logica\Basic\Objetos</Filter>
+    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -524,6 +518,9 @@
     <ClInclude Include="Logica\Math\Objetos\Unit.hpp">
       <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClInclude>
+    <ClInclude Include="Logica\Math\Libs\MathTypes.h">
+      <Filter>Logica\Math\Libs</Filter>
+    </ClInclude>
     <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp">
       <Filter>Logica\Math\Singletons\Hpp</Filter>
     </ClInclude>
@@ -626,17 +623,8 @@
     <ClInclude Include="Logica\Basic\Singletons\DateController.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Basic\Objetos\ClientSocket.hpp">
-      <Filter>Logica\Basic\Objetos</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Basic\Objetos\ServerSocket.hpp">
-      <Filter>Logica\Basic\Objetos</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Basic\Enumerators\SocketEnum.hpp">
-      <Filter>Logica\Basic\Enumerators</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Basic\Objetos\Socket.hpp">
-      <Filter>Logica\Basic\Objetos</Filter>
+    <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
