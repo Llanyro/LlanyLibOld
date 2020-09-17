@@ -361,7 +361,7 @@
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
-      <Filter>Logica\Math\Objetos\Hpp</Filter>
+      <Filter>Logica\Math\Objetos\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -12,41 +12,44 @@ namespace LlanyLib {
 				class LinkedList;
 			}
 		}
-	namespace Math {
-		namespace Objetos {
-			// V22
-			class Racional;
-			class Matriz
-			{
-				protected:
-					Basic::Templates::Listas::LinkedList<Basic::Templates::Listas::LinkedList<Racional>*>* filas;
+		namespace Math {
+			namespace Objetos {
+				// V22
+				class Racional;
+				class Matriz
+				{
+					protected:
+						Basic::Templates::Listas::LinkedList<Basic::Templates::Listas::LinkedList<Racional>*>* filas;
 
-				protected:
-					// comprobar sila matriz es coherente
-						// 
+					protected:
+						// comprobar sila matriz es coherente
+							// 
 
-				public:
+					public:
 
-					// devolver numero de filas
-					// devolver numero de columnas
-
-
-					/// Sin logger
-					// inversa
-					// diagonalizar
-					// rango
-					// traspuesta
-					// suma
-					// resta
-					// multiplicacion
-					// multiplicacion por escalalr
-					// determinante
+						// devolver numero de filas
+						// devolver numero de columnas
 
 
-					/// Con logger
+						/// Sin logger
+						// inversa
+						// diagonalizar
+						// rango
+						// traspuesta
+						// suma
+						// resta
+						// multiplicacion
+						// multiplicacion por escalalr
+						// determinante
 
 
-			};
+						Matriz* asdf(const Matriz& other) const;
+
+						/// Con logger
+
+
+				};
+			}
 		}
 	}
 }
