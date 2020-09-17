@@ -2,12 +2,9 @@
 #ifndef LOGGER_ENUMS_HPP_
 #define LOGGER_ENUMS_HPP_
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Enum
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Enum {
 			enum class LogType
 			{
 				Log,

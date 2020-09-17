@@ -2,7 +2,7 @@
 #ifndef STRING_BUILDER_OBJECT_HPP_
 #define STRING_BUILDER_OBJECT_HPP_
 
-#include "../../Math/Libs/MathTypes.h"
+#include "../LibreriasSimples/LlanyTypes.h"
 
 namespace LlanyLib {
 	namespace Basic {

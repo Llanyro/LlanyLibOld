@@ -2,7 +2,7 @@
 #ifndef DATE_CONTROLLER_SINGLETON_HPP_
 #define DATE_CONTROLLER_SINGLETON_HPP_
 
-#include "../../Math/Libs/MathTypes.h"
+#include "../LibreriasSimples/LlanyTypes.h"
 #include "../Plantillas/Otros/Singleton.hpp"
 #include "../Gestores/SubscriptorSingletons.hpp"
 

@@ -25,7 +25,7 @@
 #define OUTPUT_FILENAME_LOG_WARNING "/LogWarningOutput.txt"
 #define CHARSCONTROL_FILENAME_LOG_WARNING "/LogWarningCharsControl.txt"*/
 
-void LlanyLib::Basic::Objetos::Logger::log(const String* log, const Enum::LogType& type) const
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Objetos::Logger::getFileName(const Enum::LogType& type) const
 {
 	String* fileName = nullptr;
 	switch (type)
@@ -40,6 +40,19 @@ void LlanyLib::Basic::Objetos::Logger::log(const String* log, const Enum::LogTyp
 			fileName = this->logWarningFile;
 			break;
 	}
+	return fileName;
+}
+void LlanyLib::Basic::Objetos::Logger::log(const String* log, const Enum::LogType& type) const
+{
+	String* fileName = Logger::getFileName(type);
+	FILES->escribirFicheroAppendClearContent(fileName, DATE_CONTROLLER->now());
+	FILES->escribirFicheroAppend(fileName, ' ');
+	FILES->escribirFicheroAppend(fileName, log);
+	FILES->escribirFicheroAppend(fileName, '\n');
+}
+void LlanyLib::Basic::Objetos::Logger::log(char const* const log, const Enum::LogType& type) const
+{
+	String* fileName = Logger::getFileName(type);
 	FILES->escribirFicheroAppendClearContent(fileName, DATE_CONTROLLER->now());
 	FILES->escribirFicheroAppend(fileName, ' ');
 	FILES->escribirFicheroAppend(fileName, log);
@@ -80,6 +93,7 @@ LlanyLib::Basic::Objetos::Logger::Logger(String* className)
 	Logger::logClear(info->operator+(*className));
 	delete info;
 }
+LlanyLib::Basic::Objetos::Logger::Logger(char const* const className) : Logger(new String(className)){}
 LlanyLib::Basic::Objetos::Logger::~Logger()
 {
 	if (this->logClassName)
@@ -109,6 +123,18 @@ void LlanyLib::Basic::Objetos::Logger::logWarning(const String* log) const
 	Logger::log(log, Enum::LogType::Warning);
 }
 void LlanyLib::Basic::Objetos::Logger::logError(const String* log) const
+{
+	Logger::log(log, Enum::LogType::Error);
+}
+void LlanyLib::Basic::Objetos::Logger::log(char const* const log) const
+{
+	Logger::log(log, Enum::LogType::Log);
+}
+void LlanyLib::Basic::Objetos::Logger::logWarning(char const* const log) const
+{
+	Logger::log(log, Enum::LogType::Warning);
+}
+void LlanyLib::Basic::Objetos::Logger::logError(char const* const log) const
 {
 	Logger::log(log, Enum::LogType::Error);
 }

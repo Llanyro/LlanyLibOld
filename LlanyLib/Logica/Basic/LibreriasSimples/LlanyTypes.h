@@ -5,6 +5,12 @@
 //typedef unsigned int size_int;
 //#define SIZE_INT sizeof(size_int)
 
+typedef long long long_t;
+typedef unsigned long long ulong_t;
+
+typedef unsigned int uint;
+
+
 typedef unsigned long size_long;
 #define SIZE_LONG sizeof(size_long)
 

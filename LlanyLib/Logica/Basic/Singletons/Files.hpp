@@ -25,6 +25,7 @@ namespace LlanyLib {
 					const char* getParams(const Enum::FopenType& type) const;
 					void escribirFicheroBase(const Objetos::String* fileName, const Objetos::String* content, const Enum::FopenType& type) const;
 					void escribirFicheroBase(const Objetos::String* fileName, const char& caracter, const Enum::FopenType& type) const;
+					void escribirFicheroBase(const Objetos::String* fileName, char const* const content, const Enum::FopenType& type) const;
 					#pragma endregion
 				public:
 					#pragma region Lectura
@@ -47,6 +48,12 @@ namespace LlanyLib {
 					void escribirFicheroClear(const Objetos::String* fileName, const char& caracter) const;
 					void escribirFicheroAppend(const Objetos::String* fileName, const char& caracter) const;
 					void escribirFicheroAppendClear(const Objetos::String* fileName, const char& caracter) const;
+					#pragma endregion
+					#pragma region Char const
+					void escribirFichero(const Objetos::String* fileName, char const* const content) const;
+					void escribirFicheroClear(const Objetos::String* fileName, char const* const content) const;
+					void escribirFicheroAppend(const Objetos::String* fileName, char const* const content) const;
+					void escribirFicheroAppendClear(const Objetos::String* fileName, char const* const content) const;
 					#pragma endregion
 					#pragma endregion
 					#pragma region Directorios

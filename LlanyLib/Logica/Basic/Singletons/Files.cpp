@@ -3,6 +3,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "System.hpp"
 #include "../Objetos/String.hpp"
@@ -17,6 +18,12 @@ void fileputs(FILE* file, const LlanyLib::Basic::Objetos::String* content)
 {
 	for (size_t i = 0; i < content->length() - 1; i++)
 		fputc(content->get()[i], file);
+}
+void fileputs(FILE* file, const char* const content)
+{
+	size_t size = strlen(content);
+	for (size_t i = 0; i < size; i++)
+		fputc(content[i], file);
 }
 
 #pragma region Singleton
@@ -62,6 +69,14 @@ void LlanyLib::Basic::Singletons::Files::escribirFicheroBase(const Objetos::Stri
 	fputc(caracter, file);
 	fclose(file);
 }
+void LlanyLib::Basic::Singletons::Files::escribirFicheroBase(const Objetos::String* fileName, char const* const content, const Enum::FopenType& type) const
+{
+	assert(fileName != nullptr);
+	assert(content != nullptr);
+	FILE* file = fopen(fileName->get(), Files::getParams(type));
+	fileputs(file, content);
+	fclose(file);
+}
 #pragma endregion
 #pragma region Lectura
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopenFseek(const Objetos::String* fileName) const
@@ -96,17 +111,20 @@ void LlanyLib::Basic::Singletons::Files::escribirFichero(const Objetos::String* 
 }
 void LlanyLib::Basic::Singletons::Files::escribirFicheroClear(const Objetos::String* fileName, const Objetos::String* content) const
 {
+	assert(fileName != nullptr);
 	Files::escribirFichero(fileName, content);
 	delete fileName;
 	delete content;
 }
 void LlanyLib::Basic::Singletons::Files::escribirFicheroClearFilename(const Objetos::String* fileName, const Objetos::String* content) const
 {
+	assert(fileName != nullptr);
 	Files::escribirFichero(fileName, content);
 	delete fileName;
 }
 void LlanyLib::Basic::Singletons::Files::escribirFicheroClearContent(const Objetos::String* fileName, const Objetos::String* content) const
 {
+	assert(fileName != nullptr);
 	Files::escribirFichero(fileName, content);
 	delete content;
 }
@@ -150,6 +168,30 @@ void LlanyLib::Basic::Singletons::Files::escribirFicheroAppend(const Objetos::St
 void LlanyLib::Basic::Singletons::Files::escribirFicheroAppendClear(const Objetos::String* fileName, const char& caracter) const
 {
 	Files::escribirFicheroAppend(fileName, caracter);
+	delete fileName;
+}
+#pragma endregion
+#pragma region Char const
+void LlanyLib::Basic::Singletons::Files::escribirFichero(const Objetos::String* fileName, char const* const content) const
+{
+	assert(fileName != nullptr);
+	Files::escribirFicheroBase(fileName, content, Enum::FopenType::Create);
+}
+void LlanyLib::Basic::Singletons::Files::escribirFicheroClear(const Objetos::String* fileName, char const* const content) const
+{
+	assert(fileName != nullptr);
+	Files::escribirFichero(fileName, content);
+	delete fileName;
+}
+void LlanyLib::Basic::Singletons::Files::escribirFicheroAppend(const Objetos::String* fileName, char const* const content) const
+{
+	assert(fileName != nullptr);
+	Files::escribirFicheroBase(fileName, content, Enum::FopenType::Append);
+}
+void LlanyLib::Basic::Singletons::Files::escribirFicheroAppendClear(const Objetos::String* fileName, char const* const content) const
+{
+	assert(fileName != nullptr);
+	Files::escribirFicheroAppend(fileName, content);
 	delete fileName;
 }
 #pragma endregion

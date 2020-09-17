@@ -7,6 +7,8 @@
 #include "../../Basic/Objetos/StringBuilder.hpp"
 #include "../../Basic/LibreriasSimples/ASCII_Defines.h"
 
+#define BIN_TO_HEX_GROUP_SIZE 4
+
 #pragma region Singleton
 LlanyLib::Math::Singletons::UnitConversor::UnitConversor() { UnitConversor::subscribir(UnitConversor::freeInstancia); }
 LlanyLib::Math::Singletons::UnitConversor::~UnitConversor() {}

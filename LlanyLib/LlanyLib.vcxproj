@@ -140,11 +140,14 @@
   <ItemGroup>
     <ClCompile Include="Logica\Basic\Gestores\GestorSingletons.cpp" />
     <ClCompile Include="Logica\Basic\Gestores\SubscriptorSingletons.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\ClientSocket.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Date.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Excepcion.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\JSONBuilder.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Logger.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Proceso.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\ServerSocket.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Socket.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\String.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Chars.cpp" />
@@ -196,6 +199,7 @@
     <ClInclude Include="Logica\Basic\Enumerators\DateEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\FilesEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\LoggerEnum.hpp" />
+    <ClInclude Include="Logica\Basic\Enumerators\SocketEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\StringEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\SystemCodes.h" />
     <ClInclude Include="Logica\Basic\Gestores\GestorSingletons.hpp" />
@@ -210,11 +214,14 @@
     <ClInclude Include="Logica\Basic\LibreriasSimples\ASCII_Defines.h" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\Fork.h" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\LlanyTypes.h" />
+    <ClInclude Include="Logica\Basic\Objetos\ClientSocket.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Date.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Excepcion.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Logger.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Proceso.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\ServerSocket.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\Socket.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\String.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\StringBuilder.hpp" />
     <ClInclude Include="Logica\Basic\Plantillas\Dictionary\DictionaryLinkedList.hpp" />
@@ -266,7 +273,6 @@
     <ClInclude Include="Logica\Juego\Singletons\ItemController.hpp" />
     <ClInclude Include="Logica\Juego\Singletons\VistaItemController.hpp" />
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp" />
-    <ClInclude Include="Logica\Math\Libs\MathTypes.h" />
     <ClInclude Include="Logica\Math\Objetos\Racional.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Unit.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Vector2.hpp" />
