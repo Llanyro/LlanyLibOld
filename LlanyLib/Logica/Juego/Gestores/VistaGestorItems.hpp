@@ -5,7 +5,7 @@
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
 
-#include "../../Math/Libs/MathTypes.h"
+#include "../../Basic/LibreriasSimples/LlanyTypes.h"
 
 #define VISTA_GESTOR_ITEMS LlanyLib::Juego::Gestores::VistaGestorItems::getInstancia()
 

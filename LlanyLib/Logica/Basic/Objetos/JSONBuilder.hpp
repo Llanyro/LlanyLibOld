@@ -2,7 +2,7 @@
 #ifndef JSON_BUILDER_OBJECT_HPP_
 #define JSON_BUILDER_OBJECT_HPP_
 
-#include "../../Math/Libs/MathTypes.h"
+#include "../../Basic/LibreriasSimples/LlanyTypes.h"
 
 namespace LlanyLib {
 	namespace Basic {

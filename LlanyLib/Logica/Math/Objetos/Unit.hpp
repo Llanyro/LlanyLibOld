@@ -2,7 +2,7 @@
 #ifndef UNIT_OBJECT_MATH_HPP_
 #define UNIT_OBJECT_MATH_HPP_
 
-#include "../Libs/MathTypes.h"
+#include "../../Basic/LibreriasSimples/LlanyTypes.h"
 
 namespace LlanyLib {
 	namespace Basic {

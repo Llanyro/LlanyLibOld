@@ -2,8 +2,6 @@
 #ifndef MATRIZ_OBJECT_MATH_HPP_
 #define MATRIZ_OBJECT_MATH_HPP_
 
-
-
 namespace LlanyLib {
 	namespace Basic {
 		namespace Templates {
@@ -14,7 +12,6 @@ namespace LlanyLib {
 		}
 		namespace Math {
 			namespace Objetos {
-				// V22
 				class Racional;
 				class Matriz
 				{

@@ -2,7 +2,7 @@
 #ifndef MATH_SINGLETON_MATH_HPP_
 #define MATH_SINGLETON_MATH_HPP_
 
-#include "../Libs/MathTypes.h"
+#include "../../Basic/LibreriasSimples/LlanyTypes.h"
 #include "../../Basic/Plantillas/Otros/Singleton.hpp"
 #include "../../Basic/Gestores/SubscriptorSingletons.hpp"
 

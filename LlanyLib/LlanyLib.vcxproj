@@ -138,6 +138,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Logica\AI\Matriz.cpp" />
+    <ClCompile Include="Logica\AI\Network.cpp" />
     <ClCompile Include="Logica\Basic\Gestores\GestorSingletons.cpp" />
     <ClCompile Include="Logica\Basic\Gestores\SubscriptorSingletons.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Date.cpp" />
@@ -191,9 +193,12 @@
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
+    <ClCompile Include="Tests\MainTests.cpp" />
     <ClCompile Include="Tests\MainTests2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Logica\AI\Matriz.hpp" />
+    <ClInclude Include="Logica\AI\Network.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\DateEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\FilesEnum.hpp" />
     <ClInclude Include="Logica\Basic\Enumerators\LoggerEnum.hpp" />
