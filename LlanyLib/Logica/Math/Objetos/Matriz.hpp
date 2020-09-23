@@ -16,16 +16,29 @@ namespace LlanyLib {
 				class Matriz
 				{
 					protected:
-						Basic::Templates::Listas::LinkedList<Basic::Templates::Listas::LinkedList<Racional>*>* filas;
+						// filas -> columnas
+						Basic::Templates::Listas::LinkedList<
+							Basic::Templates::Listas::LinkedList<Racional>*>* contenido;
 
 					protected:
 						// comprobar sila matriz es coherente
-							// 
+						// 
 
 					public:
+						#pragma region Getters
+						size_t getNumeroFilas() const;
+						size_t getNumeroColumnas() const;
+						size_t getNumeroColumnas(const size_t& columna) const;
+						Racional* getValue(const size_t& fila, const size_t& columna) const;
+						#pragma endregion
+						#pragma region Modificadores de matriz
+						void multiplicarEscalar_(const int& escalar);
 
-						// devolver numero de filas
-						// devolver numero de columnas
+						#pragma endregion
+						#pragma region Operaciones sin modificacion originales
+						Matriz* multiplicarEscalar(const int& escalar) const;
+
+						#pragma endregion
 
 
 						/// Sin logger

@@ -638,6 +638,9 @@
     <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
       <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celda.hpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClInclude>
     <ClInclude Include="Logica\AI\Network.hpp">
       <Filter>Logica\AI</Filter>
     </ClInclude>

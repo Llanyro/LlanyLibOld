@@ -79,6 +79,14 @@ bool LlanyLib::Objetos::Celda3D::getDerecha() const
 {
 	return this->derecha;
 }
+bool LlanyLib::Objetos::Celda3D::getDelante() const
+{
+	return this->delante;
+}
+bool LlanyLib::Objetos::Celda3D::getAtras() const
+{
+	return this->atras;
+}
 bool LlanyLib::Objetos::Celda3D::getVisitada() const
 {
 	return this->visitada;
@@ -89,30 +97,40 @@ const LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Objetos::Celda3D*
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Objetos::Celda3D::setArriba(const bool& value)
+void LlanyLib::Objetos::Celda3D::setArriba(const bool& arriba)
 {
-	assert(&value != nullptr);
-	this->arriba = value;
+	assert(&arriba != nullptr);
+	this->arriba = arriba;
 }
-void LlanyLib::Objetos::Celda3D::setAbajo(const bool& value)
+void LlanyLib::Objetos::Celda3D::setAbajo(const bool& abajo)
 {
-	assert(&value != nullptr);
-	this->abajo = value;
+	assert(&abajo != nullptr);
+	this->abajo = abajo;
 }
-void LlanyLib::Objetos::Celda3D::setIzquierda(const bool& value)
+void LlanyLib::Objetos::Celda3D::setIzquierda(const bool& izquierda)
 {
-	assert(&value != nullptr);
-	this->izquierda = value;
+	assert(&izquierda != nullptr);
+	this->izquierda = izquierda;
 }
-void LlanyLib::Objetos::Celda3D::setDerecha(const bool& value)
+void LlanyLib::Objetos::Celda3D::setDerecha(const bool& derecha)
 {
-	assert(&value != nullptr);
-	this->derecha = value;
+	assert(&derecha != nullptr);
+	this->derecha = derecha;
 }
-void LlanyLib::Objetos::Celda3D::setVisitada(const bool& value)
+void LlanyLib::Objetos::Celda3D::setDelante(const bool& delante)
 {
-	assert(&value != nullptr);
-	this->visitada = value;
+	assert(&delante != nullptr);
+	this->delante = delante;
+}
+void LlanyLib::Objetos::Celda3D::setAtras(const bool& atras)
+{
+	assert(&atras != nullptr);
+	this->atras = atras;
+}
+void LlanyLib::Objetos::Celda3D::setVisitada(const bool& visitada)
+{
+	assert(&visitada != nullptr);
+	this->visitada = visitada;
 }
 void LlanyLib::Objetos::Celda3D::setAllFalse()
 {
@@ -139,8 +157,10 @@ bool LlanyLib::Objetos::Celda3D::igual(const Celda3D& other) const
 			if (this->abajo == other.abajo)
 				if (this->derecha == other.derecha)
 					if (this->izquierda == other.izquierda)
-						if (this->visitada == other.visitada)
-							temp = true;
+						if (this->atras == other.atras)
+							if (this->delante == other.delante)
+								if (this->visitada == other.visitada)
+									temp = true;
 	return temp;
 }
 #pragma endregion
