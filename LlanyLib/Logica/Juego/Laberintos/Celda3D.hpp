@@ -55,13 +55,13 @@ namespace LlanyLib
 				const Basic::Templates::Listas::LinkedList<Celda3D*>* getGrupo() const;
 				#pragma endregion
 				#pragma region Setters
-				void setArriba(const bool& value);
-				void setAbajo(const bool& value);
-				void setIzquierda(const bool& value);
-				void setDerecha(const bool& value);
-				void setDelante(const bool& value);
-				void setAtras(const bool& value);
-				void setVisitada(const bool& value);
+				void setArriba(const bool& arriba);
+				void setAbajo(const bool& abajo);
+				void setIzquierda(const bool& izquierda);
+				void setDerecha(const bool& derecha);
+				void setDelante(const bool& delante);
+				void setAtras(const bool& atras);
+				void setVisitada(const bool& visitada);
 				void setAllFalse();
 				void setAllTrue();
 				#pragma endregion

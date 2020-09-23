@@ -1,4 +1,5 @@
 #include "Celda2D.hpp"
+
 #include "../../Basic/Plantillas/Listas/LinkedList.hpp"
 
 #pragma region Constructores
@@ -82,30 +83,30 @@ const LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Objetos::Celda2D*
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Objetos::Celda2D::setArriba(const bool& value)
+void LlanyLib::Objetos::Celda2D::setArriba(const bool& arriba)
 {
-	assert(&value != nullptr);
-	this->arriba = value;
+	assert(&arriba != nullptr);
+	this->arriba = arriba;
 }
-void LlanyLib::Objetos::Celda2D::setAbajo(const bool& value)
+void LlanyLib::Objetos::Celda2D::setAbajo(const bool& abajo)
 {
-	assert(&value != nullptr);
-	this->abajo = value;
+	assert(&abajo != nullptr);
+	this->abajo = abajo;
 }
-void LlanyLib::Objetos::Celda2D::setIzquierda(const bool& value)
+void LlanyLib::Objetos::Celda2D::setIzquierda(const bool& izquierda)
 {
-	assert(&value != nullptr);
-	this->izquierda = value;
+	assert(&izquierda != nullptr);
+	this->izquierda = izquierda;
 }
-void LlanyLib::Objetos::Celda2D::setDerecha(const bool& value)
+void LlanyLib::Objetos::Celda2D::setDerecha(const bool& derecha)
 {
-	assert(&value != nullptr);
-	this->derecha = value;
+	assert(&derecha != nullptr);
+	this->derecha = derecha;
 }
-void LlanyLib::Objetos::Celda2D::setVisitada(const bool& value)
+void LlanyLib::Objetos::Celda2D::setVisitada(const bool& visitada)
 {
-	assert(&value != nullptr);
-	this->visitada = value;
+	assert(&visitada != nullptr);
+	this->visitada = visitada;
 }
 void LlanyLib::Objetos::Celda2D::setAllFalse()
 {

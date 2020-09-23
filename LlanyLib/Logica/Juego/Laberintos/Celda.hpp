@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CELDA_2D_HPP_
-#define CELDA_2D_HPP_
+#ifndef CELDA_INTERFACE_HPP_
+#define CELDA_INTERFACE_HPP_
 
 namespace LlanyLib
 {
@@ -12,33 +12,24 @@ namespace LlanyLib
 			}
 		}
 	}
-	namespace Objetos
-	{
-		/*
-			Recordatorio:
-				True = pared
-				False = hueco
-		*/
-		class Celda2D
+	namespace Objetos {
+		template<class T>
+		class Celda
 		{
 			protected:
-				bool arriba;	// Y+
-				bool abajo;		// Y-
-				bool izquierda;	// X-
-				bool derecha;	// X+
-				bool visitada;
-				Basic::Templates::Listas::LinkedList<Celda2D*>* grupo;
+				bool* posiciones;
+				Basic::Templates::Listas::LinkedList<T*>* grupo;
 			public:
 				#pragma region Constructores
-				Celda2D();
-				Celda2D(
-					const bool& arriba,		// Y+
-					const bool& abajo,		// Y-
-					const bool& izquierda,	// X-
-					const bool& derecha);	// X+
-				Celda2D(const Celda2D& other);
-				bool operator=(const Celda2D& other);
-				~Celda2D();
+				Celda(const size_t& numPos)
+				{
+					this->posiciones = new bool[numPos];
+
+
+				}
+				Celda(const Celda& other);
+				bool operator=(const Celda& other);
+				~Celda();
 				#pragma endregion
 				#pragma region Getters
 				bool getArriba() const;
@@ -72,4 +63,4 @@ namespace LlanyLib
 	}
 }
 
-#endif // !CELDA_2D_HPP_
+#endif // !CELDA_INTERFACE_HPP_

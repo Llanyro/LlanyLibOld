@@ -247,6 +247,7 @@
     <ClInclude Include="Logica\Juego\Items\Contenedores\BotellaPlastico.hpp" />
     <ClInclude Include="Logica\Juego\Items\Elementos\Helio.hpp" />
     <ClInclude Include="Logica\Juego\Items\Elementos\Hidrogeno.hpp" />
+    <ClInclude Include="Logica\Juego\Laberintos\Celda.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celda2D.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp" />

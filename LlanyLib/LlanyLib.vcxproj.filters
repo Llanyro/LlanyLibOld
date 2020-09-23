@@ -626,6 +626,9 @@
     <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
       <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celda.hpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Logica\Notas\readme.txt">
