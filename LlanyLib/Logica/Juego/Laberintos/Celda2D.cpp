@@ -10,7 +10,7 @@ LlanyLib::Objetos::Celda2D::Celda2D()
 	this->izquierda = false;
 	this->derecha = false;
 	this->visitada = false;
-	this->grupo = new LlanyLib::Basic::Templates::Listas::LinkedList<Celda2D*>();
+	this->grupo = new Basic::Templates::Listas::LinkedList<Celda2D*>();
 	this->grupo->add(this);
 }
 LlanyLib::Objetos::Celda2D::Celda2D(const bool& arriba, const bool& abajo, const bool& izquierda, const bool& derecha) : Celda2D()
