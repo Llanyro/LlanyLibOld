@@ -375,6 +375,9 @@
     <ClCompile Include="Tests\MainTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Celda.cpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
@@ -637,6 +640,15 @@
     </ClInclude>
     <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
       <Filter>Logica\Math\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\AI\Matriz.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\AI\Network.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celda.hpp">
+      <Filter>Logica\Juego\Laberintos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

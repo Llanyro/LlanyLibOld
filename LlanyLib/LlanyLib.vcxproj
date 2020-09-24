@@ -163,6 +163,7 @@
     <ClCompile Include="Logica\Juego\Items\Contenedores\BotellaPlastico.cpp" />
     <ClCompile Include="Logica\Juego\Items\Elementos\Helio.cpp" />
     <ClCompile Include="Logica\Juego\Items\Elementos\Hidrogeno.cpp" />
+    <ClCompile Include="Logica\Juego\Laberintos\Celda.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celda3D.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Laberinto2D.cpp" />
