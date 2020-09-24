@@ -2,7 +2,7 @@
 #ifndef SOCKET_OBJECT_HPP_
 #define SOCKET_OBJECT_HPP_
 
-#include "../LibreriasSimples/LlanyTypes.h"
+#include "../../Basic/LibreriasSimples/LlanyTypes.h"
 
 struct WSAData;
 struct addrinfo;
