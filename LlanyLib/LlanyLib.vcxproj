@@ -192,6 +192,9 @@
     <ClCompile Include="Logica\Math\Singletons\Math.cpp" />
     <ClCompile Include="Logica\Math\Singletons\Random.cpp" />
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
+    <ClCompile Include="Logica\Net\Nueva carpeta\ClientSocket.cpp" />
+    <ClCompile Include="Logica\Net\Nueva carpeta\ServerSocket.cpp" />
+    <ClCompile Include="Logica\Net\Nueva carpeta\Socket.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
     <ClCompile Include="Tests\MainTests.cpp" />
@@ -286,8 +289,12 @@
     <ClInclude Include="Logica\Math\Singletons\Random.hpp" />
     <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp" />
     <ClInclude Include="Logica\Net\Enums\ContentTypeEnum.hpp" />
+    <ClInclude Include="Logica\Net\Nueva carpeta\ClientSocket.hpp" />
+    <ClInclude Include="Logica\Net\Nueva carpeta\ServerSocket.hpp" />
+    <ClInclude Include="Logica\Net\Nueva carpeta\Socket.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
+    <ClInclude Include="Logica\Net\Objetos\Server.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Logica\Basic\Notas.txt" />
