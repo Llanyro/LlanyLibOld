@@ -208,6 +208,15 @@
     <Filter Include="Logica\Net\%3f">
       <UniqueIdentifier>{a2f10c8d-c0d7-4062-9b22-7937ad477281}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\Juego\Laberintos\Celdas">
+      <UniqueIdentifier>{2984685f-a806-44d9-a206-24d04af89f2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Laberintos\Old">
+      <UniqueIdentifier>{cb340bd2-1884-48fc-8c1a-8d37850a271e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Laberintos\Laberintos">
+      <UniqueIdentifier>{add25a5e-0cfe-4bb1-98a6-7c2474227b45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tests\MainTests2.cpp">
@@ -260,15 +269,6 @@
     </ClCompile>
     <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp">
       <Filter>Logica\Basic\Objetos\Cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Laberintos\Celda2D.cpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Laberintos\Celda3D.cpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Juego\Laberintos\Laberinto2D.cpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Basic\Singletons\JSONConversor.cpp">
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
@@ -390,8 +390,17 @@
     <ClCompile Include="Logica\Net\Nueva carpeta\Socket.cpp">
       <Filter>Logica\Net\%3f</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Juego\Laberintos\Celda.cpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
+    <ClCompile Include="Logica\Juego\Laberintos\Celdas\Celda.cpp">
+      <Filter>Logica\Juego\Laberintos\Celdas</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Laberintos\Laberinto.cpp">
+      <Filter>Logica\Juego\Laberintos\Laberintos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Old\Laberinto2D.cpp">
+      <Filter>Logica\Juego\Laberintos\Old</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Celdas\Celda2D.cpp">
+      <Filter>Logica\Juego\Laberintos\Celdas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -520,15 +529,6 @@
     </ClInclude>
     <ClInclude Include="Logica\Math\Plantillas\Racional.hpp">
       <Filter>Logica\Math\Plantillas</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Laberintos\Laberinto2D.hpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Laberintos\Celda2D.hpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Juego\Laberintos\Celda3D.hpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
     </ClInclude>
     <ClInclude Include="Logica\Basic\Singletons\JSONConversor.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
@@ -662,9 +662,6 @@
     <ClInclude Include="Logica\AI\Network.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Juego\Laberintos\Celda.hpp">
-      <Filter>Logica\Juego\Laberintos</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Net\Objetos\Server.hpp">
       <Filter>Logica\Net\Interfaces</Filter>
     </ClInclude>
@@ -676,6 +673,27 @@
     </ClInclude>
     <ClInclude Include="Logica\Net\Nueva carpeta\ServerSocket.hpp">
       <Filter>Logica\Net\%3f</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celdas\Celda.hpp">
+      <Filter>Logica\Juego\Laberintos\Celdas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Laberintos\Laberinto.hpp">
+      <Filter>Logica\Juego\Laberintos\Laberintos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Old\Celda2D.hpp">
+      <Filter>Logica\Juego\Laberintos\Old</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Old\Celda3D.hpp">
+      <Filter>Logica\Juego\Laberintos\Old</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Old\Laberinto2D.hpp">
+      <Filter>Logica\Juego\Laberintos\Old</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Celdas\Celda2D.hpp">
+      <Filter>Logica\Juego\Laberintos\Celdas</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Laberintos\GeneradorLaberintos.hpp">
+      <Filter>Logica\Juego\Laberintos\Laberintos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
