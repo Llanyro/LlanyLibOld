@@ -2,6 +2,7 @@
 #ifndef DATE_OBJECT_HPP_
 #define DATE_OBJECT_HPP_
 
+#include "../LibreriasSimples/LlanyTypes.h"
 
 namespace LlanyLib {
 	namespace Basic {

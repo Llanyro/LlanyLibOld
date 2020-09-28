@@ -205,9 +205,6 @@
     <Filter Include="Logica\Net\Interfaces">
       <UniqueIdentifier>{657319db-5737-4d5d-8c70-031576c0c139}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Net\%3f">
-      <UniqueIdentifier>{a2f10c8d-c0d7-4062-9b22-7937ad477281}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\Juego\Laberintos\Celdas">
       <UniqueIdentifier>{2984685f-a806-44d9-a206-24d04af89f2b}</UniqueIdentifier>
     </Filter>
@@ -216,6 +213,12 @@
     </Filter>
     <Filter Include="Logica\Juego\Laberintos\Laberintos">
       <UniqueIdentifier>{add25a5e-0cfe-4bb1-98a6-7c2474227b45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Juego\Laberintos\Enums">
+      <UniqueIdentifier>{3688fc8b-f6de-4dbc-a61b-57107dd9fe74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\asd">
+      <UniqueIdentifier>{a2f10c8d-c0d7-4062-9b22-7937ad477281}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -369,9 +372,6 @@
     <ClCompile Include="Logica\Basic\Singletons\DateController.cpp">
       <Filter>Logica\Basic\Singletons\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
-      <Filter>Logica\Math\Objetos\Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\AI\Network.cpp">
       <Filter>Logica\AI</Filter>
     </ClCompile>
@@ -380,15 +380,6 @@
     </ClCompile>
     <ClCompile Include="Tests\MainTests.cpp">
       <Filter>Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Net\Nueva carpeta\ClientSocket.cpp">
-      <Filter>Logica\Net\%3f</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Net\Nueva carpeta\ServerSocket.cpp">
-      <Filter>Logica\Net\%3f</Filter>
-    </ClCompile>
-    <ClCompile Include="Logica\Net\Nueva carpeta\Socket.cpp">
-      <Filter>Logica\Net\%3f</Filter>
     </ClCompile>
     <ClCompile Include="Logica\Juego\Laberintos\Celdas\Celda.cpp">
       <Filter>Logica\Juego\Laberintos\Celdas</Filter>
@@ -401,6 +392,9 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Laberintos\Celdas\Celda2D.cpp">
       <Filter>Logica\Juego\Laberintos\Celdas</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Juego\Laberintos\Laberintos\GeneradorLaberintos.cpp">
+      <Filter>Logica\Juego\Laberintos\Laberintos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -653,9 +647,6 @@
     <ClInclude Include="Logica\Basic\Singletons\DateController.hpp">
       <Filter>Logica\Basic\Singletons\Hpp</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
-      <Filter>Logica\Math\Objetos\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\AI\Matriz.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -664,15 +655,6 @@
     </ClInclude>
     <ClInclude Include="Logica\Net\Objetos\Server.hpp">
       <Filter>Logica\Net\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Net\Nueva carpeta\Socket.hpp">
-      <Filter>Logica\Net\%3f</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Net\Nueva carpeta\ClientSocket.hpp">
-      <Filter>Logica\Net\%3f</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Net\Nueva carpeta\ServerSocket.hpp">
-      <Filter>Logica\Net\%3f</Filter>
     </ClInclude>
     <ClInclude Include="Logica\Juego\Laberintos\Celdas\Celda.hpp">
       <Filter>Logica\Juego\Laberintos\Celdas</Filter>
@@ -694,6 +676,9 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Laberintos\Laberintos\GeneradorLaberintos.hpp">
       <Filter>Logica\Juego\Laberintos\Laberintos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Juego\Laberintos\Enums\Dificultad.hpp">
+      <Filter>Logica\Juego\Laberintos\Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

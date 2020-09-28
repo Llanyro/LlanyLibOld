@@ -165,6 +165,7 @@
     <ClCompile Include="Logica\Juego\Items\Elementos\Hidrogeno.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celdas\Celda.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Celdas\Celda2D.cpp" />
+    <ClCompile Include="Logica\Juego\Laberintos\Laberintos\GeneradorLaberintos.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Laberintos\Laberinto.cpp" />
     <ClCompile Include="Logica\Juego\Laberintos\Old\Laberinto2D.cpp" />
     <ClCompile Include="Logica\Juego\Objetos\Entidades\Entidad.cpp" />
@@ -183,7 +184,6 @@
     <ClCompile Include="Logica\Juego\Objetos\Stats\Survival.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\VistaItemController.cpp" />
-    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Racional.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Unit.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Vector2.cpp" />
@@ -192,9 +192,6 @@
     <ClCompile Include="Logica\Math\Singletons\Math.cpp" />
     <ClCompile Include="Logica\Math\Singletons\Random.cpp" />
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
-    <ClCompile Include="Logica\Net\Nueva carpeta\ClientSocket.cpp" />
-    <ClCompile Include="Logica\Net\Nueva carpeta\ServerSocket.cpp" />
-    <ClCompile Include="Logica\Net\Nueva carpeta\Socket.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
     <ClCompile Include="Tests\MainTests.cpp" />
@@ -258,6 +255,7 @@
     <ClInclude Include="Logica\Juego\Items\Elementos\Hidrogeno.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celdas\Celda.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Celdas\Celda2D.hpp" />
+    <ClInclude Include="Logica\Juego\Laberintos\Enums\Dificultad.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Laberintos\GeneradorLaberintos.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Laberintos\Laberinto.hpp" />
     <ClInclude Include="Logica\Juego\Laberintos\Old\Celda2D.hpp" />
@@ -281,7 +279,6 @@
     <ClInclude Include="Logica\Juego\Singletons\VistaItemController.hpp" />
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp" />
     <ClInclude Include="Logica\Math\Libs\MathTypes.h" />
-    <ClInclude Include="Logica\Math\Objetos\Matriz.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Racional.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Unit.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Vector2.hpp" />
@@ -292,9 +289,6 @@
     <ClInclude Include="Logica\Math\Singletons\Random.hpp" />
     <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp" />
     <ClInclude Include="Logica\Net\Enums\ContentTypeEnum.hpp" />
-    <ClInclude Include="Logica\Net\Nueva carpeta\ClientSocket.hpp" />
-    <ClInclude Include="Logica\Net\Nueva carpeta\ServerSocket.hpp" />
-    <ClInclude Include="Logica\Net\Nueva carpeta\Socket.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Server.hpp" />

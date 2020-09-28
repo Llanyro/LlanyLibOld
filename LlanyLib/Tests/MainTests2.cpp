@@ -47,6 +47,12 @@
 #include "../Logica/Juego/Items/Elementos/Helio.hpp"
 #include "../Logica/Juego/Items/Contenedores/BotellaPlastico.hpp"
 #include "../Logica/Juego/Items/Contenedores/BotellaHidrogeno.hpp"
+
+#include "../Logica/Juego/Laberintos/Laberintos/GeneradorLaberintos.hpp"
+#include "../Logica/Juego/Laberintos/Laberintos/Laberinto.hpp"
+#include "../Logica/Juego/Laberintos/Celdas/Celda2D.hpp"
+#include "../Logica/Juego/Laberintos/Enums/Dificultad.hpp"
+
 #pragma endregion
 
 using namespace std;
@@ -691,6 +697,29 @@ void j5()
 	VISTA_ITEM_CONTROLLER->deleteItem(botellahidrogeno);
 }
 
+
+void printCelda(const LlanyLib::Laberintos::Objetos::Celda2D* celda)
+{
+	cout
+		<< celda->getAbajo() << ' '
+		<< celda->getArriba() << ' '
+		<< celda->getDerecha() << ' '
+		<< celda->getIzquierda() << endl;
+}
+
+void lab1()
+{
+	LlanyLib::Laberintos::Objetos::Laberinto2D* lab = GENERADOR_LABERINTOS->generarLaberinto2D(3, LlanyLib::Laberintos::Enums::Dificultad::KruskalSimple);
+	for (size_t i = 0; i < lab->getY(); i++)
+		for (size_t e = 0; e < lab->getX(); e++)
+		{
+			cout << i << ' ' << e << ' ';
+			printCelda(lab->getCelda(e, i));
+		}
+	delete lab;
+}
+
+
 int main()
 {
 	//if (NULL == nullptr)
@@ -709,8 +738,8 @@ int main()
 	//t7();
 	//t8();
 	//t9();
-	///t10();
-	t11();
+	//t10();
+	//t11();
 
 	//m1();
 	//m2();
@@ -723,6 +752,7 @@ int main()
 	//j4();
 	//j5();
 
+	lab1();
 
 	FREE_SINGLETONS;
 

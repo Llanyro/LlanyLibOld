@@ -33,7 +33,7 @@ void LlanyLib::Basic::AI::Objetos::DataSet::shuffleTogether(DataSet* other)
 {
     assert(this->rows == other->rows);
     for (int i = 0; i < this->rows - 1; i++) {
-        size_t j = i + rand() / (RAND_MAX / (this->rows - i) + 1);
+        size_t j = i; //+ rand() / (RAND_MAX / (this->rows - i) + 1);
         float* tmpA = this->data[j];
         this->data[j] = this->data[i];
         this->data[i] = tmpA;

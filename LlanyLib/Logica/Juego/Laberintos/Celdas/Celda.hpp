@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CELDA_CELDAS_INTERFACE_HPP_
-#define CELDA_CELDAS_INTERFACE_HPP_
+#ifndef CELDA_INTERFACE_LABERINTOS_HPP_
+#define CELDA_INTERFACE_LABERINTOS_HPP_
 
 namespace LlanyLib {
 	namespace Basic {
@@ -13,8 +13,8 @@ namespace LlanyLib {
 			}
 		}
 	}
-	namespace Objetos {
-		namespace Celdas {
+	namespace Laberintos {
+		namespace Objetos {
 			class Celda
 			{
 				protected:
@@ -44,11 +44,11 @@ namespace LlanyLib {
 					bool operator==(const Celda& other) const;
 					bool operator!=(const Celda& other) const;
 					#pragma endregion
-					void mergeGrupos(const Celda& other);
-					bool contiene(const Celda* other) const;
+					void mergeGrupos(Celda* other);
+					bool contiene(Celda* other) const;
 					void romperGrupo();
 			};
 		}
 	}
 }
-#endif // !CELDA_CELDAS_INTERFACE_HPP_
+#endif // !CELDA_INTERFACE_LABERINTOS_HPP_

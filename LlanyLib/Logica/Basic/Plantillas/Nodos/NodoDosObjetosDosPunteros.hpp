@@ -7,14 +7,10 @@
 
 #define DECLARACION_HERENCIA_VECTOR_NODOS_DOS_OBJETOS_DOS_PUNTEROS Interfaces::VectorPunteros<NDODP<T1, T2>, 2>
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Templates
-		{
-			namespace Nodos
-			{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Templates {
+			namespace Nodos {
 				// Nodo dos objetos un puntero
 				template <class T1, class T2>
 				class NDODP : public Interfaces::ContenedorDobleTipo<T1, T2>, protected DECLARACION_HERENCIA_VECTOR_NODOS_DOS_OBJETOS_DOS_PUNTEROS

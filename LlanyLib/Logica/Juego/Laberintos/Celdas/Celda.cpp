@@ -4,24 +4,24 @@
 #include "../../../Basic/Plantillas/Listas/LinkedList.hpp"
 
 #pragma region Constructores
-LlanyLib::Objetos::Celdas::Celda::Celda()
+LlanyLib::Laberintos::Objetos::Celda::Celda()
 {
 	this->posiciones = nullptr;
 	this->grupo = nullptr;
 }
-LlanyLib::Objetos::Celdas::Celda::Celda(const size_t& numPos)
+LlanyLib::Laberintos::Objetos::Celda::Celda(const size_t& numPos)
 {
 	this->posiciones = new Basic::Templates::Listas::Array<bool>(numPos);
 	this->grupo = new Basic::Templates::Listas::LinkedList<Celda*>();
 	Celda::setAll(false);
 }
-LlanyLib::Objetos::Celdas::Celda::Celda(const Celda& other) : Celda()
+LlanyLib::Laberintos::Objetos::Celda::Celda(const Celda& other) : Celda()
 {
 	assert(&other != nullptr);
 	bool temp = Celda::operator=(other);
 	assert(temp);
 }
-bool LlanyLib::Objetos::Celdas::Celda::operator=(const Celda& other)
+bool LlanyLib::Laberintos::Objetos::Celda::operator=(const Celda& other)
 {
 	bool temp = true;
 	if (&other == nullptr) temp = false;
@@ -38,7 +38,7 @@ bool LlanyLib::Objetos::Celdas::Celda::operator=(const Celda& other)
 	}
 	return temp;
 }
-LlanyLib::Objetos::Celdas::Celda::~Celda()
+LlanyLib::Laberintos::Objetos::Celda::~Celda()
 {
 	if (this->posiciones != nullptr)
 		delete this->posiciones;
@@ -53,11 +53,11 @@ LlanyLib::Objetos::Celdas::Celda::~Celda()
 }
 #pragma endregion
 #pragma region Getters
-const LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Objetos::Celdas::Celda*>* LlanyLib::Objetos::Celdas::Celda::getGrupo() const
+const LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Laberintos::Objetos::Celda*>* LlanyLib::Laberintos::Objetos::Celda::getGrupo() const
 {
 	return this->grupo;
 }
-const bool* LlanyLib::Objetos::Celdas::Celda::getValue(const size_t& posicion) const
+const bool* LlanyLib::Laberintos::Objetos::Celda::getValue(const size_t& posicion) const
 {
 	bool* resultado = nullptr;
 	if(this->posiciones != nullptr)
@@ -66,13 +66,13 @@ const bool* LlanyLib::Objetos::Celdas::Celda::getValue(const size_t& posicion) c
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Objetos::Celdas::Celda::setAll(const bool& value) const
+void LlanyLib::Laberintos::Objetos::Celda::setAll(const bool& value) const
 {
 	if (this->posiciones != nullptr)
 		for (size_t i = 0; i < this->posiciones->length(); i++)
 			*this->posiciones->get(i) = value;
 }
-bool LlanyLib::Objetos::Celdas::Celda::set(const bool& value, const size_t& posicion) const
+bool LlanyLib::Laberintos::Objetos::Celda::set(const bool& value, const size_t& posicion) const
 {
 	bool resultado = true;
 	if (posicion < this->posiciones->length())
@@ -83,7 +83,7 @@ bool LlanyLib::Objetos::Celdas::Celda::set(const bool& value, const size_t& posi
 }
 #pragma endregion
 #pragma region Compares
-bool LlanyLib::Objetos::Celdas::Celda::igual(const Celda& other) const
+bool LlanyLib::Laberintos::Objetos::Celda::igual(const Celda& other) const
 {
 	bool resultado = true;
 	if (other.posiciones->length() != this->posiciones->length())
@@ -93,32 +93,31 @@ bool LlanyLib::Objetos::Celdas::Celda::igual(const Celda& other) const
 			resultado = this->posiciones[i] == other.posiciones[i];
 	return resultado;
 }
-bool LlanyLib::Objetos::Celdas::Celda::operator==(const Celda& other) const
+bool LlanyLib::Laberintos::Objetos::Celda::operator==(const Celda& other) const
 {
 	return Celda::igual(other);
 }
-bool LlanyLib::Objetos::Celdas::Celda::operator!=(const Celda& other) const
+bool LlanyLib::Laberintos::Objetos::Celda::operator!=(const Celda& other) const
 {
 	return !Celda::igual(other);
 }
 #pragma endregion
 #pragma region Operators
-void LlanyLib::Objetos::Celdas::Celda::mergeGrupos(const Celda& other)
+void LlanyLib::Laberintos::Objetos::Celda::mergeGrupos(Celda* other)
 {
-	LlanyLib::Basic::Templates::Listas::LinkedList<Celda*>* grupoAMezclar = other.grupo;
-	for (size_t i = 0; i < grupoAMezclar->getCount(); i++)
+	for (size_t i = 0; i < other->grupo->getCount(); i++)
 	{
-		Celda* celda = *grupoAMezclar->get(i);
+		Celda* celda = *other->grupo->get(i);
 		celda->grupo = this->grupo;
 		this->grupo->add(celda);
 	}
-	delete grupoAMezclar;
+	delete other->grupo;
 }
-bool LlanyLib::Objetos::Celdas::Celda::contiene(const Celda* other) const
+bool LlanyLib::Laberintos::Objetos::Celda::contiene(Celda* other) const
 {
-	return this->grupo->contains((Celda*)other);
+	return this->grupo->contains(other);
 }
-void LlanyLib::Objetos::Celdas::Celda::romperGrupo()
+void LlanyLib::Laberintos::Objetos::Celda::romperGrupo()
 {
 	size_t pos = 0;
 	if (this->grupo->find(this, &pos)) {

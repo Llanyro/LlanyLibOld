@@ -1,6 +1,6 @@
-#include "Laberinto2D.hpp"
+/*#include "Laberinto2D.hpp"
 #include "Celda2D.hpp"
-/*#include "../../Herramientas/Singletons/Random.h"
+#include "../../Herramientas/Singletons/Random.h"
 #include "../../Herramientas/Plantillas/List.h"
 #include "../../Herramientas/Plantillas/Diccionario.h"
 #include "../../Herramientas/Objetos/String.h"

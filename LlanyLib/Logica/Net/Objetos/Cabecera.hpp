@@ -2,7 +2,7 @@
 #ifndef CABECERA_OBJECT_NET_HPP_
 #define CABECERA_OBJECT_NET_HPP_
 
-#include "../../Math/Libs/MathTypes.h"
+#include "../../Basic/LibreriasSimples/LlanyTypes.h"
 
 namespace LlanyLib {
 	namespace Basic {

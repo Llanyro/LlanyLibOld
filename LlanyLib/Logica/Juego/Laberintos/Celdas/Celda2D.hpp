@@ -1,13 +1,13 @@
 #pragma once
-#ifndef CELDA2D_CELDAS_OBJECT_HPP_
-#define CELDA2D_CELDAS_OBJECT_HPP_
+#ifndef CELDA2D_OBJECT_LABERINTOS_HPP_
+#define CELDA2D_OBJECT_LABERINTOS_HPP_
 
 #include "Celda.hpp"
 
 namespace LlanyLib {
-	namespace Objetos {
-		namespace Celdas {
-			class Celda2D : Celda
+	namespace Laberintos {
+		namespace Objetos {
+			class Celda2D : public Celda
 			{
 				public:
 					Celda2D();
@@ -31,4 +31,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !CELDA2D_CELDAS_OBJECT_HPP_
+#endif // !CELDA2D_OBJECT_LABERINTOS_HPP_

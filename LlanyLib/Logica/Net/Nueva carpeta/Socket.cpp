@@ -6,7 +6,7 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <stdlib.h>
-
+/*
 #include "Logger.hpp"
 #include "String.hpp"
 #include "StringBuilder.hpp"
@@ -86,3 +86,4 @@ LlanyLib::Basic::Objetos::Socket::~Socket()
 	if (this->ipServer != nullptr)
 		delete this->ipServer;
 }
+*/

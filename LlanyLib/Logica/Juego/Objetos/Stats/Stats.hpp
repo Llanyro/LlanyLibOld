@@ -3,7 +3,7 @@
 #define STATS_STATS_OBJECT_JUEGO_HPP_
 
 #include "../../Enums/StatsEnum.hpp"
-#include "../../../Math/Libs/MathTypes.h"
+#include "../../../Basic/LibreriasSimples/LlanyTypes.h"
 
 #define MAX_LV 65400
 

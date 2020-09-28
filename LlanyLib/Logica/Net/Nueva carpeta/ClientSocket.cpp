@@ -7,13 +7,13 @@
 #include <ws2tcpip.h>
 #include <stdlib.h>
 
-#include "String.hpp"
-#include "StringBuilder.hpp"
-#include "../Enumerators/SocketEnum.hpp"
+#include "../../Basic/Objetos/String.hpp"
+#include "../../Basic/Objetos/StringBuilder.hpp"
+#include "../../Basic/Enumerators/SocketEnum.hpp"
 
 void LlanyLib::Basic::Objetos::ClientSocket::connect()
 {
-    // Attempt to connect to an address until one succeeds
+    /*// Attempt to connect to an address until one succeeds
     for (ptr = result; ptr != NULL; ptr = ptr->ai_next) {
 
         // Create a SOCKET for connecting to server
@@ -34,7 +34,7 @@ void LlanyLib::Basic::Objetos::ClientSocket::connect()
         }
         break;
     }
-
+    */
 }
 
 LlanyLib::Basic::Objetos::ClientSocket::ClientSocket(String* port) : Socket(port, "ClientSocket")
