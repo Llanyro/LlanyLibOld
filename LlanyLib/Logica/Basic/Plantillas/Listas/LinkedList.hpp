@@ -11,7 +11,6 @@ namespace LlanyLib {
 			namespace Listas {
 				template<class T>
 				class LinkedListAuto;
-
 				template<class T>
 				class LinkedList : public Interfaces::List<T>
 				{

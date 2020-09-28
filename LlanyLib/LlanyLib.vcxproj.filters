@@ -375,9 +375,6 @@
     <ClCompile Include="Logica\AI\Network.cpp">
       <Filter>Logica\AI</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\AI\Matriz.cpp">
-      <Filter>Logica\AI</Filter>
-    </ClCompile>
     <ClCompile Include="Tests\MainTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
@@ -395,6 +392,12 @@
     </ClCompile>
     <ClCompile Include="Logica\Juego\Laberintos\Laberintos\GeneradorLaberintos.cpp">
       <Filter>Logica\Juego\Laberintos\Laberintos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\Socket.cpp">
+      <Filter>Logica\Net\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -679,6 +682,15 @@
     </ClInclude>
     <ClInclude Include="Logica\Juego\Laberintos\Enums\Dificultad.hpp">
       <Filter>Logica\Juego\Laberintos\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\Socket.hpp">
+      <Filter>Logica\Net\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Objetos\Matriz.hpp">
+      <Filter>Logica\Math\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\LibreriasSimples\ListaDefines.hpp">
+      <Filter>Logica\Basic\LibreriasSimples</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

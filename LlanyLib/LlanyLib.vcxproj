@@ -138,7 +138,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Logica\AI\Matriz.cpp" />
     <ClCompile Include="Logica\AI\Network.cpp" />
     <ClCompile Include="Logica\Basic\Gestores\GestorSingletons.cpp" />
     <ClCompile Include="Logica\Basic\Gestores\SubscriptorSingletons.cpp" />
@@ -184,6 +183,7 @@
     <ClCompile Include="Logica\Juego\Objetos\Stats\Survival.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\VistaItemController.cpp" />
+    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Racional.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Unit.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Vector2.cpp" />
@@ -194,6 +194,7 @@
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
+    <ClCompile Include="Logica\Net\Objetos\Socket.cpp" />
     <ClCompile Include="Tests\MainTests.cpp" />
     <ClCompile Include="Tests\MainTests2.cpp" />
   </ItemGroup>
@@ -216,6 +217,7 @@
     <ClInclude Include="Logica\Basic\LibreriasSimples\AllLists.hpp" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\ASCII_Defines.h" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\Fork.h" />
+    <ClInclude Include="Logica\Basic\LibreriasSimples\ListaDefines.hpp" />
     <ClInclude Include="Logica\Basic\LibreriasSimples\LlanyTypes.h" />
     <ClInclude Include="Logica\Basic\Objetos\Date.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Excepcion.hpp" />
@@ -279,6 +281,7 @@
     <ClInclude Include="Logica\Juego\Singletons\VistaItemController.hpp" />
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp" />
     <ClInclude Include="Logica\Math\Libs\MathTypes.h" />
+    <ClInclude Include="Logica\Math\Objetos\Matriz.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Racional.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Unit.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Vector2.hpp" />
@@ -292,6 +295,7 @@
     <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Server.hpp" />
+    <ClInclude Include="Logica\Net\Objetos\Socket.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Logica\Basic\Notas.txt" />

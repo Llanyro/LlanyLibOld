@@ -127,6 +127,9 @@ namespace LlanyLib {
 					// Complejidad temporal y espacial: O(1) y M(1)
 					void operator*=(const int& valor);
 					#pragma endregion
+					#pragma region Modificadores
+					void escalar(const int& escalar);
+					#pragma endregion
 			};	
 		}
 	}

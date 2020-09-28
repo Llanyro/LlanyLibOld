@@ -9,7 +9,7 @@ void LlanyLib::Math::Objetos::Racional::IniciarRacional(const int& numerador, co
 {
 	this->numerador = numerador;
 	this->denominador = denominador;
-	LlanyLib::Math::Objetos::Racional::AjustarSignos();
+	Racional::AjustarSignos();
 }
 void LlanyLib::Math::Objetos::Racional::AjustarSignos()
 {
@@ -160,5 +160,11 @@ void LlanyLib::Math::Objetos::Racional::operator*=(const int& valor)
 {
 	assert(&valor != nullptr);
 	Objetos::Racional::IniciarRacional(this->numerador * valor, denominador);
+}
+#pragma endregion
+#pragma region Modificadores
+void LlanyLib::Math::Objetos::Racional::escalar(const int& escalar)
+{
+	this->numerador = this->numerador * escalar;
 }
 #pragma endregion

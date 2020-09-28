@@ -4,6 +4,8 @@
 
 #include "../../Basic/LibreriasSimples/LlanyTypes.h"
 
+
+#ifdef _WIN32
 struct WSAData;
 struct addrinfo;
 
@@ -25,7 +27,7 @@ namespace LlanyLib {
 					addrinfo* result;
 					addrinfo* ptr;
 					addrinfo* hints;
-					
+
 
 				protected:
 					void startData();
@@ -38,4 +40,8 @@ namespace LlanyLib {
 		}
 	}
 }
+#elif __unix__
+
+#endif // __WIN32
+
 #endif // !SOCKET_OBJECT_HPP_
