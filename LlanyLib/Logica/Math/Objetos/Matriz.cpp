@@ -90,7 +90,7 @@ bool LlanyLib::Math::Objetos::Matriz::removeFila(const size_t& pos)
 }
 #pragma endregion
 #pragma region Modificadores de matriz
-void LlanyLib::Math::Objetos::Matriz::multiplicarEscalar_(const int& escalar)
+void LlanyLib::Math::Objetos::Matriz::multiplicarEscalar_(const Racional& escalar)
 {
 	LISTA_T<Racional>* actualList = nullptr;
 	for (size_t i = 0; i < this->contenido->length(); i++) {
@@ -99,22 +99,38 @@ void LlanyLib::Math::Objetos::Matriz::multiplicarEscalar_(const int& escalar)
 			actualList->operator[](e).escalar(escalar);
 	}
 }
-void LlanyLib::Math::Objetos::Matriz::dividirEscalar_(const int& escalar)
+bool LlanyLib::Math::Objetos::Matriz::modificarColum(LISTA_T<Racional>* columna, const size_t& pos)
 {
-
+	bool resultado = false;
+	if (columna->length() == Matriz::getNumeroFilas()) {
+		for (size_t i = 0; i < resultado && columna->length(); i++)
+			resultado = this->contenido->operator[](i)->add(columna->operator[](i));
+	}
+	return resultado;
+}
+bool LlanyLib::Math::Objetos::Matriz::modificarFila(LISTA_T<Racional>* fila, const size_t& pos)
+{
+	bool resultado = false;
+	if (pos < this->contenido->length())
+		resultado = this->contenido->operator[](pos)->operator=(*fila);
+	return resultado;
 }
 #pragma endregion
 #pragma region Operaciones sin modificacion originales
-LlanyLib::Math::Objetos::Matriz* LlanyLib::Math::Objetos::Matriz::multiplicarEscalar(const int& escalar) const
+LlanyLib::Math::Objetos::Matriz* LlanyLib::Math::Objetos::Matriz::multiplicarEscalar(const Racional& escalar) const
 {
 	Matriz* mat = new Matriz(*this);
 	mat->multiplicarEscalar_(escalar);
 	return mat;
 }
-LlanyLib::Math::Objetos::Matriz* LlanyLib::Math::Objetos::Matriz::dividirEscalar(const int& escalar)
+#pragma endregion
+#pragma region MyRegion
+LlanyLib::Math::Objetos::Racional* LlanyLib::Math::Objetos::Matriz::determinante() const
 {
+
+
+
+
 	return nullptr;
 }
-
-
 #pragma endregion

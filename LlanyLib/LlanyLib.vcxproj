@@ -184,6 +184,7 @@
     <ClCompile Include="Logica\Juego\Singletons\ItemController.cpp" />
     <ClCompile Include="Logica\Juego\Singletons\VistaItemController.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Matriz.cpp" />
+    <ClCompile Include="Logica\Math\Objetos\MatrizFixed.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Racional.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Unit.cpp" />
     <ClCompile Include="Logica\Math\Objetos\Vector2.cpp" />
@@ -282,6 +283,7 @@
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp" />
     <ClInclude Include="Logica\Math\Libs\MathTypes.h" />
     <ClInclude Include="Logica\Math\Objetos\Matriz.hpp" />
+    <ClInclude Include="Logica\Math\Objetos\MatrizFixed.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Racional.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Unit.hpp" />
     <ClInclude Include="Logica\Math\Objetos\Vector2.hpp" />

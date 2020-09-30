@@ -129,6 +129,8 @@ namespace LlanyLib {
 					#pragma endregion
 					#pragma region Modificadores
 					void escalar(const int& escalar);
+					void escalar(const Racional& rac);
+
 					#pragma endregion
 			};	
 		}

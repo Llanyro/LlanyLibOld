@@ -399,6 +399,9 @@
     <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
       <Filter>Logica\Math\Objetos\Hpp</Filter>
     </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\MatrizFixed.cpp">
+      <Filter>Logica\Math\Objetos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
@@ -691,6 +694,9 @@
     </ClInclude>
     <ClInclude Include="Logica\Basic\LibreriasSimples\ListaDefines.hpp">
       <Filter>Logica\Basic\LibreriasSimples</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Math\Objetos\MatrizFixed.hpp">
+      <Filter>Logica\Math\Objetos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

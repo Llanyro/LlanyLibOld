@@ -167,4 +167,9 @@ void LlanyLib::Math::Objetos::Racional::escalar(const int& escalar)
 {
 	this->numerador = this->numerador * escalar;
 }
+void LlanyLib::Math::Objetos::Racional::escalar(const Racional& rac)
+{
+	this->numerador = this->numerador * rac.numerador;
+	this->denominador = this->denominador * rac.denominador;
+}
 #pragma endregion

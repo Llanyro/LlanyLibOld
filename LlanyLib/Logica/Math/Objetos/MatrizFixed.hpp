@@ -1,24 +1,13 @@
 #pragma once
-#ifndef MATRIZ_OBJECT_MATH_HPP_
-#define MATRIZ_OBJECT_MATH_HPP_
-
-#include "../../Basic/LibreriasSimples/ListaDefines.hpp"
+#ifndef MATRIZ_FIXED_OBJECT_MATH_HPP_
+#define MATRIZ_FIXED_OBJECT_MATH_HPP_
 
 namespace LlanyLib {
-	namespace Basic {
-		namespace Templates {
-			namespace Listas {
-				template<class T>
-				class LinkedList;
-				template<class T>
-				class Array;
-			}
-		}
-	}
 	namespace Math {
 		namespace Objetos {
 			class Racional;
-			class Matriz
+			class Matriz;
+			class MatrizFixed
 			{
 				protected:
 					/*
@@ -52,42 +41,25 @@ namespace LlanyLib {
 						this->contenido[3].add(newList[3])
 
 					*/
-
-
 					// filas -> columnas
-					LISTA_T<LISTA_T<Racional>*>* contenido;
+					Racional** contenido;
+					size_t filas;
+					size_t columnas;
 
 				protected:
 					// comprobar sila matriz es coherente
 					// 
-
 				public:
-					Matriz();
-					~Matriz();
+					MatrizFixed();
+					~MatrizFixed();
 
 					#pragma region Getters
-						size_t getNumeroFilas() const;
-						size_t getNumeroColumnas() const;
-						size_t getNumeroColumnas(const size_t& columna) const;
-						Racional* getValue(const size_t& fila, const size_t& columna) const;
-						#pragma endregion
-					#pragma region Add
-						bool addColum(LISTA_T<Racional>* columna);
-						bool addFila(LISTA_T<Racional>* fila);
-
-						// Testear cuidadosamente antes de usar
-						// Posiblemente fallo de herencia al crear el objeto LISTA_T y recibir como paramentro el array
-						bool addColum(ARRAY_T<Racional>* columna);
-						bool addFila(ARRAY_T<Racional>* fila);
-						#pragma endregion
-					#pragma region Remove
-						bool removeColum(const size_t& pos);
-						bool removeFila(const size_t& pos);
-						#pragma endregion
+					size_t getNumeroFilas() const;
+					size_t getNumeroColumnas() const;
+					Racional* getValue(const size_t& fila, const size_t& columna) const;
+					#pragma endregion
 					#pragma region Modificadores de matriz
 					void multiplicarEscalar_(const Racional& escalar);
-					bool modificarColum(LISTA_T<Racional>* columna, const size_t& pos);
-					bool modificarFila(LISTA_T<Racional>* fila, const size_t& pos);
 					#pragma endregion
 					#pragma region Operaciones sin modificacion originales
 					Matriz* multiplicarEscalar(const Racional& escalar) const;
