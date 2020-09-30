@@ -31,6 +31,7 @@ namespace LlanyLib {
 				#pragma endregion
 				public:
 					#pragma region Rangos
+					size_t random() const;
 					// Funcion: Devuelve un valor entero random entre los valores min y max
 					// Retorno: Valor aleatorio
 					// Complejidad temporal y espacial: O(1) y M(1)

@@ -222,9 +222,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tests\MainTests2.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Math\Objetos\Vector3.cpp">
       <Filter>Logica\Math\Objetos\Cpp</Filter>
     </ClCompile>
@@ -396,11 +393,14 @@
     <ClCompile Include="Logica\Net\Objetos\Socket.cpp">
       <Filter>Logica\Net\Objetos</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
-      <Filter>Logica\Math\Objetos\Hpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Math\Objetos\MatrizFixed.cpp">
       <Filter>Logica\Math\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Math\Objetos\Matriz.cpp">
+      <Filter>Logica\Math\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\MainTests2.cpp">
+      <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

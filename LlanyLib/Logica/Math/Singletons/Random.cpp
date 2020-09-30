@@ -19,6 +19,10 @@ LlanyLib::Math::Singletons::Random::Random()
 LlanyLib::Math::Singletons::Random::~Random() {}
 #pragma endregion
 #pragma region Rangos
+size_t LlanyLib::Math::Singletons::Random::random() const
+{
+	return rand();
+}
 size_t LlanyLib::Math::Singletons::Random::range(const size_t& min, const size_t& max) const
 {
 	size_t resultado = 0;

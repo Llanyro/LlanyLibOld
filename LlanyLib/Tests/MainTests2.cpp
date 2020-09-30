@@ -30,6 +30,9 @@
 #include "../Logica/Math/Singletons/UnitConversor.hpp"
 
 #include "../Logica/Math/Objetos/Unit.hpp"
+
+#include "../Logica/Math/Objetos/MatrizFixed.hpp"
+#include "../Logica/Math/Objetos/Racional.hpp"
 #pragma endregion
 #pragma region Juego
 #include "../Logica/Juego/Enums/ItemEnum.hpp"
@@ -74,6 +77,7 @@ void tt()
 	//test.logErrorClear(new LlanyLib::Basic::Objetos::String("Testando log error"));
 }*/
 
+#pragma region Tests
 void t1()
 {
 	LlanyLib::Basic::Objetos::String* str = new LlanyLib::Basic::Objetos::String("Hola mundo");
@@ -85,7 +89,6 @@ void t1()
 	STRING_PRINTER->printLnClear(str);
 	STRING_PRINTER->printClear(list);
 }
-
 void t2()
 {
 	LlanyLib::Basic::Objetos::String* str = 
@@ -100,7 +103,6 @@ void t2()
 	STRING_PRINTER->printLnClear(list);
 	STRING_PRINTER->printLnClear(str);
 }
-
 void t3()
 {
 	//STRING_PRINTER->printLnClear(CHARS->toString(true));
@@ -111,12 +113,10 @@ void t3()
 
 	//STRING_PRINTER->printLnClear(SYSTEM->horaFechaNumericos());
 }
-
 void t4()
 {
 	//STRING_PRINTER->printLnClear(SYSTEM->origenPrograma());
 }
-
 void t5()
 {
 	//LlanyLib::Basic::Objetos::String* str1 = SYSTEM->origenPrograma();
@@ -131,7 +131,6 @@ void t5()
 	//STRING_PRINTER->printLnClear(FILES->crearPathClear(str3));
 	//delete str3;
 }
-
 void t6()
 {
 	LlanyLib::Basic::Objetos::String* str1 = new LlanyLib::Basic::Objetos::String("Str content");
@@ -139,7 +138,6 @@ void t6()
 	STRING_PRINTER->printLnClear(str1->operator+('A'));
 	delete str1;
 }
-
 void t7()
 {
 	LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
@@ -184,12 +182,10 @@ void t7()
 	delete dict2;
 
 }
-
 void t8()
 {
 	STRING_PRINTER->printClear(RANDOM->uuid());
 }
-
 void t9()
 {
 	LlanyLib::Basic::Objetos::String* str1 = new LlanyLib::Basic::Objetos::String("Hola");
@@ -209,7 +205,6 @@ void t9()
 	delete str3;
 	delete str4;
 }
-
 void t10()
 {
 	LlanyLib::Basic::Objetos::Date* date = new LlanyLib::Basic::Objetos::Date(LlanyLib::Basic::Enum::DateType::Days, 2531);
@@ -225,13 +220,13 @@ void t10()
 	//STRING_PRINTER->printLnClear(date.toString());
 	//STRING_PRINTER->printLnClear(date.toJSON());
 }
-
 void t11()
 {
 	LlanyLib::Basic::Objetos::Date date;
 	STRING_PRINTER->printLnClear(DATE_CONTROLLER->diaToString(date.getToday()));
 }
-
+#pragma endregion
+#pragma region Math
 /*
 int charToIntHex(const char& caracter)
 {
@@ -582,7 +577,6 @@ void m2()
 	delete hex_f_oct_c;
 }
 */
-
 void printHex(LlanyLib::Basic::Objetos::String* str)
 {
 	for (size_t i = 0; i < str->length() - 1; i++)
@@ -590,7 +584,6 @@ void printHex(LlanyLib::Basic::Objetos::String* str)
 	putchar('\n');
 	delete str;
 }
-
 void m3()
 {
 	//printHex(UNIT_CONVERSOR->binToRawHex("11111"));
@@ -605,7 +598,26 @@ void m3()
 	LlanyLib::Math::Objetos::Unit unit("101011001110100100", LlanyLib::Math::Enum::UnitType::Binary);
 	printHex(unit.getHex());
 }
-
+void m4()
+{
+	LlanyLib::Math::Objetos::MatrizFixed* mat = new LlanyLib::Math::Objetos::MatrizFixed(3, 3);
+	for (size_t i = 0; i < mat->getNumeroFilas(); i++) {
+		for (size_t e = 0; e < mat->getNumeroColumnas(); e++) {
+			mat->setValue(LlanyLib::Math::Objetos::Racional(i, e), i, e);
+		}
+	}
+	STRING_PRINTER->printLnClear(mat->toString());
+	delete mat;
+}
+void m5()
+{
+	LlanyLib::Math::Objetos::MatrizFixed* mat = new LlanyLib::Math::Objetos::MatrizFixed(3, 3);
+	mat->randomize();
+	STRING_PRINTER->printLnClear(mat->toString());
+	delete mat;
+}
+#pragma endregion
+#pragma region Juego
 void jregister()
 {
 	// Elementos puros
@@ -624,7 +636,6 @@ void jregister()
 		new LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno(),
 		LlanyLib_Juego_Items_Generados_Contenedores_BotellaHidrogeno);
 }
-
 void j1()
 {
 	LlanyLib::Juego::Objetos::Items::Item item;
@@ -633,13 +644,11 @@ void j1()
 	LlanyLib::Juego::Items::Generados::Elementos::Hidrogeno hidrogeno;
 	STRING_PRINTER->printLnClear(hidrogeno.toJSON());
 }
-
 void j2()
 {
 	LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico botella;
 	STRING_PRINTER->printLnClear(botella.toJSONBuilder());
 }
-
 void j3()
 {
 	/*cout << GESTOR_ITEMS->getID(LlanyLib_Juego_Items_Generados_Elementos_Hidrogeno) << endl;
@@ -653,7 +662,6 @@ void j3()
 
 	delete it;*/
 }
-
 void j4()
 {
 	LlanyLib::Juego::Objetos::Items::Item* botellahidro =
@@ -684,7 +692,6 @@ void j4()
 	}
 
 }
-
 void j5()
 {
 	LlanyLib::Juego::Objetos::Items::Item* botellahidrogeno =
@@ -696,8 +703,8 @@ void j5()
 
 	VISTA_ITEM_CONTROLLER->deleteItem(botellahidrogeno);
 }
-
-
+#pragma endregion
+#pragma region Laberintos
 void printCelda(const LlanyLib::Laberintos::Objetos::Celda2D* celda)
 {
 	cout
@@ -706,7 +713,6 @@ void printCelda(const LlanyLib::Laberintos::Objetos::Celda2D* celda)
 		<< celda->getDerecha() << ' '
 		<< celda->getIzquierda() << endl;
 }
-
 void lab1()
 {
 	LlanyLib::Laberintos::Objetos::Laberinto2D* lab = GENERADOR_LABERINTOS->generarLaberinto2D(3, LlanyLib::Laberintos::Enums::Dificultad::KruskalSimple);
@@ -718,7 +724,7 @@ void lab1()
 		}
 	delete lab;
 }
-
+#pragma endregion
 
 int main()
 {
@@ -726,7 +732,6 @@ int main()
 	//	cout << "Son iguales\n";
 	//else
 	//	cout << "No son iguales\n";
-
 
 	//t1();
 	//t2();
@@ -744,6 +749,8 @@ int main()
 	//m1();
 	//m2();
 	//m3();
+	//m4();
+	m5();
 
 	//jregister();
 	//j1();
@@ -752,7 +759,7 @@ int main()
 	//j4();
 	//j5();
 
-	lab1();
+	//lab1();
 
 	FREE_SINGLETONS;
 

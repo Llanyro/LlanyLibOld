@@ -3,6 +3,11 @@
 #define MATRIZ_FIXED_OBJECT_MATH_HPP_
 
 namespace LlanyLib {
+	namespace Basic {
+		namespace Objetos {
+			class String;
+		}
+	}
 	namespace Math {
 		namespace Objetos {
 			class Racional;
@@ -10,37 +15,6 @@ namespace LlanyLib {
 			class MatrizFixed
 			{
 				protected:
-					/*
-						
-						++++ -> this->contenido[0][n]
-						++++
-						++++
-						++++
-						|------> this[n][0]
-						 |------> this[n][1]
-						  |------> this[n][2]
-						   |------> this[n][3]
-
-						Add
-						
-						Fila
-						++++				++++
-						++++		->		++++
-						++++				++++
-											++++
-						this->contenido.add(newList)
-
-						Columna
-						+++					++++
-						+++			->		++++
-						+++					++++
-						+++					++++
-						this->contenido[0].add(newList[0])
-						this->contenido[1].add(newList[1])
-						this->contenido[2].add(newList[2])
-						this->contenido[3].add(newList[3])
-
-					*/
 					// filas -> columnas
 					Racional** contenido;
 					size_t filas;
@@ -50,39 +24,26 @@ namespace LlanyLib {
 					// comprobar sila matriz es coherente
 					// 
 				public:
+					#pragma region Constructores
 					MatrizFixed();
+					MatrizFixed(const Matriz& matriz);
+					MatrizFixed(const size_t& filas, const size_t& columnas);
+					MatrizFixed(Racional** matriz, const size_t& filas, const size_t& columnas);
 					~MatrizFixed();
-
+					#pragma endregion
 					#pragma region Getters
 					size_t getNumeroFilas() const;
 					size_t getNumeroColumnas() const;
 					Racional* getValue(const size_t& fila, const size_t& columna) const;
 					#pragma endregion
-					#pragma region Modificadores de matriz
-					void multiplicarEscalar_(const Racional& escalar);
+					#pragma region Set
+					bool setValue(const Racional& value, const size_t& fila, const size_t& columna);
 					#pragma endregion
-					#pragma region Operaciones sin modificacion originales
-					Matriz* multiplicarEscalar(const Racional& escalar) const;
+					#pragma region Modificadores
+					void randomize();
+					
 					#pragma endregion
-					#pragma region Obtencion de datos
-					Racional* determinante() const;
-					#pragma endregion
-
-
-					/// Sin logger
-					// inversa
-					// diagonalizar
-					// rango
-					// traspuesta
-					// suma
-					// resta
-					// multiplicacion
-					// multiplicacion por escalalr
-					// determinante
-
-					/// Con logger
-
-
+					Basic::Objetos::String* toString() const;
 			};
 		}
 	}

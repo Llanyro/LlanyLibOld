@@ -39,7 +39,7 @@ void LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarPorKruskalSim
 					{
 						c1->setArriba(false);
 						c2->setAbajo(false);
-						c1->mergeGrupos(*c2);
+						//c1->mergeGrupos(*c2);
 					}
 				}
 				break;
@@ -51,7 +51,7 @@ void LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarPorKruskalSim
 					{
 						c1->setDerecha(false);
 						c2->setIzquierda(false);
-						c1->mergeGrupos(*c2);
+						//c1->mergeGrupos(*c2);
 					}
 				}
 				break;
@@ -63,7 +63,7 @@ void LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarPorKruskalSim
 					{
 						c1->setAbajo(false);
 						c2->setArriba(false);
-						c1->mergeGrupos(*c2);
+						//c1->mergeGrupos(*c2);
 					}
 				}
 				break;
@@ -75,7 +75,7 @@ void LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarPorKruskalSim
 					{
 						c1->setIzquierda(false);
 						c2->setDerecha(false);
-						c1->mergeGrupos(*c2);
+						//c1->mergeGrupos(*c2);
 					}
 				}
 				break;
