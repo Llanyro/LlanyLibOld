@@ -92,20 +92,8 @@ bool LlanyLib::Math::Objetos::Matriz::removeFila(const size_t& pos)
 #pragma region Modificadores de matriz
 void LlanyLib::Math::Objetos::Matriz::multiplicarEscalar_(const int& escalar)
 {
-	/*Templates::Listas::LinkedList<Racional>* list = nullptr;
-	Math::Objetos::Racional* rac = nullptr;
-
-	for (size_t i = 0; i < this->contenido->length(); i++) {
-		list = *this->contenido->get(i);
-		for (size_t e = 0; e < list->length(); e++) {
-			list->get(e)->;
-		}
-	}*/
-
 	LISTA_T<Racional>* actualList = nullptr;
-
-	for (size_t i = 0; i < this->contenido->length(); i++)
-	{
+	for (size_t i = 0; i < this->contenido->length(); i++) {
 		actualList = this->contenido->operator[](i);
 		for (size_t e = 0; e < actualList->length(); e++)
 			actualList->operator[](e).escalar(escalar);
