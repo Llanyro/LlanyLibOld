@@ -1,11 +1,24 @@
 #include "Socket.hpp"
 
-#define WIN32_LEAN_AND_MEAN
 
-#include <windows.h>
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
 #include <winsock2.h>
-#include <ws2tcpip.h>
-#include <stdlib.h>
+#include <Ws2tcpip.h>
+#pragma comment (lib, "Ws2_32.lib")
+#pragma comment (lib, "Mswsock.lib")
+#pragma comment (lib, "AdvApi32.lib")
+#elif __unix__
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <sys/types.h>
+#endif
+
+#define RED AF_INET
+
+
 /*
 #include "Logger.hpp"
 #include "String.hpp"
@@ -87,3 +100,103 @@ LlanyLib::Basic::Objetos::Socket::~Socket()
 		delete this->ipServer;
 }
 */
+
+
+
+
+#pragma once
+template <class T>
+class List;
+class String;
+struct sockaddr_in;
+
+/*
+	Se recomienda solo hacer servidores con esta clase en unix ya que usa fork y otros
+		(En proceso -> V3)
+	V2
+	Padre o plantilla de todos los servicios
+	Al heredar se pueden modificar las funciones a gusto
+	No se puede usar la clase directamente como un servicio:
+	es decir, hay que heredarla de otra clase que sea un singleton
+	Pd: Esta clase no se debe de modificar
+	Pd: Los sockets no estan testeado en windows, solo en unix
+	Funciones sobrecargables:
+	virtual bool getServicioIniciado() const;					->	Public
+	virtual String leerSocket(const int& newsock_fd) const;		-> Protected
+	virtual String resolverSolicitud(String& solicitud) const;	-> Protected
+*/
+class Servicio
+{
+	public:
+		#pragma region Enums
+		// Lista de estados al iniciar el servicio
+		enum class EstadoServicio
+		{
+			Iniciado,
+			AnteriormenteIniciado,
+
+
+			// Errores
+			ErrorSocketNoDisponible,
+			ErrorOnBinding,
+			ErrorNoEscuchando
+
+
+		};
+		#pragma endregion
+	protected:
+		String* nombre;				// Nombre dado al servicio
+		sockaddr_in* direccionIP;	// Estructura de la direccion ip del servidor/socket
+		int socket_fd;				// Puerto de escucha (socket file descriptor)
+		bool servicioIniciado;		// Si se ha iniciado el servicio
+	protected:
+		#pragma region Constructores
+		Servicio();
+		~Servicio();
+		void clearServicio();
+		#pragma endregion
+		#pragma region Funciones del servicio no virtuales
+		// Funcion: Recibe un socket de escharSolicitudes(), lee la peticion y la envia a
+		//		"resolverSolicitud(const String) const"
+		// Extra: Envia el string que recibe de la funcion mencionada
+		// Precondiciones:
+		//		sea un socket real
+		// Complejidad temporal y espacial: O(1) y M(1)
+		void resolverSolicitud(const int& newsock_fd) const;
+		// Funcion: Ignora el socket indicado sin leerlo
+		// Extra: Es decir solo lo cierra (RST)
+		// Precondiciones:
+		//		sea un socket real
+		// Complejidad temporal y espacial: O(1) y M(1)
+		void ignorarSolicitud(const int& newsock_fd) const;
+		#pragma endregion
+		#pragma region Funciones del servicio virtuales
+		virtual String leerSocket(const int& newsock_fd) const;
+		virtual String resolverSolicitud(String& solicitud) const;
+		#pragma endregion
+	public:
+		#pragma region Funciones del servicio no virtuales
+		// Funcion: Se queda a la espera de que se reciba una solicitud
+		// Extra: Al recibir una solicitud la resuelve
+		// Extra 2: Se mantiene en bucle si se pide
+		// Complejidad temporal y espacial: O(1) y M(1)
+		void escharSolicitudes(const bool& bucle) const;
+		// Funcion: Inicia el servicio con unos parametros indicados
+		// Retorno: El estado de iniciar el servicio
+		// Complejidad temporal y espacial: O(1) y M(1)
+		List<EstadoServicio> iniciarServicio(
+			const String& nombre,
+			const unsigned short& puertoEscucha);
+		List<EstadoServicio> iniciarServicio(const unsigned short& puertoEscucha);
+		List<EstadoServicio> iniciarServicio();
+		#pragma endregion
+		#pragma region Funciones del servicio virtuales
+		virtual bool getServicioIniciado() const;
+		#pragma endregion
+		#pragma region Getters
+		String getNombreServicio(void) const;
+		#pragma endregion
+		#pragma region Setters
+		void setNombreServicio(const String& nuevoNombre);
+		#pragma endregion
+};

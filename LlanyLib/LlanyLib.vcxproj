@@ -195,6 +195,7 @@
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
+    <ClCompile Include="Logica\Net\Objetos\Server.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Socket.cpp" />
     <ClCompile Include="Tests\MainTests.cpp" />
     <ClCompile Include="Tests\MainTests2.cpp" />
@@ -294,6 +295,7 @@
     <ClInclude Include="Logica\Math\Singletons\Random.hpp" />
     <ClInclude Include="Logica\Math\Singletons\UnitConversor.hpp" />
     <ClInclude Include="Logica\Net\Enums\ContentTypeEnum.hpp" />
+    <ClInclude Include="Logica\Net\Enums\SocketEnum.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Server.hpp" />

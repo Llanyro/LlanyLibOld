@@ -402,6 +402,9 @@
     <ClCompile Include="Tests\MainTests2.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\Server.cpp">
+      <Filter>Logica\Net\Interfaces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
@@ -697,6 +700,9 @@
     </ClInclude>
     <ClInclude Include="Logica\Math\Objetos\MatrizFixed.hpp">
       <Filter>Logica\Math\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Enums\SocketEnum.hpp">
+      <Filter>Logica\Net\Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
