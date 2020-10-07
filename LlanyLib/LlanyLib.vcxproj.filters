@@ -725,14 +725,14 @@
     <ClInclude Include="Logica\Net\Enums\SocketEnum.hpp">
       <Filter>Logica\Net\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\SLDB\Enums\TypeEnums.hpp">
-      <Filter>Logica\SLDB\Enums</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\SLDB\Objetos\Table.hpp">
       <Filter>Logica\SLDB\Objetos\Hpp</Filter>
     </ClInclude>
     <ClInclude Include="Logica\SLDB\Objetos\Columna.hpp">
       <Filter>Logica\SLDB\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\SLDB\Enums\ColumEnums.hpp">
+      <Filter>Logica\SLDB\Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

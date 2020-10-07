@@ -12,6 +12,12 @@ namespace LlanyLib {
 				CHAR,
 				STRING
 			};
+			enum class Propiedades
+			{
+				MaxStringSize,
+				ParamsNull,
+
+			};
 		}
 	}
 }

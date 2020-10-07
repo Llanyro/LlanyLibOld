@@ -302,7 +302,7 @@
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Server.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Socket.hpp" />
-    <ClInclude Include="Logica\SLDB\Enums\TypeEnums.hpp" />
+    <ClInclude Include="Logica\SLDB\Enums\ColumEnums.hpp" />
     <ClInclude Include="Logica\SLDB\Objetos\Columna.hpp" />
     <ClInclude Include="Logica\SLDB\Objetos\Table.hpp" />
   </ItemGroup>
