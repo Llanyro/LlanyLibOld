@@ -4,12 +4,9 @@
 
 #include "Contenedor.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Interfaces
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Interfaces {
 			template<class T0, class T1>
 			class ContenedorDobleTipo : public Contenedor<T0>
 			{

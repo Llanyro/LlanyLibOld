@@ -5,14 +5,10 @@
 #include "LinkedList.hpp"
 #include "Array.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Templates
-		{
-			namespace Listas
-			{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Templates {
+			namespace Listas {
 				template<class T>
 				class Buffer : public Interfaces::List<T>
 				{

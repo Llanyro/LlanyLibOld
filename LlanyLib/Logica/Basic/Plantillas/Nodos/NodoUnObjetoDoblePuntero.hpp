@@ -7,14 +7,10 @@
 
 #define DECLARACION_HERENCIA_VECTOR_NODOS_UN_OBJETO_DOBLE_PUNTERO Interfaces::VectorPunteros<NUODP<T>, 2>
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Templates
-		{
-			namespace Nodos
-			{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Templates {
+			namespace Nodos {
 				// Nodo de un objeto doble puntero
 				template <class T>
 				class NUODP : public Interfaces::Contenedor<T>, protected DECLARACION_HERENCIA_VECTOR_NODOS_UN_OBJETO_DOBLE_PUNTERO

@@ -7,14 +7,10 @@
 
 #define DECLARACION_HERENCIA_VECTOR_NODOS_UN_OBJETO_UN_PUNTERO Interfaces::VectorPunteros<NUOUP<T>, 1>
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Templates
-		{
-			namespace Nodos
-			{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Templates {
+			namespace Nodos {
 				// Nodo de un objeto un puntero
 				template <class T>
 				class NUOUP : public Interfaces::Contenedor<T>, protected DECLARACION_HERENCIA_VECTOR_NODOS_UN_OBJETO_UN_PUNTERO

@@ -2,12 +2,9 @@
 #ifndef CONTENEDOR_INTERFACE_HPP_
 #define CONTENEDOR_INTERFACE_HPP_
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Interfaces
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Interfaces {
 			template<class T>
 			class Contenedor
 			{

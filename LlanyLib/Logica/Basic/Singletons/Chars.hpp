@@ -10,8 +10,7 @@
 namespace LlanyLib {
 	namespace Basic {
 		namespace Objetos { class String; }
-		namespace Singletons
-		{
+		namespace Singletons {
 			class Chars : public Templates::Singleton<Chars>, Gestores::SubscriptorSingletons
 			{
 				#pragma region Singleton

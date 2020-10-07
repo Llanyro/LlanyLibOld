@@ -5,12 +5,9 @@
 #include "../Objetos/Excepcion.hpp"
 #include "Listas.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Interfaces
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Interfaces {
 			template<class T>
 			class List : public Listas
 			{

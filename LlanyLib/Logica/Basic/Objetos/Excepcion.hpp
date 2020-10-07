@@ -8,12 +8,9 @@
 #define EXCEPTION throw LlanyLib::Basic::Objetos::Excepcion
 #define BACK_TRACE_EXCEPTION throw LlanyLib::Basic::Objetos::BackTraceException(__FUNCTION__)
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Objetos
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Objetos {
 			class Excepcion
 			{
 				protected:
@@ -31,7 +28,6 @@ namespace LlanyLib
 					virtual char const* getFuncionExcepcion() const;
 					virtual void print() const;
 			};
-
 			class BackTraceException : public Excepcion
 			{
 				public:

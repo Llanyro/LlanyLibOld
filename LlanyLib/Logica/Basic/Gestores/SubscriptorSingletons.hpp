@@ -2,12 +2,9 @@
 #ifndef SUBSCRIPTOR_SINGLETONS_HPP_
 #define SUBSCRIPTOR_SINGLETONS_HPP_
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Gestores
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Gestores {
 			class SubscriptorSingletons
 			{
 				public:

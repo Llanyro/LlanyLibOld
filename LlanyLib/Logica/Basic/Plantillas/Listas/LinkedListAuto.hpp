@@ -4,14 +4,10 @@
 
 #include "LinkedList.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Templates
-		{
-			namespace Listas
-			{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Templates {
+			namespace Listas {
 				template<class T>
 				class LinkedListAuto : public LinkedList<T>
 				{

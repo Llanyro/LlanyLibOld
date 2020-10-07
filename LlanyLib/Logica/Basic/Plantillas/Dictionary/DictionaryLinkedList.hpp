@@ -5,18 +5,14 @@
 #include "../../Interfaces/Dictionary.hpp"
 #include "../Nodos/NodoDosObjetosDosPunteros.hpp"
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
+namespace LlanyLib {
+	namespace Basic {
 		namespace Interfaces {
 			template<class T0, class T1>
 			class ContenedorDobleTipo;
 		}
-		namespace Templates
-		{
-			namespace Diccionarios
-			{
+		namespace Templates {
+			namespace Diccionarios {
 				template<class T1, class T2>
 				class DictionaryLinkedList : public LlanyLib::Basic::Interfaces::Dictionary<T1, T2>
 				{

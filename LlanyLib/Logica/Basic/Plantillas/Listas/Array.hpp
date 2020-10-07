@@ -8,7 +8,7 @@
 #include "../../Singletons/Mem.hpp"
 
 namespace LlanyLib {
-	namespace Basic 	{
+	namespace Basic {
 		namespace Templates {
 			namespace Listas {
 				template<class T>
