@@ -197,6 +197,8 @@
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Server.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Socket.cpp" />
+    <ClCompile Include="Logica\SLDB\Objetos\Columna.cpp" />
+    <ClCompile Include="Logica\SLDB\Objetos\Table.cpp" />
     <ClCompile Include="Tests\MainTests.cpp" />
     <ClCompile Include="Tests\MainTests2.cpp" />
   </ItemGroup>
@@ -300,6 +302,9 @@
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Server.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Socket.hpp" />
+    <ClInclude Include="Logica\SLDB\Enums\TypeEnums.hpp" />
+    <ClInclude Include="Logica\SLDB\Objetos\Columna.hpp" />
+    <ClInclude Include="Logica\SLDB\Objetos\Table.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Logica\Basic\Notas.txt" />

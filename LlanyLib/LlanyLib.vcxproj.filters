@@ -220,6 +220,21 @@
     <Filter Include="Logica\Net\asd">
       <UniqueIdentifier>{a2f10c8d-c0d7-4062-9b22-7937ad477281}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\SLDB">
+      <UniqueIdentifier>{037ada28-6e6f-4556-9bcc-66b2419648fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\SLDB\Enums">
+      <UniqueIdentifier>{a06b5649-c73d-47ea-89c5-e860fbadaff5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\SLDB\Objetos">
+      <UniqueIdentifier>{2347cf30-8312-4bd1-be7e-f84d7e7f9de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\SLDB\Objetos\Hpp">
+      <UniqueIdentifier>{411be7e5-dc04-45bd-8632-7127d3279f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\SLDB\Objetos\Cpp">
+      <UniqueIdentifier>{52337083-0554-4407-8481-c305acd4138c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Logica\Math\Objetos\Vector3.cpp">
@@ -404,6 +419,12 @@
     </ClCompile>
     <ClCompile Include="Logica\Net\Objetos\Server.cpp">
       <Filter>Logica\Net\Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\SLDB\Objetos\Table.cpp">
+      <Filter>Logica\SLDB\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\SLDB\Objetos\Columna.cpp">
+      <Filter>Logica\SLDB\Objetos\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -703,6 +724,15 @@
     </ClInclude>
     <ClInclude Include="Logica\Net\Enums\SocketEnum.hpp">
       <Filter>Logica\Net\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\SLDB\Enums\TypeEnums.hpp">
+      <Filter>Logica\SLDB\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\SLDB\Objetos\Table.hpp">
+      <Filter>Logica\SLDB\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\SLDB\Objetos\Columna.hpp">
+      <Filter>Logica\SLDB\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
