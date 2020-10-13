@@ -22,7 +22,7 @@
 #pragma region Constructores
 LlanyLib::Juego::Objetos::Entidades::Entidad::Entidad()
 {
-	this->tipoDeEntidad = Enums::TipoDeEntidad::ENTIDAD_NULL;
+	this->tipoDeEntidad = Enum::TipoDeEntidad::ENTIDAD_NULL;
 	this->nombre = new Basic::Objetos::String("ENTIDAD_NULL");
 	this->stats = new Stats::Stats();
 	//this->inventario = new Inventario();
@@ -50,7 +50,7 @@ bool LlanyLib::Juego::Objetos::Entidades::Entidad::operator=(const Entidad& othe
 }
 LlanyLib::Juego::Objetos::Entidades::Entidad::~Entidad()
 {
-	this->tipoDeEntidad = Enums::TipoDeEntidad::ENTIDAD_NULL;
+	this->tipoDeEntidad = Enum::TipoDeEntidad::ENTIDAD_NULL;
 	delete(this->nombre);
 	delete(this->stats);
 	//if (this->inventario != nullptr) delete(this->inventario);
@@ -66,7 +66,7 @@ const LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Objetos::Entidades::Ent
 {
 	return this->nombre;
 }
-LlanyLib::Juego::Enums::TipoDeEntidad LlanyLib::Juego::Objetos::Entidades::Entidad::getTipoDeEntidad() const
+LlanyLib::Juego::Enum::TipoDeEntidad LlanyLib::Juego::Objetos::Entidades::Entidad::getTipoDeEntidad() const
 {
 	return this->tipoDeEntidad;
 }
@@ -93,7 +93,7 @@ Equipamiento* LlanyLib::Juego::Objetos::Entidades::Entidad::getEquipamiento() co
 //	assert(&nombre != nullptr);
 //	//this->nombre->operator=(nombre);
 //}
-void LlanyLib::Juego::Objetos::Entidades::Entidad::setTipoDeEntidad(const LlanyLib::Juego::Enums::TipoDeEntidad& value)
+void LlanyLib::Juego::Objetos::Entidades::Entidad::setTipoDeEntidad(const LlanyLib::Juego::Enum::TipoDeEntidad& value)
 {
 	this->tipoDeEntidad = value;
 }

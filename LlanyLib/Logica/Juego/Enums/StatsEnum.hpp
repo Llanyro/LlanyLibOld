@@ -4,7 +4,7 @@
 
 namespace LlanyLib {
 	namespace Juego {
-		namespace Enums {
+		namespace Enum {
 			enum class Raza
 			{
 				#pragma region No agrupados

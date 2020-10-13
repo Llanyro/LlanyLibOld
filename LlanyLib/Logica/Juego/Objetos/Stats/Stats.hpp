@@ -61,7 +61,7 @@ namespace LlanyLib {
 						bool pvp;
 						bool fuegoAmigo;
 
-						Enums::Raza raza;
+						Enum::Raza raza;
 						#pragma endregion
 					public:
 						#pragma region Constructores
@@ -78,7 +78,7 @@ namespace LlanyLib {
 						ulong_t getEquipo() const;
 						bool getPVP() const;
 						bool getFuegoAmigo() const;
-						Enums::Raza getRaza() const;
+						Enum::Raza getRaza() const;
 						#pragma endregion
 						#pragma region Setters
 						void setNivel(const ulong_t& value);
@@ -87,7 +87,7 @@ namespace LlanyLib {
 						void setEquipo(const ulong_t& value);
 						void setPVP(const bool& value);
 						void setFuegoAmigo(const bool& value);
-						void setRaza(const Enums::Raza& value);
+						void setRaza(const Enum::Raza& value);
 						#pragma endregion
 						#pragma region Adders
 						void addNivel(const ulong_t& value);

@@ -4,8 +4,8 @@
 #include "../../../Basic/Objetos/String.hpp"
 
 LlanyLib::Juego::Items::Generados::Elementos::Helio::Helio()
-	: Helio(1.0, Enums::TipoDeMaterial::Liquido){}
-LlanyLib::Juego::Items::Generados::Elementos::Helio::Helio(const double& cantidad, const Enums::TipoDeMaterial& material)
+	: Helio(1.0, Enum::TipoDeMaterial::Liquido){}
+LlanyLib::Juego::Items::Generados::Elementos::Helio::Helio(const double& cantidad, const Enum::TipoDeMaterial& material)
 {
 	this->valorActual = 1.0;
 	this->valorMaximo = 1.0;
@@ -16,14 +16,14 @@ LlanyLib::Juego::Items::Generados::Elementos::Helio::Helio(const double& cantida
 
 	//this->itemShowName = new Basic::Objetos::String("Hidrogeno");
 
-	this->tipoDeObjeto = Enums::TipoObjeto::ElementoPuro;
+	this->tipoDeObjeto = Enum::TipoObjeto::ElementoPuro;
 	this->tipoDeMaterial = material;
 
 	this->temperatura = 5.2;
 	this->resistenciaMaterial = 0.0;
 }
 LlanyLib::Juego::Items::Generados::Elementos::Helio::Helio(const double& cantidad)
-	: Helio(cantidad, Enums::TipoDeMaterial::Liquido) {}
+	: Helio(cantidad, Enum::TipoDeMaterial::Liquido) {}
 LlanyLib::Juego::Items::Generados::Elementos::Helio::~Helio(){}
 LlanyLib::Juego::Items::Generados::Elementos::Helio::Helio(const Helio& other)
 {

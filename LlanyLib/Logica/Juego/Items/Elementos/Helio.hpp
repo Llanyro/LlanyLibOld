@@ -8,7 +8,7 @@
 
 namespace LlanyLib {
 	namespace Juego {
-		namespace Enums {
+		namespace Enum {
 			enum class TipoDeMaterial;
 		}
 		namespace Items {
@@ -22,7 +22,7 @@ namespace LlanyLib {
 								// Cantidad en litros / unidades
 								const double& cantidad,
 								// Tipo de estado del material
-								const Enums::TipoDeMaterial& material);
+								const Enum::TipoDeMaterial& material);
 							Helio(
 								// Cantidad en litros / unidades
 								const double& cantidad);

@@ -21,7 +21,7 @@
 #include "../../Basic/Objetos/Logger.hpp"
 #include "../../Basic/Objetos/String.hpp"
 
-#pragma region Protected
+/*#pragma region Protected
 #pragma region Constructores
 LlanyLib::Net::Iterface::Server::Server(char const* const serverName) : Server(serverName, "localhost") {}
 LlanyLib::Net::Iterface::Server::Server(char const* const serverName, char const* const ipServer)
@@ -57,5 +57,5 @@ void LlanyLib::Net::Iterface::Server::clearServicio()
 #pragma endregion
 
 #pragma endregion
-
+*/
 

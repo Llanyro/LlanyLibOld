@@ -81,6 +81,7 @@ namespace LlanyLib {
 					String* buscarYBorrar(const char& caracter) const;
 					String* buscarYBorrarAll(const char& caracter) const;
 					Templates::Listas::LinkedList<String*>* split(const char& separador) const;
+					Templates::Listas::LinkedList<String*>* split(char const* const separador) const;
 					Templates::Listas::LinkedList<String*>* split(Templates::Listas::LinkedList<char>* list) const;
 					Templates::Listas::LinkedList<String*>* splitClear(Templates::Listas::LinkedList<char>* list) const;
 					String* splitGetFirst(const char& separador) const;
@@ -103,6 +104,10 @@ namespace LlanyLib {
 					bool startWith(char const* const str) const;
 					bool startWith(const char* str, const size_t& size) const;
 					bool startWith(const String& other) const;
+					bool startWithSimilar(const char& caracter) const;
+					bool startWithSimilar(char const* const str) const;
+					bool startWithSimilar(const char* str, const size_t& size) const;
+					bool startWithSimilar(const String& other) const;
 					#pragma endregion
 					#pragma region Modificadores
 					void reverse();

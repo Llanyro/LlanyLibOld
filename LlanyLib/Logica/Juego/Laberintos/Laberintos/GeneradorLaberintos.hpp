@@ -9,7 +9,7 @@
 
 namespace LlanyLib {
 	namespace Laberintos {
-		namespace Enums {
+		namespace Enum {
 			enum class Dificultad;
 		}
 		namespace Objetos {
@@ -43,8 +43,8 @@ namespace LlanyLib {
 					#pragma endregion
 					#pragma endregion
 				public:
-					Objetos::Laberinto2D* generarLaberinto2D(const size_t& size, const Enums::Dificultad& diff) const;
-					Objetos::Laberinto2D* generarLaberinto2D(const size_t& x, const size_t& y, const Enums::Dificultad& diff) const;
+					Objetos::Laberinto2D* generarLaberinto2D(const size_t& size, const Enum::Dificultad& diff) const;
+					Objetos::Laberinto2D* generarLaberinto2D(const size_t& x, const size_t& y, const Enum::Dificultad& diff) const;
 			};
 		}
 	}

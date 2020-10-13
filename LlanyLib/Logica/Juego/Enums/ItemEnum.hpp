@@ -1,12 +1,9 @@
 #pragma once
 #ifndef ITEM_ENUM_JUEGO_HPP_
 #define ITEM_ENUM_JUEGO_HPP_
-namespace LlanyLib
-{
-	namespace Juego
-	{
-		namespace Enums
-		{
+namespace LlanyLib {
+	namespace Juego {
+		namespace Enum {
 			enum class TipoObjeto
 			{
 				Objeto,

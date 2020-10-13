@@ -16,7 +16,7 @@ namespace LlanyLib {
 		namespace Gestores {
 			class GestorItems;
 		}
-		namespace Enums {
+		namespace Enum {
 			enum class TipoDeMaterial;
 			enum class TipoObjeto;
 		}
@@ -28,8 +28,8 @@ namespace LlanyLib {
 						long_t itemID;							// Id del objeto
 						friend class Gestores::GestorItems;
 					protected:
-						Enums::TipoDeMaterial tipoDeMaterial;	// Estado del material usado para definir en grupos y permitir o no el guardado en contenedores
-						Enums::TipoObjeto tipoDeObjeto;			// Indica que grupo de objetos pertenece
+						Enum::TipoDeMaterial tipoDeMaterial;	// Estado del material usado para definir en grupos y permitir o no el guardado en contenedores
+						Enum::TipoObjeto tipoDeObjeto;			// Indica que grupo de objetos pertenece
 						Basic::Objetos::String* itemShowName;		// Nombre a mostrar en el juego
 
 						double valorActual;						// Valor actual del objeto
@@ -50,8 +50,8 @@ namespace LlanyLib {
 						#pragma endregion
 						#pragma region Getters
 						long_t getItemID() const;
-						Enums::TipoDeMaterial getTipoDeMaterial() const;
-						Enums::TipoObjeto getTipoObjeto() const;
+						Enum::TipoDeMaterial getTipoDeMaterial() const;
+						Enum::TipoObjeto getTipoObjeto() const;
 						const Basic::Objetos::String* getShowName() const;
 						double getValorActual() const;
 						double getValorMaximo() const;
@@ -77,7 +77,7 @@ namespace LlanyLib {
 						void setDurabilidadMaxima(const double& value);
 						void setCantidad(const double& value);
 						void setPeso(const double& value);
-						void setTipoDeMaterial(const Base::Enums::TipoDeMaterial& value);
+						void setTipoDeMaterial(const Base::Enum::TipoDeMaterial& value);
 						void setTemperatura(const double& value);
 						void setResistenciaTemperatura(const double& value);
 						#pragma endregion

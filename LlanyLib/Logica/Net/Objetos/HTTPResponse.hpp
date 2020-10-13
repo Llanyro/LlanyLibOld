@@ -1,8 +1,6 @@
 #pragma once
-#ifndef CABECERA_OBJECT_NET_HPP_
-#define CABECERA_OBJECT_NET_HPP_
-
-#include "../../Basic/LibreriasSimples/LlanyTypes.h"
+#ifndef HTTP_RESPONSE_OBJECT_NET_HPP_
+#define HTTP_RESPONSE_OBJECT_NET_HPP_
 
 namespace LlanyLib {
 	namespace Basic {
@@ -20,7 +18,7 @@ namespace LlanyLib {
 	namespace Net {
 		namespace Objetos {
 			class Cookie;
-			class Cabecera 
+			class HTTPResponse
 			{
 				protected:
 					int responseCode = 200;
@@ -98,4 +96,4 @@ namespace LlanyLib {
 		}
 	}
 }
-#endif // !CABECERA_OBJECT_NET_HPP_
+#endif // !HTTP_RESPONSE_OBJECT_NET_HPP_

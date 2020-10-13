@@ -3,7 +3,7 @@
 #define ENTIDAD_ENUM_JUEGO_HPP_
 namespace LlanyLib {
 	namespace Juego {
-		namespace Enums {
+		namespace Enum {
 			enum class TipoDeEntidad
 			{
 				ENTIDAD_NULL,

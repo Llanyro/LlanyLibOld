@@ -41,60 +41,60 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Singletons::ItemContoller::ge
 
 #pragma endregion
 #pragma region Contenedores
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::isContenedor(Objetos::Items::Item* contenedor) const
+LlanyLib::Juego::Enum::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::isContenedor(Objetos::Items::Item* contenedor) const
 {
-	Enums::ItemControllerResults resultado = Enums::ItemControllerResults::NoResult;
+	Enum::ItemControllerResults resultado = Enum::ItemControllerResults::NoResult;
 	if(contenedor == nullptr)
-		resultado = Enums::ItemControllerResults::PunteroContenedorNull;
+		resultado = Enum::ItemControllerResults::PunteroContenedorNull;
 	else
 	{
-		if (contenedor->getTipoObjeto() != Enums::TipoObjeto::Contenedor)
-			resultado = Enums::ItemControllerResults::NoEsContenedor;
+		if (contenedor->getTipoObjeto() != Enum::TipoObjeto::Contenedor)
+			resultado = Enum::ItemControllerResults::NoEsContenedor;
 		else
-			resultado = Enums::ItemControllerResults::EsContenedor;
+			resultado = Enum::ItemControllerResults::EsContenedor;
 	}
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::isContenedor(Objetos::Items::Contenedor* contenedor) const
+LlanyLib::Juego::Enum::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::isContenedor(Objetos::Items::Contenedor* contenedor) const
 {
 	return ItemContoller::isContenedor((Objetos::Items::Item*)contenedor);
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const
+LlanyLib::Juego::Enum::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const
 {
-	Enums::ItemControllerResults resultado = ItemContoller::isContenedor(contenedor);
-	if (resultado == Enums::ItemControllerResults::EsContenedor)
+	Enum::ItemControllerResults resultado = ItemContoller::isContenedor(contenedor);
+	if (resultado == Enum::ItemControllerResults::EsContenedor)
 		resultado = ItemContoller::addItemToContenedor((Objetos::Items::Contenedor*)contenedor, item);
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const
+LlanyLib::Juego::Enum::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const
 {
-	Enums::ItemControllerResults resultado = ItemContoller::addItemToContenedor(contenedor, item);
-	if (resultado != Enums::ItemControllerResults::AddItemExitoContenedor)
+	Enum::ItemControllerResults resultado = ItemContoller::addItemToContenedor(contenedor, item);
+	if (resultado != Enum::ItemControllerResults::AddItemExitoContenedor)
 		item->deleteItem();
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const
+LlanyLib::Juego::Enum::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const
 {
-	Enums::ItemControllerResults resultado = ItemContoller::isContenedor(contenedor);
+	Enum::ItemControllerResults resultado = ItemContoller::isContenedor(contenedor);
 
-	if (resultado == Enums::ItemControllerResults::EsContenedor) {
+	if (resultado == Enum::ItemControllerResults::EsContenedor) {
 		if (item == nullptr)
-			resultado = Enums::ItemControllerResults::PunteroItemNull;
+			resultado = Enum::ItemControllerResults::PunteroItemNull;
 		else {
 			Objetos::Items::Item* resultAdd = contenedor->add(item);
 			if (resultAdd != nullptr) {
-				resultado = Enums::ItemControllerResults::NoCumpleRequirimientosDelContenedor;
+				resultado = Enum::ItemControllerResults::NoCumpleRequirimientosDelContenedor;
 			}
 			else
-				resultado = Enums::ItemControllerResults::AddItemExitoContenedor;
+				resultado = Enum::ItemControllerResults::AddItemExitoContenedor;
 		}
 	}
 	return resultado;
 }
-LlanyLib::Juego::Enums::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const
+LlanyLib::Juego::Enum::ItemControllerResults LlanyLib::Juego::Singletons::ItemContoller::addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const
 {
-	Enums::ItemControllerResults resultado = ItemContoller::addItemToContenedor(contenedor, item);
-	if (resultado != Enums::ItemControllerResults::AddItemExitoContenedor)
+	Enum::ItemControllerResults resultado = ItemContoller::addItemToContenedor(contenedor, item);
+	if (resultado != Enum::ItemControllerResults::AddItemExitoContenedor)
 		item->deleteItem();
 	return resultado;
 }

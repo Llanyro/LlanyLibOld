@@ -5,7 +5,7 @@
 #include "../Enumerators/StringEnum.hpp"
 
 #include "../Singletons/Mem.hpp"
-//#include "../Singletons/Chars.hpp"
+#include "../Singletons/Chars.hpp"
 
 #include "../Plantillas/Listas/Buffer.hpp"
 
@@ -302,14 +302,60 @@ LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Basic::Objetos::String*
 		// Si lo es
 		else
 		{
-			// Añadimos el buffer a la lista
-			result->add(new String(buffer));
-			// Limpiamos el buffer para reutilizarlo
-			buffer.clear();
+			if (buffer.getCount() > 0) {
+				// Añadimos el buffer a la lista
+				result->add(new String(buffer));
+				// Limpiamos el buffer para reutilizarlo
+				buffer.clear();
+			}
 		}
 	}
 	if (buffer.getCount() > 1)
 		result->add(new String(buffer));
+	return result;
+}
+LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Basic::Objetos::String*>* LlanyLib::Basic::Objetos::String::split(char const* const separador) const
+{
+	Templates::Listas::LinkedList<String*>* result = nullptr;
+	size_t sizeStr = strlen(separador);
+	if (sizeStr == 2)
+		result = String::split(separador[0]);
+	else {
+		StringBuilder buffer;
+		result = new LlanyLib::Basic::Templates::Listas::LinkedList<String*>();
+		for (size_t i = 0; i < this->count; i++) {
+			// Si el caracter actual coincide con el primero del separador
+			if (this->vector[i] == separador[0]) {
+				for (size_t r = 1; r < sizeStr; r++) {
+					// Si coincide el caracter actual + r con el caracter del separador + r 
+					if (this->vector[i + r] == separador[r]) {
+						if (r == sizeStr - 1) {
+							// Añadimos el buffer cortado a la lista
+							result->add(buffer.build());
+							// Limpiamos el buffer para reutilizarlo
+							buffer.clear();
+							// Avanzamos tanas posiciones como caracteres coincidan
+							i += r;
+						}
+					}
+					// Si no
+					else {
+						// Guardamos el caracter en un buffer
+						buffer += this->vector[i];
+						// Salimos del bucle
+						r = sizeStr;
+					}
+				}
+			}
+			// Si no coincide
+			else
+				// Guardamos el caracter en un buffer
+				buffer += this->vector[i];
+		}
+		if (buffer.contieneAlgo())
+			result->add(buffer.build());
+	}
+
 	return result;
 }
 LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Basic::Objetos::String*>* LlanyLib::Basic::Objetos::String::split(Templates::Listas::LinkedList<char>* list) const
@@ -426,9 +472,8 @@ bool LlanyLib::Basic::Objetos::String::startWith(const char& caracter) const
 	bool resultado = false;
 	if (&caracter == this->vector) resultado = true;
 	else if (&caracter != nullptr && this->vector != nullptr) {
-		if (this->count == 1) {
+		if (this->count == 1)
 			resultado = caracter == this->vector[0];
-		}
 	}
 	return resultado;
 }
@@ -463,6 +508,49 @@ bool LlanyLib::Basic::Objetos::String::startWith(const String& other) const
 	if (other.vector == this->vector) resultado = true;
 	else if (&other.vector != nullptr && this->vector != nullptr)
 		resultado = String::startWith(other.vector, other.count);
+	return resultado;
+}
+bool LlanyLib::Basic::Objetos::String::startWithSimilar(const char& caracter) const
+{
+	bool resultado = false;
+	if (&caracter == this->vector) resultado = true;
+	else if (&caracter != nullptr && this->vector != nullptr) {
+		if (this->count == 1)
+			resultado = CHARS->compareCharSimilar(&caracter, &this->vector[0]);
+	}
+	return resultado;
+}
+bool LlanyLib::Basic::Objetos::String::startWithSimilar(char const* const str) const
+{
+	bool resultado = false;
+	if (str == this->vector) resultado = true;
+	else if (str != nullptr && this->vector != nullptr) {
+		size_t size = strlen(str);
+		resultado = String::startWithSimilar(str, size);
+	}
+	return resultado;
+}
+bool LlanyLib::Basic::Objetos::String::startWithSimilar(const char* str, const size_t& size) const
+{
+	bool resultado = false;
+	if (str == this->vector) resultado = true;
+	else if (str != nullptr && this->vector != nullptr) {
+		if (this->count >= size) {
+			// Si el primer caracter coincide
+			bool temp = CHARS->compareCharSimilar(&this->vector[0], &str[0]);
+			for (size_t i = 1; i < size && temp; i++)
+				temp = CHARS->compareCharSimilar(&this->vector[i], &str[i]);
+			resultado = temp;
+		}
+	}
+	return resultado;
+}
+bool LlanyLib::Basic::Objetos::String::startWithSimilar(const String& other) const
+{
+	bool resultado = false;
+	if (other.vector == this->vector) resultado = true;
+	else if (&other.vector != nullptr && this->vector != nullptr)
+		resultado = String::startWithSimilar(other.vector, other.count);
 	return resultado;
 }
 #pragma endregion

@@ -68,7 +68,7 @@ void LlanyLib::Juego::Objetos::Items::ListItem::clear()
 	for (size_t i = 0; i < this->list->length(); i++)
 		ListItem::extractItem(i)->deleteItem();
 }
-void LlanyLib::Juego::Objetos::Items::ListItem::ordenar(const Enums::Ordenamiento& ord)
+void LlanyLib::Juego::Objetos::Items::ListItem::ordenar(const Enum::Ordenamiento& ord)
 {
 }
 const LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::ListItem::get(const size_t& pos) const

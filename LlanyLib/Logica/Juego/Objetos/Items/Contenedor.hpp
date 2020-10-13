@@ -18,7 +18,7 @@ namespace LlanyLib {
 		}
 	}
 	namespace Juego {
-		namespace Enums {
+		namespace Enum {
 			enum class TipoDeMaterial;
 			enum class TipoObjeto;
 			enum class Ordenamiento;
@@ -30,7 +30,7 @@ namespace LlanyLib {
 				{
 					protected:
 						ListItem* listaContenedor;
-						Enums::TipoDeMaterial tipoDeMaterialContenible;
+						Enum::TipoDeMaterial tipoDeMaterialContenible;
 						double capacidadOcupada;
 						double capacidadMaxima;
 					#pragma region No virtual
@@ -51,7 +51,7 @@ namespace LlanyLib {
 						#pragma endregion
 						#pragma region Contenedor
 						void clear();
-						void ordenar(const Enums::Ordenamiento& ord);
+						void ordenar(const Enum::Ordenamiento& ord);
 						const Item* get(const size_t& pos) const;
 						#pragma endregion
 					#pragma endregion

@@ -251,18 +251,18 @@ void LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarCuboHueco(Obj
 #pragma endregion
 #pragma endregion
 
-LlanyLib::Laberintos::Objetos::Laberinto2D* LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarLaberinto2D(const size_t& size, const Enums::Dificultad& diff) const
+LlanyLib::Laberintos::Objetos::Laberinto2D* LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarLaberinto2D(const size_t& size, const Enum::Dificultad& diff) const
 {
 	return GeneradorLaberintos::generarLaberinto2D(size, size, diff);
 }
-LlanyLib::Laberintos::Objetos::Laberinto2D* LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarLaberinto2D(const size_t& x, const size_t& y, const Enums::Dificultad& diff) const
+LlanyLib::Laberintos::Objetos::Laberinto2D* LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarLaberinto2D(const size_t& x, const size_t& y, const Enum::Dificultad& diff) const
 {
 	Objetos::Laberinto2D* laberinto = new Objetos::Laberinto2D(x, y, diff);
 	switch (diff)
 	{
 		#pragma region Kruskal
 			// Ponemos todas la paredes y luego hacemos el laberinto
-		case Enums::Dificultad::KruskalSimple:
+		case Enum::Dificultad::KruskalSimple:
 			GeneradorLaberintos::rellenarParedes(laberinto);
 			GeneradorLaberintos::generarPorKruskalSimple2D(laberinto);
 			break;
@@ -270,25 +270,25 @@ LlanyLib::Laberintos::Objetos::Laberinto2D* LlanyLib::Laberintos::Singletons::Ge
 		#pragma endregion
 		#pragma region Random
 			// Ponemos todas la paredes y luego hacemos el laberinto
-		case Enums::Dificultad::RandomMedio:
+		case Enum::Dificultad::RandomMedio:
 			GeneradorLaberintos::rellenarParedes(laberinto);
 			GeneradorLaberintos::generarRandomMedio(laberinto);
 			break;
 			// Ponemos todas la paredes y luego hacemos el laberinto
-		case Enums::Dificultad::RandomFacil:
+		case Enum::Dificultad::RandomFacil:
 			GeneradorLaberintos::rellenarParedes(laberinto);
 			GeneradorLaberintos::generarRandomFacil(laberinto);
 			break;
 
 		#pragma endregion
 		#pragma region Otros
-		case Enums::Dificultad::SoloMuros:
+		case Enum::Dificultad::SoloMuros:
 			GeneradorLaberintos::rellenarParedes(laberinto);
 			break;
-		case Enums::Dificultad::Vacio:
+		case Enum::Dificultad::Vacio:
 			GeneradorLaberintos::eliminarParedes(laberinto);
 			break;
-		case Enums::Dificultad::CuboHueco:
+		case Enum::Dificultad::CuboHueco:
 			GeneradorLaberintos::generarCuboHueco(laberinto);
 			break;
 		#pragma endregion

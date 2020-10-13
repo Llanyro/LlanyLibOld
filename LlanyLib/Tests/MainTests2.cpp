@@ -672,7 +672,7 @@ void j4()
 	if (botellahidro != nullptr) {
 		LlanyLib::Juego::Objetos::Items::Item* temp = nullptr;
 
-		if (botellahidro->getTipoObjeto() == LlanyLib::Juego::Enums::TipoObjeto::Contenedor) {
+		if (botellahidro->getTipoObjeto() == LlanyLib::Juego::Enum::TipoObjeto::Contenedor) {
 			LlanyLib::Juego::Objetos::Items::Contenedor* contenedorHidro =
 				(LlanyLib::Juego::Objetos::Items::Contenedor*)botellahidro;
 			temp = contenedorHidro->add(hidrogeno);
@@ -715,7 +715,7 @@ void printCelda(const LlanyLib::Laberintos::Objetos::Celda2D* celda)
 }
 void lab1()
 {
-	LlanyLib::Laberintos::Objetos::Laberinto2D* lab = GENERADOR_LABERINTOS->generarLaberinto2D(3, LlanyLib::Laberintos::Enums::Dificultad::KruskalSimple);
+	LlanyLib::Laberintos::Objetos::Laberinto2D* lab = GENERADOR_LABERINTOS->generarLaberinto2D(3, LlanyLib::Laberintos::Enum::Dificultad::KruskalSimple);
 	for (size_t i = 0; i < lab->getY(); i++)
 		for (size_t e = 0; e < lab->getX(); e++)
 		{
@@ -726,7 +726,7 @@ void lab1()
 }
 #pragma endregion
 
-int main()
+int main2()
 {
 	//if (NULL == nullptr)
 	//	cout << "Son iguales\n";

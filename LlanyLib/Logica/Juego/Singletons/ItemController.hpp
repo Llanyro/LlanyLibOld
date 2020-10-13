@@ -44,16 +44,16 @@ namespace LlanyLib {
 
 					#pragma endregion
 					#pragma region Contenedores
-					Enums::ItemControllerResults isContenedor(Objetos::Items::Item* contenedor) const;
-					Enums::ItemControllerResults isContenedor(Objetos::Items::Contenedor* contenedor) const;
+					Enum::ItemControllerResults isContenedor(Objetos::Items::Item* contenedor) const;
+					Enum::ItemControllerResults isContenedor(Objetos::Items::Contenedor* contenedor) const;
 
-					Enums::ItemControllerResults addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
+					Enum::ItemControllerResults addItemToContenedor(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
 					// Si no se añade borra el item
-					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
+					Enum::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Item* contenedor, Objetos::Items::Item* item) const;
 
-					Enums::ItemControllerResults addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
+					Enum::ItemControllerResults addItemToContenedor(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
 					// Si no se añade borra el item
-					Enums::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
+					Enum::ItemControllerResults addItemToContenedorDelete(Objetos::Items::Contenedor* contenedor, Objetos::Items::Item* item) const;
 					#pragma endregion
 			};
 		}

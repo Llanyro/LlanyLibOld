@@ -13,8 +13,8 @@ LlanyLib::Juego::Objetos::Items::Item::Item()
 {
 	this->itemID = -1;
 
-	this->tipoDeMaterial = Enums::TipoDeMaterial::Irreal;
-	this->tipoDeObjeto = Enums::TipoObjeto::Objeto;
+	this->tipoDeMaterial = Enum::TipoDeMaterial::Irreal;
+	this->tipoDeObjeto = Enum::TipoObjeto::Objeto;
 	this->itemShowName = nullptr;
 
 	this->valorActual = 0.0;
@@ -68,11 +68,11 @@ long_t LlanyLib::Juego::Objetos::Items::Item::getItemID() const
 {
 	return this->itemID;
 }
-LlanyLib::Juego::Enums::TipoDeMaterial LlanyLib::Juego::Objetos::Items::Item::getTipoDeMaterial() const
+LlanyLib::Juego::Enum::TipoDeMaterial LlanyLib::Juego::Objetos::Items::Item::getTipoDeMaterial() const
 {
 	return this->tipoDeMaterial;
 }
-LlanyLib::Juego::Enums::TipoObjeto LlanyLib::Juego::Objetos::Items::Item::getTipoObjeto() const
+LlanyLib::Juego::Enum::TipoObjeto LlanyLib::Juego::Objetos::Items::Item::getTipoObjeto() const
 {
 	return this->tipoDeObjeto;
 }
@@ -255,7 +255,7 @@ void LlanyLib::Juego::Objetos::Items::Objetos::setCantidad(const double& value)
 void LlanyLib::Juego::Objetos::Items::Objetos::setPeso(const double& value)
 {
 }
-void LlanyLib::Juego::Objetos::Items::Objetos::setTipoDeMaterial(const Base::Enums::TipoDeMaterial& value)
+void LlanyLib::Juego::Objetos::Items::Objetos::setTipoDeMaterial(const Base::Enum::TipoDeMaterial& value)
 {
 }
 void LlanyLib::Juego::Objetos::Items::Objetos::setTemperatura(const double& value)

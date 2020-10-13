@@ -72,14 +72,14 @@ namespace LlanyLib {
 			class Socket
 			{
 				protected:
-					Logger* logger;
-					String* port;
-					String* ipServer;			//Dejar a nullptr si se usa como cliente
-					WSAData* wsaData;
-					Enum::SocketCode lastCode;
-					addrinfo* result;
-					addrinfo* ptr;
-					addrinfo* hints;
+					//Logger* logger;
+					//String* port;
+					//String* ipServer;			//Dejar a nullptr si se usa como cliente
+					//WSAData* wsaData;
+					//Enum::SocketCode lastCode;
+					//addrinfo* result;
+					//addrinfo* ptr;
+					//addrinfo* hints;
 				protected:
 					void startData();
 					void getAddrInfo();
@@ -92,4 +92,4 @@ namespace LlanyLib {
 	}
 }
 #endif // __WIN32
-#endif // !SOCKET_OBJECT_HPP_
+//#endif // !SOCKET_OBJECT_HPP_

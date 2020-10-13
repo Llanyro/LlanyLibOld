@@ -4,7 +4,7 @@
 
 namespace LlanyLib {
 	namespace Laberintos {
-		namespace Enums {
+		namespace Enum {
 			enum class Dificultad
 			{
 				KruskalSimple,

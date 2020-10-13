@@ -25,8 +25,8 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::BotellaHidrog
 
 	//this->itemShowName = new Basic::Objetos::String("BotellaPlastico");
 
-	this->tipoDeObjeto = Enums::TipoObjeto::Contenedor;
-	this->tipoDeMaterial = Enums::TipoDeMaterial::Solido;
+	this->tipoDeObjeto = Enum::TipoObjeto::Contenedor;
+	this->tipoDeMaterial = Enum::TipoDeMaterial::Solido;
 
 	this->temperatura = 0;
 	this->resistenciaMaterial = 0.0;
@@ -35,7 +35,7 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::BotellaHidrog
 	// Contenedor
 	this->capacidadMaxima = 100.0;
 	this->capacidadOcupada = 0.0;
-	this->tipoDeMaterialContenible = Enums::TipoDeMaterial::Gaseoso;
+	this->tipoDeMaterialContenible = Enum::TipoDeMaterial::Gaseoso;
 }
 LlanyLib::Juego::Items::Generados::Contenedores::BotellaHidrogeno::BotellaHidrogeno(const BotellaHidrogeno& other)
 {

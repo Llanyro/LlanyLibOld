@@ -217,9 +217,6 @@
     <Filter Include="Logica\Juego\Laberintos\Enums">
       <UniqueIdentifier>{3688fc8b-f6de-4dbc-a61b-57107dd9fe74}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Net\asd">
-      <UniqueIdentifier>{a2f10c8d-c0d7-4062-9b22-7937ad477281}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\SLDB">
       <UniqueIdentifier>{037ada28-6e6f-4556-9bcc-66b2419648fa}</UniqueIdentifier>
     </Filter>
@@ -234,6 +231,15 @@
     </Filter>
     <Filter Include="Logica\SLDB\Objetos\Cpp">
       <UniqueIdentifier>{52337083-0554-4407-8481-c305acd4138c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos\Socket">
+      <UniqueIdentifier>{cdbb96dd-92a0-479a-bb8d-b09640fae5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Singletons">
+      <UniqueIdentifier>{0cb53aab-60c5-4aaa-b344-ef6f1c85367d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Headers">
+      <UniqueIdentifier>{b4b5a7ab-10c2-4602-9015-01e240d637f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -369,9 +375,6 @@
     <ClCompile Include="Logica\Juego\Objetos\Entidades\Familiar.cpp">
       <Filter>Logica\Juego\Objetos\Entidades\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Net\Objetos\Cabecera.cpp">
-      <Filter>Logica\Net\Objetos\Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp">
       <Filter>Logica\Net\Objetos\Cpp</Filter>
     </ClCompile>
@@ -425,6 +428,27 @@
     </ClCompile>
     <ClCompile Include="Logica\SLDB\Objetos\Columna.cpp">
       <Filter>Logica\SLDB\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\ClientSocket.cpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\ServerSocket.cpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\ClientWebSocket.cpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\ServerWebSocket.cpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Singletons\SocketController.cpp">
+      <Filter>Logica\Net\Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\HTTPResponse.cpp">
+      <Filter>Logica\Net\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\HTTPRequest.cpp">
+      <Filter>Logica\Net\Objetos\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -656,12 +680,6 @@
     <ClInclude Include="Logica\Juego\Objetos\Entidades\Familiar.hpp">
       <Filter>Logica\Juego\Objetos\Entidades\Hpp</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Net\Enums\ContentTypeEnum.hpp">
-      <Filter>Logica\Net\Enums</Filter>
-    </ClInclude>
-    <ClInclude Include="Logica\Net\Objetos\Cabecera.hpp">
-      <Filter>Logica\Net\Objetos\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp">
       <Filter>Logica\Net\Objetos\Hpp</Filter>
     </ClInclude>
@@ -733,6 +751,33 @@
     </ClInclude>
     <ClInclude Include="Logica\SLDB\Enums\ColumEnums.hpp">
       <Filter>Logica\SLDB\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\ClientSocket.hpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\ServerSocket.hpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\ClientWebSocket.hpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\ServerWebSocket.hpp">
+      <Filter>Logica\Net\Objetos\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Enums\HTTPEnum.hpp">
+      <Filter>Logica\Net\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Singletons\SocketController.hpp">
+      <Filter>Logica\Net\Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\HTTPResponse.hpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\HTTPRequest.hpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Headers\SocketsHeaders.hpp">
+      <Filter>Logica\Net\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

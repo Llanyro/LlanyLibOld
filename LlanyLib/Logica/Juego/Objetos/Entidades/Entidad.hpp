@@ -22,7 +22,7 @@ namespace LlanyLib {
 				{
 					protected:
 						Basic::Objetos::String* nombre;		// Name
-						Enums::TipoDeEntidad tipoDeEntidad;	// Tipo de entidad: Player, npc, familiar...
+						Enum::TipoDeEntidad tipoDeEntidad;	// Tipo de entidad: Player, npc, familiar...
 						Stats::Stats* stats;				// Stats de la entidad
 						//Equipamiento* equipamiento;		// Equipamiento de la entidad
 						//Inventario* inventario;			// Inventario de la entidad
@@ -31,7 +31,7 @@ namespace LlanyLib {
 						#pragma region Constructores
 						Entidad();
 						//Entidad(const String& contenidoJSON);
-						//Entidad(const Basic::Objetos::String& nombre, const Enums::TipoDeEntidad& tipoDeEntidad);
+						//Entidad(const Basic::Objetos::String& nombre, const Enum::TipoDeEntidad& tipoDeEntidad);
 						Entidad(const Entidad& other);
 						bool operator=(const Entidad& other);
 						~Entidad();
@@ -41,12 +41,12 @@ namespace LlanyLib {
 						Stats::Stats* getStats() const;
 						//Inventario* getInventario() const;
 						//Equipamiento* getEquipamiento() const;
-						Enums::TipoDeEntidad getTipoDeEntidad() const;
+						Enum::TipoDeEntidad getTipoDeEntidad() const;
 						Familiar* getFamiliar() const;
 						#pragma endregion
 						#pragma region Setters
 						//void setNombre(const String& nombre);
-						void setTipoDeEntidad(const Enums::TipoDeEntidad& value);
+						void setTipoDeEntidad(const Enum::TipoDeEntidad& value);
 						// Se recoge el puntero, es decir, no se clona el familiar(Cuidado!)
 						void setFamiliar(Familiar* familiar);
 						#pragma endregion

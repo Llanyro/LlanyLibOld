@@ -27,7 +27,7 @@ LlanyLib::Juego::Objetos::Items::Contenedor::Contenedor() : Item()
 	this->listaContenedor = new ListItem();
 	this->capacidadOcupada = 0.0;
 	this->capacidadMaxima = 0.0;
-	this->tipoDeMaterialContenible = Enums::TipoDeMaterial::Irreal;
+	this->tipoDeMaterialContenible = Enum::TipoDeMaterial::Irreal;
 }
 LlanyLib::Juego::Objetos::Items::Contenedor::Contenedor(const Contenedor& other) : Contenedor()
 {
@@ -67,7 +67,7 @@ void LlanyLib::Juego::Objetos::Items::Contenedor::clear()
 	this->listaContenedor->clear();
 	this->capacidadOcupada = 0.0;
 }
-void LlanyLib::Juego::Objetos::Items::Contenedor::ordenar(const Enums::Ordenamiento& ord)
+void LlanyLib::Juego::Objetos::Items::Contenedor::ordenar(const Enum::Ordenamiento& ord)
 {
 }
 const LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Objetos::Items::Contenedor::get(const size_t& pos) const

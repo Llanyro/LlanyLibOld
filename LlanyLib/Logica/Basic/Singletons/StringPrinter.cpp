@@ -72,6 +72,12 @@ void LlanyLib::Basic::Singletons::StringPrinter::printClear(Objetos::JSONBuilder
 	delete json;
 }
 
+void LlanyLib::Basic::Singletons::StringPrinter::printBoolLn(const bool& value) const
+{
+	StringPrinter::printBool(value);
+	StringPrinter::print('\n');
+}
+
 void LlanyLib::Basic::Singletons::StringPrinter::printLn(const char& caracter) const
 {
 	StringPrinter::print(caracter);

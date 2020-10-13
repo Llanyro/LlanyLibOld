@@ -21,6 +21,7 @@ namespace LlanyLib {
 				public:
 					StringBuilder();
 					~StringBuilder();
+					bool contieneAlgo() const;
 					bool add(const String* str);
 					bool addClear(const String* str);
 					bool add(char const* const str);

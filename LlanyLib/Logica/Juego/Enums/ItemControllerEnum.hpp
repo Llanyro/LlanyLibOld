@@ -3,7 +3,7 @@
 #define ITEM_CONTROLLER_ENUM_JUEGO_HPP_
 namespace LlanyLib {
 	namespace Juego {
-		namespace Enums {
+		namespace Enum {
 			enum class ItemControllerResults
 			{
 				NoResult,

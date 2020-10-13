@@ -14,6 +14,10 @@ LlanyLib::Basic::Objetos::StringBuilder::~StringBuilder()
 {
 	delete this->buffer;
 }
+bool LlanyLib::Basic::Objetos::StringBuilder::contieneAlgo() const
+{
+	return (this->buffer->length() > 0);
+}
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const String* str)
 {
 	bool resultado = false;

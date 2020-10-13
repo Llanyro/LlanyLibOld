@@ -4,7 +4,7 @@
 #include "../../Basic/Objetos/String.hpp"
 
 #include "../Enums/ColumEnums.hpp"
-
+/*
 #pragma region Constructores
 LlanyLib::LSDB::Objetos::Columna::Columna(const Enum::Tipos& tipo, Basic::Objetos::String* columName, const size_t& maxStringSize, const bool& paramNull)
 {
@@ -92,3 +92,4 @@ void LlanyLib::LSDB::Objetos::Columna::clearColums()
 	this->filas->clear();
 }
 #pragma endregion
+*/

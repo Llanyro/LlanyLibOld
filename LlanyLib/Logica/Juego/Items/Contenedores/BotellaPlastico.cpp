@@ -16,8 +16,8 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::BotellaPlastic
 
 	//this->itemShowName = new Basic::Objetos::String("BotellaPlastico");
 
-	this->tipoDeObjeto = Enums::TipoObjeto::Contenedor;
-	this->tipoDeMaterial = Enums::TipoDeMaterial::Solido;
+	this->tipoDeObjeto = Enum::TipoObjeto::Contenedor;
+	this->tipoDeMaterial = Enum::TipoDeMaterial::Solido;
 
 	this->temperatura = 10;
 	this->resistenciaMaterial = 0.0;
@@ -26,7 +26,7 @@ LlanyLib::Juego::Items::Generados::Contenedores::BotellaPlastico::BotellaPlastic
 	// Contenedor
 	this->capacidadMaxima = 100.0;
 	this->capacidadOcupada = 0.0;
-	this->tipoDeMaterialContenible = Enums::TipoDeMaterial::Liquido;
+	this->tipoDeMaterialContenible = Enum::TipoDeMaterial::Liquido;
 
 
 	/*Item* tmp = nullptr;

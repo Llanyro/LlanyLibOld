@@ -1,24 +1,49 @@
 #pragma once
-#ifndef SOCKER_ENUMS_HPP_
-#define SOCKER_ENUMS_HPP_
+#ifndef SOCKET_ENUMS_HPP_
+#define SOCKET_ENUMS_HPP_
 
 namespace LlanyLib {
-	namespace Basic {
+	namespace Net {
 		namespace Enum {
-			enum class SocketCode
-			{
-				NoCode,
+				#ifdef __unix__
+				enum class SocketCode
+				{
+					NoCode,
 
-				WSAStartupError,
-				GetAddrInfoError,
+					ErrorSocketNoDisponible,
+					ErrorOnBinding,
+					ErrorNoEscuchando,
 
-				WSAStartupOK,
-				GetAddrInfoOK,
-				
+					IniciadoCorrectamente
+
+				};
+				#elif _WIN32
+				enum class SocketCode
+				{
+					NoCode,
+
+					WSAStartupError,
+					GetAddrInfoError,
+					ErrorPuertoEscucha,
+					ErrorOnBinding,
+					ErrorNoEscuchando,
+
+					IniciadoCorrectamente,
+					ErrorAceptarCliente,
 
 
-			};
+				};
+				#endif // __unix__
+
+				enum class ReadSocketType
+				{
+					HTTP,
+					JSON,
+
+
+
+				};
 		}
 	}
 }
-#endif // !SOCKER_ENUMS_HPP_
+#endif // !SOCKET_ENUMS_HPP_

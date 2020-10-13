@@ -9,9 +9,9 @@ LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D()
 	this->laberinto = nullptr;
 	this->x = 0;
 	this->y = 0;
-	this->diff = Enums::Dificultad::Vacio;
+	this->diff = Enum::Dificultad::Vacio;
 }
-LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D(const size_t& x, const size_t& y, const Enums::Dificultad& diff) : Laberinto2D()
+LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D(const size_t& x, const size_t& y, const Enum::Dificultad& diff) : Laberinto2D()
 {
 	this->x = x;
 	this->y = y;
@@ -19,7 +19,7 @@ LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D(const size_t& x, const s
 	for (size_t i = 0; i < this->y; i++)
 		this->laberinto[i] = new Celda2D[this->x];
 }
-LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D(const size_t& size, const Enums::Dificultad& diff) : Laberinto2D(size, size, diff){}
+LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D(const size_t& size, const Enum::Dificultad& diff) : Laberinto2D(size, size, diff){}
 LlanyLib::Laberintos::Objetos::Laberinto2D::Laberinto2D(const Laberinto2D& other) : Laberinto2D()
 {
 	if (&other != nullptr)
@@ -72,7 +72,7 @@ LlanyLib::Laberintos::Objetos::Celda2D** LlanyLib::Laberintos::Objetos::Laberint
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Laberintos::Objetos::Laberinto2D::setCeldas(Celda2D** celdas, const size_t& x, const size_t& y, const Enums::Dificultad& diff)
+void LlanyLib::Laberintos::Objetos::Laberinto2D::setCeldas(Celda2D** celdas, const size_t& x, const size_t& y, const Enum::Dificultad& diff)
 {
 	Laberinto2D::clear();
 	this->laberinto = celdas;
@@ -109,7 +109,7 @@ void LlanyLib::Laberintos::Objetos::Laberinto2D::clear()
 	delete[] this->laberinto;
 	this->x = 0;
 	this->y = 0;
-	this->diff = Enums::Dificultad::Vacio;
+	this->diff = Enum::Dificultad::Vacio;
 	this->laberinto = nullptr;
 }
 

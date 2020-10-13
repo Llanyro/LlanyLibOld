@@ -12,7 +12,7 @@ namespace LlanyLib {
 		}
 	}
 	namespace Juego {
-		namespace Enums { enum class Ordenamiento; }
+		namespace Enum { enum class Ordenamiento; }
 		namespace Objetos {
 			namespace Items {
 				class Item;
@@ -28,7 +28,7 @@ namespace LlanyLib {
 						bool operator=(const ListItem& other);
 						bool add(Item* item);
 						void clear();
-						void ordenar(const Enums::Ordenamiento& ord);
+						void ordenar(const Enum::Ordenamiento& ord);
 						const Item* get(const size_t& pos) const;
 						Item* extractItem(const size_t& pos) const;
 						Item* extractItem(const size_t& pos, const double& cantidad) const;

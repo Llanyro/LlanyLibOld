@@ -2,12 +2,9 @@
 #ifndef SYSTEM_ENUMS_HPP_
 #define SYSTEM_ENUMS_HPP_
 
-namespace LlanyLib
-{
-	namespace Basic
-	{
-		namespace Enum
-		{
+namespace LlanyLib {
+	namespace Basic {
+		namespace Enum {
 			enum class Error
 			{
 				Input,

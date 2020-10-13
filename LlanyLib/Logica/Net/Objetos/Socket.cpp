@@ -18,6 +18,62 @@
 
 #define RED AF_INET
 
+/*
+List<Servicio::EstadoServicio> Servicio::iniciarServicio(const String& nombre, const unsigned short& puertoEscucha)
+{
+	assert(&nombre != nullptr);
+	assert(&puertoEscucha != nullptr);
+
+	List<EstadoServicio> estadoServidor;
+
+	// Si el servicio no esta inicializado
+	if (!this->servicioIniciado)
+	{
+		#pragma region Seleccion de puerto
+		// Creamos un socket
+		this->socket_fd = socket(RED, SOCK_STREAM, 0);
+		if (this->socket_fd < 0)
+			estadoServidor.add(EstadoServicio::ErrorSocketNoDisponible);
+
+		// Iniciamos el socket en el puerto 8080
+		char option = 1;
+		#ifdef _WIN32
+		setsockopt(this->socket_fd, SOL_SOCKET, SO_BROADCAST, &option, sizeof(option));
+		#elif __unix__
+		setsockopt(this->socket_fd, SOL_SOCKET, (SO_REUSEPORT | SO_REUSEADDR), &option, sizeof(option));
+		#endif
+
+		// Creamos una estructura con el puerto de escucha
+		this->direccionIP->sin_family = RED;
+		this->direccionIP->sin_addr.s_addr = INADDR_ANY;
+		this->direccionIP->sin_port = htons(puertoEscucha);
+
+		// Asignamos el socket al puerto de la estructura creada
+		if (bind(this->socket_fd, (struct sockaddr*)this->direccionIP, sizeof(*this->direccionIP)) < 0)
+			estadoServidor.add(EstadoServicio::ErrorOnBinding);
+
+		// Empezamos a escuchar el puerto
+		if (listen(this->socket_fd, 3) < 0)
+			estadoServidor.add(EstadoServicio::ErrorNoEscuchando);
+		#pragma endregion
+
+		// Si hasta aqui no hay errores completamos la clase
+		if (estadoServidor.getCount() == 0)
+		{
+			estadoServidor.add(EstadoServicio::Iniciado);
+			this->servicioIniciado = true;
+			// Nombre del servidor
+			this->nombre->operator=(nombre);
+		}
+		// Si no, limpiamos los cambios
+		else
+			Servicio::clearServicio();
+	}
+	else
+		estadoServidor.add(EstadoServicio::Iniciado);
+	return estadoServidor;
+}
+*/
 
 /*
 #include "Logger.hpp"

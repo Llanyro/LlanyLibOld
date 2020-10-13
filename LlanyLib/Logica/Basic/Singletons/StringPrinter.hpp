@@ -45,6 +45,8 @@ namespace LlanyLib {
 					void printClear(Objetos::String* str) const;
 					void printClear(Objetos::JSONBuilder* json) const;
 
+					void printBoolLn(const bool& value) const;
+
 					void printLn(const char& caracter) const;
 					void printLn(const char* str, const size_t& size) const;
 					void printLn(const Objetos::String* str) const;

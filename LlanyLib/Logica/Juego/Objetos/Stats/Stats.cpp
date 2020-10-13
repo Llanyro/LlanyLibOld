@@ -18,7 +18,7 @@ LlanyLib::Juego::Objetos::Stats::Stats::Stats()
 	this->equipo = 0ull;
 	this->pvp = true;
 	this->fuegoAmigo = true;
-	this->raza = Enums::Raza::Null;
+	this->raza = Enum::Raza::Null;
 
 	this->criticoBase = new Critico();
 	this->critico = new Critico();
@@ -72,7 +72,7 @@ LlanyLib::Juego::Objetos::Stats::Stats::~Stats()
 	this->equipo = 0ull;
 	this->pvp = false;
 	this->fuegoAmigo = false;
-	this->raza = Enums::Raza::Null;
+	this->raza = Enum::Raza::Null;
 	if (this->criticoBase != nullptr) delete(this->criticoBase);
 	if (this->critico != nullptr) delete(this->critico);
 	if (this->ofensivos != nullptr) delete(this->ofensivos);
@@ -120,7 +120,7 @@ bool LlanyLib::Juego::Objetos::Stats::Stats::getFuegoAmigo() const
 {
 	return this->fuegoAmigo;
 }
-LlanyLib::Juego::Enums::Raza LlanyLib::Juego::Objetos::Stats::Stats::getRaza() const
+LlanyLib::Juego::Enum::Raza LlanyLib::Juego::Objetos::Stats::Stats::getRaza() const
 {
 	return this->raza;
 }
@@ -156,7 +156,7 @@ void LlanyLib::Juego::Objetos::Stats::Stats::setFuegoAmigo(const bool& value)
 	assert(&value != nullptr);
 	this->fuegoAmigo = value;
 }
-void LlanyLib::Juego::Objetos::Stats::Stats::setRaza(const LlanyLib::Juego::Enums::Raza& value)
+void LlanyLib::Juego::Objetos::Stats::Stats::setRaza(const LlanyLib::Juego::Enum::Raza& value)
 {
 	assert(&value != nullptr);
 	this->raza = value;
