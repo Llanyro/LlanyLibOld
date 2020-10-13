@@ -7,10 +7,6 @@
 
 namespace LlanyLib {
 	namespace Basic {
-		namespace Interfaces {
-			template<class T0, class T1>
-			class ContenedorDobleTipo;
-		}
 		namespace Templates {
 			namespace Diccionarios {
 				template<class T1, class T2>
@@ -401,6 +397,20 @@ namespace LlanyLib {
 							if (pos > this->count)
 								throw Objetos::Excepcion("position > count: 'Position must be lower than dict.count'", __FUNCTION__);
 							return DictionaryLinkedList::getNodoLow(pos);
+						}
+						inline T1* getKey(const size_t& pos)
+						{
+							T1* resultado = nullptr;
+							if (pos > this->count)
+								resultado = &DictionaryLinkedList::getNodoLow(pos)->getObject0();
+							return resultado;
+						}
+						inline T2* geValue(const size_t& pos)
+						{
+							T2* resultado = nullptr;
+							if (pos > this->count)
+								resultado = &DictionaryLinkedList::getNodoLow(pos)->getObject1();
+							return resultado;
 						}
 						#pragma endregion
 				};

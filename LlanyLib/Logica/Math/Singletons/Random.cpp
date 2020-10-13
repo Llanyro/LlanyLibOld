@@ -43,7 +43,7 @@ size_t LlanyLib::Math::Singletons::Random::range(const size_t& value) const
 }
 char LlanyLib::Math::Singletons::Random::getRandomChar() const
 {
-	return Random::range(ASCII_CHARS);
+	return (char)Random::range(ASCII_CHARS);
 }
 char LlanyLib::Math::Singletons::Random::getRandomCharAbecedario() const
 {
@@ -55,13 +55,13 @@ char LlanyLib::Math::Singletons::Random::getRandomCharEspecial() const
 	switch (Random::range(3))
 	{
 		case 0:
-			c = Random::range(33, 43);
+			c = (char)Random::range(33, 43);
 			break;
 		case 1:
-			c = Random::range(58, 65);
+			c = (char)Random::range(58, 65);
 			break;
 		case 2:
-			c = Random::range(128, 255);
+			c = (char)Random::range(128, 255);
 			break;
 	}
 
