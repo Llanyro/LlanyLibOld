@@ -447,7 +447,10 @@
     <ClCompile Include="Logica\Net\Objetos\HTTPResponse.cpp">
       <Filter>Logica\Net\Objetos\Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Net\Objetos\HTTPRequest.cpp">
+    <ClCompile Include="Logica\Net\Objetos\HTTPRequestOld.cpp">
+      <Filter>Logica\Net\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\HttpRequest.cpp">
       <Filter>Logica\Net\Objetos\Cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -773,11 +776,14 @@
     <ClInclude Include="Logica\Net\Objetos\HTTPResponse.hpp">
       <Filter>Logica\Net\Objetos\Hpp</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Net\Objetos\HTTPRequest.hpp">
-      <Filter>Logica\Net\Objetos\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Net\Headers\SocketsHeaders.hpp">
       <Filter>Logica\Net\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\HTTPRequestOld.hpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\HttpRequest.hpp">
+      <Filter>Logica\Net\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

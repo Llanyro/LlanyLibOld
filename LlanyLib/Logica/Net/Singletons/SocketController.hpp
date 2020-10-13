@@ -40,6 +40,7 @@ namespace LlanyLib {
 					Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket) const;
 					Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType) const;
 
+					Objetos::HTTPRequest* getHttpRequest();
 
 			};
 		}

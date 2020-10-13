@@ -73,13 +73,11 @@ void n2()
 
 int main1()
 {
-	LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>* dict = new
-		LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>();
-	dict->getKey(0);
-	dict->geValue(0);
-	delete dict;
-
-
+	//LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>* dict = new
+	//	LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>();
+	//dict->getKey(0);
+	//dict->geValue(0);
+	//delete dict;
 
 	//n1();
 	//n2();

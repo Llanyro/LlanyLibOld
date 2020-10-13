@@ -747,7 +747,7 @@ void lab1()
 }
 #pragma endregion
 
-int main()
+int main2()
 {
 	//if (NULL == nullptr)
 	//	cout << "Son iguales\n";
