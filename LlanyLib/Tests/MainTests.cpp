@@ -71,7 +71,7 @@ void n2()
 
 
 
-int main()
+int main1()
 {
 	LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>* dict = new
 		LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>();

@@ -20,6 +20,7 @@ namespace LlanyLib {
 					Templates::Listas::Buffer<char>* buffer;
 				public:
 					StringBuilder();
+					StringBuilder(const size_t& size);
 					~StringBuilder();
 					bool contieneAlgo() const;
 					bool add(const String* str);

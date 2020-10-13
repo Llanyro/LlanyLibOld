@@ -19,12 +19,6 @@
     <Filter Include="Tests">
       <UniqueIdentifier>{9495809b-b07f-4589-8d91-c030761065d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Net">
-      <UniqueIdentifier>{8b406f4b-1353-45dc-81ac-6d012cd324e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Net\Objetos">
-      <UniqueIdentifier>{52860761-157d-4289-a563-bb4284269ac0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\Math">
       <UniqueIdentifier>{65509835-f9d6-41df-b53c-d1d17aa4f6d2}</UniqueIdentifier>
     </Filter>
@@ -109,12 +103,6 @@
     <Filter Include="Logica\Notas">
       <UniqueIdentifier>{35530b26-8b26-4dba-8a3a-558e2dc29203}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Net\Objetos\Hpp">
-      <UniqueIdentifier>{bcdb647c-b76f-444c-a4c2-be635c45c3ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Net\Objetos\Cpp">
-      <UniqueIdentifier>{5a2ef586-faef-4d21-9dc1-b0243846f30e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\Juego">
       <UniqueIdentifier>{88409c9d-7d72-46be-bd55-72380f53cc31}</UniqueIdentifier>
     </Filter>
@@ -196,14 +184,8 @@
     <Filter Include="Logica\Juego\Objetos\Entidades\Hpp">
       <UniqueIdentifier>{590fc2f9-3b67-4b40-8f70-bef970a3a803}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Logica\Net\Enums">
-      <UniqueIdentifier>{2dbcd8ff-0149-42cd-8927-fed3f96f23c0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Logica\AI">
       <UniqueIdentifier>{60e6dd25-50a9-4af4-9dd8-44367ad8f234}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logica\Net\Interfaces">
-      <UniqueIdentifier>{657319db-5737-4d5d-8c70-031576c0c139}</UniqueIdentifier>
     </Filter>
     <Filter Include="Logica\Juego\Laberintos\Celdas">
       <UniqueIdentifier>{2984685f-a806-44d9-a206-24d04af89f2b}</UniqueIdentifier>
@@ -232,8 +214,26 @@
     <Filter Include="Logica\SLDB\Objetos\Cpp">
       <UniqueIdentifier>{52337083-0554-4407-8481-c305acd4138c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logica\Net">
+      <UniqueIdentifier>{8b406f4b-1353-45dc-81ac-6d012cd324e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos">
+      <UniqueIdentifier>{52860761-157d-4289-a563-bb4284269ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos\Hpp">
+      <UniqueIdentifier>{bcdb647c-b76f-444c-a4c2-be635c45c3ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Objetos\Cpp">
+      <UniqueIdentifier>{5a2ef586-faef-4d21-9dc1-b0243846f30e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Logica\Net\Objetos\Socket">
       <UniqueIdentifier>{cdbb96dd-92a0-479a-bb8d-b09640fae5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Enums">
+      <UniqueIdentifier>{2dbcd8ff-0149-42cd-8927-fed3f96f23c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica\Net\Interfaces">
+      <UniqueIdentifier>{657319db-5737-4d5d-8c70-031576c0c139}</UniqueIdentifier>
     </Filter>
     <Filter Include="Logica\Net\Singletons">
       <UniqueIdentifier>{0cb53aab-60c5-4aaa-b344-ef6f1c85367d}</UniqueIdentifier>

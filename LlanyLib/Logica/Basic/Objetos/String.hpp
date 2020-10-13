@@ -113,7 +113,7 @@ namespace LlanyLib {
 					void reverse();
 					String* getModifiedString(const Enum::ModificadorString& modif) const;
 					size_t modifyString(const Enum::ModificadorString& modif);
-					inline void clear();
+					inline void clear() override;
 					#pragma endregion
 					#pragma region Conversiones
 					bool toBool() const;

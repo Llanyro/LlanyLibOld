@@ -10,6 +10,10 @@ LlanyLib::Basic::Objetos::StringBuilder::StringBuilder()
 {
 	this->buffer = new Templates::Listas::Buffer<char>();
 }
+LlanyLib::Basic::Objetos::StringBuilder::StringBuilder(const size_t& size)
+{
+	this->buffer = new Templates::Listas::Buffer<char>(size);
+}
 LlanyLib::Basic::Objetos::StringBuilder::~StringBuilder()
 {
 	delete this->buffer;

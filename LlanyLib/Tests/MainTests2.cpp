@@ -8,6 +8,7 @@
 #include "../Logica/Basic/Gestores/GestorSingletons.hpp"
 
 #include "../Logica/Basic/Plantillas/Listas/LinkedList.hpp"
+#include "../Logica/Basic/Plantillas/Listas/Buffer.hpp"
 #include "../Logica/Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
 #include "../Logica/Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
@@ -224,6 +225,26 @@ void t11()
 {
 	LlanyLib::Basic::Objetos::Date date;
 	STRING_PRINTER->printLnClear(DATE_CONTROLLER->diaToString(date.getToday()));
+}
+void t12()
+{
+	//LlanyLib::Basic::Templates::Listas::Buffer<char>* buffer =
+	//	new LlanyLib::Basic::Templates::Listas::Buffer<char>(5);
+	//
+	//buffer->add("Test 1", 6);
+
+	LlanyLib::Basic::Objetos::StringBuilder* buffer =
+		new LlanyLib::Basic::Objetos::StringBuilder(5);
+
+	buffer->operator+=("Test 1");
+	STRING_PRINTER->printLnClear(buffer->build());
+	buffer->clear();
+
+	buffer->operator+=("Test 2");
+	STRING_PRINTER->printLnClear(buffer->build());
+	buffer->clear();
+
+	delete buffer;
 }
 #pragma endregion
 #pragma region Math
@@ -726,7 +747,7 @@ void lab1()
 }
 #pragma endregion
 
-int main2()
+int main()
 {
 	//if (NULL == nullptr)
 	//	cout << "Son iguales\n";
@@ -745,12 +766,13 @@ int main2()
 	//t9();
 	//t10();
 	//t11();
+	t12();
 
 	//m1();
 	//m2();
 	//m3();
 	//m4();
-	m5();
+	//m5();
 
 	//jregister();
 	//j1();

@@ -186,16 +186,13 @@ namespace LlanyLib {
 						inline virtual bool add(const T& object) override
 						{
 							bool resultado = false;
-							if (&object != nullptr)
-							{
-								if (Array::sePuedeAñadir(1))
-								{
+							if (&object != nullptr) {
+								if (Array::sePuedeAñadir(1)) {
 									this->bloque[this->count] = object;
 									this->count++;
 									resultado = true;
 								}
-								else if (Array::sePuedeIncrementar())
-								{
+								else if (Array::sePuedeIncrementar()) {
 									Array::resize(1);
 									resultado = Array::add(object);
 								}
@@ -283,7 +280,11 @@ namespace LlanyLib {
 						// Extra: La deja preparada para poder volver a usarla
 						// Version: Beta
 						// Complejidad temporal y espacial: O(n) y M(1)
-						inline virtual void clear() override { Array::clearArray(); }
+						inline virtual void clear() override
+						{
+							//Array::clearArray();
+							this->count = 0;
+						}
 						#pragma endregion
 						#pragma region Busquedas
 						// Funcion: Busca un objeto solicitado

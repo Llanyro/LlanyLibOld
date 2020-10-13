@@ -15,6 +15,8 @@ namespace LlanyLib {
 					protected:
 						// Tamaño de los blosques
 						size_t sizeArray;
+						// Posicion del array que estamos insertando actualmente
+						size_t arrayActual;
 						// Lista de bloques del buffer
 						LinkedList<Array<T>> listaArrays;
 						// Array de datos actual (Donde metemos los datos)
@@ -23,10 +25,18 @@ namespace LlanyLib {
 						#pragma region Funciones
 						inline void crearNuevoArray()
 						{
-							// Creamos un bloque nuevo
-							this->listaArrays.add(Array<T>(this->sizeArray));
-							// Guardamos el puntero de el ultimo bloque(Actual)
-							this->bloque = &this->listaArrays[this->listaArrays.getCount() - 1];
+							if (this->arrayActual < this->listaArrays.length()) {
+								this->arrayActual++;
+								this->bloque = &this->listaArrays[this->arrayActual - 1];
+								this->bloque->clear();
+							}
+							else {
+								this->arrayActual++;
+								// Creamos un bloque nuevo
+								this->listaArrays.add(Array<T>(this->sizeArray));
+								// Guardamos el puntero de el ultimo bloque(Actual)
+								this->bloque = &this->listaArrays[this->listaArrays.getCount() - 1];
+							}
 						}
 						inline Array<T>* getArray(const size_t& position)
 						{
@@ -143,10 +153,11 @@ namespace LlanyLib {
 						inline virtual bool operator+=(const Interfaces::List<T>& list) override { return Buffer::add(list); }
 						inline virtual bool insert(const T& object, const size_t& position) override { return false; }
 						inline virtual bool remove(const size_t& position) override { return false; }
-						void clear()
+						inline virtual void clear() override
 						{
 							this->count = 0;
-							this->listaArrays.clear();
+							this->arrayActual = 0;
+							//this->listaArrays.clear();
 							this->bloque = nullptr;
 							Buffer::crearNuevoArray();
 						}
@@ -169,6 +180,7 @@ namespace LlanyLib {
 						{
 							this->sizeArray = blockSize;
 							this->count = 0;
+							this->arrayActual = 0;
 							Buffer::crearNuevoArray();
 						}
 						inline Buffer(const Buffer<T>& buffer) : Buffer() { Buffer::operator=(buffer); }
@@ -188,6 +200,7 @@ namespace LlanyLib {
 						}
 						inline ~Buffer()
 						{
+							this->arrayActual = 0;
 							this->sizeArray = 0;
 							this->count = 0;
 							this->listaArrays.clear();
