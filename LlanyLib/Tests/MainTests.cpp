@@ -36,6 +36,13 @@ using namespace std;
 void n1()
 {
 	LlanyLib::Net::Objetos::ServerSocket* s = new LlanyLib::Net::Objetos::ServerSocket("9090");
+	if (s->acceptClient())
+		SOCKET_CONTROLLER->printTest(s);
+	delete s;
+}
+void n2()
+{
+	LlanyLib::Net::Objetos::ServerSocket* s = new LlanyLib::Net::Objetos::ServerSocket("9090");
 	LlanyLib::Net::Objetos::HTTPRequest* req = nullptr;
 	if (s->acceptClient()) {
 		req = SOCKET_CONTROLLER->getHTTPRequest(s, LlanyLib::Net::Enum::ResponseProcess::SUPER_SLOW);
@@ -47,7 +54,7 @@ void n1()
 		STRING_PRINTER->printLn(req->getConnection());
 
 		STRING_PRINTER->printBoolLn(req->getUpgradeInsecureRequests());
-		
+
 		STRING_PRINTER->printLn(req->getUserAgent());
 
 		for (size_t i = 0; i < req->getNumAcceptTypes(); i++)
@@ -60,7 +67,6 @@ void n1()
 	}
 	delete s;
 }
-
 #pragma endregion
 
 
@@ -68,6 +74,7 @@ void n1()
 int main()
 {
 	n1();
+	//n2();
 
 	FREE_SINGLETONS;
 

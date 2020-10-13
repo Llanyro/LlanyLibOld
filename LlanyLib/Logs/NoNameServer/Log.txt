@@ -40,3 +40,5 @@
 13/10/2020 4:51:37 Inicializado Logger de la clase: NoNameServer
 13/10/2020 4:53:52 Inicializado Logger de la clase: NoNameServer
 13/10/2020 4:57:22 Inicializado Logger de la clase: NoNameServer
+13/10/2020 11:43:11 Inicializado Logger de la clase: NoNameServer
+13/10/2020 11:44:55 Inicializado Logger de la clase: NoNameServer

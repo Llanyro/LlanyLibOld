@@ -73,6 +73,25 @@ namespace LlanyLib {
 }
 #endif // !HTTP_REQUEST_OBJECT_NET_HPP_
 
+//POST /?test=tomate HTTP / 1.1
+//Host : localhost : 9090
+//User - Agent : python - requests / 2.24.0
+//Accept - Encoding : gzip, deflate
+//Accept : */*
+//Connection: keep-alive
+//Content-Length: 0
+//
+//Bytes sent: 233
+
+//GET / ? test = tomate HTTP / 1.1
+//Host : localhost : 9090
+//User - Agent : python - requests / 2.24.0
+//Accept - Encoding : gzip, deflate
+//Accept : */*
+//Connection: keep-alive
+//
+//Bytes sent: 233
+
 /// GET /API/ HTTP/1.1
 /// Host: localhost:8080
 /// Accept : text / html, application / xhtml + xml, application / xml; q = 0.9, image / avif, image / webp, image / apng, */*;q=0.8,application/signed-exchange;v=b3;q=0.9
