@@ -31,12 +31,12 @@ namespace LlanyLib {
 					bool getUpgradeInsecureRequests() const;
 					#pragma endregion
 					#pragma region Setters
-					void setPeticion(const Basic::Objetos::String* petition) const;
-					void setRoot(const Basic::Objetos::String* root) const;
-					void setVersion(const Basic::Objetos::String* version) const;
-					void setHost(const Basic::Objetos::String* host) const;
-					void setConnection(const Basic::Objetos::String* connection) const;
-					void setUpgradeInsecureRequests(const bool& upgrade) const;
+					void setPeticion(Basic::Objetos::String* petition);
+					void setRoot(Basic::Objetos::String* root);
+					void setVersion(Basic::Objetos::String* version);
+					void setHost(Basic::Objetos::String* host);
+					void setConnection(Basic::Objetos::String* connection);
+					void setUpgradeInsecureRequests(const bool& upgrade);
 					#pragma endregion
 
 			};

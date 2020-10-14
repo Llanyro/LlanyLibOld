@@ -34,32 +34,37 @@ bool LlanyLib::Net::Objetos::HttpRequest::getUpgradeInsecureRequests() const
 }
 #pragma endregion
 #pragma region Setters
-void LlanyLib::Net::Objetos::HttpRequest::setPeticion(const Basic::Objetos::String* petition) const
+void LlanyLib::Net::Objetos::HttpRequest::setPeticion(Basic::Objetos::String* petition)
 {
 	if (this->peticion != nullptr)
 		delete this->peticion;
+	this->peticion = peticion;
 }
-void LlanyLib::Net::Objetos::HttpRequest::setRoot(const Basic::Objetos::String* root) const
+void LlanyLib::Net::Objetos::HttpRequest::setRoot(Basic::Objetos::String* root)
 {
 	if (this->root != nullptr)
 		delete this->root;
+	this->root = root;
 }
-void LlanyLib::Net::Objetos::HttpRequest::setVersion(const Basic::Objetos::String* version) const
+void LlanyLib::Net::Objetos::HttpRequest::setVersion(Basic::Objetos::String* version)
 {
 	if (this->version != nullptr)
 		delete this->version;
+	this->version = version;
 }
-void LlanyLib::Net::Objetos::HttpRequest::setHost(const Basic::Objetos::String* host) const
+void LlanyLib::Net::Objetos::HttpRequest::setHost(Basic::Objetos::String* host)
 {
 	if (this->host != nullptr)
 		delete this->host;
+	this->host = host;
 }
-void LlanyLib::Net::Objetos::HttpRequest::setConnection(const Basic::Objetos::String* connection) const
+void LlanyLib::Net::Objetos::HttpRequest::setConnection(Basic::Objetos::String* connection)
 {
 	if (this->connection != nullptr)
 		delete this->connection;
+	this->connection = connection;
 }
-void LlanyLib::Net::Objetos::HttpRequest::setUpgradeInsecureRequests(const bool& upgrade) const
+void LlanyLib::Net::Objetos::HttpRequest::setUpgradeInsecureRequests(const bool& upgrade)
 {
 	this->upgrade_insecure_requests = upgrade;
 }
