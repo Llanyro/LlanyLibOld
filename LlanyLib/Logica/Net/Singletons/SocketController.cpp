@@ -6,12 +6,106 @@
 #include "../Enums/HTTPEnum.hpp"
 
 #include "../Objetos/ServerSocket.hpp"
-#include "../Objetos/HTTPRequest.hpp"
+#include "../Objetos/HttpRequest.hpp"
 
 #include "../../Basic/Objetos/StringBuilder.hpp"
 
 LlanyLib::Net::Singletons::SocketController::SocketController() { SocketController::subscribir(SocketController::freeInstancia); }
 LlanyLib::Net::Singletons::SocketController::~SocketController(){}
+
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPetition(const Objetos::ServerSocket* serverSocket)
+{
+	Objetos::HttpRequest* request = new Objetos::HttpRequest();
+	Basic::Objetos::StringBuilder builder;
+	Basic::Objetos::String* tempparam1 = nullptr;
+	char c;
+	bool continuar = true;
+	int parte = 0;
+	while (continuar) {
+		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		putchar(c);
+		if (c == ' ') {
+			switch (parte)
+			{
+				case 0:
+					request->setPeticion(builder.build());
+					break;
+				case 1:
+					if (tempparam1 != nullptr) {
+						request->setParametro(tempparam1, builder.build());
+						builder.clear();
+						tempparam1 = nullptr;
+					}
+					else
+						request->setRoot(builder.build());
+					break;
+				case 2:
+					request->setVersion(builder.build());
+					break;
+			}
+			parte++;
+			builder.clear();
+		}
+		else if (c == '?') {
+			request->setRoot(builder.build());
+			builder.clear();
+		}
+		else if (c == '=') {
+			tempparam1 = builder.build();
+			builder.clear();
+		}
+		else if(c == '&') {
+			request->setParametro(tempparam1, builder.build());
+			builder.clear();
+			tempparam1 = nullptr;
+		}
+		else if (c == '\n')
+			continuar = false;
+		else
+			builder += c;
+	}
+	return request;
+}
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket)
+{
+	return nullptr;
+}
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFast(const Objetos::ServerSocket* serverSocket)
+{
+	return nullptr;
+}
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestSlow(const Objetos::ServerSocket* serverSocket)
+{
+	return nullptr;
+}
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFull(const Objetos::ServerSocket* serverSocket)
+{
+	return nullptr;
+}
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType)
+{
+	LlanyLib::Net::Objetos::HttpRequest* request = nullptr;
+	switch (processType)
+	{
+		case Enum::ResponseProcess::PETITION:
+			request = SocketController::getHttpRequestPetition(serverSocket);
+			break;
+		case Enum::ResponseProcess::POST_CONTENT:
+			request = SocketController::getHttpRequestPetition(serverSocket);
+			break;
+		case Enum::ResponseProcess::FAST:
+			request = SocketController::getHttpRequestFast(serverSocket);
+			break;
+		case Enum::ResponseProcess::SLOW:
+			request = SocketController::getHttpRequestSlow(serverSocket);
+			break;
+		case Enum::ResponseProcess::FULL:
+			request = SocketController::getHttpRequestFull(serverSocket);
+			break;
+	}
+	return request;
+}
+
 
 void LlanyLib::Net::Singletons::SocketController::printTest(const Objetos::ServerSocket* serverSocket) const
 {
@@ -83,7 +177,7 @@ void LlanyLib::Net::Singletons::SocketController::shitSend(const Objetos::Server
 		WSACleanup();
 	}
 }
-LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController::getHTTPRequest(const Objetos::ServerSocket* serverSocket) const
+/*LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController::getHTTPRequest(const Objetos::ServerSocket* serverSocket) const
 {
 	return SocketController::getHTTPRequest(serverSocket, Enum::ResponseProcess::SUPER_SLOW);
 }
@@ -132,6 +226,8 @@ LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController
 	SocketController::shitSend(serverSocket);
 	return request;
 }
+*/
+
 
 /*void LlanyLib::Net::Objetos::ServerSocket::acceptConn()
 {

@@ -2,7 +2,6 @@
 
 #include "../../Basic/Plantillas/Listas/LinkedList.hpp"
 #include "../../Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../../Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
 #include "../../Basic/Objetos/String.hpp"
 
@@ -20,11 +19,9 @@ LlanyLib::Juego::Gestores::GestorItems::GestorItems()
 }
 LlanyLib::Juego::Gestores::GestorItems::~GestorItems()
 {
-	NODO* temp = this->registro->getObject(0);
 	for (size_t i = 0; i < this->registro->length(); i++) {
-		delete temp->getObject0();
-		temp->getObject1()->deleteItem();
-		temp = temp->getPrimerNodo();
+		delete *this->registro->getKey(i);
+		(*this->registro->getValue(i))->deleteItem();
 	}
 	delete this->registro;
 }

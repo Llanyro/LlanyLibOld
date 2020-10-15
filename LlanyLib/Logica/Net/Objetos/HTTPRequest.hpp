@@ -7,6 +7,12 @@ namespace LlanyLib {
 		namespace Objetos {
 			class String;
 		}
+		namespace Templates {
+			namespace Diccionarios {
+				template<class T1, class T2>
+				class DictionaryLinkedList;
+			}
+		}
 	}
 	namespace Net {
 		namespace Objetos {
@@ -19,6 +25,9 @@ namespace LlanyLib {
 					Basic::Objetos::String* host;		// localhost:8080
 					Basic::Objetos::String* connection;	// keep-alive
 					bool upgrade_insecure_requests;		// 0 o 1
+					Basic::Templates::Diccionarios::DictionaryLinkedList<
+						Basic::Objetos::String*,
+						Basic::Objetos::String*>* parametros;
 				public:
 					HttpRequest();
 					~HttpRequest();
@@ -29,6 +38,9 @@ namespace LlanyLib {
 					const Basic::Objetos::String* getHost() const;
 					const Basic::Objetos::String* getConnection() const;
 					bool getUpgradeInsecureRequests() const;
+					const Basic::Templates::Diccionarios::DictionaryLinkedList<
+						Basic::Objetos::String*,
+						Basic::Objetos::String*>* getParametros() const;
 					#pragma endregion
 					#pragma region Setters
 					void setPeticion(Basic::Objetos::String* petition);
@@ -37,6 +49,7 @@ namespace LlanyLib {
 					void setHost(Basic::Objetos::String* host);
 					void setConnection(Basic::Objetos::String* connection);
 					void setUpgradeInsecureRequests(const bool& upgrade);
+					void setParametro(Basic::Objetos::String* key, Basic::Objetos::String* value);
 					#pragma endregion
 
 			};

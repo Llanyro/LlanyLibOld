@@ -35,9 +35,9 @@ void LlanyLib::Net::Objetos::HTTPRequestOld::processHTTPRequest(Basic::Objetos::
 		//case Enum::ResponseProcess::SLOW:
 		//	HTTPRequestOld::processFast(all);
 		//	break;
-		case Enum::ResponseProcess::SUPER_SLOW:
-			HTTPRequestOld::processSuperSlow(all);
-			break;
+		//case Enum::ResponseProcess::SUPER_SLOW:
+		//	HTTPRequestOld::processSuperSlow(all);
+		//	break;
 	}
 	delete all;
 }
@@ -149,7 +149,7 @@ void LlanyLib::Net::Objetos::HTTPRequestOld::processSuperSlow(Basic::Objetos::St
 	}
 }
 
-LlanyLib::Net::Objetos::HTTPRequestOld::HTTPRequestOld(Basic::Objetos::String* all) : HTTPRequestOld(all, Enum::ResponseProcess::SUPER_SLOW){}
+LlanyLib::Net::Objetos::HTTPRequestOld::HTTPRequestOld(Basic::Objetos::String* all) : HTTPRequestOld(all, Enum::ResponseProcess::SLOW){}
 LlanyLib::Net::Objetos::HTTPRequestOld::HTTPRequestOld(Basic::Objetos::String* all, const Enum::ResponseProcess& processType)
 {
 	this->peticion = nullptr;

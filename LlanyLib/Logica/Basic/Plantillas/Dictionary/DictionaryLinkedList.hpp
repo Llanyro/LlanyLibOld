@@ -392,6 +392,7 @@ namespace LlanyLib {
 							this->cacheNodo = nullptr;
 							this->cachePosicionNodo = 0;
 						}
+						[[deprecated("NDODP no debe obtenerse externamente")]]
 						inline Nodos::NDODP<T1, T2>* getObject(const size_t& pos) const THROW
 						{
 							if (pos > this->count)
@@ -402,10 +403,24 @@ namespace LlanyLib {
 						{
 							T1* resultado = nullptr;
 							if (pos > this->count)
+								resultado = &DictionaryLinkedList::getNodoCache(pos)->getObject0();
+							return resultado;
+						}
+						inline T2* getValue(const size_t& pos)
+						{
+							T2* resultado = nullptr;
+							if (pos > this->count)
+								resultado = &DictionaryLinkedList::getNodoCache(pos)->getObject1();
+							return resultado;
+						}
+						inline T1* getKeyLow(const size_t& pos) const
+						{
+							T1* resultado = nullptr;
+							if (pos > this->count)
 								resultado = &DictionaryLinkedList::getNodoLow(pos)->getObject0();
 							return resultado;
 						}
-						inline T2* geValue(const size_t& pos)
+						inline T2* getValueLow(const size_t& pos) const
 						{
 							T2* resultado = nullptr;
 							if (pos > this->count)

@@ -3,39 +3,34 @@
 #include "../Objetos/String.hpp"
 #include "../Objetos/StringBuilder.hpp"
 #include "../Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
 LlanyLib::Basic::Singletons::JSONConversor::JSONConversor() { JSONConversor::subscribir(JSONConversor::freeInstancia); }
 LlanyLib::Basic::Singletons::JSONConversor::~JSONConversor(){}
 
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::JSONConversor::toJSON(const Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::JSONConversor::toJSON(Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const
 {
 	Objetos::StringBuilder str;
 	str.add('{');
 
-	Templates::Nodos::NDODP<Objetos::String*, Objetos::String*>* temp = nullptr;
 	for (size_t i = 0; i < dict->length(); i++) {
 		if(i != 0) 
 			str.add(',');
-		temp = dict->getObject(i);
 		str.add('"');
-		str.add(temp->getObject0());
+		str.add(*dict->getKey(i));
 		str.add("\": \"");
-		str.add(temp->getObject1());
+		str.add(*dict->getValue(i));
 		str.add('"');
 	}
 
 	str.add('}');
 	return str.build();
 }
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::JSONConversor::toJSONClear(const Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::JSONConversor::toJSONClear(Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const
 {
 	LlanyLib::Basic::Objetos::String* res = JSONConversor::toJSON(dict);
-	Templates::Nodos::NDODP<Objetos::String*, Objetos::String*>* temp = nullptr;
 	for (size_t i = 0; i < dict->length(); i++) {
-		temp = dict->getObject(i);
-		delete temp->getObject0();
-		delete temp->getObject1();
+		delete dict->getKey(i);
+		delete dict->getKey(i);
 	}
 	delete dict;
 	return res;

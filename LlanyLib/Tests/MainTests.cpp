@@ -25,7 +25,7 @@
 #pragma region Net
 #include "../Logica/Net/Objetos/ServerSocket.hpp"
 #include "../Logica/Net/Singletons/SocketController.hpp"
-#include "../Logica/Net/Objetos/HTTPRequest.hpp"
+#include "../Logica/Net/Objetos/HttpRequest.hpp"
 #include "../Logica/Net/Enums/HTTPEnum.hpp"
 #pragma endregion
 
@@ -43,9 +43,9 @@ void n1()
 void n2()
 {
 	LlanyLib::Net::Objetos::ServerSocket* s = new LlanyLib::Net::Objetos::ServerSocket("9090");
-	LlanyLib::Net::Objetos::HTTPRequest* req = nullptr;
+	LlanyLib::Net::Objetos::HttpRequest* req = nullptr;
 	if (s->acceptClient()) {
-		req = SOCKET_CONTROLLER->getHTTPRequest(s, LlanyLib::Net::Enum::ResponseProcess::SUPER_SLOW);
+		req = SOCKET_CONTROLLER->getHttpRequest(s, LlanyLib::Net::Enum::ResponseProcess::PETITION);
 		STRING_PRINTER->printLn(req->getPeticion());
 		STRING_PRINTER->printLn(req->getRoot());
 		STRING_PRINTER->printLn(req->getVersion());
@@ -54,11 +54,19 @@ void n2()
 		STRING_PRINTER->printLn(req->getConnection());
 
 		STRING_PRINTER->printBoolLn(req->getUpgradeInsecureRequests());
+		const LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
+			LlanyLib::Basic::Objetos::String*,
+			LlanyLib::Basic::Objetos::String*>* dict = req->getParametros();
+		for (size_t i = 0; i < dict->length(); i++) {
+			STRING_PRINTER->printLn(*dict->getKeyLow(i));
+			STRING_PRINTER->printLn(*dict->getValueLow(i));
+		}
 
-		STRING_PRINTER->printLn(req->getUserAgent());
 
-		for (size_t i = 0; i < req->getNumAcceptTypes(); i++)
-			STRING_PRINTER->printLn(req->getAcceptedType(i));
+		//STRING_PRINTER->printLn(req->getUserAgent());
+
+		//for (size_t i = 0; i < req->getNumAcceptTypes(); i++)
+		//	STRING_PRINTER->printLn(req->getAcceptedType(i));
 
 		//for (size_t i = 0; i < req->getNumOther(); i++)
 		//	STRING_PRINTER->printLn(req->getOtherStartWithSimilar(i

@@ -22,7 +22,7 @@ namespace LlanyLib {
 		}
 		namespace Objetos {
 			class ServerSocket;
-			class HTTPRequest;
+			class HttpRequest;
 		}
 		namespace Singletons {
 			class SocketController : public Basic::Templates::Singleton<SocketController>, Basic::Gestores::SubscriptorSingletons
@@ -33,14 +33,21 @@ namespace LlanyLib {
 					SocketController();
 					~SocketController();
 				#pragma endregion
+				protected:
+					Objetos::HttpRequest* getHttpRequestPetition(const Objetos::ServerSocket* serverSocket);
+					Objetos::HttpRequest* getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket);
+					Objetos::HttpRequest* getHttpRequestFast(const Objetos::ServerSocket* serverSocket);
+					Objetos::HttpRequest* getHttpRequestSlow(const Objetos::ServerSocket* serverSocket);
+					Objetos::HttpRequest* getHttpRequestFull(const Objetos::ServerSocket* serverSocket);
+
 				public:
 					void printTest(const Objetos::ServerSocket* serverSocket) const;
 					void shitSend(const Objetos::ServerSocket* serverSocket) const;
 
-					Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket) const;
-					Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType) const;
+					//Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket) const;
+					//Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType) const;
 
-					Objetos::HTTPRequest* getHttpRequest();
+					Objetos::HttpRequest* getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType);
 
 			};
 		}

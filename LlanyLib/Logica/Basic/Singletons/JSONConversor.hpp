@@ -26,8 +26,8 @@ namespace LlanyLib {
 					~JSONConversor();
 				#pragma endregion
 				public:
-					Objetos::String* toJSON(const Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const;
-					Objetos::String* toJSONClear(const Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const;
+					Objetos::String* toJSON(Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const;
+					Objetos::String* toJSONClear(Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* dict) const;
 					Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* toDict(const Objetos::String* json) const;
 					Templates::Diccionarios::DictionaryLinkedList<Objetos::String*, Objetos::String*>* toDictClear(Objetos::String* json) const;
 			};

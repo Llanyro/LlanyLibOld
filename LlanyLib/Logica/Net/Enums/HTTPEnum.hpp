@@ -20,10 +20,9 @@ namespace LlanyLib {
 				// Insecure requests
 				FAST,
 
-				MEDIUM,
 				SLOW,
 				// Processes all
-				SUPER_SLOW,
+				FULL,
 			};
 		}
 	}
