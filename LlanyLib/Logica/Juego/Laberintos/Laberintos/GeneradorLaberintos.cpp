@@ -1,9 +1,7 @@
 #include "GeneradorLaberintos.hpp"
 
-
 #include "../../../Basic/Plantillas/Listas/LinkedList.hpp"
 #include "../../../Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../../../Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
 #include "../Laberintos/Laberinto.hpp"
 #include "../Enums/Dificultad.hpp"
@@ -102,39 +100,38 @@ void LlanyLib::Laberintos::Singletons::GeneradorLaberintos::generarRandomFacil(O
 	while (celdas.getCount() > 0)
 	{
 		size_t pos = RANDOM->range(celdas.getCount());
-		Basic::Templates::Nodos::NDODP<size_t, size_t>* nodo = celdas.getObject(pos);
 		size_t edge = RANDOM->range(4);		//
 		switch (edge)
 		{
 			case 0:
-				if (nodo->getObject1() > 0)
+				if ((*celdas.getValue(pos)) > 0)
 				{
-					lab[nodo->getObject0()][nodo->getObject1()].setArriba(false);
-					lab[nodo->getObject0()][nodo->getObject1() - 1].setAbajo(false);
+					lab[(*celdas.getKey(pos))][(*celdas.getValue(pos))].setArriba(false);
+					lab[(*celdas.getKey(pos))][(*celdas.getValue(pos)) - 1].setAbajo(false);
 					celdas.remove(pos);
 				}
 				break;
 			case 1:
-				if (nodo->getObject0() < x - 1)
+				if ((*celdas.getKey(pos)) < x - 1)
 				{
-					lab[nodo->getObject0()][nodo->getObject1()].setDerecha(false);
-					lab[nodo->getObject0() + 1][nodo->getObject1()].setIzquierda(false);
+					lab[(*celdas.getKey(pos))][(*celdas.getValue(pos))].setDerecha(false);
+					lab[(*celdas.getKey(pos)) + 1][(*celdas.getValue(pos))].setIzquierda(false);
 					celdas.remove(pos);
 				}
 				break;
 			case 2:
-				if (nodo->getObject1() < y - 1)
+				if ((*celdas.getValue(pos)) < y - 1)
 				{
-					lab[nodo->getObject0()][nodo->getObject1()].setAbajo(false);
-					lab[nodo->getObject0()][nodo->getObject1() + 1].setArriba(false);
+					lab[(*celdas.getKey(pos))][(*celdas.getValue(pos))].setAbajo(false);
+					lab[(*celdas.getKey(pos))][(*celdas.getValue(pos)) + 1].setArriba(false);
 					celdas.remove(pos);
 				}
 				break;
 			case 3:
-				if (nodo->getObject0() > 0)
+				if ((*celdas.getKey(pos)) > 0)
 				{
-					lab[nodo->getObject0()][nodo->getObject1()].setIzquierda(false);
-					lab[nodo->getObject0() - 1][nodo->getObject1()].setDerecha(false);
+					lab[(*celdas.getKey(pos))][(*celdas.getValue(pos))].setIzquierda(false);
+					lab[(*celdas.getKey(pos)) - 1][(*celdas.getValue(pos))].setDerecha(false);
 					celdas.remove(pos);
 				}
 				break;

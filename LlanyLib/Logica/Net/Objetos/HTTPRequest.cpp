@@ -1,6 +1,7 @@
 #include "HttpRequest.hpp"
 
 #include "../../Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
+#include "../../Basic/Objetos/String.hpp"
 
 LlanyLib::Net::Objetos::HttpRequest::HttpRequest()
 {
@@ -21,8 +22,8 @@ LlanyLib::Net::Objetos::HttpRequest::~HttpRequest()
 	if (this->connection != nullptr) delete this->connection;
 	if (this->parametros != nullptr) {
 		for (size_t i = 0; i < this->parametros->length(); i++) {
-			delete this->parametros->getKey(i);
-			delete this->parametros->getValue(i);
+			delete *this->parametros->getKey(i);
+			delete *this->parametros->getValue(i);
 		}
 		delete this->parametros;
 	}
@@ -34,7 +35,6 @@ LlanyLib::Net::Objetos::HttpRequest::~HttpRequest()
 	this->parametros = nullptr;
 	this->upgrade_insecure_requests = false;
 }
-
 #pragma region Getters
 const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpRequest::getPeticion() const
 {
@@ -73,7 +73,7 @@ void LlanyLib::Net::Objetos::HttpRequest::setPeticion(Basic::Objetos::String* pe
 {
 	if (this->peticion != nullptr)
 		delete this->peticion;
-	this->peticion = peticion;
+	this->peticion = petition;
 }
 void LlanyLib::Net::Objetos::HttpRequest::setRoot(Basic::Objetos::String* root)
 {
@@ -112,5 +112,3 @@ void LlanyLib::Net::Objetos::HttpRequest::setParametro(Basic::Objetos::String* k
 	this->parametros->add(key, value);
 }
 #pragma endregion
-
-

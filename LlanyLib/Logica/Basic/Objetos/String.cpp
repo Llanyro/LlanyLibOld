@@ -104,8 +104,7 @@ LlanyLib::Basic::Objetos::String::String(const Templates::Listas::Buffer<char>& 
 bool LlanyLib::Basic::Objetos::String::operator=(const char& caracter)
 {
 	bool resultado = false;
-	if (&caracter != nullptr)
-	{
+	if (&caracter != nullptr) {
 		String::clear();
 		String::inicializarString(caracter);
 	}

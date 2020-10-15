@@ -34,6 +34,10 @@ namespace LlanyLib {
 					~SocketController();
 				#pragma endregion
 				protected:
+
+					void getPetition(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
+					void getKnownHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
+
 					Objetos::HttpRequest* getHttpRequestPetition(const Objetos::ServerSocket* serverSocket);
 					Objetos::HttpRequest* getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket);
 					Objetos::HttpRequest* getHttpRequestFast(const Objetos::ServerSocket* serverSocket);

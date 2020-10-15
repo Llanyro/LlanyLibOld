@@ -2,7 +2,6 @@
 
 #include "../../Basic/Plantillas/Listas/LinkedList.hpp"
 #include "../../Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../../Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
 #include "../../Basic/Objetos/String.hpp"
 
@@ -183,9 +182,9 @@ LlanyLib::Net::Objetos::HTTPRequestOld::~HTTPRequestOld()
 			LlanyLib::Basic::Objetos::String*,
 			LlanyLib::Basic::Objetos::String*>* temp = nullptr;
 		for (size_t i = 0; i < this->other->length(); i++) {
-			temp = this->other->getObject(i);
-			delete temp->getObject0();
-			delete temp->getObject1();
+			//temp = this->other->getObject(i);
+			//delete temp->getObject0();
+			//delete temp->getObject1();
 		}
 		delete this->other;
 	}
@@ -255,11 +254,11 @@ const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HTTPRequestOld::
 		LlanyLib::Basic::Objetos::String*>* temp = nullptr;
 	if(this->other != nullptr)
 		for (size_t i = 0; i < this->other->length(); i++) {
-			temp = this->other->getObject(i);
-			if (temp->getObject0()->startWithSimilar(str)) {
-				resultado = temp->getObject0();
-				i = this->other->length();
-			}
+			//temp = this->other->getObject(i);
+			//if (temp->getObject0()->startWithSimilar(str)) {
+			//	resultado = temp->getObject0();
+			//	i = this->other->length();
+			//}
 		}
 	return resultado;
 }

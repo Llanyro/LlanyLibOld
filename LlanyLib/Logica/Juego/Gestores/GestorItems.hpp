@@ -50,7 +50,7 @@ namespace LlanyLib {
 				protected:
 					#pragma region Protected
 					bool containsName(char const* const registerName) const;
-					NODO* buscarNodo(char const* const registerName) const;
+					LlanyLib::Juego::Objetos::Items::Item* getObjeto(char const* const registerName) const;
 					long_t buscarID(char const* const registerName) const;
 					#pragma endregion
 				public:

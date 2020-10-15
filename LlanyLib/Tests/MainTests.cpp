@@ -9,7 +9,6 @@
 
 #include "../Logica/Basic/Plantillas/Listas/LinkedList.hpp"
 #include "../Logica/Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../Logica/Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
 #include "../Logica/Basic/Singletons/StringPrinter.hpp"
 #include "../Logica/Basic/Singletons/System.hpp"
@@ -46,21 +45,22 @@ void n2()
 	LlanyLib::Net::Objetos::HttpRequest* req = nullptr;
 	if (s->acceptClient()) {
 		req = SOCKET_CONTROLLER->getHttpRequest(s, LlanyLib::Net::Enum::ResponseProcess::PETITION);
-		STRING_PRINTER->printLn(req->getPeticion());
-		STRING_PRINTER->printLn(req->getRoot());
-		STRING_PRINTER->printLn(req->getVersion());
-
-		STRING_PRINTER->printLn(req->getHost());
-		STRING_PRINTER->printLn(req->getConnection());
-
-		STRING_PRINTER->printBoolLn(req->getUpgradeInsecureRequests());
-		const LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
-			LlanyLib::Basic::Objetos::String*,
-			LlanyLib::Basic::Objetos::String*>* dict = req->getParametros();
-		for (size_t i = 0; i < dict->length(); i++) {
-			STRING_PRINTER->printLn(*dict->getKeyLow(i));
-			STRING_PRINTER->printLn(*dict->getValueLow(i));
-		}
+		//STRING_PRINTER->printLn(req->getPeticion());
+		//STRING_PRINTER->printLn(req->getRoot());
+		//STRING_PRINTER->printLn(req->getVersion());
+		//
+		//STRING_PRINTER->printLn(req->getHost());
+		//STRING_PRINTER->printLn(req->getConnection());
+		//
+		//STRING_PRINTER->printBoolLn(req->getUpgradeInsecureRequests());
+		//const LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
+		//	LlanyLib::Basic::Objetos::String*,
+		//	LlanyLib::Basic::Objetos::String*>* dict = req->getParametros();
+		//for (size_t i = 0; i < dict->length(); i++) {
+		//	STRING_PRINTER->print(*dict->getKeyLow(i));
+		//	STRING_PRINTER->print(": ", 2);
+		//	STRING_PRINTER->printLn(*dict->getValueLow(i));
+		//}
 
 
 		//STRING_PRINTER->printLn(req->getUserAgent());
@@ -79,7 +79,7 @@ void n2()
 
 
 
-int main1()
+int main()
 {
 	//LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>* dict = new
 	//	LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<char, int>();
@@ -88,7 +88,7 @@ int main1()
 	//delete dict;
 
 	//n1();
-	//n2();
+	n2();
 
 	FREE_SINGLETONS;
 

@@ -402,28 +402,28 @@ namespace LlanyLib {
 						inline T1* getKey(const size_t& pos)
 						{
 							T1* resultado = nullptr;
-							if (pos > this->count)
+							if (pos < this->count)
 								resultado = &DictionaryLinkedList::getNodoCache(pos)->getObject0();
 							return resultado;
 						}
 						inline T2* getValue(const size_t& pos)
 						{
 							T2* resultado = nullptr;
-							if (pos > this->count)
+							if (pos < this->count)
 								resultado = &DictionaryLinkedList::getNodoCache(pos)->getObject1();
 							return resultado;
 						}
 						inline T1* getKeyLow(const size_t& pos) const
 						{
 							T1* resultado = nullptr;
-							if (pos > this->count)
+							if (pos < this->count)
 								resultado = &DictionaryLinkedList::getNodoLow(pos)->getObject0();
 							return resultado;
 						}
 						inline T2* getValueLow(const size_t& pos) const
 						{
 							T2* resultado = nullptr;
-							if (pos > this->count)
+							if (pos < this->count)
 								resultado = &DictionaryLinkedList::getNodoLow(pos)->getObject1();
 							return resultado;
 						}

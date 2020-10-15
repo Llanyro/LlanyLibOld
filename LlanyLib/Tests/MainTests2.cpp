@@ -10,7 +10,6 @@
 #include "../Logica/Basic/Plantillas/Listas/LinkedList.hpp"
 #include "../Logica/Basic/Plantillas/Listas/Buffer.hpp"
 #include "../Logica/Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
-#include "../Logica/Basic/Plantillas/Nodos/NodoDosObjetosDosPunteros.hpp"
 
 #include "../Logica/Basic/Singletons/StringPrinter.hpp"
 #include "../Logica/Basic/Singletons/System.hpp"
@@ -168,16 +167,11 @@ void t7()
 	LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
 		LlanyLib::Basic::Objetos::String*,
 		LlanyLib::Basic::Objetos::String*>* dict2 = JSON_CONVERSOR->toDictClear(json);
-	LlanyLib::Basic::Templates::Nodos::NDODP<
-		LlanyLib::Basic::Objetos::String*,
-		LlanyLib::Basic::Objetos::String*>* temp = nullptr;
 
 	for (size_t i = 0; i < dict2->length(); i++) {
-		temp = dict2->getObject(i);
-
-		STRING_PRINTER->printLnClear(temp->getObject0());
+		STRING_PRINTER->printLnClear(*dict2->getKey(i));
 		STRING_PRINTER->print('\t');
-		STRING_PRINTER->printLnClear(temp->getObject1());
+		STRING_PRINTER->printLnClear(*dict2->getValue(i));
 		STRING_PRINTER->print('\n');
 	}
 	delete dict2;

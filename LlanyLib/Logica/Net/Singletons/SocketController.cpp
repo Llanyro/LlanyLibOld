@@ -9,13 +9,21 @@
 #include "../Objetos/HttpRequest.hpp"
 
 #include "../../Basic/Objetos/StringBuilder.hpp"
+#include "../../Basic/Objetos/String.hpp"
+
+#define HOST "Host"
+#define CONNECTION "Connection"
+#define UPGRADE_INSECURE_REQUESTS "Upgrade-Insecure-Requests"
+#define USER_AGENT "User-Agent"
+#define ACCEPT "Accept"
+#define ACCEPT_ENCODING "Accept-Encoding"
+#define ACCEPT_LANGUAJE "Accept-Language"
 
 LlanyLib::Net::Singletons::SocketController::SocketController() { SocketController::subscribir(SocketController::freeInstancia); }
 LlanyLib::Net::Singletons::SocketController::~SocketController(){}
 
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPetition(const Objetos::ServerSocket* serverSocket)
+void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
 {
-	Objetos::HttpRequest* request = new Objetos::HttpRequest();
 	Basic::Objetos::StringBuilder builder;
 	Basic::Objetos::String* tempparam1 = nullptr;
 	char c;
@@ -24,7 +32,7 @@ LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController
 	while (continuar) {
 		recv(serverSocket->getClientSocket(), &c, 1, 0);
 		putchar(c);
-		if (c == ' ') {
+		if (c == ' ' || c == '\r') {
 			switch (parte)
 			{
 				case 0:
@@ -33,7 +41,6 @@ LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController
 				case 1:
 					if (tempparam1 != nullptr) {
 						request->setParametro(tempparam1, builder.build());
-						builder.clear();
 						tempparam1 = nullptr;
 					}
 					else
@@ -64,6 +71,51 @@ LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController
 		else
 			builder += c;
 	}
+}
+void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+{
+	Basic::Objetos::StringBuilder builder;
+	Enum::HeatherType actualType = Enum::HeatherType::NONE;
+	Basic::Objetos::String* temp = nullptr;
+	char c;
+	bool continuar = true;
+	int parte = 0;
+	while (continuar) {
+		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		putchar(c);
+		if (c == '\r') {
+			switch (actualType)
+			{
+			default:
+				break;
+			}
+		}
+		else if (c == '\n') {
+
+		}
+		if (c == ':') {
+			
+
+			if()
+
+
+
+			switch (switch_on)
+			{
+			default:
+				break;
+			}
+
+
+		}
+		else builder += c;
+	}
+
+}
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPetition(const Objetos::ServerSocket* serverSocket)
+{
+	Objetos::HttpRequest* request = new Objetos::HttpRequest();
+	SocketController::getPetition(request, serverSocket);
 	return request;
 }
 LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket)
@@ -227,8 +279,6 @@ LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController
 	return request;
 }
 */
-
-
 /*void LlanyLib::Net::Objetos::ServerSocket::acceptConn()
 {
 	// Accept a client socket

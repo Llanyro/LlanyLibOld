@@ -24,6 +24,17 @@ namespace LlanyLib {
 				// Processes all
 				FULL,
 			};
+			enum class HeatherType
+			{
+				NONE,
+				HOST,
+				CONNECTION,
+				UPGRADE_INSECURE_REQUESTS,
+				USER_AGENT,
+				ACCEPT,
+				ACCEPT_ENCODING,
+				ACCEPT_LANGUAJE,
+			};
 		}
 	}
 }

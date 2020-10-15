@@ -29,41 +29,32 @@ LlanyLib::Juego::Gestores::GestorItems::~GestorItems()
 #pragma region Protected
 bool LlanyLib::Juego::Gestores::GestorItems::containsName(char const* const registerName) const
 {
-	NODO* temp = this->registro->getObject(0);
 	bool encontrado = false;
-	for (size_t i = 0; i < this->registro->length(); i++) {
-		if (temp->getObject0()->equals(registerName)) {
+	for (size_t i = 0; i < this->registro->length(); i++)
+		if ((*this->registro->getKey(i))->similar(registerName)) {
 			encontrado = true;
 			i = this->registro->length();
 		}
-		temp = temp->getPrimerNodo();
-	}
 	return encontrado;
 }
-NODO* LlanyLib::Juego::Gestores::GestorItems::buscarNodo(char const* const registerName) const
+LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Gestores::GestorItems::getObjeto(char const* const registerName) const
 {
-	NODO* temp = this->registro->getObject(0);
-	NODO* result = nullptr;
-	for (size_t i = 0; i < this->registro->length(); i++) {
-		if (temp->getObject0()->equals(registerName)) {
-			result = temp;
+	Objetos::Items::Item* resultado = nullptr;
+	for (size_t i = 0; i < this->registro->length(); i++)
+		if ((*this->registro->getKey(i))->similar(registerName)) {
+			resultado = *this->registro->getValue(i);
 			i = this->registro->length();
 		}
-		temp = temp->getPrimerNodo();
-	}
-	return result;
+	return resultado;
 }
 long_t LlanyLib::Juego::Gestores::GestorItems::buscarID(char const* const registerName) const
 {
-	NODO* temp = this->registro->getObject(0);
-	long_t resultado = 0;
-	for (size_t i = 0; i < this->registro->length(); i++) {
-		if (temp->getObject0()->equals(registerName)) {
+	long_t resultado = -1;
+	for (size_t i = 0; i < this->registro->length(); i++)
+		if ((*this->registro->getKey(i))->similar(registerName)) {
 			resultado = i;
 			i = this->registro->length();
 		}
-		temp = temp->getPrimerNodo();
-	}
 	return resultado;
 }
 #pragma endregion
@@ -80,25 +71,20 @@ bool LlanyLib::Juego::Gestores::GestorItems::itemRegister(Objetos::Items::Item* 
 }
 LlanyLib::Juego::Objetos::Items::Item* LlanyLib::Juego::Gestores::GestorItems::newItem(char const* const registerName) const
 {
-	Objetos::Items::Item* resultado = nullptr;
-	NODO* nodo = GestorItems::buscarNodo(registerName);
-	if (nodo != nullptr)
-		resultado = nodo->getObject1()->clone();
+	Objetos::Items::Item* resultado = GestorItems::getObjeto(registerName);
+	if (resultado != nullptr)
+		resultado = resultado->clone();
 	return resultado;
 }
 #pragma endregion
 #pragma region Getters
 const LlanyLib::Basic::Objetos::String* LlanyLib::Juego::Gestores::GestorItems::getRegisterName(const long_t& itemID) const
 {
-	LlanyLib::Basic::Objetos::String* res = nullptr;
-	long_t realID = itemID - 1;
-	if (realID < this->registro->length() && realID >= 0)
-		res = this->registro->getObject((size_t)realID)->getObject0();
-	return res;
+	return *this->registro->getKey((size_t)itemID);
 }
 long_t LlanyLib::Juego::Gestores::GestorItems::getID(char const* const registerName) const
 {
-	return GestorItems::buscarID(registerName) + 1;
+	return GestorItems::buscarID(registerName);
 }
 long_t LlanyLib::Juego::Gestores::GestorItems::getID(Basic::Objetos::String* registerName) const
 {
@@ -111,4 +97,3 @@ long_t LlanyLib::Juego::Gestores::GestorItems::getIDClear(Basic::Objetos::String
 	return result;
 }
 #pragma endregion
-
