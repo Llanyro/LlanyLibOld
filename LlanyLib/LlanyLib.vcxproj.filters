@@ -785,6 +785,9 @@
     <ClInclude Include="Logica\Net\Objetos\HttpRequest.hpp">
       <Filter>Logica\Net\Objetos\Hpp</Filter>
     </ClInclude>
+    <ClInclude Include="Logica\Math\Libs\IA_EJ1_.h">
+      <Filter>Logica\Math\Libs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Logica\Notas\readme.txt">

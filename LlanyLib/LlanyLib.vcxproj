@@ -291,6 +291,7 @@
     <ClInclude Include="Logica\Juego\Singletons\ItemController.hpp" />
     <ClInclude Include="Logica\Juego\Singletons\VistaItemController.hpp" />
     <ClInclude Include="Logica\Math\Enums\UnitEnum.hpp" />
+    <ClInclude Include="Logica\Math\Libs\IA_EJ1_.h" />
     <ClInclude Include="Logica\Math\Libs\MathTypes.h" />
     <ClInclude Include="Logica\Math\Objetos\Matriz.hpp" />
     <ClInclude Include="Logica\Math\Objetos\MatrizFixed.hpp" />
