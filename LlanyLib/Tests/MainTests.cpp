@@ -56,8 +56,21 @@ void n2()
 		//const LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
 		//	LlanyLib::Basic::Objetos::String*,
 		//	LlanyLib::Basic::Objetos::String*>* dict = req->getParametros();
-		const LlanyLib::Basic::Objetos::Stringictionary* dict = req->getParametros();
+		STRING_PRINTER->print("Headers:\n");
+		const LlanyLib::Basic::Objetos::Stringictionary* dict = req->getHeaders();
+		for (size_t i = 0; i < dict->getNumElements(); i++) {
+			STRING_PRINTER->print(*dict->getKeyLow(i));
+			STRING_PRINTER->print(':');
+			STRING_PRINTER->print(' ');
+			STRING_PRINTER->printLn(*dict->getValueLow(i));
+			//STRING_PRINTER->printValueLn((*dict->getValueLow(i)).operator[](0));
+		}
 
+
+
+
+		STRING_PRINTER->print("Parametros:\n");
+		dict = req->getParametros();
 		for (size_t i = 0; i < dict->getNumElements(); i++) {
 			STRING_PRINTER->print(*dict->getKeyLow(i));
 			STRING_PRINTER->print(':');

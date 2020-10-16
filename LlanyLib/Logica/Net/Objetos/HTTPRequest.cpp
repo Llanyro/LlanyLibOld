@@ -10,7 +10,8 @@ LlanyLib::Net::Objetos::HttpRequest::HttpRequest()
 	this->version = nullptr;
 	this->host = nullptr;
 	this->connection = nullptr;
-	this->parametros = nullptr;
+	this->parametros = new Basic::Objetos::Stringictionary();
+	this->headers = new Basic::Objetos::Stringictionary();
 	this->upgrade_insecure_requests = false;
 }
 LlanyLib::Net::Objetos::HttpRequest::~HttpRequest()
@@ -20,13 +21,17 @@ LlanyLib::Net::Objetos::HttpRequest::~HttpRequest()
 	if (this->version != nullptr) delete this->version;
 	if (this->host != nullptr) delete this->host;
 	if (this->connection != nullptr) delete this->connection;
-	if (this->parametros != nullptr) delete this->parametros;
+	
+	delete this->parametros;
+	delete this->headers;
+	
 	this->peticion = nullptr;
 	this->root = nullptr;
 	this->version = nullptr;
 	this->host = nullptr;
 	this->connection = nullptr;
 	this->parametros = nullptr;
+	this->headers = nullptr;
 	this->upgrade_insecure_requests = false;
 }
 #pragma region Getters
@@ -57,6 +62,10 @@ bool LlanyLib::Net::Objetos::HttpRequest::getUpgradeInsecureRequests() const
 const LlanyLib::Basic::Objetos::Stringictionary* LlanyLib::Net::Objetos::HttpRequest::getParametros() const
 {
 	return this->parametros;
+}
+const LlanyLib::Basic::Objetos::Stringictionary* LlanyLib::Net::Objetos::HttpRequest::getHeaders() const
+{
+	return this->headers;
 }
 #pragma endregion
 #pragma region Setters
@@ -94,10 +103,12 @@ void LlanyLib::Net::Objetos::HttpRequest::setUpgradeInsecureRequests(const bool&
 {
 	this->upgrade_insecure_requests = upgrade;
 }
-void LlanyLib::Net::Objetos::HttpRequest::setParametro(Basic::Objetos::String* key, Basic::Objetos::String* value)
+void LlanyLib::Net::Objetos::HttpRequest::addParametro(Basic::Objetos::String* key, Basic::Objetos::String* value)
 {
-	if (this->parametros == nullptr)
-		this->parametros = new Basic::Objetos::Stringictionary();
 	this->parametros->add(key, value);
+}
+void LlanyLib::Net::Objetos::HttpRequest::addHeader(Basic::Objetos::String* key, Basic::Objetos::String* value)
+{
+	this->headers->add(key, value);
 }
 #pragma endregion

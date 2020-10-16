@@ -41,7 +41,7 @@ void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpReque
 					break;
 				case 1:
 					if (tempparam1 != nullptr) {
-						request->setParametro(tempparam1, builder.build());
+						request->addParametro(tempparam1, builder.build());
 						tempparam1 = nullptr;
 					}
 					else
@@ -63,7 +63,7 @@ void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpReque
 			builder.clear();
 		}
 		else if(c == '&') {
-			request->setParametro(tempparam1, builder.build());
+			request->addParametro(tempparam1, builder.build());
 			builder.clear();
 			tempparam1 = nullptr;
 		}
@@ -73,7 +73,7 @@ void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpReque
 			builder += c;
 	}
 }
-void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+void LlanyLib::Net::Singletons::SocketController::getKnownHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
 {
 	Basic::Objetos::Registro reg(3);
 	Basic::Objetos::StringBuilder builder;
@@ -127,7 +127,7 @@ void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::Http
 	}
 
 }
-void LlanyLib::Net::Singletons::SocketController::getAllHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+void LlanyLib::Net::Singletons::SocketController::getAllHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
 {
 	Basic::Objetos::Registro reg(3);
 	Basic::Objetos::StringBuilder builder;
@@ -146,7 +146,7 @@ void LlanyLib::Net::Singletons::SocketController::getAllHeathers(Objetos::HttpRe
 			else
 				reg.setPosTrue(0);
 			if (temp != nullptr) {
-				request->setParametro(temp, builder.build());
+				request->addHeader(temp, builder.build());
 				temp = nullptr;
 				builder.clear();
 			}
@@ -163,7 +163,7 @@ void LlanyLib::Net::Singletons::SocketController::getAllHeathers(Objetos::HttpRe
 		}
 		else {
 			if (c == ' ') {
-				if (temp != nullptr)
+				if (temp != nullptr && builder.contieneAlgo())
 					builder += c;
 			}
 			else
@@ -193,7 +193,7 @@ LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController
 {
 	Objetos::HttpRequest* request = new Objetos::HttpRequest();
 	SocketController::getPetition(request, serverSocket);
-	SocketController::getAllHeathers(request, serverSocket);
+	SocketController::getAllHeaders(request, serverSocket);
 	return request;
 }
 LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType)

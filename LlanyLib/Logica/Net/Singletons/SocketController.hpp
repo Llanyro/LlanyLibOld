@@ -36,8 +36,8 @@ namespace LlanyLib {
 				protected:
 
 					void getPetition(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
-					void getKnownHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
-					void getAllHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
+					void getKnownHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
+					void getAllHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
 
 					Objetos::HttpRequest* getHttpRequestPetition(const Objetos::ServerSocket* serverSocket);
 					Objetos::HttpRequest* getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket);
