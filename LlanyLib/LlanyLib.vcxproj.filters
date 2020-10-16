@@ -453,6 +453,9 @@
     <ClCompile Include="Logica\Net\Objetos\HttpRequest.cpp">
       <Filter>Logica\Net\Objetos\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\Registro.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
@@ -787,6 +790,9 @@
     </ClInclude>
     <ClInclude Include="Logica\Math\Libs\IA_EJ1_.h">
       <Filter>Logica\Math\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\Registro.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -146,6 +146,7 @@
     <ClCompile Include="Logica\Basic\Objetos\JSONBuilder.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Logger.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\Proceso.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Registro.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\String.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Chars.cpp" />
@@ -235,6 +236,7 @@
     <ClInclude Include="Logica\Basic\Objetos\JSONBuilder.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Logger.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\Proceso.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\Registro.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\String.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\StringBuilder.hpp" />
     <ClInclude Include="Logica\Basic\Plantillas\Dictionary\DictionaryLinkedList.hpp" />

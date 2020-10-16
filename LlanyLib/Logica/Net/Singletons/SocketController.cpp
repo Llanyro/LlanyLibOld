@@ -11,13 +11,13 @@
 #include "../../Basic/Objetos/StringBuilder.hpp"
 #include "../../Basic/Objetos/String.hpp"
 
-#define HOST "Host"
-#define CONNECTION "Connection"
-#define UPGRADE_INSECURE_REQUESTS "Upgrade-Insecure-Requests"
-#define USER_AGENT "User-Agent"
-#define ACCEPT "Accept"
-#define ACCEPT_ENCODING "Accept-Encoding"
-#define ACCEPT_LANGUAJE "Accept-Language"
+#define HOST_STR "Host"
+#define CONNECTION_STR "Connection"
+#define UPGRADE_INSECURE_REQUESTS_STR "Upgrade-Insecure-Requests"
+#define USER_AGENT_STR "User-Agent"
+#define ACCEPT_STR "Accept"
+#define ACCEPT_ENCODING_STR "Accept-Encoding"
+#define ACCEPT_LANGUAJE_STR "Accept-Language"
 
 LlanyLib::Net::Singletons::SocketController::SocketController() { SocketController::subscribir(SocketController::freeInstancia); }
 LlanyLib::Net::Singletons::SocketController::~SocketController(){}
@@ -86,25 +86,17 @@ void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::Http
 		if (c == '\r') {
 			switch (actualType)
 			{
-			default:
-				break;
+				case Enum::HeatherType::HOST:
+					request->setHost(builder.build());
+					break;
 			}
+			builder.clear();
 		}
 		else if (c == '\n') {
 
 		}
 		if (c == ':') {
 			
-
-			if()
-
-
-
-			switch (switch_on)
-			{
-			default:
-				break;
-			}
 
 
 		}
