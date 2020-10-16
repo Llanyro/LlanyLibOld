@@ -149,6 +149,7 @@
     <ClCompile Include="Logica\Basic\Objetos\Registro.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\String.cpp" />
     <ClCompile Include="Logica\Basic\Objetos\StringBuilder.cpp" />
+    <ClCompile Include="Logica\Basic\Objetos\Stringctionary.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Chars.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\DateController.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\Files.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="Logica\Basic\Objetos\Registro.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\String.hpp" />
     <ClInclude Include="Logica\Basic\Objetos\StringBuilder.hpp" />
+    <ClInclude Include="Logica\Basic\Objetos\Stringctionary.hpp" />
     <ClInclude Include="Logica\Basic\Plantillas\Dictionary\DictionaryLinkedList.hpp" />
     <ClInclude Include="Logica\Basic\Plantillas\Listas\Array.hpp" />
     <ClInclude Include="Logica\Basic\Plantillas\Listas\Buffer.hpp" />

@@ -220,15 +220,15 @@ int LlanyLib::Basic::Objetos::String::compare(const String& other) const
 		resultado = String::compare(other.vector);
 	return resultado;
 }
-int LlanyLib::Basic::Objetos::String::equals(const char& caracter) const
+bool LlanyLib::Basic::Objetos::String::equals(const char& caracter) const
 {
 	return String::compare(caracter) == 0;
 }
-int LlanyLib::Basic::Objetos::String::equals(char const* const str) const
+bool LlanyLib::Basic::Objetos::String::equals(char const* const str) const
 {
 	return String::compare(str) == 0;
 }
-int LlanyLib::Basic::Objetos::String::equals(const String& other) const
+bool LlanyLib::Basic::Objetos::String::equals(const String& other) const
 {
 	return String::compare(other) == 0;
 }
@@ -515,7 +515,7 @@ bool LlanyLib::Basic::Objetos::String::startWithSimilar(const char& caracter) co
 	if (&caracter == this->vector) resultado = true;
 	else if (&caracter != nullptr && this->vector != nullptr) {
 		if (this->count == 1)
-			resultado = CHARS->compareCharSimilar(&caracter, &this->vector[0]);
+			resultado = (CHARS->compareCharSimilar(&caracter, &this->vector[0]) == 0);
 	}
 	return resultado;
 }
@@ -536,9 +536,9 @@ bool LlanyLib::Basic::Objetos::String::startWithSimilar(const char* str, const s
 	else if (str != nullptr && this->vector != nullptr) {
 		if (this->count >= size) {
 			// Si el primer caracter coincide
-			bool temp = CHARS->compareCharSimilar(&this->vector[0], &str[0]);
+			bool temp = (CHARS->compareCharSimilar(&this->vector[0], &str[0]) == 0);
 			for (size_t i = 1; i < size && temp; i++)
-				temp = CHARS->compareCharSimilar(&this->vector[i], &str[i]);
+				temp = (CHARS->compareCharSimilar(&this->vector[i], &str[i]) == 0);
 			resultado = temp;
 		}
 	}

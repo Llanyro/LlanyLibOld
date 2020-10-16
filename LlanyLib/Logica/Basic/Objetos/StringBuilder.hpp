@@ -22,7 +22,7 @@ namespace LlanyLib {
 					StringBuilder();
 					StringBuilder(const size_t& size);
 					~StringBuilder();
-					bool contieneAlgo() const;
+					#pragma region Adders
 					bool add(const String* str);
 					bool addClear(const String* str);
 					bool add(char const* const str);
@@ -32,8 +32,6 @@ namespace LlanyLib {
 					bool add(const double& val);
 					bool add(const long_t& val);
 					bool add(const size_t& val);
-					void clear();
-					
 					bool operator+=(const String* str);
 					bool operator+=(const char& caracter);
 					bool operator+=(char const* const str);
@@ -42,6 +40,14 @@ namespace LlanyLib {
 					bool operator+=(const double& val);
 					bool operator+=(const long_t& val);
 					bool operator+=(const size_t& val);
+					#pragma endregion
+					void clear();
+					bool contieneAlgo() const;
+
+					bool startWith(char const* const str) const;
+					bool startWithSimilar(char const* const str) const;
+					bool startWith(char const* const str, const size_t& size) const;
+					bool startWithSimilar(char const* const str, const size_t& size) const;
 
 					String* build() const;
 			};

@@ -456,6 +456,9 @@
     <ClCompile Include="Logica\Basic\Objetos\Registro.cpp">
       <Filter>Logica\Basic\Objetos\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Logica\Basic\Objetos\Stringctionary.cpp">
+      <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\Math\Objetos\Vector3.hpp">
@@ -792,6 +795,9 @@
       <Filter>Logica\Math\Libs</Filter>
     </ClInclude>
     <ClInclude Include="Logica\Basic\Objetos\Registro.hpp">
+      <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Basic\Objetos\Stringctionary.hpp">
       <Filter>Logica\Basic\Objetos\Hpp</Filter>
     </ClInclude>
   </ItemGroup>

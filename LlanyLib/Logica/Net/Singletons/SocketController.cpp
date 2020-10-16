@@ -10,6 +10,7 @@
 
 #include "../../Basic/Objetos/StringBuilder.hpp"
 #include "../../Basic/Objetos/String.hpp"
+#include "../../Basic/Objetos/Registro.hpp"
 
 #define HOST_STR "Host"
 #define CONNECTION_STR "Connection"
@@ -74,6 +75,7 @@ void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpReque
 }
 void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
 {
+	Basic::Objetos::Registro reg(3);
 	Basic::Objetos::StringBuilder builder;
 	Enum::HeatherType actualType = Enum::HeatherType::NONE;
 	Basic::Objetos::String* temp = nullptr;
@@ -83,6 +85,23 @@ void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::Http
 	while (continuar) {
 		recv(serverSocket->getClientSocket(), &c, 1, 0);
 		putchar(c);
+
+		if (c == '\r') {
+			if (*reg.getPos(0) == true)
+				reg.setPosTrue(2);
+			else
+				reg.setPosTrue(0);
+		}
+		else if (c == '\n') {
+			if (*reg.getPos(1) == true)
+				continuar = false;
+			else
+				reg.setPosTrue(1);
+		}
+
+
+
+
 		if (c == '\r') {
 			switch (actualType)
 			{
@@ -96,13 +115,61 @@ void LlanyLib::Net::Singletons::SocketController::getKnownHeathers(Objetos::Http
 
 		}
 		if (c == ':') {
-			
+			if (builder.startWithSimilar(HOST_STR))
+				actualType = Enum::HeatherType::HOST;
+			//else if()
 
 
+
+			builder.clear();
 		}
 		else builder += c;
 	}
 
+}
+void LlanyLib::Net::Singletons::SocketController::getAllHeathers(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+{
+	Basic::Objetos::Registro reg(3);
+	Basic::Objetos::StringBuilder builder;
+	Enum::HeatherType actualType = Enum::HeatherType::NONE;
+	Basic::Objetos::String* temp = nullptr;
+	char c;
+	bool continuar = true;
+	int parte = 0;
+	while (continuar) {
+		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		putchar(c);
+
+		if (c == '\r') {
+			if (*reg.getPos(0) == true)
+				reg.setPosTrue(2);
+			else
+				reg.setPosTrue(0);
+			if (temp != nullptr) {
+				request->setParametro(temp, builder.build());
+				temp = nullptr;
+				builder.clear();
+			}
+		}
+		else if (c == '\n') {
+			if (*reg.getPos(1) == true)
+				continuar = false;
+			else
+				reg.setPosTrue(1);
+		}
+		else if (c == ':' && temp == nullptr) {
+			temp = builder.build();
+			builder.clear();
+		}
+		else {
+			if (c == ' ') {
+				if (temp != nullptr)
+					builder += c;
+			}
+			else
+				builder += c;
+		}
+	}
 }
 LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPetition(const Objetos::ServerSocket* serverSocket)
 {
@@ -124,7 +191,10 @@ LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController
 }
 LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFull(const Objetos::ServerSocket* serverSocket)
 {
-	return nullptr;
+	Objetos::HttpRequest* request = new Objetos::HttpRequest();
+	SocketController::getPetition(request, serverSocket);
+	SocketController::getAllHeathers(request, serverSocket);
+	return request;
 }
 LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType)
 {

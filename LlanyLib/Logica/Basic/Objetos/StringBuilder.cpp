@@ -6,6 +6,7 @@
 #include "../Objetos/String.hpp"
 #include "../Singletons/Chars.hpp"
 
+#pragma region Constructores
 LlanyLib::Basic::Objetos::StringBuilder::StringBuilder()
 {
 	this->buffer = new Templates::Listas::Buffer<char>();
@@ -18,10 +19,8 @@ LlanyLib::Basic::Objetos::StringBuilder::~StringBuilder()
 {
 	delete this->buffer;
 }
-bool LlanyLib::Basic::Objetos::StringBuilder::contieneAlgo() const
-{
-	return (this->buffer->length() > 0);
-}
+#pragma endregion
+#pragma region Adders
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const String* str)
 {
 	bool resultado = false;
@@ -63,10 +62,6 @@ bool LlanyLib::Basic::Objetos::StringBuilder::add(const size_t& val)
 {
 	return StringBuilder::addClear(CHARS->toString(val));
 }
-void LlanyLib::Basic::Objetos::StringBuilder::clear()
-{
-	this->buffer->clear();
-}
 bool LlanyLib::Basic::Objetos::StringBuilder::operator+=(const String* str)
 {
 	return StringBuilder::add(str);
@@ -98,6 +93,43 @@ bool LlanyLib::Basic::Objetos::StringBuilder::operator+=(const long_t& val)
 bool LlanyLib::Basic::Objetos::StringBuilder::operator+=(const size_t& val)
 {
 	return StringBuilder::add(val);
+}
+#pragma endregion
+void LlanyLib::Basic::Objetos::StringBuilder::clear()
+{
+	this->buffer->clear();
+}
+bool LlanyLib::Basic::Objetos::StringBuilder::contieneAlgo() const
+{
+	return (this->buffer->length() > 0);
+}
+bool LlanyLib::Basic::Objetos::StringBuilder::startWith(char const* const str) const
+{
+	return StringBuilder::startWith(str, strlen(str));
+}
+bool LlanyLib::Basic::Objetos::StringBuilder::startWithSimilar(char const* const str) const
+{
+	return StringBuilder::startWithSimilar(str, strlen(str));
+}
+bool LlanyLib::Basic::Objetos::StringBuilder::startWith(char const* const str, const size_t& size) const
+{
+	bool resultado = false;
+	if (this->buffer->length() > size) {
+		resultado = true;
+		for (size_t i = 0; i < size && resultado; i++)
+			resultado = (this->buffer->operator[](i) != str[i]);
+	}
+	return resultado;
+}
+bool LlanyLib::Basic::Objetos::StringBuilder::startWithSimilar(char const* const str, const size_t& size) const
+{
+	bool resultado = false;
+	if (this->buffer->length() > size) {
+		resultado = true;
+		for (size_t i = 0; i < size && resultado; i++)
+			resultado = (CHARS->compareCharSimilar(&this->buffer->operator[](i), &str[i]) != 0);
+	}
+	return resultado;
 }
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Objetos::StringBuilder::build() const
 {

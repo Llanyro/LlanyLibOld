@@ -35,6 +35,7 @@ namespace LlanyLib {
 					//void print(const char* str) const;
 				public:
 					void printBool(const bool& value) const;
+					void printValue(const size_t& value) const;
 
 					void print(const char& caracter) const;
 					void print(const char* str, const size_t& size) const;
@@ -46,10 +47,12 @@ namespace LlanyLib {
 					void printClear(Objetos::JSONBuilder* json) const;
 
 					void printBoolLn(const bool& value) const;
+					void printValueLn(const size_t& value) const;
 
 					void printLn(const char& caracter) const;
 					void printLn(const char* str, const size_t& size) const;
 					void printLn(const Objetos::String* str) const;
+					void printLn(const Objetos::String& str) const;
 					void printLn(const Objetos::JSONBuilder* str) const;
 
 					void printLnClear(Objetos::String* str) const;

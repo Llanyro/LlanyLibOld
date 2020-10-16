@@ -63,9 +63,9 @@ namespace LlanyLib {
 					int compare(const char& caracter) const;
 					int compare(char const* const str) const;
 					int compare(const String& other) const;
-					int equals(const char& caracter) const;
-					int equals(char const* const str) const;
-					int equals(const String& other) const;
+					bool equals(const char& caracter) const;
+					bool equals(char const* const str) const;
+					bool equals(const String& other) const;
 					bool operator==(const char& caracter) const;
 					bool operator==(char const* const str) const;
 					bool operator==(const String& other) const;

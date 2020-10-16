@@ -1,7 +1,7 @@
 #include "HttpRequest.hpp"
 
-#include "../../Basic/Plantillas/Dictionary/DictionaryLinkedList.hpp"
 #include "../../Basic/Objetos/String.hpp"
+#include "../../Basic/Objetos/Stringctionary.hpp"
 
 LlanyLib::Net::Objetos::HttpRequest::HttpRequest()
 {
@@ -20,13 +20,7 @@ LlanyLib::Net::Objetos::HttpRequest::~HttpRequest()
 	if (this->version != nullptr) delete this->version;
 	if (this->host != nullptr) delete this->host;
 	if (this->connection != nullptr) delete this->connection;
-	if (this->parametros != nullptr) {
-		for (size_t i = 0; i < this->parametros->length(); i++) {
-			delete *this->parametros->getKey(i);
-			delete *this->parametros->getValue(i);
-		}
-		delete this->parametros;
-	}
+	if (this->parametros != nullptr) delete this->parametros;
 	this->peticion = nullptr;
 	this->root = nullptr;
 	this->version = nullptr;
@@ -60,10 +54,7 @@ bool LlanyLib::Net::Objetos::HttpRequest::getUpgradeInsecureRequests() const
 {
 	return this->upgrade_insecure_requests;
 }
-const LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
-	LlanyLib::Basic::Objetos::String*, 
-	LlanyLib::Basic::Objetos::String*>* 
-	LlanyLib::Net::Objetos::HttpRequest::getParametros() const
+const LlanyLib::Basic::Objetos::Stringictionary* LlanyLib::Net::Objetos::HttpRequest::getParametros() const
 {
 	return this->parametros;
 }
@@ -106,9 +97,7 @@ void LlanyLib::Net::Objetos::HttpRequest::setUpgradeInsecureRequests(const bool&
 void LlanyLib::Net::Objetos::HttpRequest::setParametro(Basic::Objetos::String* key, Basic::Objetos::String* value)
 {
 	if (this->parametros == nullptr)
-		this->parametros = new Basic::Templates::Diccionarios::DictionaryLinkedList<
-		Basic::Objetos::String*,
-		Basic::Objetos::String*>();
+		this->parametros = new Basic::Objetos::Stringictionary();
 	this->parametros->add(key, value);
 }
 #pragma endregion

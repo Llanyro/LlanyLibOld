@@ -206,24 +206,26 @@ namespace LlanyLib {
 						}
 						inline virtual void clear() override
 						{
-							// Penultimo
-							Nodos::NDODP<T1, T2>* nodoActual = this->raiz->getSegundoNodo()->getSegundoNodo();
-							Nodos::NDODP<T1, T2>* nodoAEliminar = nullptr;
+							if (this->count > 0) {
+								// Penultimo
+								Nodos::NDODP<T1, T2>* nodoActual = this->raiz->getSegundoNodo()->getSegundoNodo();
+								Nodos::NDODP<T1, T2>* nodoAEliminar = nullptr;
 
-							while (this->count > 1)
-							{
-								nodoAEliminar = nodoActual->getPrimerNodo();
-								delete nodoAEliminar;
-								nodoActual = nodoActual->getSegundoNodo();
-								this->count--;
+								while (this->count > 1)
+								{
+									nodoAEliminar = nodoActual->getPrimerNodo();
+									delete nodoAEliminar;
+									nodoActual = nodoActual->getSegundoNodo();
+									this->count--;
+								}
+
+								delete this->raiz;
+
+								this->count = 0;
+								this->raiz = nullptr;
+								this->cacheNodo = nullptr;
+								this->cachePosicionNodo = 0;
 							}
-
-							delete this->raiz;
-
-							this->count = 0;
-							this->raiz = nullptr;
-							this->cacheNodo = nullptr;
-							this->cachePosicionNodo = 0;
 						}
 						#pragma endregion
 						#pragma region Busquedas

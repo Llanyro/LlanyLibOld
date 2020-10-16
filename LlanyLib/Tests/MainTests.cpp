@@ -20,6 +20,7 @@
 #include "../Logica/Basic/Objetos/Date.hpp"
 #include "../Logica/Basic/Objetos/String.hpp"
 #include "../Logica/Basic/Objetos/StringBuilder.hpp"
+#include "../Logica/Basic/Objetos/Stringctionary.hpp"
 #pragma endregion
 #pragma region Net
 #include "../Logica/Net/Objetos/ServerSocket.hpp"
@@ -27,7 +28,6 @@
 #include "../Logica/Net/Objetos/HttpRequest.hpp"
 #include "../Logica/Net/Enums/HTTPEnum.hpp"
 #pragma endregion
-
 
 using namespace std;
 
@@ -44,10 +44,10 @@ void n2()
 	LlanyLib::Net::Objetos::ServerSocket* s = new LlanyLib::Net::Objetos::ServerSocket("9090");
 	LlanyLib::Net::Objetos::HttpRequest* req = nullptr;
 	if (s->acceptClient()) {
-		req = SOCKET_CONTROLLER->getHttpRequest(s, LlanyLib::Net::Enum::ResponseProcess::PETITION);
-		//STRING_PRINTER->printLn(req->getPeticion());
-		//STRING_PRINTER->printLn(req->getRoot());
-		//STRING_PRINTER->printLn(req->getVersion());
+		req = SOCKET_CONTROLLER->getHttpRequest(s, LlanyLib::Net::Enum::ResponseProcess::FULL);
+		STRING_PRINTER->printLn(req->getPeticion());
+		STRING_PRINTER->printLn(req->getRoot());
+		STRING_PRINTER->printLn(req->getVersion());
 		//
 		//STRING_PRINTER->printLn(req->getHost());
 		//STRING_PRINTER->printLn(req->getConnection());
@@ -56,11 +56,14 @@ void n2()
 		//const LlanyLib::Basic::Templates::Diccionarios::DictionaryLinkedList<
 		//	LlanyLib::Basic::Objetos::String*,
 		//	LlanyLib::Basic::Objetos::String*>* dict = req->getParametros();
-		//for (size_t i = 0; i < dict->length(); i++) {
-		//	STRING_PRINTER->print(*dict->getKeyLow(i));
-		//	STRING_PRINTER->print(": ", 2);
-		//	STRING_PRINTER->printLn(*dict->getValueLow(i));
-		//}
+		const LlanyLib::Basic::Objetos::Stringictionary* dict = req->getParametros();
+
+		for (size_t i = 0; i < dict->getNumElements(); i++) {
+			STRING_PRINTER->print(*dict->getKeyLow(i));
+			STRING_PRINTER->print(':');
+			STRING_PRINTER->print(' ');
+			STRING_PRINTER->printLn(*dict->getValueLow(i));
+		}
 
 
 		//STRING_PRINTER->printLn(req->getUserAgent());
@@ -76,8 +79,6 @@ void n2()
 	delete s;
 }
 #pragma endregion
-
-
 
 int main()
 {

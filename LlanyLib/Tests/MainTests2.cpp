@@ -17,6 +17,8 @@
 #include "../Logica/Basic/Singletons/Files.hpp"
 #include "../Logica/Basic/Singletons/JSONConversor.hpp"
 #include "../Logica/Basic/Singletons/DateController.hpp"
+#include "../Logica/Basic/Objetos/Registro.hpp"
+#include "../Logica/Basic/Objetos/Stringctionary.hpp"
 
 #include "../Logica/Basic/Objetos/Date.hpp"
 #include "../Logica/Basic/Objetos/String.hpp"
@@ -239,6 +241,71 @@ void t12()
 	buffer->clear();
 
 	delete buffer;
+}
+void t13()
+{
+	size_t size = 10;
+	LlanyLib::Basic::Objetos::Registro* reg = new LlanyLib::Basic::Objetos::Registro(size);
+
+	STRING_PRINTER->printBoolLn(reg->setPosTrue(2));
+
+	STRING_PRINTER->printLn("Intentamos setear en la lista:");
+	for (size_t i = 0; i < reg->length() / 2; i++) {
+		STRING_PRINTER->print("Intentantmos poner a true la pos ");
+		STRING_PRINTER->printValueLn(i);
+		STRING_PRINTER->printBoolLn(reg->setPosTrue(i));
+	}
+
+	STRING_PRINTER->printLn("Printeamos el array:");
+	for (size_t i = 0; i < reg->length(); i++) {
+		STRING_PRINTER->print("Pos ", 4);
+		STRING_PRINTER->printValueLn(i);
+		STRING_PRINTER->printBoolLn(*reg->getPos(i));
+	}
+
+	STRING_PRINTER->print("Last True: ");
+	size_t pos = reg->lastTrue();
+	STRING_PRINTER->printValue(pos);
+	STRING_PRINTER->print(", Vaue: ");
+	STRING_PRINTER->printBoolLn(*reg->getPos(pos));
+
+	delete reg;
+}
+void t14()
+{
+	char string_1[] = "Hola";
+	char string_2[] = "hOlA";
+	LlanyLib::Basic::Objetos::StringBuilder str(2);
+	str += "Hola mundo";
+
+	STRING_PRINTER->printLn("Contenido del buffer:");
+	STRING_PRINTER->printLnClear(str.build());
+
+	STRING_PRINTER->printLn("Contenido a comparar:");
+	STRING_PRINTER->printLn(string_1);
+
+	STRING_PRINTER->print("Resultado: ");
+	STRING_PRINTER->printBoolLn(str.startWith(string_1));
+
+	STRING_PRINTER->printLn("Contenido a comparar:");
+	STRING_PRINTER->printLn(string_2);
+
+	STRING_PRINTER->print("Resultado: ");
+	STRING_PRINTER->printBoolLn(str.startWithSimilar(string_2));
+}
+void t15()
+{
+	LlanyLib::Basic::Objetos::Stringictionary dict;
+	dict.add("Fruta", "Manzana");
+	dict.add("Verdura", "Pimiento");
+	dict.add("Material", "Chinesium");
+
+	for (size_t i = 0; i < dict.getNumElements(); i++) {
+		STRING_PRINTER->print("Clave: ");
+		STRING_PRINTER->print(dict.getKey(i));
+		STRING_PRINTER->print(".\t\tValor: ");
+		STRING_PRINTER->printLn(dict.getValue(i));
+	}
 }
 #pragma endregion
 #pragma region Math
@@ -760,7 +827,11 @@ int main2()
 	//t9();
 	//t10();
 	//t11();
-	t12();
+	//t12();
+	//t13();
+	//t14();
+	t15();
+
 
 	//m1();
 	//m2();

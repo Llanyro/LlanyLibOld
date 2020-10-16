@@ -6,6 +6,8 @@
 #include "../Objetos/JSONBuilder.hpp"
 #include "../Plantillas/Listas/LinkedList.hpp"
 #include "../Plantillas/Pointers/SmartPointer.hpp"
+
+#include "../Singletons/Chars.hpp"
 //#include "FuncionesCaracteres.hpp"
 
 #define STRING_NULL "Se ha introducido un string apuntando a nullptr. Se ha ignorado esto"
@@ -22,6 +24,11 @@ void LlanyLib::Basic::Singletons::StringPrinter::printBool(const bool& value) co
 	else
 		StringPrinter::print("False");
 	StringPrinter::print('\n');
+}
+
+void LlanyLib::Basic::Singletons::StringPrinter::printValue(const size_t& value) const
+{
+	StringPrinter::printClear(CHARS->toString(value));
 }
 
 void LlanyLib::Basic::Singletons::StringPrinter::print(const char& caracter) const
@@ -44,14 +51,14 @@ void LlanyLib::Basic::Singletons::StringPrinter::print(const LlanyLib::Basic::Ob
 	if (str == nullptr)
 		StringPrinter::print(STRING_NULL);
 	else
-		StringPrinter::print(str->get(), str->length());
+		StringPrinter::print(str->get(), str->length() - 1);
 }
 void LlanyLib::Basic::Singletons::StringPrinter::print(const LlanyLib::Basic::Objetos::String& str) const
 {
 	if (str == nullptr)
 		StringPrinter::print(STRING_NULL);
 	else
-		StringPrinter::print(str(), str.length());
+		StringPrinter::print(str(), str.length() - 1);
 }
 void LlanyLib::Basic::Singletons::StringPrinter::print(const Objetos::JSONBuilder* json) const
 {
@@ -78,6 +85,11 @@ void LlanyLib::Basic::Singletons::StringPrinter::printBoolLn(const bool& value) 
 	StringPrinter::print('\n');
 }
 
+void LlanyLib::Basic::Singletons::StringPrinter::printValueLn(const size_t& value) const
+{
+	StringPrinter::printClear(CHARS->toString(value));
+}
+
 void LlanyLib::Basic::Singletons::StringPrinter::printLn(const char& caracter) const
 {
 	StringPrinter::print(caracter);
@@ -89,6 +101,11 @@ void LlanyLib::Basic::Singletons::StringPrinter::printLn(const char* str, const 
 	StringPrinter::print('\n');
 }
 void LlanyLib::Basic::Singletons::StringPrinter::printLn(const Objetos::String* str) const
+{
+	StringPrinter::print(str);
+	StringPrinter::print('\n');
+}
+void LlanyLib::Basic::Singletons::StringPrinter::printLn(const Objetos::String& str) const
 {
 	StringPrinter::print(str);
 	StringPrinter::print('\n');
