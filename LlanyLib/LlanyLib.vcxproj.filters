@@ -444,9 +444,6 @@
     <ClCompile Include="Logica\Net\Singletons\SocketController.cpp">
       <Filter>Logica\Net\Singletons</Filter>
     </ClCompile>
-    <ClCompile Include="Logica\Net\Objetos\HTTPResponse.cpp">
-      <Filter>Logica\Net\Objetos\Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Logica\Net\Objetos\HTTPRequestOld.cpp">
       <Filter>Logica\Net\Objetos\Cpp</Filter>
     </ClCompile>
@@ -458,6 +455,9 @@
     </ClCompile>
     <ClCompile Include="Logica\Basic\Objetos\Stringctionary.cpp">
       <Filter>Logica\Basic\Objetos\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Logica\Net\Objetos\HttpResponse.cpp">
+      <Filter>Logica\Net\Objetos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -779,9 +779,6 @@
     <ClInclude Include="Logica\Net\Singletons\SocketController.hpp">
       <Filter>Logica\Net\Singletons</Filter>
     </ClInclude>
-    <ClInclude Include="Logica\Net\Objetos\HTTPResponse.hpp">
-      <Filter>Logica\Net\Objetos\Hpp</Filter>
-    </ClInclude>
     <ClInclude Include="Logica\Net\Headers\SocketsHeaders.hpp">
       <Filter>Logica\Net\Headers</Filter>
     </ClInclude>
@@ -799,6 +796,9 @@
     </ClInclude>
     <ClInclude Include="Logica\Basic\Objetos\Stringctionary.hpp">
       <Filter>Logica\Basic\Objetos\Hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Logica\Net\Objetos\HttpResponse.hpp">
+      <Filter>Logica\Net\Objetos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
