@@ -7,6 +7,7 @@
 
 #include "../Objetos/ServerSocket.hpp"
 #include "../Objetos/HttpRequest.hpp"
+#include "../Objetos/HTTPResponse.hpp"
 
 #include "../../Basic/Objetos/StringBuilder.hpp"
 #include "../../Basic/Objetos/String.hpp"
@@ -218,6 +219,14 @@ LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController
 			break;
 	}
 	return request;
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpResponse(const Objetos::ServerSocket* serverSocket, const Objetos::HttpResponse* response)
+{
+	Basic::Objetos::String* str = response->toString();
+	for (size_t i = 0; i < str->length(); i++)
+		putchar(str->operator[](i));
+	send(serverSocket->getClientSocket(), str->get(), str->length(), 0);
+	delete str;
 }
 
 

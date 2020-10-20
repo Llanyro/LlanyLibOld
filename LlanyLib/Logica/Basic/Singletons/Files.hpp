@@ -29,8 +29,12 @@ namespace LlanyLib {
 					#pragma endregion
 				public:
 					#pragma region Lectura
+					Objetos::String* leerFicheroFopenFseek(char const* const fileName) const;
 					Objetos::String* leerFicheroFopenFseek(const Objetos::String* fileName) const;
 					Objetos::String* leerFicheroFopenFseekClear(const Objetos::String* fileName) const;
+					Objetos::String* leerFicheroFopen(char const* const fileName) const;
+					Objetos::String* leerFicheroFopen(const Objetos::String* fileName) const;
+					Objetos::String* leerFicheroFopenClear(const Objetos::String* fileName) const;
 					#pragma endregion
 					#pragma region Escritura
 					#pragma region Strings

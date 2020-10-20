@@ -79,11 +79,10 @@ void LlanyLib::Basic::Singletons::Files::escribirFicheroBase(const Objetos::Stri
 }
 #pragma endregion
 #pragma region Lectura
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopenFseek(const Objetos::String* fileName) const
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopenFseek(char const* const fileName) const
 {
-	assert(fileName != nullptr);
 	Objetos::String* str = nullptr;
-	FILE* file = fopen(fileName->get(), "r");
+	FILE* file = fopen(fileName, "r");
 	if (file != nullptr)
 	{
 		fseek(file, 0, SEEK_END);
@@ -94,9 +93,50 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicher
 	}
 	return str;
 }
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopenFseek(const Objetos::String* fileName) const
+{
+	//assert(fileName != nullptr);
+	//Objetos::String* str = nullptr;
+	//FILE* file = fopen(fileName->get(), "r");
+	//if (file != nullptr)
+	//{
+	//	fseek(file, 0, SEEK_END);
+	//	str = new Objetos::String((size_t)ftell(file));
+	//	fseek(file, 0, SEEK_SET);
+	//	fread(str->get(), 1, str->length(), file);
+	//	fclose(file);
+	//}
+	//return str;
+	return Files::leerFicheroFopenFseek(fileName->get());
+}
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopenFseekClear(const Objetos::String* fileName) const
 {
 	Objetos::String* str = Files::leerFicheroFopenFseek(fileName);
+	delete fileName;
+	return str;
+}
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopen(char const* const fileName) const
+{
+	assert(&fileName != nullptr);
+	Objetos::StringBuilder str;
+	FILE* file = fopen(fileName, "r");
+	if (file != nullptr) {
+		char c;
+		do {
+			c = getc(file);
+			str += c;
+		} while (c != EOF);
+		fclose(file);
+	}
+	return str.build();
+}
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopen(const Objetos::String* fileName) const
+{
+	return Files::leerFicheroFopen(fileName->get());
+}
+LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopenClear(const Objetos::String* fileName) const
+{
+	Objetos::String* str = Files::leerFicheroFopen(fileName);
 	delete fileName;
 	return str;
 }

@@ -26,6 +26,7 @@
 #include "../Logica/Net/Objetos/ServerSocket.hpp"
 #include "../Logica/Net/Singletons/SocketController.hpp"
 #include "../Logica/Net/Objetos/HttpRequest.hpp"
+#include "../Logica/Net/Objetos/HTTPResponse.hpp"
 #include "../Logica/Net/Enums/HTTPEnum.hpp"
 #pragma endregion
 
@@ -91,6 +92,49 @@ void n2()
 	}
 	delete s;
 }
+void n3()
+{
+	LlanyLib::Net::Objetos::HttpResponse* resp = new LlanyLib::Net::Objetos::HttpResponse();
+	resp->setContenido(FILES->leerFicheroFopen("./Web/Templates/chat.html"));
+	STRING_PRINTER->printLnClear(resp->toString());
+	delete resp;
+}
+void n4()
+{
+	LlanyLib::Net::Objetos::ServerSocket* s = new LlanyLib::Net::Objetos::ServerSocket("9090");
+	LlanyLib::Net::Objetos::HttpRequest* req = nullptr;
+	if (s->acceptClient()) {
+		req = SOCKET_CONTROLLER->getHttpRequest(s, LlanyLib::Net::Enum::ResponseProcess::FULL);
+		STRING_PRINTER->printLn(req->getPeticion());
+		STRING_PRINTER->printLn(req->getRoot());
+		STRING_PRINTER->printLn(req->getVersion());
+		STRING_PRINTER->print("Headers:\n");
+		const LlanyLib::Basic::Objetos::Stringictionary* dict = req->getHeaders();
+		for (size_t i = 0; i < dict->getNumElements(); i++) {
+			STRING_PRINTER->print(*dict->getKeyLow(i));
+			STRING_PRINTER->print(':');
+			STRING_PRINTER->print(' ');
+			STRING_PRINTER->printLn(*dict->getValueLow(i));
+		}
+		STRING_PRINTER->print("Parametros:\n");
+		dict = req->getParametros();
+		for (size_t i = 0; i < dict->getNumElements(); i++) {
+			STRING_PRINTER->print(*dict->getKeyLow(i));
+			STRING_PRINTER->print(':');
+			STRING_PRINTER->print(' ');
+			STRING_PRINTER->printLn(*dict->getValueLow(i));
+		}
+		delete req;
+
+
+		LlanyLib::Net::Objetos::HttpResponse* resp = new LlanyLib::Net::Objetos::HttpResponse();
+		resp->setContenido(FILES->leerFicheroFopenFseek("./Web/Templates/chat.html"));
+		SOCKET_CONTROLLER->sendHttpResponse(s, resp);
+		delete resp;
+	}
+	delete s;
+}
+
 #pragma endregion
 
 int main()
@@ -102,7 +146,9 @@ int main()
 	//delete dict;
 
 	//n1();
-	n2();
+	//n2();
+	n3();
+	//n4();
 
 	FREE_SINGLETONS;
 

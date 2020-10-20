@@ -14,7 +14,7 @@ namespace LlanyLib {
 					class BotellaHidrogeno : public Objetos::Items::Contenedor
 					{
 						protected:
-							virtual bool sePuedeAñadir(const Item* item) const;
+							virtual bool sePuedeAñadir(const Item* item) const override;
 						public:
 							BotellaHidrogeno();
 							BotellaHidrogeno(const BotellaHidrogeno& other);

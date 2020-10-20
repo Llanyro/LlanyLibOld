@@ -25,18 +25,18 @@ LlanyLib::Net::Objetos::HttpResponse::HttpResponse()
 }
 LlanyLib::Net::Objetos::HttpResponse::~HttpResponse()
 {
-	if(this->response == nullptr) delete this->response;
-	if(this->acessControlAllowOrigin == nullptr) delete this->acessControlAllowOrigin;
-	if(this->serverName == nullptr) delete this->serverName;
-	if(this->upgrade == nullptr) delete this->upgrade;
-	if(this->connection == nullptr) delete this->connection;
-	if(this->date == nullptr) delete this->date;
-	if(this->contenido == nullptr) delete this->contenido;
-	if(this->contentType == nullptr) delete this->contentType;
-	if(this->encodingType == nullptr) delete this->encodingType;
+	if(this->response != nullptr) delete this->response;
+	if(this->acessControlAllowOrigin != nullptr) delete this->acessControlAllowOrigin;
+	if(this->serverName != nullptr) delete this->serverName;
+	if(this->upgrade != nullptr) delete this->upgrade;
+	if(this->connection != nullptr) delete this->connection;
+	if(this->date != nullptr) delete this->date;
+	if(this->contenido != nullptr) delete this->contenido;
+	if(this->contentType != nullptr) delete this->contentType;
+	if(this->encodingType != nullptr) delete this->encodingType;
 
-	//if(this->cookieList == nullptr) delete this->cookieList;
-	//if(this->cabecerasExtras == nullptr) delete this->cabecerasExtras;
+	//if(this->cookieList != nullptr) delete this->cookieList;
+	//if(this->cabecerasExtras != nullptr) delete this->cabecerasExtras;
 
 	this->responseCode = 200;
 	this->response = nullptr;
@@ -251,7 +251,7 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::toString
 	if(this->response != nullptr)
 		str.add(this->response);
 	else
-		str.add("OK");
+		str.add(" OK");
 	str.add("\r\n");
 
 	/// Datos del servicio
@@ -286,12 +286,14 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::toString
 
 	/// Extras
 	// No añadido
-	Basic::Objetos::String** strtemp = nullptr;
-	for (size_t i = 0; i < this->cabecerasExtras->length(); i++)
-	{
-		strtemp = this->cabecerasExtras->get(i);
-		if (strtemp != nullptr)
-			str.add(*strtemp);
+	if (this->cabecerasExtras != nullptr) {
+		Basic::Objetos::String** strtemp = nullptr;
+		for (size_t i = 0; i < this->cabecerasExtras->length(); i++)
+		{
+			strtemp = this->cabecerasExtras->get(i);
+			if (strtemp != nullptr)
+				str.add(*strtemp);
+		}
 	}
 
 	/// Contenido Header

@@ -23,6 +23,7 @@ namespace LlanyLib {
 		namespace Objetos {
 			class ServerSocket;
 			class HttpRequest;
+			class HttpResponse;
 		}
 		namespace Singletons {
 			class SocketController : public Basic::Templates::Singleton<SocketController>, Basic::Gestores::SubscriptorSingletons
@@ -54,6 +55,9 @@ namespace LlanyLib {
 
 					Objetos::HttpRequest* getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType);
 
+
+
+					void sendHttpResponse(const Objetos::ServerSocket* serverSocket, const Objetos::HttpResponse* response);
 			};
 		}
 	}

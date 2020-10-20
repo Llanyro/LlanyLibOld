@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title> All public Files </title>
+    </head>
+    <body>
+        <nav id="navig_ID"></nav>
+        <h1> Chat </h1>
+        <label class="required" for="id_contenido_chat"></label>
+        <textarea id="content" class="vTextField" id="id_contenido_chat" rows="10" cols="100"></textarea>
+        <br/>
+        <button onclick="postmensajechat()"> Enviar </button>
+        <form
+        action="clearchat"
+        method="POST"
+        onsubmit="formfunc()">
+            <button type="submit">Clear</button>
+        </form>
+        <p id="contenido"></p>
+    </body>
+</html>

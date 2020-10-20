@@ -57,7 +57,6 @@
 #include "../Logica/Juego/Laberintos/Laberintos/Laberinto.hpp"
 #include "../Logica/Juego/Laberintos/Celdas/Celda2D.hpp"
 #include "../Logica/Juego/Laberintos/Enums/Dificultad.hpp"
-
 #pragma endregion
 
 using namespace std;
@@ -306,6 +305,10 @@ void t15()
 		STRING_PRINTER->print(".\t\tValor: ");
 		STRING_PRINTER->printLn(dict.getValue(i));
 	}
+}
+void t16()
+{
+
 }
 #pragma endregion
 #pragma region Math
@@ -830,8 +833,8 @@ int main2()
 	//t12();
 	//t13();
 	//t14();
-	t15();
-
+	//t15();
+	t16();
 
 	//m1();
 	//m2();
