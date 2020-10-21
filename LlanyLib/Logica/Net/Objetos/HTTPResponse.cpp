@@ -17,7 +17,7 @@ LlanyLib::Net::Objetos::HttpResponse::HttpResponse()
 	this->upgrade= nullptr;
 	this->connection = nullptr;
 	this->date = nullptr;
-	this->contenido = nullptr;
+	this->content = nullptr;
 	this->contentType = nullptr;
 	this->encodingType = nullptr;
 	this->cookieList = nullptr;
@@ -31,7 +31,7 @@ LlanyLib::Net::Objetos::HttpResponse::~HttpResponse()
 	if(this->upgrade != nullptr) delete this->upgrade;
 	if(this->connection != nullptr) delete this->connection;
 	if(this->date != nullptr) delete this->date;
-	if(this->contenido != nullptr) delete this->contenido;
+	if(this->content != nullptr) delete this->content;
 	if(this->contentType != nullptr) delete this->contentType;
 	if(this->encodingType != nullptr) delete this->encodingType;
 
@@ -45,7 +45,7 @@ LlanyLib::Net::Objetos::HttpResponse::~HttpResponse()
 	this->upgrade = nullptr;
 	this->connection = nullptr;
 	this->date = nullptr;
-	this->contenido = nullptr;
+	this->content = nullptr;
 	this->contentType = nullptr;
 	this->encodingType = nullptr;
 	this->cookieList = nullptr;
@@ -83,7 +83,7 @@ const LlanyLib::Basic::Objetos::Date* LlanyLib::Net::Objetos::HttpResponse::getD
 }
 const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::getContent() const
 {
-	return this->contenido;
+	return this->content;
 }
 const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::getContentType() const
 {
@@ -96,8 +96,8 @@ const LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::ge
 size_t LlanyLib::Net::Objetos::HttpResponse::getContentLength() const
 {
 	size_t len = 0;
-	if (this->contenido != nullptr)
-		len = this->contenido->length();
+	if (this->content != nullptr)
+		len = this->content->length();
 	return len;
 }
 const LlanyLib::Basic::Templates::Listas::LinkedList<LlanyLib::Net::Objetos::Cookie*>* LlanyLib::Net::Objetos::HttpResponse::getCookieList() const
@@ -197,17 +197,17 @@ void LlanyLib::Net::Objetos::HttpResponse::setDate()
 		delete this->date;
 	this->date = new Basic::Objetos::Date();
 }
-void LlanyLib::Net::Objetos::HttpResponse::setContenido(char const* const contenido)
+void LlanyLib::Net::Objetos::HttpResponse::setContent(char const* const content)
 {
-	if (this->contenido != nullptr)
-		delete this->contenido;
-	this->contenido = new Basic::Objetos::String(contenido);
+	if (this->content != nullptr)
+		delete this->content;
+	this->content = new Basic::Objetos::String(content);
 }
-void LlanyLib::Net::Objetos::HttpResponse::setContenido(Basic::Objetos::String* contenido)
+void LlanyLib::Net::Objetos::HttpResponse::setContent(Basic::Objetos::String* content)
 {
-	if (this->contenido != nullptr)
-		delete this->contenido;
-	this->contenido = contenido;
+	if (this->content != nullptr)
+		delete this->content;
+	this->content = content;
 }
 void LlanyLib::Net::Objetos::HttpResponse::setContentType(char const* const contentType)
 {
@@ -248,10 +248,11 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::toString
 	/// Respuesta
 	str.add("HTTP/1.1 ");
 	str += this->responseCode;
+	str += ' ';
 	if(this->response != nullptr)
 		str.add(this->response);
 	else
-		str.add(" OK");
+		str.add("OK");
 	str.add("\r\n");
 
 	/// Datos del servicio
@@ -298,8 +299,8 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::toString
 
 	/// Contenido Header
 	str.add("Content-Length: ");
-	if (this->contenido != nullptr)
-		str += this->contenido->length();
+	if (this->content != nullptr)
+		str += this->content->length();
 	else
 		str += 0;
 	str.add("\r\n");
@@ -309,8 +310,8 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Net::Objetos::HttpResponse::toString
 	str.add("\r\n");
 
 	/// Añadido de contenido si existe
-	if (this->contenido != nullptr)
-		str.add(this->contenido);
+	if (this->content != nullptr)
+		str.add(this->content);
 
 	return str.build();
 }

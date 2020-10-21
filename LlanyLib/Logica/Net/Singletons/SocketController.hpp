@@ -9,6 +9,9 @@
 
 namespace LlanyLib {
 	namespace Basic {
+		namespace Objetos {
+			class String;
+		}
 		namespace Templates {
 			namespace Diccionarios {
 				template<class T1, class T2>
@@ -21,9 +24,10 @@ namespace LlanyLib {
 			enum class ResponseProcess;
 		}
 		namespace Objetos {
-			class ServerSocket;
+			//class ServerSocket;
 			class HttpRequest;
 			class HttpResponse;
+			class ConnectionSocket;
 		}
 		namespace Singletons {
 			class SocketController : public Basic::Templates::Singleton<SocketController>, Basic::Gestores::SubscriptorSingletons
@@ -35,29 +39,42 @@ namespace LlanyLib {
 					~SocketController();
 				#pragma endregion
 				protected:
+					#pragma region HTTP
+					void getPetition(Objetos::HttpRequest* request, const Objetos::ConnectionSocket* connection) const;
+					void getKnownHeaders(Objetos::HttpRequest* request, const Objetos::ConnectionSocket* connection) const;
+					void getAllHeaders(Objetos::HttpRequest* request, const Objetos::ConnectionSocket* connection) const;
 
-					void getPetition(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
-					void getKnownHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
-					void getAllHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const;
+					Objetos::HttpRequest* getHttpRequestPetition(const Objetos::ConnectionSocket* connection) const;
+					Objetos::HttpRequest* getHttpRequestPostContent(const Objetos::ConnectionSocket* connection) const;
+					Objetos::HttpRequest* getHttpRequestFast(const Objetos::ConnectionSocket* connection) const;
+					Objetos::HttpRequest* getHttpRequestSlow(const Objetos::ConnectionSocket* connection) const;
+					Objetos::HttpRequest* getHttpRequestFull(const Objetos::ConnectionSocket* connection) const;
 
-					Objetos::HttpRequest* getHttpRequestPetition(const Objetos::ServerSocket* serverSocket);
-					Objetos::HttpRequest* getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket);
-					Objetos::HttpRequest* getHttpRequestFast(const Objetos::ServerSocket* serverSocket);
-					Objetos::HttpRequest* getHttpRequestSlow(const Objetos::ServerSocket* serverSocket);
-					Objetos::HttpRequest* getHttpRequestFull(const Objetos::ServerSocket* serverSocket);
-
+					void sendHttpFileProtected(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const root, char const* const file) const;
+					void sendHttpFileProtected(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const root, const Basic::Objetos::String* file) const;
+					#pragma endregion
 				public:
-					void printTest(const Objetos::ServerSocket* serverSocket) const;
-					void shitSend(const Objetos::ServerSocket* serverSocket) const;
+					void printTest(const Objetos::ConnectionSocket* connection) const;
+					void shitSend(const Objetos::ConnectionSocket* connection) const;
 
-					//Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket) const;
-					//Objetos::HTTPRequest* getHTTPRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType) const;
+					//Objetos::HTTPRequest* getHTTPRequest(const Objetos::ConnectionSocket* connection) const;
+					//Objetos::HTTPRequest* getHTTPRequest(const Objetos::ConnectionSocket* connection, const Enum::ResponseProcess& processType) const;
 
-					Objetos::HttpRequest* getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType);
-
-
-
-					void sendHttpResponse(const Objetos::ServerSocket* serverSocket, const Objetos::HttpResponse* response);
+					#pragma region HTTP
+					Objetos::HttpRequest* getHttpRequest(const Objetos::ConnectionSocket* connection, const Enum::ResponseProcess& processType) const;
+					void sendHttpResponse(const Objetos::ConnectionSocket* connection, const Objetos::HttpResponse* response) const;
+					void sendHttpTemplate(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const file) const;
+					void sendHttpTemplate(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, const Basic::Objetos::String* file) const;
+					void sendHttpTemplateClear(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, Basic::Objetos::String* file) const;
+					void sendHttpStatic(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const file) const;
+					void sendHttpStatic(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, const Basic::Objetos::String* file) const;
+					void sendHttpStaticClear(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, Basic::Objetos::String* file) const;
+					#pragma endregion
+					#pragma region All
+					void sendMsg(const Objetos::ConnectionSocket* connection, const Basic::Objetos::String* msg) const;
+					void sendMsgClear(const Objetos::ConnectionSocket* connection, Basic::Objetos::String* msg) const;
+					void closeConnectionSocket(const Objetos::ConnectionSocket* connection) const;
+					#pragma endregion
 			};
 		}
 	}

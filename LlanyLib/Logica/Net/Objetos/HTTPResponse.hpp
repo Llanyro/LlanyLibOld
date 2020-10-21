@@ -33,7 +33,7 @@ namespace LlanyLib {
 					Basic::Objetos::Date* date;							// 
 
 					/// Contenido
-					Basic::Objetos::String* contenido;
+					Basic::Objetos::String* content;
 					Basic::Objetos::String* contentType;				// if nullptr -> "text/html"
 					Basic::Objetos::String* encodingType;				// if nullptr -> "utf-8"
 
@@ -90,8 +90,8 @@ namespace LlanyLib {
 					void setDate();
 
 					/// Contenido
-					void setContenido(char const* const contenido);
-					void setContenido(Basic::Objetos::String* contenido);
+					void setContent(char const* const contenido);
+					void setContent(Basic::Objetos::String* contenido);
 					void setContentType(char const* const contentType);
 					void setContentType(Basic::Objetos::String* contentType);
 					void setEncodingType(char const* const encodingType);

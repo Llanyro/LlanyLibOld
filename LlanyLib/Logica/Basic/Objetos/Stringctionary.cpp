@@ -201,7 +201,7 @@ size_t LlanyLib::Basic::Objetos::Stringictionary::getKeySimilarPos(const String*
 {
 	size_t pos = this->dict->length();
 	for (size_t i = 0; i < this->dict->length(); i++)
-		if ((*this->dict->getKey(i))->similar(*key)) {
+		if ((*this->dict->getKey(i))->similar(key)) {
 			pos = i;
 			i = this->dict->length();
 		}
@@ -221,7 +221,7 @@ size_t LlanyLib::Basic::Objetos::Stringictionary::getValueSimilarPos(const Strin
 {
 	size_t pos = this->dict->length();
 	for (size_t i = 0; i < this->dict->length(); i++)
-		if ((*this->dict->getValue(i))->similar(*key)) {
+		if ((*this->dict->getValue(i))->similar(key)) {
 			pos = i;
 			i = this->dict->length();
 		}
@@ -318,7 +318,7 @@ bool LlanyLib::Basic::Objetos::Stringictionary::containsKeySimilar(const String*
 {
 	bool resultado = false;
 	for (size_t i = 0; i < this->dict->length(); i++)
-		if ((*this->dict->getKey(i))->similar(*key)) {
+		if ((*this->dict->getKey(i))->similar(key)) {
 			resultado = true;
 			i = this->dict->length();
 		}
@@ -338,7 +338,7 @@ bool LlanyLib::Basic::Objetos::Stringictionary::containsValueSimilar(const Strin
 {
 	bool resultado = false;
 	for (size_t i = 0; i < this->dict->length(); i++)
-		if ((*this->dict->getValue(i))->similar(*key)) {
+		if ((*this->dict->getValue(i))->similar(key)) {
 			resultado = true;
 			i = this->dict->length();
 		}
@@ -358,8 +358,8 @@ bool LlanyLib::Basic::Objetos::Stringictionary::containsSimilar(const String* ke
 {
 	bool resultado = false;
 	for (size_t i = 0; i < this->dict->length(); i++)
-		if ((*this->dict->getKey(i))->similar(*key))
-			if ((*this->dict->getValue(i))->similar(*value)) {
+		if ((*this->dict->getKey(i))->similar(key))
+			if ((*this->dict->getValue(i))->similar(value)) {
 				resultado = true;
 				i = this->dict->length();
 		}
@@ -370,7 +370,7 @@ bool LlanyLib::Basic::Objetos::Stringictionary::containsSimilar(char const* cons
 	bool resultado = false;
 	for (size_t i = 0; i < this->dict->length(); i++)
 		if ((*this->dict->getKey(i))->similar(key))
-			if ((*this->dict->getValue(i))->similar(*value)) {
+			if ((*this->dict->getValue(i))->similar(value)) {
 				resultado = true;
 				i = this->dict->length();
 			}
@@ -380,7 +380,7 @@ bool LlanyLib::Basic::Objetos::Stringictionary::containsSimilar(const String* ke
 {
 	bool resultado = false;
 	for (size_t i = 0; i < this->dict->length(); i++)
-		if ((*this->dict->getKey(i))->similar(*key))
+		if ((*this->dict->getKey(i))->similar(key))
 			if ((*this->dict->getValue(i))->similar(value)) {
 				resultado = true;
 				i = this->dict->length();

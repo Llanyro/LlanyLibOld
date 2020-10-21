@@ -2,9 +2,12 @@
 
 #include <string>
 
-#include "../Plantillas/Listas/Buffer.hpp"
-#include "../Objetos/String.hpp"
 #include "../Singletons/Chars.hpp"
+#include "../Singletons/ValueToString.hpp"
+
+#include "../Plantillas/Listas/Buffer.hpp"
+
+#include "../Objetos/String.hpp"
 
 #pragma region Constructores
 LlanyLib::Basic::Objetos::StringBuilder::StringBuilder()
@@ -44,23 +47,23 @@ bool LlanyLib::Basic::Objetos::StringBuilder::add(const char& caracter)
 }
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const int& val)
 {
-	return StringBuilder::addClear(CHARS->toString(val));
+	return StringBuilder::addClear(VALUE_2_STRING->toString(val));
 }
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const float& val)
 {
-	return StringBuilder::addClear(CHARS->toString(val));
+	return StringBuilder::addClear(VALUE_2_STRING->toString(val));
 }
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const double& val)
 {
-	return StringBuilder::addClear(CHARS->toString(val));
+	return StringBuilder::addClear(VALUE_2_STRING->toString(val));
 }
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const long_t& val)
 {
-	return StringBuilder::addClear(CHARS->toString(val));
+	return StringBuilder::addClear(VALUE_2_STRING->toString(val));
 }
 bool LlanyLib::Basic::Objetos::StringBuilder::add(const size_t& val)
 {
-	return StringBuilder::addClear(CHARS->toString(val));
+	return StringBuilder::addClear(VALUE_2_STRING->toString(val));
 }
 bool LlanyLib::Basic::Objetos::StringBuilder::operator+=(const String* str)
 {

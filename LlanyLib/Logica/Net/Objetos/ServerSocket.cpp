@@ -1,12 +1,17 @@
 #include "ServerSocket.hpp"
 
-#include "../Headers/SocketsHeaders.hpp"
+//#include "../../Basic/Singletons/Chars.hpp"
+#include "../../Basic/Singletons/ValueToString.hpp"
 
 #include "../../Basic/Objetos/Logger.hpp"
 #include "../../Basic/Objetos/String.hpp"
-#include "../../Basic/Singletons/Chars.hpp"
+
+
+#include "../Headers/SocketsHeaders.hpp"
 
 #include "../Enums/SocketEnum.hpp"
+
+#include "ConnectionSocket.hpp"
 
 #define SERVER_SIN_NOMBRE "NoNameServer"
 
@@ -25,6 +30,7 @@ void LlanyLib::Net::Objetos::ServerSocket::completarClase()
 	this->result = nullptr;
 	this->hints = new addrinfo();
 	this->listenSocket = INVALID_SOCKET;
+	this->responseSocket = INVALID_SOCKET;
 	ServerSocket::iniciarSocketWin32();
 	#endif // __unix__
 }
@@ -165,7 +171,7 @@ LlanyLib::Net::Objetos::ServerSocket::ServerSocket(char const* const serverName,
 {
 	this->logger = new Basic::Objetos::Logger(serverName);
 	this->nombre = new Basic::Objetos::String(serverName);
-	this->port_win32 = CHARS->toString(port_unix);
+	this->port_win32 = VALUE_2_STRING->toString(port_unix);
 	this->port_unix = port_unix;
 	ServerSocket::completarClase();
 }
@@ -199,13 +205,11 @@ LlanyLib::Net::Objetos::ServerSocket::~ServerSocket()
 #ifdef __unix__
 
 #elif _WIN32
-unsigned int LlanyLib::Net::Objetos::ServerSocket::getListenSocket() const
+LlanyLib::Net::Objetos::ConnectionSocket* LlanyLib::Net::Objetos::ServerSocket::getConnectionSocket()
 {
-	return this->listenSocket;
-}
-unsigned int LlanyLib::Net::Objetos::ServerSocket::getClientSocket() const
-{
-	return this->clientSocket;
+	ConnectionSocket* s = new ConnectionSocket(this->listenSocket, this->responseSocket);
+	this->responseSocket = INVALID_SOCKET;
+	return s;
 }
 #endif // __unix__
 LlanyLib::Net::Enum::SocketCode LlanyLib::Net::Objetos::ServerSocket::getLastCode() const
@@ -216,8 +220,8 @@ bool LlanyLib::Net::Objetos::ServerSocket::acceptClient()
 {
 	// Accept a client socket
 	bool resultado = true;
-	this->clientSocket = accept(this->listenSocket, NULL, NULL);
-	if (this->clientSocket == INVALID_SOCKET) {
+	this->responseSocket = accept(this->listenSocket, NULL, NULL);
+	if (this->responseSocket == INVALID_SOCKET) {
 		this->lastCode = Enum::SocketCode::ErrorAceptarCliente;
 		closesocket(this->listenSocket);
 		WSACleanup();

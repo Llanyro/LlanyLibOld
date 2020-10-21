@@ -7,7 +7,8 @@
 #include "../Plantillas/Listas/LinkedList.hpp"
 #include "../Plantillas/Pointers/SmartPointer.hpp"
 
-#include "../Singletons/Chars.hpp"
+//#include "../Singletons/Chars.hpp"
+#include "../Singletons/ValueToString.hpp"
 //#include "FuncionesCaracteres.hpp"
 
 #define STRING_NULL "Se ha introducido un string apuntando a nullptr. Se ha ignorado esto"
@@ -28,7 +29,7 @@ void LlanyLib::Basic::Singletons::StringPrinter::printBool(const bool& value) co
 
 void LlanyLib::Basic::Singletons::StringPrinter::printValue(const size_t& value) const
 {
-	StringPrinter::printClear(CHARS->toString(value));
+	StringPrinter::printClear(VALUE_2_STRING->toString(value));
 }
 
 void LlanyLib::Basic::Singletons::StringPrinter::print(const char& caracter) const
@@ -87,7 +88,7 @@ void LlanyLib::Basic::Singletons::StringPrinter::printBoolLn(const bool& value) 
 
 void LlanyLib::Basic::Singletons::StringPrinter::printValueLn(const size_t& value) const
 {
-	StringPrinter::printClear(CHARS->toString(value));
+	StringPrinter::printClear(VALUE_2_STRING->toString(value));
 }
 
 void LlanyLib::Basic::Singletons::StringPrinter::printLn(const char& caracter) const

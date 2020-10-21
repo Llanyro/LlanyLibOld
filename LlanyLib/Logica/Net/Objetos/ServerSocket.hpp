@@ -25,6 +25,7 @@ namespace LlanyLib {
 			enum class ReadSocketType;
 		}
 		namespace Objetos {
+			class ConnectionSocket;
 			class ServerSocket
 			{
 				protected:
@@ -43,7 +44,7 @@ namespace LlanyLib {
 					addrinfo* result;
 					addrinfo* hints;
 					unsigned int listenSocket;
-					unsigned int clientSocket;
+					unsigned int responseSocket;
 					#endif // __unix__
 				private:
 					void completarClase();
@@ -74,8 +75,7 @@ namespace LlanyLib {
 					#ifdef __unix__
 
 					#elif _WIN32
-					unsigned int getListenSocket() const;
-					unsigned int getClientSocket() const;
+					ConnectionSocket* getConnectionSocket();
 					#endif // __unix__
 					Enum::SocketCode getLastCode() const;
 					bool acceptClient();

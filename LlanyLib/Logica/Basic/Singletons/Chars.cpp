@@ -3,17 +3,14 @@
 #include <cassert>
 #include <string>
 
-
 #include "../LibreriasSimples/ASCII_Defines.h"
 
 #include "Mem.hpp"
 
-#include "../Objetos/String.hpp"
-
 LlanyLib::Basic::Singletons::Chars::Chars() { Chars::subscribir(Chars::freeInstancia); }
 LlanyLib::Basic::Singletons::Chars::~Chars(){}
 #pragma region Vectores y strings
-int LlanyLib::Basic::Singletons::Chars::vectorLen(const char* block, size_t* len)
+int LlanyLib::Basic::Singletons::Chars::vectorLen(char const* const block, size_t* len) const
 {
 	int resultado = 0;
 	if (block == nullptr) resultado = -1;
@@ -25,7 +22,7 @@ int LlanyLib::Basic::Singletons::Chars::vectorLen(const char* block, size_t* len
 	}
 	return resultado;
 }
-inline size_t LlanyLib::Basic::Singletons::Chars::vectorLen(const char* block)
+inline size_t LlanyLib::Basic::Singletons::Chars::vectorLen(char const* const block) const
 {
 	size_t resultado = 0;
 	if (block != nullptr){
@@ -34,7 +31,7 @@ inline size_t LlanyLib::Basic::Singletons::Chars::vectorLen(const char* block)
 	}
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::vectorLenMax(const char* block, size_t* len, const size_t& maxSize)
+int LlanyLib::Basic::Singletons::Chars::vectorLenMax(char const* const block, size_t* len, const size_t& maxSize) const
 {
 	int resultado = 0;
 	if (block == nullptr) resultado = -1;
@@ -49,7 +46,7 @@ int LlanyLib::Basic::Singletons::Chars::vectorLenMax(const char* block, size_t* 
 	}
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::compareMemoryBlocks(const char* block1, const size_t& size_1, const char* block2, const size_t& size_2, const size_t& sizeType, int Compare(const char* item_a, const char* item_b))
+int LlanyLib::Basic::Singletons::Chars::compareMemoryBlocks(char const* const block1, const size_t& size_1, char const* const block2, const size_t& size_2, const size_t& sizeType, int Compare(char const* const item_a, char const* const item_b)) const
 {
 	assert(Compare != nullptr);
 	assert(&size_1 != nullptr);
@@ -69,11 +66,11 @@ int LlanyLib::Basic::Singletons::Chars::compareMemoryBlocks(const char* block1, 
 	}
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::compareString(const char* block1, const size_t& size_1, const char* block2, const size_t& size_2)
+/*int LlanyLib::Basic::Singletons::Chars::compareString(char const* const block1, const size_t& size_1, char const* const block2, const size_t& size_2) const
 {
 	return 0;//Chars::compareMemoryBlocks(block1, size_1, block2, size_2, sizeof(char), CHARS->compareChar);
 }
-int LlanyLib::Basic::Singletons::Chars::compareString(const char* string1, const char* string2)
+int LlanyLib::Basic::Singletons::Chars::compareString(char const* const string1, char const* const string2) const
 {
 	int resultado = 0;
 
@@ -93,33 +90,38 @@ int LlanyLib::Basic::Singletons::Chars::compareString(const char* string1, const
 
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::compareStringSimilar(const char* block1, const size_t& size_1, const char* block2, const size_t& size_2)
-{
-	return 0;// Chars::compareMemoryBlocks(block1, size_1, block2, size_2, sizeof(char), CHARS->compareCharSimilar);
-}
-int LlanyLib::Basic::Singletons::Chars::compareStringSimilar(const char* string1, const char* string2)
+int LlanyLib::Basic::Singletons::Chars::compareStringSimilar(char const* const block1, const size_t& size_1, char const* const block2, const size_t& size_2) const
 {
 	int resultado = 0;
+	size_t min = 0;
 
-	size_t sizeSting1 = 0;
-	size_t sizeSting2 = 0;
-
-	if (vectorLen(string1, &sizeSting1) == 0)
-		if (vectorLen(string2, &sizeSting2) == 0)
-			resultado = 0;
-		else
+	if (size_1 > size_2) {
+		for (size_t i = 0; resultado == 0 && i < size_2; i++)
+			resultado = Chars::compareCharSimilar(block1 + i, block2 + i);
+		if (resultado == 0)
+			resultado = 1;
+	}
+	else if(size_1 < size_2) {
+		for (size_t i = 0; resultado == 0 && i < size_1; i++)
+			resultado = Chars::compareCharSimilar(block1 + i, block2 + i);
+		if (resultado == 0)
 			resultado = -1;
+	}
 	else
-		resultado = -2;
-
-	if (resultado == 0)
-		resultado = compareStringSimilar(string1, sizeSting1, string2, sizeSting2);
+		for (size_t i = 0; resultado == 0 && i < size_1; i++)
+			resultado = Chars::compareCharSimilar(block1 + i, block2 + i);
 
 	return resultado;
 }
+int LlanyLib::Basic::Singletons::Chars::compareStringSimilar(char const* const string1, char const* const string2) const
+{
+	size_t sizeSting1 = strlen(string1);
+	size_t sizeSting2 = strlen(string2);
+	return compareStringSimilar(string1, sizeSting1, string2, sizeSting2);
+}*/
 #pragma endregion
 #pragma region Chars
-int LlanyLib::Basic::Singletons::Chars::compareCharSimilar(const char* caracter1, const char* caracter2)
+int LlanyLib::Basic::Singletons::Chars::compareCharSimilar(char const* const caracter1, char const* const caracter2) const
 {
 	int resultado = 0;
 	if (caracter1 == nullptr && caracter2 == nullptr) resultado = 0;// Ambos son iguales
@@ -152,19 +154,18 @@ int LlanyLib::Basic::Singletons::Chars::compareCharSimilar(const char* caracter1
 
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::compareChar(const char* caracter1, const char* caracter2)
-{
+int LlanyLib::Basic::Singletons::Chars::compareChar(const char* caracter1, const char* caracter2) const{
 	int resultado = 0;
-	if (caracter1 == nullptr && caracter2 == nullptr) resultado = 0;	// Ambos son iguales
-	else if (caracter1 == nullptr) resultado = -1;						// Caracter 2 mayor
-	else if (caracter2 == nullptr) resultado = 1;						// Caracter 1 mayor
-	else if (*caracter1 == *caracter2) resultado = 0;					// Ambos son iguales
-	else if (*caracter1 > * caracter2) resultado = 1;					// Caracter 1 mayor
-	else if (*caracter1 < *caracter2) resultado = -1;					// Caracter 2 mayor
-	else resultado = -2;												// Other
+	if (caracter1 == nullptr && caracter2 == nullptr) resultado = 0;			// Ambos son iguales
+	else if (caracter1 == nullptr) resultado = -1;								// Caracter 2 mayor
+	else if (caracter2 == nullptr) resultado = 1;								// Caracter 1 mayor
+	else if (*caracter1 == *caracter2) resultado = 0;	// Ambos son iguales
+	else if (*caracter1 > *caracter2) resultado = 1;	// Caracter 1 mayor
+	else if (*caracter1 < *caracter2) resultado = -1;	// Caracter 2 mayor
+	else resultado = -2;														// Other
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::isAlphabet(const char* caracter)
+int LlanyLib::Basic::Singletons::Chars::isAlphabet(char const* const caracter) const
 {
 	int result = 0;
 	if (caracter == nullptr) result = 0;						// Other
@@ -173,7 +174,7 @@ int LlanyLib::Basic::Singletons::Chars::isAlphabet(const char* caracter)
 	else result = 0;										// Other
 	return result;
 }
-int LlanyLib::Basic::Singletons::Chars::cambiarMayus(char* caracter)
+int LlanyLib::Basic::Singletons::Chars::cambiarMayus(char* caracter) const
 {
 	int resultado = 1;
 	if (caracter == nullptr) resultado = -1;
@@ -182,7 +183,7 @@ int LlanyLib::Basic::Singletons::Chars::cambiarMayus(char* caracter)
 	else resultado = 0;
 	return resultado;
 }
-int LlanyLib::Basic::Singletons::Chars::cambiarMinus(char* caracter)
+int LlanyLib::Basic::Singletons::Chars::cambiarMinus(char* caracter) const
 {
 	int resultado = 1;
 	if (caracter == nullptr) resultado = -1;
@@ -190,56 +191,5 @@ int LlanyLib::Basic::Singletons::Chars::cambiarMinus(char* caracter)
 		*caracter += DIFERENCIA_MAYUS_MINUS;
 	else resultado = 0;
 	return resultado;
-}
-#pragma endregion
-#pragma region Conversiones
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const bool& value) const
-{
-	LlanyLib::Basic::Objetos::String* resultado = nullptr;
-	if (value)
-		resultado = new LlanyLib::Basic::Objetos::String("True");
-	else
-		resultado = new LlanyLib::Basic::Objetos::String("False");
-	return resultado;
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const short& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const unsigned short& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const int& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const unsigned int& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const float& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const double& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const long& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const unsigned long& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const long long& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
-}
-LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Chars::toString(const unsigned long long& value) const
-{
-	return new LlanyLib::Basic::Objetos::String(&std::to_string(value)[0]);
 }
 #pragma endregion

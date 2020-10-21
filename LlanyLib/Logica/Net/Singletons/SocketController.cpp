@@ -1,17 +1,21 @@
 #include "SocketController.hpp"
 
-#include <iostream>
+//#include <iostream>
+#include <stdio.h>
+
+#include "../../Basic/Singletons/Files.hpp"
+
+#include "../../Basic/Objetos/StringBuilder.hpp"
+#include "../../Basic/Objetos/String.hpp"
+#include "../../Basic/Objetos/Registro.hpp"
 
 #include "../Headers/SocketsHeaders.hpp"
 #include "../Enums/HTTPEnum.hpp"
 
 #include "../Objetos/ServerSocket.hpp"
+#include "../Objetos/ConnectionSocket.hpp"
 #include "../Objetos/HttpRequest.hpp"
 #include "../Objetos/HTTPResponse.hpp"
-
-#include "../../Basic/Objetos/StringBuilder.hpp"
-#include "../../Basic/Objetos/String.hpp"
-#include "../../Basic/Objetos/Registro.hpp"
 
 #define HOST_STR "Host"
 #define CONNECTION_STR "Connection"
@@ -24,7 +28,11 @@
 LlanyLib::Net::Singletons::SocketController::SocketController() { SocketController::subscribir(SocketController::freeInstancia); }
 LlanyLib::Net::Singletons::SocketController::~SocketController(){}
 
-void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+#pragma region HTTP
+#define TEMPLATE "./Web/Templates/"
+#define STATIC "./Web/Static/"
+
+void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpRequest* request, const Objetos::ConnectionSocket* connection) const
 {
 	Basic::Objetos::StringBuilder builder;
 	Basic::Objetos::String* tempparam1 = nullptr;
@@ -32,7 +40,7 @@ void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpReque
 	bool continuar = true;
 	int parte = 0;
 	while (continuar) {
-		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		recv(connection->getResponseSocket(), &c, 1, 0);
 		putchar(c);
 		if (c == ' ' || c == '\r') {
 			switch (parte)
@@ -74,7 +82,7 @@ void LlanyLib::Net::Singletons::SocketController::getPetition(Objetos::HttpReque
 			builder += c;
 	}
 }
-void LlanyLib::Net::Singletons::SocketController::getKnownHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+void LlanyLib::Net::Singletons::SocketController::getKnownHeaders(Objetos::HttpRequest* request, const Objetos::ConnectionSocket* connection) const
 {
 	Basic::Objetos::Registro reg(3);
 	Basic::Objetos::StringBuilder builder;
@@ -84,7 +92,7 @@ void LlanyLib::Net::Singletons::SocketController::getKnownHeaders(Objetos::HttpR
 	bool continuar = true;
 	int parte = 0;
 	while (continuar) {
-		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		recv(connection->getResponseSocket(), &c, 1, 0);
 		putchar(c);
 
 		if (c == '\r') {
@@ -128,7 +136,7 @@ void LlanyLib::Net::Singletons::SocketController::getKnownHeaders(Objetos::HttpR
 	}
 
 }
-void LlanyLib::Net::Singletons::SocketController::getAllHeaders(Objetos::HttpRequest* request, const Objetos::ServerSocket* serverSocket) const
+void LlanyLib::Net::Singletons::SocketController::getAllHeaders(Objetos::HttpRequest* request, const Objetos::ConnectionSocket* connection) const
 {
 	Basic::Objetos::Registro reg(3);
 	Basic::Objetos::StringBuilder builder;
@@ -138,7 +146,7 @@ void LlanyLib::Net::Singletons::SocketController::getAllHeaders(Objetos::HttpReq
 	bool continuar = true;
 	int parte = 0;
 	while (continuar) {
-		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		recv(connection->getResponseSocket(), &c, 1, 0);
 		putchar(c);
 
 		if (c == '\r') {
@@ -172,65 +180,62 @@ void LlanyLib::Net::Singletons::SocketController::getAllHeaders(Objetos::HttpReq
 		}
 	}
 }
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPetition(const Objetos::ServerSocket* serverSocket)
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPetition(const Objetos::ConnectionSocket* connection) const
 {
 	Objetos::HttpRequest* request = new Objetos::HttpRequest();
-	SocketController::getPetition(request, serverSocket);
+	SocketController::getPetition(request, connection);
 	return request;
 }
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPostContent(const Objetos::ServerSocket* serverSocket)
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestPostContent(const Objetos::ConnectionSocket* connection) const
 {
 	return nullptr;
 }
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFast(const Objetos::ServerSocket* serverSocket)
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFast(const Objetos::ConnectionSocket* connection) const
 {
 	return nullptr;
 }
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestSlow(const Objetos::ServerSocket* serverSocket)
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestSlow(const Objetos::ConnectionSocket* connection) const
 {
 	return nullptr;
 }
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFull(const Objetos::ServerSocket* serverSocket)
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequestFull(const Objetos::ConnectionSocket* connection) const
 {
 	Objetos::HttpRequest* request = new Objetos::HttpRequest();
-	SocketController::getPetition(request, serverSocket);
-	SocketController::getAllHeaders(request, serverSocket);
+	SocketController::getPetition(request, connection);
+	SocketController::getAllHeaders(request, connection);
 	return request;
 }
-LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType)
+void LlanyLib::Net::Singletons::SocketController::sendHttpFileProtected(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const root, char const* const file) const
 {
-	LlanyLib::Net::Objetos::HttpRequest* request = nullptr;
-	switch (processType)
-	{
-		case Enum::ResponseProcess::PETITION:
-			request = SocketController::getHttpRequestPetition(serverSocket);
-			break;
-		case Enum::ResponseProcess::POST_CONTENT:
-			request = SocketController::getHttpRequestPetition(serverSocket);
-			break;
-		case Enum::ResponseProcess::FAST:
-			request = SocketController::getHttpRequestFast(serverSocket);
-			break;
-		case Enum::ResponseProcess::SLOW:
-			request = SocketController::getHttpRequestSlow(serverSocket);
-			break;
-		case Enum::ResponseProcess::FULL:
-			request = SocketController::getHttpRequestFull(serverSocket);
-			break;
+	Basic::Objetos::StringBuilder filePath;
+	filePath.add(root);
+	filePath.add(file);
+	Basic::Objetos::String* fileName = filePath.build();
+	Basic::Objetos::String* fileContent = FILES->leerFicheroFopenClear(fileName);
+
+	if (fileContent != nullptr) {
+		response->setContent(fileContent);
 	}
-	return request;
+
+	SocketController::sendMsgClear(connection, response->toString());
 }
-void LlanyLib::Net::Singletons::SocketController::sendHttpResponse(const Objetos::ServerSocket* serverSocket, const Objetos::HttpResponse* response)
+void LlanyLib::Net::Singletons::SocketController::sendHttpFileProtected(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const root, const Basic::Objetos::String* file) const
 {
-	Basic::Objetos::String* str = response->toString();
-	for (size_t i = 0; i < str->length(); i++)
-		putchar(str->operator[](i));
-	send(serverSocket->getClientSocket(), str->get(), str->length(), 0);
-	delete str;
+	Basic::Objetos::StringBuilder filePath;
+	filePath.add(root);
+	filePath.add(file);
+	Basic::Objetos::String* fileName = filePath.build();
+	Basic::Objetos::String* fileContent = FILES->leerFicheroFopenClear(fileName);
+
+	if (fileContent != nullptr) {
+		response->setContent(fileContent);
+	}
+
+	SocketController::sendMsgClear(connection, response->toString());
 }
+#pragma endregion
 
-
-void LlanyLib::Net::Singletons::SocketController::printTest(const Objetos::ServerSocket* serverSocket) const
+void LlanyLib::Net::Singletons::SocketController::printTest(const Objetos::ConnectionSocket* connection) const
 {
 	char c;
 	bool continuar = true;
@@ -238,73 +243,149 @@ void LlanyLib::Net::Singletons::SocketController::printTest(const Objetos::Serve
 	bool finr = false;
 
 	while (continuar) {
-		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		recv(connection->getResponseSocket(), &c, 1, 0);
 		putchar(c);
 		switch (((c == '\n') ? (1 << 0) : 0) |	// 1
-				((c == '\r') ? (1 << 1) : 0) |	// 2
-				(fin ? (1 << 2) : 0) |			// 4
-				(finr ? (1 << 3) : 0))			// 8
+			((c == '\r') ? (1 << 1) : 0) |	// 2
+			(fin ? (1 << 2) : 0) |			// 4
+			(finr ? (1 << 3) : 0))			// 8
 		{
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-			case 7:
-			case 8:
-			case 9:
-			case 10:
-			case 11:
-			case 12:
-			case 14:
-			case 15:
-				fin = false;
-				finr = false;
-				break;
-			case 1:
-				fin = true;
-				break;
-			case 6:
-				finr = true;
-				break;
-			case 13:
-				continuar = false;
-				break;
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 14:
+		case 15:
+			fin = false;
+			finr = false;
+			break;
+		case 1:
+			fin = true;
+			break;
+		case 6:
+			finr = true;
+			break;
+		case 13:
+			continuar = false;
+			break;
 		}
 	}
-	SocketController::shitSend(serverSocket);
+	SocketController::shitSend(connection);
 }
-void LlanyLib::Net::Singletons::SocketController::shitSend(const Objetos::ServerSocket* serverSocket) const
+void LlanyLib::Net::Singletons::SocketController::shitSend(const Objetos::ConnectionSocket* connection) const
 {
 	int iSendResult;
 	int iResult;
 
-	iSendResult = send(serverSocket->getClientSocket(), "HTTP/1.1 200 YAY it works!!!\n\rAccept-Ranges: bytes\n\rAccess-Control-Allow-Origin: *\n\rContent-Length: 16\n\rContent-Type: text/html; charset=utf-8\n\rDate: Sun Oct 11 23:49:08 CEST 2020\n\rServer: Server Interfaz for PAWR\n\r\n\rHola mundo test", 233, 0);
+	iSendResult = send(connection->getResponseSocket(), "HTTP/1.1 200 YAY it works!!!\n\rAccept-Ranges: bytes\n\rAccess-Control-Allow-Origin: *\n\rContent-Length: 16\n\rContent-Type: text/html; charset=utf-8\n\rDate: Sun Oct 11 23:49:08 CEST 2020\n\rServer: Server Interfaz for PAWR\n\r\n\rHola mundo test", 233, 0);
 
 	if (iSendResult == SOCKET_ERROR) {
 		printf("send failed with error: %d\n", WSAGetLastError());
-		closesocket(serverSocket->getClientSocket());
+		closesocket(connection->getResponseSocket());
 		WSACleanup();
 	}
 	else printf("Bytes sent: %d\n", iSendResult);
 
 	// shutdown the connection since we're done
-	iResult = shutdown(serverSocket->getClientSocket(), SD_SEND);
+	iResult = shutdown(connection->getResponseSocket(), SD_SEND);
 	if (iResult == SOCKET_ERROR) {
 		printf("shutdown failed with error: %d\n", WSAGetLastError());
-		closesocket(serverSocket->getClientSocket());
+		closesocket(connection->getResponseSocket());
 		WSACleanup();
 	}
 	else {
 		// cleanup
-		closesocket(serverSocket->getClientSocket());
+		closesocket(connection->getResponseSocket());
 		WSACleanup();
 	}
 }
-/*LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController::getHTTPRequest(const Objetos::ServerSocket* serverSocket) const
+
+#pragma region HTTP
+LlanyLib::Net::Objetos::HttpRequest* LlanyLib::Net::Singletons::SocketController::getHttpRequest(const Objetos::ConnectionSocket* connection, const Enum::ResponseProcess& processType) const
+{
+	LlanyLib::Net::Objetos::HttpRequest* request = nullptr;
+	switch (processType)
+	{
+		case Enum::ResponseProcess::PETITION:
+			request = SocketController::getHttpRequestPetition(connection);
+			break;
+		case Enum::ResponseProcess::POST_CONTENT:
+			request = SocketController::getHttpRequestPetition(connection);
+			break;
+		case Enum::ResponseProcess::FAST:
+			request = SocketController::getHttpRequestFast(connection);
+			break;
+		case Enum::ResponseProcess::SLOW:
+			request = SocketController::getHttpRequestSlow(connection);
+			break;
+		case Enum::ResponseProcess::FULL:
+			request = SocketController::getHttpRequestFull(connection);
+			break;
+	}
+	return request;
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpResponse(const Objetos::ConnectionSocket* connection, const Objetos::HttpResponse* response) const
+{
+	SocketController::sendMsgClear(connection, response->toString());
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpTemplate(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const file) const
+{
+	SocketController::sendHttpFileProtected(connection, response, TEMPLATE, file);
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpTemplate(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, const Basic::Objetos::String* file) const
+{
+	SocketController::sendHttpFileProtected(connection, response, TEMPLATE, file);
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpTemplateClear(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, Basic::Objetos::String* file) const
+{
+	SocketController::sendHttpFileProtected(connection, response, TEMPLATE, file);
+	delete file;
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpStatic(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, char const* const file) const
+{
+	SocketController::sendHttpFileProtected(connection, response, STATIC, file);
+	delete file;
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpStatic(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, const Basic::Objetos::String* file) const
+{
+	SocketController::sendHttpFileProtected(connection, response, STATIC, file);
+}
+void LlanyLib::Net::Singletons::SocketController::sendHttpStaticClear(const Objetos::ConnectionSocket* connection, Objetos::HttpResponse* response, Basic::Objetos::String* file) const
+{
+	SocketController::sendHttpFileProtected(connection, response, STATIC, file);
+	delete file;
+}
+#pragma endregion
+#pragma region All
+void LlanyLib::Net::Singletons::SocketController::sendMsg(const Objetos::ConnectionSocket* connection, const Basic::Objetos::String* msg) const
+{
+	for (size_t i = 0; i < msg->length(); i++)
+		putchar(msg->operator[](i));
+	send(connection->getResponseSocket(), msg->get(), msg->length(), 0);
+}
+void LlanyLib::Net::Singletons::SocketController::sendMsgClear(const Objetos::ConnectionSocket* connection, Basic::Objetos::String* msg) const
+{
+	SocketController::sendMsg(connection, msg);
+	delete msg;
+}
+void LlanyLib::Net::Singletons::SocketController::closeConnectionSocket(const Objetos::ConnectionSocket* connection) const
+{
+	closesocket(connection->getResponseSocket());
+	WSACleanup();
+}
+#pragma endregion
+
+/*LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController::getHTTPRequest(const Objetos::ConnectionSocket* connection) const
 {
 	return SocketController::getHTTPRequest(serverSocket, Enum::ResponseProcess::SUPER_SLOW);
 }
-LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController::getHTTPRequest(const Objetos::ServerSocket* serverSocket, const Enum::ResponseProcess& processType) const
+LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController::getHTTPRequest(const Objetos::ConnectionSocket* connection, const Enum::ResponseProcess& processType) const
 {
 	Objetos::HTTPRequest* request = nullptr;
 	Basic::Objetos::StringBuilder builder;
@@ -313,7 +394,7 @@ LlanyLib::Net::Objetos::HTTPRequest* LlanyLib::Net::Singletons::SocketController
 	bool fin = false;
 	bool finr = false;
 	while (continuar) {
-		recv(serverSocket->getClientSocket(), &c, 1, 0);
+		recv(connection->getResponseSocket(), &c, 1, 0);
 		putchar(c);
 		if (c != '\r')
 			builder += c;

@@ -149,17 +149,17 @@ void t7()
 			LlanyLib::Basic::Objetos::String*>();
 
 	dict->add(
-		new LlanyLib::Basic::Objetos::String("Clave"),
-		new LlanyLib::Basic::Objetos::String("Valor"));
+		new LlanyLib::Basic::Objetos::String("Clave", false),
+		new LlanyLib::Basic::Objetos::String("Valor", false));
 	dict->add(
-		new LlanyLib::Basic::Objetos::String("name"),
-		new LlanyLib::Basic::Objetos::String("Chinesium"));
+		new LlanyLib::Basic::Objetos::String("name", false),
+		new LlanyLib::Basic::Objetos::String("Chinesium", false));
 	dict->add(
-		new LlanyLib::Basic::Objetos::String("DurabilidadMax"),
-		new LlanyLib::Basic::Objetos::String("2"));
+		new LlanyLib::Basic::Objetos::String("DurabilidadMax", false),
+		new LlanyLib::Basic::Objetos::String("2", false));
 	dict->add(
-		new LlanyLib::Basic::Objetos::String("Durabilidad"),
-		new LlanyLib::Basic::Objetos::String("1"));
+		new LlanyLib::Basic::Objetos::String("Durabilidad", false),
+		new LlanyLib::Basic::Objetos::String("1", false));
 
 	LlanyLib::Basic::Objetos::String* json = JSON_CONVERSOR->toJSONClear(dict);
 

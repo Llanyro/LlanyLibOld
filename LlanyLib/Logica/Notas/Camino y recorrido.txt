@@ -22,3 +22,16 @@ Objetivo/os:
 // Retorno: Void/Si se ha realizado todo correctamente
 //		Resultado
 // Complejidad temporal y espacial: O(1) y M(1)
+
+
+orden de includes:
+
+// c
+
+// cpp
+
+// BasicLib
+
+// Other libs(LlanyLib)
+
+// This lib

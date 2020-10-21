@@ -56,10 +56,10 @@ namespace LlanyLib {
 					//bool operator+=(const String& other);
 					#pragma endregion
 					#pragma region Compares
-					bool similar(const char& caracter);
-					bool similar(char const* const str);
+					bool similar(const char& caracter) const;
+					bool similar(char const* const str) const;
 					bool similar(const char* str, const size_t& size);
-					bool similar(const String& other);
+					bool similar(const String* other);
 					int compare(const char& caracter) const;
 					int compare(char const* const str) const;
 					int compare(const String& other) const;

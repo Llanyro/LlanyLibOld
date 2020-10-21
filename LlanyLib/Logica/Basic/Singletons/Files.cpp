@@ -117,15 +117,12 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicher
 }
 LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Singletons::Files::leerFicheroFopen(char const* const fileName) const
 {
-	assert(&fileName != nullptr);
 	Objetos::StringBuilder str;
 	FILE* file = fopen(fileName, "r");
 	if (file != nullptr) {
 		char c;
-		do {
-			c = getc(file);
+		while ((c = getc(file)) != EOF)
 			str += c;
-		} while (c != EOF);
 		fclose(file);
 	}
 	return str.build();

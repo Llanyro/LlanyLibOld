@@ -177,26 +177,48 @@ LlanyLib::Basic::Objetos::String* LlanyLib::Basic::Objetos::String::operator+(co
 }
 #pragma endregion
 #pragma region Compares
-bool LlanyLib::Basic::Objetos::String::similar(const char& caracter)
+bool LlanyLib::Basic::Objetos::String::similar(const char& caracter) const
 {
-	return false;
+	bool resultado = false;
+	if (this->count == 2)
+		resultado = CHARS->compareCharSimilar(this->vector, &caracter);
+	return resultado;
 }
-bool LlanyLib::Basic::Objetos::String::similar(char const* const str)
+bool LlanyLib::Basic::Objetos::String::similar(char const* const str) const
 {
-	return false;
+	int resultado = 0;
+	size_t size_2 = strlen(str);
+	size_t min = 0;
+
+	if (this->count > size_2) {
+		for (size_t i = 0; resultado == 0 && i < size_2; i++)
+			resultado = CHARS->compareCharSimilar(this->vector + i, str + i);
+		if (resultado == 0)
+			resultado = 1;
+	}
+	else if (this->count < size_2) {
+		for (size_t i = 0; resultado == 0 && i < this->count; i++)
+			resultado = CHARS->compareCharSimilar(this->vector + i, str + i);
+		if (resultado == 0)
+			resultado = -1;
+	}
+	else
+		for (size_t i = 0; resultado == 0 && i < this->count; i++)
+			resultado = CHARS->compareCharSimilar(this->vector + i, str + i);
+	return (resultado == 0);
 }
 bool LlanyLib::Basic::Objetos::String::similar(const char* str, const size_t& size)
 {
 	return false;
 }
-bool LlanyLib::Basic::Objetos::String::similar(const String& other)
+bool LlanyLib::Basic::Objetos::String::similar(const String* other)
 {
 	return false;
 }
 int LlanyLib::Basic::Objetos::String::compare(const char& caracter) const
 {
 	int resultado = 0;
-	if (this->count > 0)
+	if (this->count == 2)
 		resultado = compareChar(this->vector, &caracter);
 	else
 		resultado = -1;

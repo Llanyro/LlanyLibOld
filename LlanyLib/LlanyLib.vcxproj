@@ -158,6 +158,7 @@
     <ClCompile Include="Logica\Basic\Singletons\Printer.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\StringPrinter.cpp" />
     <ClCompile Include="Logica\Basic\Singletons\System.cpp" />
+    <ClCompile Include="Logica\Basic\Singletons\ValueToString.cpp" />
     <ClCompile Include="Logica\Juego\Gestores\GestorItems.cpp" />
     <ClCompile Include="Logica\Juego\Gestores\VistaGestorItems.cpp" />
     <ClCompile Include="Logica\Juego\Items\Contenedores\BotellaHidrogeno.cpp" />
@@ -195,8 +196,8 @@
     <ClCompile Include="Logica\Math\Singletons\Math.cpp" />
     <ClCompile Include="Logica\Math\Singletons\Random.cpp" />
     <ClCompile Include="Logica\Math\Singletons\UnitConversor.cpp" />
+    <ClCompile Include="Logica\Net\Objetos\ConnectionSocket.cpp" />
     <ClCompile Include="Logica\Net\Objetos\HttpRequest.cpp" />
-    <ClCompile Include="Logica\Net\Objetos\HTTPRequestOld.cpp" />
     <ClCompile Include="Logica\Net\Objetos\ClientSocket.cpp" />
     <ClCompile Include="Logica\Net\Objetos\ClientWebSocket.cpp" />
     <ClCompile Include="Logica\Net\Objetos\Cookie.cpp" />
@@ -209,7 +210,6 @@
     <ClCompile Include="Logica\SLDB\Objetos\Columna.cpp" />
     <ClCompile Include="Logica\SLDB\Objetos\Table.cpp" />
     <ClCompile Include="Tests\MainTests.cpp" />
-    <ClCompile Include="Tests\MainTests2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logica\AI\Matriz.hpp" />
@@ -260,6 +260,7 @@
     <ClInclude Include="Logica\Basic\Singletons\Printer.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\StringPrinter.hpp" />
     <ClInclude Include="Logica\Basic\Singletons\System.hpp" />
+    <ClInclude Include="Logica\Basic\Singletons\ValueToString.hpp" />
     <ClInclude Include="Logica\Juego\Enums\EntidadesEnum.hpp" />
     <ClInclude Include="Logica\Juego\Enums\ItemControllerEnum.hpp" />
     <ClInclude Include="Logica\Juego\Enums\ItemEnum.hpp" />
@@ -311,8 +312,8 @@
     <ClInclude Include="Logica\Net\Enums\HTTPEnum.hpp" />
     <ClInclude Include="Logica\Net\Enums\SocketEnum.hpp" />
     <ClInclude Include="Logica\Net\Headers\SocketsHeaders.hpp" />
+    <ClInclude Include="Logica\Net\Objetos\ConnectionSocket.hpp" />
     <ClInclude Include="Logica\Net\Objetos\HttpRequest.hpp" />
-    <ClInclude Include="Logica\Net\Objetos\HTTPRequestOld.hpp" />
     <ClInclude Include="Logica\Net\Objetos\ClientSocket.hpp" />
     <ClInclude Include="Logica\Net\Objetos\ClientWebSocket.hpp" />
     <ClInclude Include="Logica\Net\Objetos\Cookie.hpp" />
